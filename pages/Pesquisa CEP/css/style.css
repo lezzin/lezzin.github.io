@@ -1,0 +1,18 @@
+@import url(./bootstrap.min.css);
+
+small {
+    opacity: 0;
+    transition: .4s;
+}
+
+#cep:focus~small {
+    opacity: 1;
+}
+
+span {
+    margin: 10px 0;
+}
+
+.buttons {
+    top: 20px;
+}

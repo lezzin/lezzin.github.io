@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8">
+    <meta name="keywords"
+        content="Leandro, Adrian, HTML, CSS, Javascript, javascritpt, portfolio, portfolios, html, css">
+    <meta name="author" content="Leandro Adrian da Silva">
+    <meta name="description" content="Portfólio | Leandro Adrian da Silva">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="./assets/img/user-solid.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <title>Portfólio | Leandro Adrian da Silva</title>
+</head>
+
+<body>
+    <input type="checkbox" id="darkSwitch" style="display: none;">
+    <!-- Header -->
+    <div id="header" class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="https://lezzin.github.io" target="_blank"><img
+                        class="rounded-circle border border-dark" src="./assets/img/profile.jfif" alt="minha foto"
+                        width="40"></a>
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    style="outline: none;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end pt-2" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#habilidades">Habilidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projetos">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"><label for="darkSwitch"><i class="fa-solid" id="labelDarkSwitch"
+                                        tabindex="0" style="cursor: pointer;"></i></label></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- /Header -->
+
+    <!-- Apresentação -->
+    <section id="home">
+        <div
+            class="container-fluid pb-5 pt-md-0 pt-4 d-flex justify-content-center align-items-center flex-column text-center bg-light">
+
+            <div>
+                <h3 class="h3">Olá!</h3>
+                <h2 class="h2">Me chamo Leandro Adrian</h2>
+                <h4 class="h4"><samp>Um jovem estudante que quer ser programador full-stack no futuro</samp></h4>
+
+                <nav class="nav d-flex justify-content-center align-items-center mt-1" style="width: 100%;">
+                    <a href="https://www.instagram.com/leandroadrian_/" target="_blank" class="p-1"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/lezzin" target="_blank" class="p-1"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" class="p-1"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </nav>
+            </div>
+
+            <article class="p-2 h5">
+                <p>Tenho 16 anos, atualmente estou cursando Técnico em Informática no IFSMG, na
+                    cidade
+                    de
+                    Muzambinho. Conheci a programação de sites em 2021, quando entrei na Instituição, e desde então,
+                    estou sempre praticando e me aperçoando cada vez mais. No futuro, quero ser um programador Full
+                    Stack.</p>
+            </article>
+            <noscript><span style="font-size: .8rem;">Algumas funções do site talves não funcionem corretamente. Ative o
+                    javascript, por
+                    favor.</span>
+            </noscript>
+        </div>
+    </section>
+    <!-- /Apresentação -->
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+
+        <div class="container d-flex flex-column justify-content-center align-items-center" style="height:100%;">
+            <div class="text-dark text-center m-5">
+                <h1>Minhas habilidades</h1>
+            </div>
+            <h3 class="badge badge-primary" style="font-size:1.2em;">Primárias</h3>
+            <span class="text-muted pb-3">São as linguagens que mais utilizo em meus projetos pessoais e que mais me
+                familiarizo.</span>
+            <div class="row text-center justify-content-center align-items-center">
+                <!-- HTML -->
+                <div class=" col-md-4">
+                    <div class=" card p-2 mb-3 col-md border border-dark rounded" tabindex="0">
+                        <img class="card-img-top" src="./assets/img/html.png" alt="HTML Logo" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">HTML</h5>
+                            <span class="badge badge-warning"><i class="fa-solid fa-check"></i>
+                                Intermediário</span>
+                            <p class="card-text">Sobre meu conhecimento em HTML, me considero intermediário.<br>
+                                Conheço as tag's semânticas, consigo montar formulários complexos, tabelas, inserir
+                                videos, imagens, áudios...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /HTML -->
+                <!-- CSS -->
+                <div class="col-md-4">
+                    <div class="card p-2 mb-3 col-md border border-dark rounded" tabindex="0">
+                        <img class="card-img-top" src="./assets/img/css.png" alt="CSS Logo" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">CSS/Bootstrap</h5>
+                            <span class="badge badge-warning"><i class="fa-solid fa-check"></i>
+                                Intermediário</span>
+                            <p class="card-text">Sobre CSS, também me considero intermediário, conheço algumas
+                                pseudo-classes, grid, flexbox, responsividade... Hoje, estou me aperfeiçoando no
+                                framework <a href="https://getbootstrap.com/">bootstrap.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <!-- JAVASCRIPT -->
+                <div class="col-md-4">
+                    <div class="card p-2 mb-3 col-md border border-dark rounded" tabindex="0">
+                        <img class="card-img-top" src="./assets/img/js.png" alt="Javascript Logo" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">JavaScript/jQuery</h5>
+                            <span class="badge badge-success"><i class="fa-solid fa-check"></i> Iniciante</span>
+                            <p class="card-text">E falando de javascript, me considero iniciante, pois meus códigos
+                                ainda não são totalmente "limpos", mas consigo entender a lógica de programação e
+                                muitas vezes resolver problemas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- JAVASCRIPT -->
+
+                <!-- PHP -->
+                <div class="col-md-4">
+                    <div class="card p-2 mb-3 col-md border border-dark rounded" tabindex="0">
+                        <img class="card-img-top" src="./assets/img/php-icon.svg" alt="PHP Logo" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">PHP</h5>
+                            <span class="badge badge-success"><i class="fa-solid fa-check"></i> Iniciante</span>
+                            <p class="card-text">Recentemente criei um projeto de uma biblioteca virtual utilizando
+                                principalmente o PHP e MySQL, então, possuo um bom conhecimento do funcionamento da
+                                linguagem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- PHP -->
+            </div>
+            <span class="text-muted text-center" style="font-size:.9em;">*Sim, eu sei que HTML e CSS não são
+                linguagens de programação <i class="fa-solid fa-face-grin-beam-sweat"></i></span>
+            <div class="row">
+                <div class="mt-4 center">
+                    <h4 class="badge badge-secondary" style="font-size:1em;">Secundárias</h4>
+                    <p class="pt-2 pb-0 pl-1 pr-1">Sobre as habilidades secundárias: são linguagens que
+                        conheço e
+                        consigo utilizar, mas não são totalmente o meu foco.</p>
+                    <p class="text-muted pb-2 text-info pl-1 pr-1">*passe o mouse ou clique encima dos ícones para mais
+                        informações</p>
+                </div>
+            </div>
+
+            <!-- MYSQL -->
+            <div class="row mb-5 justify-content-around secondary-skills">
+                <div class="icons-svg col-md-3 col-5 mb-md-0 mb-5 rounded center p-1">
+                    <button style="width: 14rem; height:14rem;"
+                        class="btn-light border-0 d-flex flex-column justify-content-center align-items-center"
+                        type="button" data-toggle="tooltip" data-placement="bottom"
+                        title="Comecei a criar um biblioteca virtual utilizando-o, mas possuio pouco conhecimento. Sei apenas o básico."
+                        tabindex="0">
+                        <img src="./assets/img/mysql-icon.svg">
+                        <span class="badge badge-secondary mb-2" style="font-size: 1rem;">MySQL</span>
+                        <noscript>Comecei a criar um biblioteca virtual utilizando-o, mas possuio pouco conhecimento.
+                            Sei apenas o básico.</noscript>
+                    </button>
+                </div>
+                <!-- /MYSQL -->
+
+                <!-- C++ -->
+                <div class="icons-svg col-md-3 col-5 rounded mb-md-0 mb-5 center p-1">
+                    <button style="width: 14rem; height:14rem;"
+                        class="btn-light border-0 d-flex flex-column justify-content-center align-items-center"
+                        type="button" data-toggle="tooltip" data-placement="bottom"
+                        title="No ano de 2020, eu utilizei bastante, não pratico muito." tabindex="0">
+                        <img src="./assets/img/c++icon.svg">
+                        <span class="badge badge-secondary mb-2" style="font-size: 1rem;">C++</span>
+                        <noscript>No ano de 2020, eu utilizei bastante, não pratico muito.</noscript>
+                    </button>
+                </div>
+                <!-- /C++ -->
+
+                <!-- PYTHON -->
+                <div class="icons-svg col-md-3 col-5 rounded center p-1">
+                    <button style="width: 14rem; height:14rem;"
+                        class="btn-light border-0 d-flex flex-column justify-content-center align-items-center"
+                        type="button" data-toggle="tooltip" data-placement="bottom"
+                        title="É a linguagem que mais utilizo depois de javascript, gosto bastante." tabindex="0">
+                        <img src="./assets/img/python-icon.svg">
+                        <span class="badge badge-secondary mb-2" style="font-size: 1rem;">Python</span>
+                        <noscript>É a linguagem que mais utilizo depois de javascript, gosto bastante.</noscript>
+                    </button>
+                </div>
+                <!-- PYTHON -->
+            </div>
+        </div>
+    </section>
+    <!-- /Habilidades -->
+
+    <!-- Projetos -->
+    <section id="projetos">
+        <div class="container-fluid d-flex flex-column justify-content-center align-items-center text-center"
+            style="height: 100%;">
+            <h1 class="mt-5 mb-md-3 mb-2">Projetos pessoais</h1>
+            <div class="row bg-primary p-2 m-2 justify-content-center">
+
+                <!-- Biblioteca virtual -->
+                <div class="card m-2" style="width: 20rem;" tabindex="0">
+                    <img class="card-img-top" src="./assets/img/biblioteca.png"
+                        alt="Ilustração do jogo - naves atirando lasers" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Biblioteca virtual</h5>
+                        <div class="card-text text-center">
+                            <p><strong>MySQL, Javascript e PHP</strong><br>
+                                Criado para eu aprender e entender o lado servidor de
+                                uma página web<br>
+                            </p>
+                        </div>
+                        <a href="https://github.com/lezzin/biblioteca-virtual" class="btn btn-primary"
+                            target="_blank">Pasta no GitHub</a><br><br>
+                    </div>
+                </div>
+                <!-- /Biblioteca virtual -->
+
+                <!-- Space Invaders -->
+                <div class="card m-2" style="width: 20rem;" tabindex="0">
+                    <img class="card-img-top" src="./assets/img/space_invaders.png"
+                        alt="Ilustração do jogo - naves atirando lasers" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Space Invaders</h5>
+                        <div class="card-text text-center">
+                            <p><strong>Pygame e Python</strong> - <a href="https://www.youtube.com/watch?v=Q-__8Xw9KTM"
+                                    target="_blank">Referência</a>
+                                <br>
+                                Projeto feito para a apresentação de um trabalho em meu curso.<br>
+                            </p>
+                        </div>
+                        <a href="https://github.com/lezzin/Space-Invaders-pygame" class="btn btn-primary"
+                            target="_blank">Pasta no GitHub</a><br><br>
+                        <small>Participação: <a>Miguel</a>,
+                            <a>Luis Gustavo</a> e
+                            <a>João Vitor</a>.
+                        </small>
+                    </div>
+                </div>
+                <!-- /Space Invaders -->
+
+                <!-- Mario -->
+                <div class="card m-2" style="width: 20rem;" tabindex="0">
+                    <img class="card-img-top" src="./assets/img/mario.png" alt="Mario correndo" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Jogo em Javascript</h5>
+                        <div class="card-text text-center">
+                            <p><strong>Javascript e jQuery</strong> - <a
+                                    href="https://www.youtube.com/watch?v=r9buAwVBDhA"
+                                    target="_blank">Referência</a><br>
+                                Projeto criado para treinar as funções jquery(js) e keyframes(css).<br>
+                            </p>
+                        </div>
+                        <a href="https://github.com/lezzin/Jogo-em-javascript" class="btn btn-primary m-1"
+                            target="_blank">Pasta no
+                            GitHub</a>
+                        <a href="./pages/Mario em js/mario.html" class="btn btn-primary m-1" target="_blank">
+                            Página do projeto</a>
+                    </div>
+                </div>
+                <!-- /Mario -->
+
+                <!-- Site de tarefas -->
+                <div class="card m-2" style="width: 20rem;" tabindex="0">
+                    <img class="card-img-top" src="./assets/img/site_tarefas.png"
+                        alt="Visualização do projeto da lista de tarefas" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Site de Tarefas</h5>
+                        <div class="card-text text-center">
+                            <p><strong>Javascript - <a
+                                        href="https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage"
+                                        target="_blank">LocalStorage</a>
+                                </strong><br>
+                                Projeto criado para treinar e também conhecer LocalStorage e JSON.<br>
+                            </p>
+                        </div>
+                        <a href="https://github.com/lezzin/Site-de-tarefas" class="btn btn-primary m-1" target="_blank">
+                            Pasta no GitHub</a>
+                        <a href="./pages/Site de tarefas/tarefas.html" class="btn btn-primary m-1" target="_blank">
+                            Página do projeto</a>
+                    </div>
+                </div>
+                <!-- /Site de tarefas -->
+
+                <!-- API's -->
+                <div class="card m-2" style="width: 20rem;" tabindex="0">
+                    <img class="card-img-top border-bottom" src="./assets/img/pagina_cep.png"
+                        alt="imagem a página de CEPS" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">API's</h5>
+                        <div class="card-text text-center">
+                            <p>Site criado utilizando duas API's, com o objetivo de
+                                treinar manipulação de arquivos json e o método <span class="text-info"
+                                    data-toggle="tooltip" data-placement="bottom"
+                                    title="Um método que de maneira fácil e lógica, busca recursos de forma assíncrona através da rede..">fetch().<br>
+                                </span>
+                                <noscript><small>(Método que de maneira fácil e lógica, busca recursos de
+                                        forma assíncrona através da rede.)</small>
+                                </noscript>
+                            </p>
+                        </div>
+                        <a href="https://github.com/lezzin/treino-json" class="btn btn-primary m-1" target="_blank">
+                            Pasta no GitHub</a>
+                        <a href="./pages/Pesquisa CEP/index.html" class="btn btn-primary m-1" target="_blank">
+                            Página do projeto</a>
+                    </div>
+                </div>
+                <!-- /API's -->
+
+                <!-- Exercicios beecrowd -->
+                <div class="card m-2" style="width: 20rem;" tabindex="0">
+                    <img class="card-img-top border-bottom" src="./assets/img/beecrowd.jpg"
+                        alt="imagem do site beecrowd" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Resoluções de exercícios</h5>
+                        <div class="card-text text-center">
+                            <p>Exercícios feitos na plataforma <strong><a href="https://www.beecrowd.com.br/judge/pt"
+                                        target="_blank">Beecrowd</a>
+                                </strong>
+                                com foco em Python para aprendizado e fixação.
+                            </p>
+                        </div>
+                        <a href="https://github.com/lezzin/Exercicios-Beecrowd" class="btn btn-primary m-1"
+                            target="_blank">
+                            Pasta no GitHub</a><br>
+                    </div>
+                </div>
+                <!-- /Exercicios beecrowd -->
+
+            </div>
+    </section>
+    <!-- /Projetos -->
+
+    <!-- Contatos -->
+    <section id="contato">
+
+        <div class="container-fluid mb-md-0 mb-5">
+            <div class="row" style="overflow: hidden;">
+                <div class="col-md-6 col-12 center mt-md-0 mt-5">
+                    <img class="w-50" src="./assets/img/imagem-contato.jpg" loading="lazy">
+                    <small><a href="http://www.freepik.com" class="text-secondary" target="_blank">Designed
+                            by slidesgo
+                            /
+                            Freepik</a></small>
+                </div>
+                <div class="col-md-6 bg-light mt-md-0 mt-5">
+
+                    <div class="container center">
+
+                        <nav class="nav m-4">
+                            <ul class="nav flex-row h3">
+                                <li class="nav-item m-1">
+                                    <a class="nav-link text-primary" href="https://www.instagram.com/leandroadrian_/"
+                                        target="_blank">
+                                        <i class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li class="nav-item m-1">
+                                    <a class="nav-link text-primary" href="https://github.com/lezzin" target="_blank">
+                                        <i class="fa-brands fa-github"></i></a>
+                                </li>
+                                <li class="nav-item m-1">
+                                    <a class="nav-link text-primary" href="https://www.linkedin.com/in/leandro-adrian/"
+                                        target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <!-- FORMULÁRIO NÃO FUNCIONAL - DESATIVADO -->
+                        <p class="text-primary"><i class="fa fa-envelope"></i> lezzin.contato@gmail.com</p>
+                        <form class="text-left" action="enviar.php" method="POST">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="text-muted" for="nome">Nome</label>
+                                    <input type="text" class="form-control" name="nome" placeholder="Seu nome" disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="text-muted" for="email">Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Email" disabled>
+                                </div>
+                            </div>
+                            <div class="form-row mt-2">
+                                <div class="form-group col-md-12">
+                                    <label class="text-muted" for="mensagem">Mensagem</label>
+                                    <textarea name="mensagem" rows="5" class="form-control" placeholder="Sua mensagem"
+                                        disabled></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row m-1">
+                                <button type="submit" class="btn btn-outline-secondary" disabled>Enviar</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Contatos -->
+
+
+    <!-- Rodapé -->
+    <footer class="container-fluid d-flex justify-content-around text-center bg-secondary text-dark">
+
+        <!-- Navegação -->
+        <div class="row">
+            <div class="col-md-7 mt-2 d-flex flex-column justify-content-center align-items-center p-2">
+
+                <nav>
+                    <a href="#home" class="mr-2 ml-2"><i class="fa-solid fa-house"></i></a>
+                    <a href="#habilidades" class="mr-2 ml-2"><i class="fa-solid fa-bolt"></i></a>
+                    <a href="#projetos" class="mr-2 ml-2"><i class="fa-solid fa-file"></i></a>
+                    <a href="#contato" class="mr-2 ml-2"><i class="fa-solid fa-phone"></i></a>
+                </nav>
+
+                <p>Copyright &copy 2022 by <a href="https://github.com/lezzin" target="_blank"
+                        style="color:#000;">Leandro Adrian da Silva</a>
+                </p>
+
+            </div>
+            <!-- /Navegação -->
+
+            <!-- Redes sociais -->
+            <div class=" col-md-5 d-flex flex-column justify-content-center align-items-center p-2">
+                <p>Tem alguma crítica construtiva, elogios, conselhos para me fazer? Me chame nas minhas redes
+                    sociais</p>
+
+                <nav>
+                    <a href="https://www.instagram.com/leandroadrian_/" target="_blank" class="mr-2 ml-2"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/lezzin" target="_blank" class="mr-2 ml-2"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" class="mr-2 ml-2"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </nav>
+
+            </div>
+            <!-- /Redes sociais -->
+        </div>
+
+    </footer>
+    <!-- /Rodapé -->
+</body>
+
+<!-- JS Bootstrap -->
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/global.js"></script>
+<script src="./assets/js/theme.js"></script>
+<script src="./assets/js/pace.js"></script>
+
+</html>

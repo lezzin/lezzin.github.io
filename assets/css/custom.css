@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@500;700&display=swap');
+
+body,
+html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    z-index: 2;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    background: #00dfc1c5;
+    border-bottom: 1px solid #0b8978c5;
+}
+
+#header .nav-link {
+    text-transform: uppercase;
+}
+
+section .container-fluid,
+section .container {
+    height: 100vh;
+}
+
+#home .nav {
+    width: 20%;
+    font-size: 1.5rem;
+    margin: auto;
+}
+
+#home .nav a {
+    color: #000;
+}
+
+#home .nav a:hover {
+    color: #555;
+}
+
+#home article {
+    width: 80%;
+}
+
+#habilidades img {
+    margin: auto;
+    max-width: 50%;
+}
+
+footer i {
+    font-size: 1.3rem;
+    color: #000;
+}
+
+footer :is(a:hover, i:hover) {
+    color: #555;
+}
+
+#projetos .card {
+    overflow: hidden;
+}
+
+#projetos .card>img,
+.icons-svg>button img {
+    transition: .4s;
+}
+
+#projetos .card:hover>img,
+.icons-svg:hover>button img {
+    transform: scale(1.05) translateY(2px);
+}
+
+.bg-primary {
+    background: #58a8ea;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-green {
+    color: #04d9bf;
+}
+
+.bg-green {
+    background: #04d9bf;
+}
