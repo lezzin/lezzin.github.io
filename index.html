@@ -32,64 +32,66 @@
 <body>
     <input type="checkbox" id="darkSwitch" style="display: none;">
     <!-- Header -->
-    <div id="header" class="sticky-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="https://lezzin.github.io" target="_blank"><img
-                        class="rounded-circle border border-dark" src="./assets/img/profile.jfif" alt="minha foto"
-                        width="40"></a>
-                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
-                    style="outline: none;">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <header id="header">
+        <div>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="https://lezzin.github.io" target="_blank"><img
+                            class="rounded-circle border border-dark" src="./assets/img/profile.jfif" alt="minha foto"
+                            width="40"></a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation" style="outline: none;">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse justify-content-end pt-2" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#habilidades">Habilidades</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projetos">Projetos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contato">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><label for="darkSwitch"><i class="fa-solid" id="labelDarkSwitch"
-                                        tabindex="0" style="cursor: pointer;"></i></label></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                    <div class="collapse navbar-collapse justify-content-end pt-2" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#habilidades">Habilidades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projetos">Projetos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contato">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"><label for="darkSwitch"><i class="fa-solid" id="labelDarkSwitch"
+                                            tabindex="0" style="cursor: pointer;"></i></label></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
-    </div>
+    </header>
     <!-- /Header -->
 
     <!-- Apresentação -->
     <section id="home">
         <div
-            class="container-fluid pb-5 pt-md-0 pt-4 d-flex justify-content-center align-items-center flex-column text-center bg-light">
+            class="container-fluid pb-5 pt-md-0 pt-4 d-flex justify-content-center align-items-center flex-column text-center">
 
-            <div>
+            <div class="text-light">
                 <h3 class="h3">Olá!</h3>
                 <h2 class="h2">Me chamo Leandro Adrian</h2>
                 <h4 class="h4"><samp>Um jovem estudante que quer ser programador full-stack no futuro</samp></h4>
 
                 <nav class="nav d-flex justify-content-center align-items-center mt-1" style="width: 100%;">
-                    <a href="https://www.instagram.com/leandroadrian_/" target="_blank" class="p-1"><i
+                    <a href="https://www.instagram.com/leandroadrian_/" target="_blank" class="p-1 text-light"><i
                             class="fa-brands fa-instagram"></i></a>
-                    <a href="https://github.com/lezzin" target="_blank" class="p-1"><i
+                    <a href="https://github.com/lezzin" target="_blank" class="p-1 text-light"><i
                             class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" class="p-1"><i
+                    <a href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" class="p-1 text-light"><i
                             class="fa-brands fa-linkedin"></i></a>
                 </nav>
             </div>
 
-            <article class="p-2 h5">
+            <article class="p-2 h5 text-light">
                 <p>Tenho 16 anos, atualmente estou cursando Técnico em Informática no IFSMG, na
                     cidade
                     de
@@ -97,9 +99,8 @@
                     estou sempre praticando e me aperçoando cada vez mais. No futuro, quero ser um programador Full
                     Stack.</p>
             </article>
-            <noscript><span style="font-size: .8rem;">Algumas funções do site talves não funcionem corretamente. Ative o
-                    javascript, por
-                    favor.</span>
+            <noscript><span style=" font-size: .8rem;">Algumas funções do site talves não funcionem corretamente. Ative
+                    o javascript, por favor.</span>
             </noscript>
         </div>
     </section>
@@ -180,8 +181,7 @@
                 </div>
                 <!-- PHP -->
             </div>
-            <span class="text-muted text-center" style="font-size:.9em;">*Sim, eu sei que HTML e CSS não são
-                linguagens de programação <i class="fa-solid fa-face-grin-beam-sweat"></i></span>
+
             <div class="row">
                 <div class="mt-4 center">
                     <h4 class="badge badge-secondary" style="font-size:1em;">Secundárias</h4>
@@ -227,10 +227,12 @@
                     <button style="width: 14rem; height:14rem;"
                         class="btn-light border-0 d-flex flex-column justify-content-center align-items-center"
                         type="button" data-toggle="tooltip" data-placement="bottom"
-                        title="É a linguagem que mais utilizo depois de javascript, gosto bastante." tabindex="0">
+                        title="Possuo um bom conhecimento da linguagem, comecei a utilizá-la no inicio de 2022 no curso de Informática"
+                        tabindex="0">
                         <img src="./assets/img/python-icon.svg">
                         <span class="badge badge-secondary mb-2" style="font-size: 1rem;">Python</span>
-                        <noscript>É a linguagem que mais utilizo depois de javascript, gosto bastante.</noscript>
+                        <noscript>Possuo um bom conhecimento da linguagem, comecei a utilizá-la no inicio de 2022 no
+                            curso de Informática</noscript>
                     </button>
                 </div>
                 <!-- PYTHON -->
@@ -382,77 +384,40 @@
     <!-- Contatos -->
     <section id="contato">
 
-        <div class="container-fluid mb-md-0 mb-5">
+        <div class="container-fluid mb-md-0 mb-5 center">
+            <h2 class="mt-5 mb-md-3 mb-2">Contato</h2>
+            <p>Tem alguma crítica construtiva, elogios, conselhos para me fazer? Me chame nas minhas redes
+                sociais</p>
             <div class="row" style="overflow: hidden;">
-                <div class="col-md-6 col-12 center mt-md-0 mt-5">
-                    <img class="w-50" src="./assets/img/imagem-contato.jpg" loading="lazy">
-                    <small><a href="http://www.freepik.com" class="text-secondary" target="_blank">Designed
-                            by slidesgo
-                            /
-                            Freepik</a></small>
-                </div>
-                <div class="col-md-6 bg-light mt-md-0 mt-5">
+                <nav class="nav m-4">
+                    <ul class="nav flex-row h3">
+                        <li class="nav-item m-1">
+                            <a class="nav-link text-primary" href="https://www.instagram.com/leandroadrian_/"
+                                target="_blank">
+                                <i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link text-primary" href="https://github.com/lezzin" target="_blank">
+                                <i class="fa-brands fa-github"></i></a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link text-primary" href="https://www.linkedin.com/in/leandro-adrian/"
+                                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </nav>
 
-                    <div class="container center">
-
-                        <nav class="nav m-4">
-                            <ul class="nav flex-row h3">
-                                <li class="nav-item m-1">
-                                    <a class="nav-link text-primary" href="https://www.instagram.com/leandroadrian_/"
-                                        target="_blank">
-                                        <i class="fa-brands fa-instagram"></i></a>
-                                </li>
-                                <li class="nav-item m-1">
-                                    <a class="nav-link text-primary" href="https://github.com/lezzin" target="_blank">
-                                        <i class="fa-brands fa-github"></i></a>
-                                </li>
-                                <li class="nav-item m-1">
-                                    <a class="nav-link text-primary" href="https://www.linkedin.com/in/leandro-adrian/"
-                                        target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                        <!-- FORMULÁRIO NÃO FUNCIONAL - DESATIVADO -->
-                        <p class="text-primary"><i class="fa fa-envelope"></i> lezzin.contato@gmail.com</p>
-                        <form class="text-left" action="enviar.php" method="POST">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label class="text-muted" for="nome">Nome</label>
-                                    <input type="text" class="form-control" name="nome" placeholder="Seu nome" disabled>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="text-muted" for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Email" disabled>
-                                </div>
-                            </div>
-                            <div class="form-row mt-2">
-                                <div class="form-group col-md-12">
-                                    <label class="text-muted" for="mensagem">Mensagem</label>
-                                    <textarea name="mensagem" rows="5" class="form-control" placeholder="Sua mensagem"
-                                        disabled></textarea>
-                                </div>
-                            </div>
-                            <div class="form-row m-1">
-                                <button type="submit" class="btn btn-outline-secondary" disabled>Enviar</button>
-                            </div>
-                        </form>
-
-                    </div>
-
-                </div>
             </div>
         </div>
+
     </section>
     <!-- /Contatos -->
 
 
     <!-- Rodapé -->
     <footer class="container-fluid d-flex justify-content-around text-center bg-secondary text-dark">
-
-        <!-- Navegação -->
         <div class="row">
-            <div class="col-md-7 mt-2 d-flex flex-column justify-content-center align-items-center p-2">
+            <div class="col-12 mt-2 d-flex flex-column justify-content-center align-items-center p-2">
 
                 <nav>
                     <a href="#home" class="mr-2 ml-2"><i class="fa-solid fa-house"></i></a>
@@ -461,31 +426,12 @@
                     <a href="#contato" class="mr-2 ml-2"><i class="fa-solid fa-phone"></i></a>
                 </nav>
 
-                <p>Copyright &copy 2022 by <a href="https://github.com/lezzin" target="_blank"
+                <p class="pt-1">Copyright &copy 2022 by <a href="https://github.com/lezzin" target="_blank"
                         style="color:#000;">Leandro Adrian da Silva</a>
                 </p>
 
             </div>
-            <!-- /Navegação -->
-
-            <!-- Redes sociais -->
-            <div class=" col-md-5 d-flex flex-column justify-content-center align-items-center p-2">
-                <p>Tem alguma crítica construtiva, elogios, conselhos para me fazer? Me chame nas minhas redes
-                    sociais</p>
-
-                <nav>
-                    <a href="https://www.instagram.com/leandroadrian_/" target="_blank" class="mr-2 ml-2"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://github.com/lezzin" target="_blank" class="mr-2 ml-2"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" class="mr-2 ml-2"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                </nav>
-
-            </div>
-            <!-- /Redes sociais -->
         </div>
-
     </footer>
     <!-- /Rodapé -->
 </body>
