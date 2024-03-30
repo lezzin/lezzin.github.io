@@ -1,3 +1,16 @@
+const sr = ScrollReveal({
+    origin: "top",
+    distance: "50px",
+    duration: 2000,
+});
+
+sr.reveal(".delay-small", { delay: 200 });
+sr.reveal(".delay-medium", { delay: 300 });
+sr.reveal(".delay-large", { delay: 400 });
+
+sr.reveal(".interval-small", { interval: 200 });
+sr.reveal(".interval-medium", { interval: 300 });
+
 const mobileBtn = document.querySelector("#btn-mobile");
 const navbar = document.querySelector("#navbar");
 const navbarLinks = navbar.querySelectorAll("a");
@@ -58,17 +71,3 @@ navbarLinks.forEach(link => {
         changeMobileButtonIcon();
     });
 })
-
-const sr = ScrollReveal({
-    origin: innerWidth <= 768 ? "left" : "top",
-    distance: "50px",
-    duration: 2000,
-    opacity: 0,
-});
-
-sr.reveal(".delay-small", { delay: 200 });
-sr.reveal(".delay-medium", { delay: 300 });
-sr.reveal(".delay-large", { delay: 400 });
-
-sr.reveal(".interval-small", { interval: 200 });
-sr.reveal(".interval-medium", { interval: 300 });
