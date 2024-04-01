@@ -10,15 +10,15 @@
     --font-color: #fff;
     --font-color-secondary: #AFAFAF;
 
-    --bg: #0C0C0D;
-    --bg-2: #0F0F0F;
+    --bg: #0F0F0F;
+    --bg-2: #111;
     --bg-3: #151515;
 
     --details: #0E6212;
 
     --border: #222;
 
-    font-family: 'Tauri', -apple-system, sans-serif;
+    font-family: 'Tauri', system-ui, -apple-system, sans-serif;
 
     background-color: var(--bg);
     color: var(--font-color-secondary);
@@ -43,52 +43,33 @@ button {
     color: inherit;
 }
 
-textarea {
-    resize: none;
-}
-
-input,
-textarea {
-    font-family: inherit;
-    border: none;
-    padding: 1rem 0.6rem;
-    border-radius: 3px;
-    background-color: var(--font-color);
-}
-
-label.btn {
-    padding: .54rem 1rem !important;
+.btn,
+.btn-secondary {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: all .6s ease;
+    border-radius: .25rem;
+    white-space: nowrap;
 }
 
 .btn {
-    font-size: 1.4rem;
     padding: .6rem 1rem;
-    border-radius: .25rem;
-    transition: all .6s ease;
     cursor: pointer;
     color: var(--font-color);
-}
 
-.success {
-    background-color: var(--details);
-}
+    &.success {
+        background-color: var(--details);
+    }
 
-.outline-success {
-    color: var(--details);
-    border: 1px solid var(--details);
-}
-
-.btn-secondary {
-    margin-top: 4em;
-    font-size: inherit;
-    border-radius: .25rem;
-    transition: all .6s ease;
-    cursor: pointer;
+    &.dark {
+        background-color: var(--bg-3);
+    }
 }
 
 .btn:hover,
 .btn-secondary:hover {
-    transition: all .6s ease;
     filter: brightness(80%);
 }
 
@@ -136,10 +117,6 @@ header {
         max-width: 1080px;
         margin: 0 auto;
         height: 10vh;
-
-        @media screen and (width <=768px) {
-            min-height: 10vh;
-        }
 
         .logo {
             display: grid;
@@ -240,11 +217,24 @@ header {
 
                 @media screen and (width <=768px) {
                     padding: 1rem 2rem;
-                    width: 100%;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--details);
+                    transition: width .6s;
                 }
 
                 &:hover {
                     color: var(--details);
+
+                    &::after {
+                        width: 100%;
+                        transition: width .3s;
+                    }
                 }
             }
         }
@@ -272,14 +262,11 @@ section {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 98%;
+        width: 90%;
         max-width: 1080px;
         min-height: 100vh;
+        padding: 15vh 0;
         margin: 0 auto;
-
-        @media screen and (width <=768px) {
-            padding: 10rem 1rem;
-        }
     }
 
     &#s_home {
@@ -317,9 +304,7 @@ section {
             }
 
             .download {
-                display: flex;
                 margin-top: 3rem;
-                gap: 1rem;
                 padding: .8rem 1.6rem;
                 font-size: 1.6rem;
 
@@ -351,45 +336,38 @@ section {
     &#s_apresentacao {
         .presentation-container {
             display: flex;
-            align-items: start;
+            align-items: stretch;
             gap: 3rem;
             margin: 0 auto;
             padding: 3rem;
             width: 100%;
-            max-width: 800px;
             background: var(--bg-3);
             overflow: hidden;
             border-radius: .25rem;
             border: 1px solid var(--border);
 
+            @media screen and (width <=768px) {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .presentation-image {
+                border-radius: .15rem;
+            }
+
             .presentation-texts {
                 display: flex;
                 flex-direction: column;
                 gap: 1.6rem;
-            }
 
-            @media screen and (width <=768px) {
-                flex-direction: column;
-            }
-
-            nav {
-                display: flex;
-                justify-content: center;
-                margin-top: 3rem;
-                gap: .6rem;
-                color: var(--font-color);
-
-                a {
+                nav {
                     display: flex;
-                    justify-content: center;
-                    gap: 0.6rem;
-                    background: var(--details);
-                    border-radius: .25rem;
-                    padding: 0.6rem 1.2rem;
-                    transition: all .6s ease;
+                    margin-top: auto;
+                    gap: .6rem;
+                    color: var(--font-color);
 
-                    &:hover {
-                        filter: brightness(80%);
+                    @media screen and (width <=768px) {
+                        margin-top: 1.2rem;
                     }
                 }
             }
@@ -466,14 +444,6 @@ section {
     }
 
     &#s_projetos {
-        padding: calc(10vh + 2rem) 0 6rem;
-
-        @media screen and (width <=768px) {
-            .container {
-                padding: 0 1rem;
-            }
-        }
-
         .projects {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -531,9 +501,7 @@ section {
         }
 
         .btn-secondary {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
+            margin-top: 3rem;
         }
     }
 }
@@ -555,19 +523,6 @@ footer {
             gap: .6rem;
             margin-top: 1rem;
             color: var(--font-color);
-
-            a {
-                display: flex;
-                gap: 0.6rem;
-                background: var(--bg-3);
-                border-radius: .25rem;
-                padding: 0.5rem 1rem;
-                transition: all .6s ease;
-
-                &:hover {
-                    filter: brightness(80%);
-                }
-            }
         }
     }
 
