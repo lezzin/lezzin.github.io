@@ -1,73 +1,105 @@
-const sr = ScrollReveal({
-    origin: "top",
-    distance: "50px",
-    duration: 2000,
-});
-
-sr.reveal(".delay-small", { delay: 200 });
-sr.reveal(".delay-medium", { delay: 300 });
-sr.reveal(".delay-large", { delay: 400 });
-
-sr.reveal(".interval-small", { interval: 200 });
-sr.reveal(".interval-medium", { interval: 300 });
-
 const mobileBtn = document.querySelector("#btn-mobile");
 const navbar = document.querySelector("#navbar");
 const navbarLinks = navbar.querySelectorAll("a");
 
-const skills = document.querySelectorAll(".skill.with_details");
-const skillDetails = document.querySelector("#skill-details");
-const skillsDetails = {
-    "html": "HTML é a linguagem de marcação usada para criar a estrutura básica de uma página da web.",
-    "css": "CSS é usado para estilizar páginas da web e torná-las visualmente atraentes.",
-    "javascript": "JavaScript é uma linguagem de programação usada para tornar páginas da web interativas e dinâmicas.",
-    "php": "PHP é uma linguagem de programação usada principalmente para desenvolvimento web, especialmente para criar aplicativos da web dinâmicos.",
-    "mysql": "MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.",
-}
+const initializeEmailJS = () => {
+    emailjs.init({
+        publicKey: "w4ibtr02pG80RpOng",
+    });
+};
 
-function showSkillDetails(skillName) {
-    skillDetails.classList.add("active");
-    skillDetails.innerHTML = skillsDetails[skillName] ?? "---";
-}
+const initializeScrollReveal = () => {
+    const sr = ScrollReveal({
+        origin: "top",
+        distance: "50px",
+        duration: 2000,
+    });
 
-function hideSkillDetails() {
-    skillDetails.classList.remove("active");
-}
+    sr.reveal(".delay-small", { delay: 200 });
+    sr.reveal(".delay-medium", { delay: 300 });
+    sr.reveal(".delay-large", { delay: 400 });
+    sr.reveal(".interval-small", { interval: 200 });
+    sr.reveal(".interval-medium", { interval: 300 });
+};
 
-function changeMobileButtonIcon() {
+const toggleMobileButtonIcon = () => {
     const isActive = navbar.classList.contains("active");
+    const lines = ["#line-1", "#line-2", "#line-3"];
 
-    const line1 = document.querySelector("#line-1");
-    const line2 = document.querySelector("#line-2");
-    const line3 = document.querySelector("#line-3");
-
-    line1.classList.toggle('animated', isActive);
-    line2.classList.toggle('animated', isActive);
-    line3.classList.toggle('animated', isActive);
+    lines.forEach((line) => {
+        document.querySelector(line).classList.toggle('animated', isActive);
+    });
 
     mobileBtn.setAttribute("title", `${isActive ? "Fechar" : "Abrir"} menu`);
-}
+};
 
-skills.forEach(skill => {
-    const skillName = skill.querySelector(".skill-name").textContent.toLowerCase();
-
-    skill.addEventListener("mouseover", () => {
-        showSkillDetails(skillName);
-    });
-
-    skill.addEventListener("mouseout", () => {
-        hideSkillDetails();
-    });
-});
-
-mobileBtn.addEventListener("click", function () {
+const handleMobileButtonClick = () => {
     navbar.classList.toggle("active");
-    changeMobileButtonIcon();
-});
+    toggleMobileButtonIcon();
+};
 
-navbarLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        navbar.classList.remove("active");
-        changeMobileButtonIcon();
+const handleNavbarLinkClick = () => {
+    navbar.classList.remove("active");
+    toggleMobileButtonIcon();
+};
+
+const initializeEventListeners = () => {
+    mobileBtn.addEventListener("click", handleMobileButtonClick);
+    navbarLinks.forEach(link => {
+        link.addEventListener("click", handleNavbarLinkClick);
     });
-})
+};
+
+const submitContactForm = () => {
+    const email = emailInput.value;
+    const message = messageInput.value;
+
+    if (!email || !message) return;
+
+    grecaptcha.execute();
+};
+
+const submitMessage = () => {
+    const email = emailInput.value;
+    const message = messageInput.value;
+
+    const params = {
+        from_email: email,
+        message: message,
+        "g-recaptcha-response": grecaptcha.getResponse()
+    };
+
+    contactButton.innerText = "Carregando...";
+    emailjs.send(serviceID, templateID, params)
+        .then((_response) => {
+            showFormMessage("info", "Mensagem enviada com sucesso!");
+            resetForm();
+        })
+        .catch((_error) => {
+            showFormMessage("danger", "Erro ao enviar mensagem");
+            resetForm();
+        });
+};
+
+const resetForm = () => {
+    contactButton.innerText = "Enviar mensagem";
+    contactForm.reset();
+    setTimeout(hideFormMessage, 3000);
+};
+
+const showFormMessage = (status, message) => {
+    contactFormMessage.classList.add(status);
+    contactFormMessage.innerText = message;
+};
+
+const hideFormMessage = () => {
+    contactFormMessage.classList.remove("info", "danger");
+};
+
+const initialize = () => {
+    initializeEmailJS();
+    initializeScrollReveal();
+    initializeEventListeners();
+};
+
+initialize();

@@ -1,4 +1,7 @@
-@import "https://fonts.googleapis.com/css2?family=Tauri:wght@300;400;500;600&display=swap";
+@font-face {
+    font-family: Tauri;
+    src: url("../assets/fonts/Tauri-Regular.ttf");
+}
 
 * {
     margin: 0;
@@ -35,6 +38,16 @@
 
 body {
     overflow-x: hidden;
+}
+
+input,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
 }
 
 button {
@@ -376,25 +389,6 @@ section {
             flex-wrap: wrap;
             gap: 1rem;
 
-            ~#skill-details {
-                display: block;
-                margin: 1.8rem 0;
-                min-height: 3rem;
-                font-size: 1.4rem;
-                pointer-events: none;
-                transition: all .6s ease;
-                opacity: 0;
-
-                &.active {
-                    opacity: 1;
-                    pointer-events: auto;
-                }
-
-                @media screen and (width <=768px) {
-                    display: none;
-                }
-            }
-
             .skill {
                 display: grid;
                 place-items: center;
@@ -491,6 +485,49 @@ section {
 
         .btn-secondary {
             margin-top: 3rem;
+        }
+    }
+
+    &#s_contato {
+        form {
+            display: grid;
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 600px;
+            font-style: 1.6rem;
+
+            .form-message {
+                border: 1px solid var(--border);
+                border-radius: 3px;
+                padding: 1rem;
+                display: none;
+
+                &.info {
+                    display: initial;
+                    background-color: #032830;
+                }
+
+                &.danger {
+                    display: initial;
+                    background-color: #2c0b0e;
+                }
+            }
+
+            .form-group {
+                display: grid;
+                gap: 0.4rem;
+
+                .form-control {
+                    border: 1px solid var(--border);
+                    background-color: var(--bg-3);
+                    border-radius: 3px;
+                    padding: 1rem;
+                }
+            }
+
+            button {
+                padding: 1rem;
+            }
         }
     }
 }
