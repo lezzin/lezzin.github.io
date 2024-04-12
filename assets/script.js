@@ -1,14 +1,21 @@
-const mobileBtn = document.querySelector("#btn-mobile");
-const navbar = document.querySelector("#navbar");
-const navbarLinks = navbar.querySelectorAll("a");
+const mobileButton = document.querySelector("#btn-mobile");
+const header = document.querySelector("#navbar");
+const headerLinks = header.querySelectorAll("a");
 
-const initializeEmailJS = () => {
-    emailjs.init({
-        publicKey: "w4ibtr02pG80RpOng",
-    });
+const contactForm = document.querySelector("#contact-form");
+const formMessage = contactForm.querySelector(".form-message");
+const emailInput = contactForm.querySelector("#contact-email");
+const messageInput = contactForm.querySelector("#contact-message");
+const submitButton = contactForm.querySelector("button");
+
+const EMAIL_SERVICE_ID = "service_65278fy";
+const EMAIL_TEMPLATE_ID = "template_ekqvr1p";
+
+function initializeEmailJS() {
+    emailjs.init({ publicKey: "w4ibtr02pG80RpOng" });
 };
 
-const initializeScrollReveal = () => {
+function initializeScrollReveal() {
     const sr = ScrollReveal({
         origin: "top",
         distance: "50px",
@@ -20,86 +27,95 @@ const initializeScrollReveal = () => {
     sr.reveal(".delay-large", { delay: 400 });
     sr.reveal(".interval-small", { interval: 200 });
     sr.reveal(".interval-medium", { interval: 300 });
-};
+}
 
-const toggleMobileButtonIcon = () => {
-    const isActive = navbar.classList.contains("active");
-    const lines = ["#line-1", "#line-2", "#line-3"];
+function changeMobileButtonIcon() {
+    const isHeaderActive = header.classList.contains("active");
 
-    lines.forEach((line) => {
-        document.querySelector(line).classList.toggle('animated', isActive);
-    });
+    const firstLine = document.querySelector("#line-1");
+    const secondLine = document.querySelector("#line-2");
+    const thirdLine = document.querySelector("#line-3");
 
-    mobileBtn.setAttribute("title", `${isActive ? "Fechar" : "Abrir"} menu`);
-};
+    firstLine.classList.toggle('animated', isHeaderActive);
+    secondLine.classList.toggle('animated', isHeaderActive);
+    thirdLine.classList.toggle('animated', isHeaderActive);
 
-const handleMobileButtonClick = () => {
-    navbar.classList.toggle("active");
-    toggleMobileButtonIcon();
-};
+    const newButtonTitle = `${isHeaderActive ? "Fechar" : "Abrir"} menu`;
+    mobileButton.setAttribute("title", newButtonTitle);
+}
 
-const handleNavbarLinkClick = () => {
-    navbar.classList.remove("active");
-    toggleMobileButtonIcon();
-};
+function submitFormMessage() {
+    const email = emailInput.value;
+    const message = messageInput.value;
 
-const initializeEventListeners = () => {
-    mobileBtn.addEventListener("click", handleMobileButtonClick);
-    navbarLinks.forEach(link => {
-        link.addEventListener("click", handleNavbarLinkClick);
-    });
-};
+    const emailParams = {
+        from_email: email,
+        message: message,
+        "g-recaptcha-response": grecaptcha.getResponse()
+    }
 
-const submitContactForm = () => {
+    submitButton.innerText = "Carregando...";
+
+    emailjs.send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, emailParams).then(
+        (_response) => {
+            showFormMessage("info", "Mensagem enviada com sucesso!");
+            resetForm();
+        },
+        (_error) => {
+            showFormMessage("danger", "Erro ao enviar mensagem");
+            resetForm();
+        },
+    );
+}
+
+function resetForm() {
+    submitButton.innerText = "Enviar mensagem";
+    contactForm.reset();
+    setTimeout(hideFormMessage, 3000);
+}
+
+function showFormMessage(status, message) {
+    formMessage.classList.add(status);
+    formMessage.innerText = message;
+}
+
+function hideFormMessage() {
+    formMessage.classList.remove("info", "danger");
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+
     const email = emailInput.value;
     const message = messageInput.value;
 
     if (!email || !message) return;
 
     grecaptcha.execute();
-};
+}
 
-const submitMessage = () => {
-    const email = emailInput.value;
-    const message = messageInput.value;
+function handleMobileButtonClick() {
+    header.classList.toggle("active");
+    changeMobileButtonIcon();
+}
 
-    const params = {
-        from_email: email,
-        message: message,
-        "g-recaptcha-response": grecaptcha.getResponse()
-    };
+function handleHeaderLinkClick() {
+    header.classList.remove("active");
+    changeMobileButtonIcon();
+}
 
-    contactButton.innerText = "Carregando...";
-    emailjs.send(serviceID, templateID, params)
-        .then((_response) => {
-            showFormMessage("info", "Mensagem enviada com sucesso!");
-            resetForm();
-        })
-        .catch((_error) => {
-            showFormMessage("danger", "Erro ao enviar mensagem");
-            resetForm();
-        });
-};
+function initializeEventHandlers() {
+    mobileButton.addEventListener("click", handleMobileButtonClick);
+    headerLinks.forEach(link => {
+        link.addEventListener("click", handleHeaderLinkClick);
+    });
+    contactForm.addEventListener("submit", handleFormSubmit);
+}
 
-const resetForm = () => {
-    contactButton.innerText = "Enviar mensagem";
-    contactForm.reset();
-    setTimeout(hideFormMessage, 3000);
-};
-
-const showFormMessage = (status, message) => {
-    contactFormMessage.classList.add(status);
-    contactFormMessage.innerText = message;
-};
-
-const hideFormMessage = () => {
-    contactFormMessage.classList.remove("info", "danger");
-};
-
-const initialize = () => {
+function initialize() {
     initializeEmailJS();
     initializeScrollReveal();
-    initializeEventListeners();
-};
+    initializeEventHandlers();
+}
 
 initialize();

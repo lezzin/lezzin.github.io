@@ -501,6 +501,7 @@ section {
                 border-radius: 3px;
                 padding: 1rem;
                 display: none;
+                text-align: center;
 
                 &.info {
                     display: initial;
