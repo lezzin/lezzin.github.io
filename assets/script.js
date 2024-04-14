@@ -11,6 +11,36 @@ const submitButton = contactForm.querySelector("button");
 const EMAIL_SERVICE_ID = "service_65278fy";
 const EMAIL_TEMPLATE_ID = "template_ekqvr1p";
 
+async function typeWriterEffect(element) {
+    const DEFAULT_SPEED = 100;
+    const text = element.dataset.text;
+
+    element.classList.add("typewriting");
+    element.textContent = "";
+
+    return await new Promise(resolve => {
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(interval);
+                element.classList.remove("typewriting");
+                resolve();
+            }
+        }, DEFAULT_SPEED);
+    });
+}
+
+async function initializeTypewriter() {
+    const elements = document.querySelectorAll('.typewriter');
+
+    for (const element of elements) {
+        await typeWriterEffect(element);
+    }
+}
+
 function initializeEmailJS() {
     emailjs.init({ publicKey: "w4ibtr02pG80RpOng" });
 };
@@ -113,9 +143,10 @@ function initializeEventHandlers() {
 }
 
 function initialize() {
-    initializeEmailJS();
     initializeScrollReveal();
+    initializeTypewriter();
+    initializeEmailJS();
     initializeEventHandlers();
 }
 
-initialize();
+addEventListener("load", initialize);

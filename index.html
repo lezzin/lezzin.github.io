@@ -31,8 +31,12 @@
 
     <link rel="stylesheet" href="./assets/style.css">
 
-    <title>Portfólio de Leandro Adrian da Silva - Desenvolvedor Full Stack</title>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer> </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer> </script>
+    <script src="./assets/script.js" defer> </script>
 
+    <title>Portfólio de Leandro Adrian da Silva - Desenvolvedor Full Stack</title>
 </head>
 
 <body>
@@ -63,8 +67,10 @@
         <section id="s_home">
             <div class="container">
                 <div class="profile-container delay-small">
-                    <h1 class="interval-small">Leandro Adrian da Silva</h1>
-                    <h2 class="interval-small">Desenvolvedor Full Stack</h2>
+                    <h1 class="interval-small typewriter" data-text="Leandro Adrian da Silva"><noscript>Leandro Adrian
+                            da Silva</noscript></h1>
+                    <h2 class="interval-small typewriter" data-text="Desenvolvedor Full Stack"><noscript>Desenvolvedor
+                            Full Stack</noscript></h2>
                 </div>
                 <img class="delay-large hero-image" src="./assets/images/hero-image.svg"
                     alt="Um homem e um computador com o nome Lezzin na tela, estilo cartoon" width="400" height="400">
@@ -96,19 +102,20 @@
                         <p> Estou sempre em busca de desafios que me permitam expandir meu conhecimento e aprimorar
                             minhas habilidades. </p>
                         <nav>
-                            <a class="interval-small btn success" href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" rel="noopener noreferrer"
-                                title="Acessar Linkedin">
+                            <a class="interval-small btn success" href="https://www.linkedin.com/in/leandro-adrian/"
+                                target="_blank" rel="noopener noreferrer" title="Acessar Linkedin">
                                 <img src="./assets/icons/linkedin.svg" alt="Logo do linkedin" width="16" height="16">
                                 <span class="desktop-only">LinkedIn</span>
                             </a>
-                            <a class="interval-small btn success" href="https://www.instagram.com/leandroadrian_/" target="_blank" rel="noopener noreferrer"
-                                title="Acessar Instagram">
+                            <a class="interval-small btn success" href="https://www.instagram.com/leandroadrian_/"
+                                target="_blank" rel="noopener noreferrer" title="Acessar Instagram">
                                 <img src="./assets/icons/instagram.svg" alt="Logo do instagram" width="16" height="16">
                                 <span class="desktop-only">Instagram</span>
                             </a>
-                            <a class="interval-small btn success" href="https://github.com/lezzin/" target="_blank" rel="noopener noreferrer"
-                                title="Acessar GitHub">
-                                <img src="./assets/icons/github.svg" alt="Logo do github" width="16" height="16"> <span class="desktop-only">GitHub</span>
+                            <a class="interval-small btn success" href="https://github.com/lezzin/" target="_blank"
+                                rel="noopener noreferrer" title="Acessar GitHub">
+                                <img src="./assets/icons/github.svg" alt="Logo do github" width="16" height="16"> <span
+                                    class="desktop-only">GitHub</span>
                             </a>
                         </nav>
                     </div>
@@ -121,23 +128,28 @@
                 <h3 class="section-title delay-medium">Habilidades principais</h3>
                 <div class="skills">
                     <div class="skill with_details interval-small">
-                        <img src="./assets/icons/html.svg" class="skill-image" alt="Logo do HTML" width="128" height="128">
+                        <img src="./assets/icons/html.svg" class="skill-image" alt="Logo do HTML" width="128"
+                            height="128">
                         <p class="skill-name">HTML</p>
                     </div>
                     <div class="skill with_details interval-small">
-                        <img src="./assets/icons/css.svg" class="skill-image" alt="Logo do CSS" width="128" height="128">
+                        <img src="./assets/icons/css.svg" class="skill-image" alt="Logo do CSS" width="128"
+                            height="128">
                         <p class="skill-name">CSS</p>
                     </div>
                     <div class="skill with_details interval-small">
-                        <img src="./assets/icons/javascript.svg" class="skill-image" alt="Logo do Javascript" width="128" height="128">
+                        <img src="./assets/icons/javascript.svg" class="skill-image" alt="Logo do Javascript"
+                            width="128" height="128">
                         <p class="skill-name">Javascript</p>
                     </div>
                     <div class="skill with_details interval-small">
-                        <img src="./assets/icons/php.svg" class="skill-image" alt="Logo do PHP" width="128" height="128">
+                        <img src="./assets/icons/php.svg" class="skill-image" alt="Logo do PHP" width="128"
+                            height="128">
                         <p class="skill-name">PHP</p>
                     </div>
                     <div class="skill with_details interval-small">
-                        <img src="./assets/icons/mysql.svg" class="skill-image" alt="Logo do MySQL" width="128" height="128">
+                        <img src="./assets/icons/mysql.svg" class="skill-image" alt="Logo do MySQL" width="128"
+                            height="128">
                         <p class="skill-name">MySQL</p>
                     </div>
                 </div>
@@ -157,11 +169,11 @@
 
         <section id="s_projetos">
             <div class="container">
-                <h3 class="section-title delay-medium">Projetos</h3>
+                <h3 class="section-title delay-small">Projetos</h3>
                 <div class="projects">
                     <article class="project interval-medium">
-                        <img class="project-image" src="./assets/images/minezzin.jpeg" alt="Foto da pagína inicial do projeto Minezzin" width="1920"
-                            height="1080" loading="lazy">
+                        <img class="project-image" src="./assets/images/minezzin.jpeg"
+                            alt="Foto da pagína inicial do projeto Minezzin" width="1920" height="1080" loading="lazy">
                         <div class="project-details">
                             <h3 class="project-name">Minezzin</h3>
                             <p class="project-description">
@@ -174,14 +186,16 @@
                             </p>
                         </div>
                         <div class="project-buttons">
-                            <a class="btn success" role="button" href="https://minezzin.000webhostapp.com/" target="_blank" rel="noopener noreferrer"
-                                title="Acessar deploy do projeto"> <img src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16"> Acessar
+                            <a class="btn success" role="button" href="https://minezzin.000webhostapp.com/"
+                                target="_blank" rel="noopener noreferrer" title="Acessar deploy do projeto"> <img
+                                    src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16">
+                                Acessar
                                 projeto </a>
                         </div>
                     </article>
                     <article class="project interval-medium">
-                        <img class="project-image" src="./assets/images/ecommerce.jpeg" alt="Foto da pagína inicial do projeto Minezzin" width="1920"
-                            height="1080" loading="lazy">
+                        <img class="project-image" src="./assets/images/ecommerce.jpeg"
+                            alt="Foto da pagína inicial do projeto Minezzin" width="1920" height="1080" loading="lazy">
                         <div class="project-details">
                             <h3 class="project-name">Ecommerce</h3>
                             <p class="project-description">
@@ -193,18 +207,21 @@
                             </p>
                         </div>
                         <div class="project-buttons">
-                            <a class="btn success" role="button" href="https://ecommerce-lezzin.000webhostapp.com/" target="_blank" rel="noopener noreferrer"
-                                title="Acessar deploy do projeto"> <img src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16"> Acessar
+                            <a class="btn success" role="button" href="https://ecommerce-lezzin.000webhostapp.com/"
+                                target="_blank" rel="noopener noreferrer" title="Acessar deploy do projeto"> <img
+                                    src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16">
+                                Acessar
                                 projeto </a>
                         </div>
                     </article>
                     <article class="project interval-medium">
-                        <img class="project-image" src="./assets/images/barbershop.jpeg" alt="Página inicial do BarberShop" width="1920" height="1080"
-                            loading="lazy">
+                        <img class="project-image" src="./assets/images/barbershop.jpeg"
+                            alt="Página inicial do BarberShop" width="1920" height="1080" loading="lazy">
                         <div class="project-details">
                             <h3 class="project-name">BarberShop </h3>
                             <p class="project-description">
-                                Sistema de agendamento para barbearias, permitindo aos usuários marcar horários e aos
+                                Sistema de agendamento para barbearias, permitindo aos usuários marcar horários e
+                                aos
                                 administradores gerenciar agenda e serviços.
                             <p class="project-skills">
                                 Para a sua criação, utilizei PHP e MySQL no back-end e HTML, CSS e JavaScript no
@@ -212,18 +229,20 @@
                             </p>
                         </div>
                         <div class="project-buttons">
-                            <a class="btn success" role="button" href="https://lzzn-barber.000webhostapp.com/" target="_blank" rel="noopener noreferrer"
-                                title="Acessar deploy do projeto"> <img src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16"> Acessar
+                            <a class="btn success" role="button" href="https://lzzn-barber.000webhostapp.com/"
+                                target="_blank" rel="noopener noreferrer" title="Acessar deploy do projeto"> <img
+                                    src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16">
+                                Acessar
                                 projeto </a>
-                            <a class="btn success" role="button" href="https://github.com/lezzin/projeto_barbearia" target="_blank" rel="noopener noreferrer"
-                                title="Acessar código do projeto no GitHub">
+                            <a class="btn success" role="button" href="https://github.com/lezzin/projeto_barbearia"
+                                target="_blank" rel="noopener noreferrer" title="Acessar código do projeto no GitHub">
                                 <img src="./assets/icons/code.svg" alt="Ícone de código" width="16" height="16">
                                 Visualizar código </a>
                         </div>
                     </article>
                     <article class="project interval-medium">
-                        <img class="project-image" src="./assets/images/gerenciador_tarefas.jpeg" alt="Página inicial do TaskFlow" width="1920" height="1080"
-                            loading="lazy">
+                        <img class="project-image" src="./assets/images/gerenciador_tarefas.jpeg"
+                            alt="Página inicial do TaskFlow" width="1920" height="1080" loading="lazy">
                         <div class="project-details">
                             <h3 class="project-name">TaskFlow</h3>
                             <p class="project-description">
@@ -234,22 +253,26 @@
                             </p>
                         </div>
                         <div class="project-buttons">
-                            <a class="btn success" role="button" href="https://tasks-manager-woad.vercel.app" target="_blank" rel="noopener noreferrer"
-                                title="Acessar deploy do projeto"> <img src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16"> Acessar
+                            <a class="btn success" role="button" href="https://tasks-manager-woad.vercel.app"
+                                target="_blank" rel="noopener noreferrer" title="Acessar deploy do projeto"> <img
+                                    src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16">
+                                Acessar
                                 projeto </a>
-                            <a class="btn success" role="button" href="https://github.com/lezzin/tasks_manager" target="_blank" rel="noopener noreferrer"
-                                title="Acessar código do projeto no GitHub">
+                            <a class="btn success" role="button" href="https://github.com/lezzin/tasks_manager"
+                                target="_blank" rel="noopener noreferrer" title="Acessar código do projeto no GitHub">
                                 <img src="./assets/icons/code.svg" alt="Ícone de código" width="16" height="16">
                                 Visualizar código </a>
                         </div>
                     </article>
                     <article class="project interval-medium">
-                        <img class="project-image" src="./assets/images/ferramentas-dev.jpeg" alt="Página inicial do projeto Ferramentas para Devs" width="1920"
-                            height="1080" loading="lazy">
+                        <img class="project-image" src="./assets/images/ferramentas-dev.jpeg"
+                            alt="Página inicial do projeto Ferramentas para Devs" width="1920" height="1080"
+                            loading="lazy">
                         <div class="project-details">
                             <h3 class="project-name">Ferramentas para Devs</h3>
                             <p class="project-description">
-                                Meu primeiro projeto utilizando o framework Vue.js, um website que facilita o acesso a
+                                Meu primeiro projeto utilizando o framework Vue.js, um website que facilita o acesso
+                                a
                                 recursos gratuitos para desenvolvedores, com conteúdo atualizado dinamicamente.
                             </p>
                             <p class="project-skills">
@@ -257,22 +280,25 @@
                             </p>
                         </div>
                         <div class="project-buttons">
-                            <a class="btn success" role="button" href="https://ferramentas-dev.vercel.app" target="_blank" rel="noopener noreferrer"
-                                title="Acessar deploy do projeto"> <img src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16"> Acessar
+                            <a class="btn success" role="button" href="https://ferramentas-dev.vercel.app"
+                                target="_blank" rel="noopener noreferrer" title="Acessar deploy do projeto"> <img
+                                    src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16">
+                                Acessar
                                 projeto </a>
-                            <a class="btn success" role="button" href="https://github.com/lezzin/ferramentas-dev" target="_blank" rel="noopener noreferrer"
-                                title="Acessar código do projeto no GitHub">
+                            <a class="btn success" role="button" href="https://github.com/lezzin/ferramentas-dev"
+                                target="_blank" rel="noopener noreferrer" title="Acessar código do projeto no GitHub">
                                 <img src="./assets/icons/code.svg" alt="Ícone de código" width="16" height="16">
                                 Visualizar código </a>
                         </div>
                     </article>
                     <article class="project interval-medium">
-                        <img class="project-image" src="./assets/images/iniciacao-cientifica.jpeg" alt="Foto da pagína inicial do projeto de IC" width="1920"
-                            height="1080" loading="lazy">
+                        <img class="project-image" src="./assets/images/iniciacao-cientifica.jpeg"
+                            alt="Foto da pagína inicial do projeto de IC" width="1920" height="1080" loading="lazy">
                         <div class="project-details">
                             <h3 class="project-name"> Iniciação Científica </h3>
                             <p class="project-description">
-                                Projeto de pesquisa sobre a situação do transporte e segurança alimentar no estado do
+                                Projeto de pesquisa sobre a situação do transporte e segurança alimentar no estado
+                                do
                                 Amazonas, conduzido por estudantes do curso Técnico em Alimentos.
                             </p>
                             <p class="project-skills">
@@ -280,18 +306,21 @@
                             </p>
                         </div>
                         <div class="project-buttons">
-                            <a class="btn success" role="button" href="https://iniciacao-cientifica.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                title="Acessar deploy do projeto"> <img src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16"> Acessar
+                            <a class="btn success" role="button" href="https://iniciacao-cientifica.vercel.app/"
+                                target="_blank" rel="noopener noreferrer" title="Acessar deploy do projeto"> <img
+                                    src="./assets/icons/link.svg" alt="Ícone de link" width="16" height="16">
+                                Acessar
                                 projeto </a>
-                            <a class="btn success" role="button" href="https://github.com/lezzin/iniciacao-cientifica" target="_blank" rel="noopener noreferrer"
-                                title="Acessar código do projeto no GitHub">
+                            <a class="btn success" role="button" href="https://github.com/lezzin/iniciacao-cientifica"
+                                target="_blank" rel="noopener noreferrer" title="Acessar código do projeto no GitHub">
                                 <img src="./assets/icons/code.svg" alt="Ícone de código" width="16" height="16">
                                 Visualizar código </a>
                         </div>
                     </article>
                 </div>
-                <a class="btn-secondary delay-small" href="https://github.com/lezzin/" target="_blank" rel="noopener noreferrer"
-                    title="Acessar mais projetos no GitHub">
+
+                <a class="btn-secondary delay-small" href="https://github.com/lezzin/" target="_blank"
+                    rel="noopener noreferrer" title="Acessar mais projetos no GitHub">
                     <img src="./assets/icons/github.svg" alt="Logo do GitHub" width="16" height="16"> Visualizar mais
                     projetos
                 </a>
@@ -300,38 +329,48 @@
 
         <section id="s_contato">
             <div class="container">
-                <h2 class="section-title delay-small">Contato</h2>
-
+                <h2 class="section-title delay-small">
+                    Contato
+                    <noscript>(Ative o javascript para enviar mensagens)</noscript>
+                </h2>
                 <form id="contact-form" class="delay-small">
-                    <p class="form-message active">Mensagem aqui</p>
+                    <p class="form-message"></p>
 
                     <div class="form-group interval-small">
                         <label for="contact-email">Email</label>
-                        <input type="email" id="contact-email" class="form-control" placeholder="usuario@gmail.com" required>
+                        <input type="email" id="contact-email" class="form-control" placeholder="usuario@gmail.com"
+                            required>
                     </div>
 
                     <div class="form-group interval-small">
                         <label for="contact-message">Mensagem</label>
-                        <textarea id="contact-message" rows="3" class="form-control" placeholder="Digite sua mensagem aqui" required></textarea>
+                        <textarea id="contact-message" rows="3" class="form-control"
+                            placeholder="Digite sua mensagem aqui" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn success interval-small" title="Enviar mensagem">Enviar mensagem</button>
+                    <button type="submit" class="btn success interval-small" title="Enviar mensagem">
+                        Enviar mensagem
+                    </button>
                 </form>
             </div>
 
-            <div class="g-recaptcha" data-sitekey="6Ld7ObkpAAAAAP8J9NwPrytrO7IUy4-0wT96WTLJ" data-callback="submitFormMessage" data-size="invisible"></div>
+            <div class="g-recaptcha" data-sitekey="6Ld7ObkpAAAAAP8J9NwPrytrO7IUy4-0wT96WTLJ"
+                data-callback="submitFormMessage" data-size="invisible"></div>
         </section>
     </main>
 
     <footer>
         <div class="social_media">
-            <p>Gostaria de me enviar uma mensagem? Me chame em alguma dessas redes sociais, será um prazer respondê-lo!</p>
+            <p>Gostaria de me enviar uma mensagem? Me chame em alguma dessas redes sociais, será um prazer respondê-lo!
+            </p>
 
             <nav>
-                <a class="btn dark" href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" rel="noopener noreferrer" title="Acessar Linkedin">
+                <a class="btn dark" href="https://www.linkedin.com/in/leandro-adrian/" target="_blank"
+                    rel="noopener noreferrer" title="Acessar Linkedin">
                     <img src="./assets/icons/linkedin.svg" alt="Logo do linkedin" width="16" height="16"> LinkedIn
                 </a>
-                <a class="btn dark" href="https://www.instagram.com/leandroadrian_/" target="_blank" rel="noopener noreferrer" title="Acessar Instagram">
+                <a class="btn dark" href="https://www.instagram.com/leandroadrian_/" target="_blank"
+                    rel="noopener noreferrer" title="Acessar Instagram">
                     <img src="./assets/icons/instagram.svg" alt="Logo do instagram" width="16" height="16"> Instagram
                 </a>
             </nav>
@@ -344,11 +383,6 @@
             <p>&copy; Leandro Adrian da Silva</p>
         </div>
     </footer>
-
-    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="./assets/script.js"></script>
 </body>
 
 </html>

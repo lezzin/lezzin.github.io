@@ -3,6 +3,18 @@
     src: url("../assets/fonts/Tauri-Regular.ttf");
 }
 
+@keyframes typewriter {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -104,6 +116,13 @@ h4,
 h5,
 h6 {
     color: var(--font-color);
+}
+
+.typewriter {
+    &.typewriting::after {
+        content: "|";
+        animation: 1s typewriter linear infinite;
+    }
 }
 
 @media screen and (width <=768px) {
@@ -429,21 +448,16 @@ section {
     &#s_projetos {
         .projects {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1rem;
-
-            @media screen and (width <=768px) {
-                grid-template-columns: 1fr;
-            }
+            margin-bottom: 3rem;
+            max-width: 100%;
 
             .project {
                 display: grid;
                 grid-template-rows: auto 1fr;
-                position: relative;
-                overflow: hidden;
                 border: 1px solid var(--border);
                 background-color: var(--bg-3);
-                border-radius: .25rem;
                 transition: all .6s ease;
 
                 &:hover {
@@ -471,7 +485,7 @@ section {
 
                 .project-buttons {
                     display: grid;
-                    grid-template-columns: repeat(2, 2fr);
+                    grid-template-columns: 1fr 1fr;
                     width: 100%;
                     text-align: center;
                     gap: 1rem;
@@ -481,10 +495,6 @@ section {
                     }
                 }
             }
-        }
-
-        .btn-secondary {
-            margin-top: 3rem;
         }
     }
 
