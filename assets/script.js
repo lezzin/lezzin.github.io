@@ -147,6 +147,7 @@ function initialize() {
     initializeTypewriter();
     initializeEmailJS();
     initializeEventHandlers();
+    document.body.classList.add("loaded");
 }
 
-addEventListener("load", initialize);
+document.addEventListener("DOMContentLoaded", initialize);
