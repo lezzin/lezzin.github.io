@@ -29,12 +29,11 @@
     <link rel="apple-touch-icon" href="favicon.ico">
     <link rel="icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://www.gstatic.com">
 
-    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer> </script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer> </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer> </script>
-    <script src="./assets/script.js" defer> </script>
+    <link rel="stylesheet" href="./assets/style.css">
 
     <title>Portfólio de Leandro Adrian da Silva - Desenvolvedor Full Stack</title>
 </head>
@@ -46,14 +45,14 @@
                 <img src="./assets/images/lezzin.svg" alt="Logo do website - lezzin" width="80" height="26">
             </a>
 
-            <button id="btn-mobile" title="Abrir menu">
+            <button id="btn-mobile" title="Abrir menu" aria-expanded="false">
                 <div class="line" id="line-1"></div>
                 <div class="line" id="line-2"></div>
                 <div class="line" id="line-3"></div>
                 <div class="clear"></div>
             </button>
 
-            <nav id="navbar">
+            <nav id="navbar" role="navigation">
                 <a href="#s_home" title="Ir para o início">Início</a>
                 <a href="#s_apresentacao" title="Ir para a apresentação">Apresentação</a>
                 <a href="#s_habilidades" title="Ir para as habilidades">Habilidades</a>
@@ -64,18 +63,18 @@
     </header>
 
     <main>
-        <section id="s_home">
+        <section id="s_home" tabindex="0" aria-label="Seção de Início">
             <div class="container">
                 <div class="profile-container">
-                    <h1 class="typewriter" data-text="Leandro Adrian da Silva"></h1>
-                    <h2 class="typewriter" data-text="Desenvolvedor Full Stack"></h2>
+                    <h1>Leandro Adrian da Silva</h1>
+                    <h2>Desenvolvedor Full Stack</h2>
                 </div>
                 <img class="hero-image" src="./assets/images/hero-image.svg"
                     alt="Um homem e um computador com o nome Lezzin na tela, estilo cartoon" width="400" height="400">
             </div>
         </section>
 
-        <section id="s_apresentacao">
+        <section id="s_apresentacao" tabindex="0" aria-label="Seção de Apresentação">
             <div class="container">
                 <h3 class="section-title delay-medium">Apresentação</h3>
                 <div class="presentation-container delay-medium">
@@ -121,51 +120,52 @@
             </div>
         </section>
 
-        <section id="s_habilidades">
+        <section id="s_habilidades" tabindex="0" aria-label="Seção de Habilidades Principais">
             <div class="container">
                 <h3 class="section-title delay-medium">Habilidades principais</h3>
                 <div class="skills">
-                    <div class="skill with_details interval-small">
+                    <div class="skill interval-small" tabindex="0" aria-label="HTML">
                         <img src="./assets/icons/html.svg" class="skill-image" alt="Logo do HTML" width="128"
                             height="128">
                         <p class="skill-name">HTML</p>
                     </div>
-                    <div class="skill with_details interval-small">
+                    <div class="skill interval-small" tabindex="0" aria-label="CSS">
                         <img src="./assets/icons/css.svg" class="skill-image" alt="Logo do CSS" width="128"
                             height="128">
                         <p class="skill-name">CSS</p>
                     </div>
-                    <div class="skill with_details interval-small">
+                    <div class="skill interval-small" tabindex="0" aria-label="Javascript">
                         <img src="./assets/icons/javascript.svg" class="skill-image" alt="Logo do Javascript"
                             width="128" height="128">
                         <p class="skill-name">Javascript</p>
                     </div>
-                    <div class="skill with_details interval-small">
+                    <div class="skill interval-small" tabindex="0" aria-label="PHP">
                         <img src="./assets/icons/php.svg" class="skill-image" alt="Logo do PHP" width="128"
                             height="128">
                         <p class="skill-name">PHP</p>
                     </div>
-                    <div class="skill with_details interval-small">
+                    <div class="skill interval-small" tabindex="0" aria-label="MySQL">
                         <img src="./assets/icons/mysql.svg" class="skill-image" alt="Logo do MySQL" width="128"
                             height="128">
                         <p class="skill-name">MySQL</p>
                     </div>
                 </div>
+
                 <h4 class="delay-medium">Outras</h4>
-                <p class="skills-secondary">
-                    <span class="interval-small">Vue.js (JS)</span>
-                    <span class="interval-small">jQuery (JS)</span>
-                    <span class="interval-small">CodeIgniter (PHP)</span>
-                    <span class="interval-small">Bootstrap (CSS)</span>
-                    <span class="interval-small">Sass (CSS)</span>
-                    <span class="interval-small">Agile Culture (Scrum) </span>
-                    <span class="interval-small">User Experience (UX) </span>
-                    <span class="interval-small">User Interface (UI) </span>
+                <p class="skills-secondary" tabindex="0" aria-label="Habilidades secundárias">
+                    <span class="interval-small" tabindex="0" aria-label="Vue.js">Vue.js (JS)</span>
+                    <span class="interval-small" tabindex="0" aria-label="jQuery">jQuery (JS)</span>
+                    <span class="interval-small" tabindex="0" aria-label="CodeIgniter">CodeIgniter (PHP)</span>
+                    <span class="interval-small" tabindex="0" aria-label="Bootstrap">Bootstrap (CSS)</span>
+                    <span class="interval-small" tabindex="0" aria-label="Sass">Sass (CSS)</span>
+                    <span class="interval-small" tabindex="0" aria-label="Agile Culture">Agile Culture (Scrum) </span>
+                    <span class="interval-small" tabindex="0" aria-label="User Experience">User Experience (UX) </span>
+                    <span class="interval-small" tabindex="0" aria-label="User Interface">User Interface (UI) </span>
                 </p>
             </div>
         </section>
 
-        <section id="s_projetos">
+        <section id="s_projetos" tabindex="0" aria-label="Seção de Projetos">
             <div class="container">
                 <h3 class="section-title delay-small">Projetos</h3>
                 <div class="projects">
@@ -325,7 +325,7 @@
             </div>
         </section>
 
-        <section id="s_contato">
+        <section id="s_contato" tabindex="0" aria-label="Seção de Contato">
             <div class="container">
                 <h2 class="section-title delay-small">
                     Contato
@@ -357,7 +357,7 @@
     </main>
 
     <footer>
-        <div class="social_media">
+        <div class="social_media" tabindex="0" aria-label="Links de Redes Sociais">
             <p>Gostaria de me enviar uma mensagem? Me chame em alguma dessas redes sociais, será um prazer respondê-lo!
             </p>
 
@@ -380,6 +380,11 @@
             <p>&copy; Leandro Adrian da Silva</p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer> </script>
+    <script src="https://www.google.com/recaptcha/api.js" defer> </script>
+    <script src="./assets/script.js" defer> </script>
 </body>
 
 </html>

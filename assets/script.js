@@ -23,7 +23,8 @@ function changeMobileButtonIcon() {
     thirdLine.classList.toggle('animated', isHeaderActive);
 
     const newButtonTitle = `${isHeaderActive ? "Fechar" : "Abrir"} menu`;
-    mobileButton.setAttribute("title", newButtonTitle);
+    mobileButton.setAttribute("title", newButtonTitle); 
+    mobileButton.setAttribute("aria-expanded", isHeaderActive ? "false" : "true");
 }
 
 function submitFormMessage() {
@@ -81,36 +82,6 @@ function handleMobileButtonClick() {
     changeMobileButtonIcon();
 }
 
-async function typeWriterEffect(element) {
-    const DEFAULT_SPEED = 100;
-    const text = element.dataset.text;
-
-    element.classList.add("typewriting");
-    element.textContent = "";
-
-    return await new Promise(resolve => {
-        let i = 0;
-        const interval = setInterval(() => {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-            } else {
-                clearInterval(interval);
-                element.classList.remove("typewriting");
-                resolve();
-            }
-        }, DEFAULT_SPEED);
-    });
-}
-
-async function initializeTypewriter() {
-    const elements = document.querySelectorAll('.typewriter');
-
-    for (const element of elements) {
-        await typeWriterEffect(element);
-    }
-}
-
 function initializeEmailJS() {
     emailjs.init({ publicKey: "w4ibtr02pG80RpOng" });
 };
@@ -145,7 +116,6 @@ function initializeEventHandlers() {
 
 function initialize() {
     initializeScrollReveal();
-    initializeTypewriter();
     initializeEmailJS();
     initializeEventHandlers();
     document.body.classList.add("loaded");

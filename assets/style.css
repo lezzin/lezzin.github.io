@@ -3,18 +3,6 @@
     src: url("../assets/fonts/Tauri-Regular.ttf");
 }
 
-@keyframes typewriter {
-
-    0%,
-    100% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +38,7 @@
 
 body {
     opacity: 0;
-    transition: opacity .6s ease;
+    transition: all .3s ease;
 
     &.loaded {
         opacity: 1;
@@ -115,13 +103,6 @@ button {
 .btn:hover,
 .btn-secondary:hover {
     filter: brightness(80%);
-}
-
-.typewriter {
-    &.typewriting::after {
-        content: "|";
-        animation: 1s typewriter linear infinite;
-    }
 }
 
 header {
