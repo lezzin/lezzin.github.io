@@ -118,7 +118,6 @@ function initialize() {
     initializeScrollReveal();
     initializeEmailJS();
     initializeEventHandlers();
-    document.body.classList.add("loaded");
 }
 
 addEventListener("load", initialize);

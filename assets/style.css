@@ -36,15 +36,6 @@
     scroll-behavior: smooth;
 }
 
-body {
-    opacity: 0;
-    transition: all .3s ease;
-
-    &.loaded {
-        opacity: 1;
-    }
-}
-
 img {
     max-width: 100%;
     height: auto;
