@@ -2,6 +2,8 @@ const mobileButton = document.querySelector("#btn-mobile");
 const header = document.querySelector("#navbar");
 const headerLinks = header.querySelectorAll("a");
 
+const themeTogglerButton = document.querySelector("#theme-toggler");
+
 const contactForm = document.querySelector("#contact-form");
 const contactFormFeedback = contactForm.querySelector(".form-message");
 const contactFormEmailInput = contactForm.querySelector("#contact-email");
@@ -20,6 +22,22 @@ function changeMobileButtonIcon() {
     const newButtonTitle = `${isHeaderActive ? "Fechar" : "Abrir"} menu`;
     mobileButton.setAttribute("title", newButtonTitle);
     mobileButton.setAttribute("aria-expanded", isHeaderActive ? "false" : "true");
+}
+
+function loadTheme() {
+    const storageTheme = localStorage.getItem("PORTFOLIO_THEME") || "dark";
+    document.body.setAttribute("data-theme", storageTheme);
+}
+
+function changeTheme(theme) {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("PORTFOLIO_THEME", theme);
+}
+
+function toggleThemes() {
+    const previousTheme = localStorage.getItem("PORTFOLIO_THEME") || "dark";
+    const newTheme = previousTheme == "dark" ? "light" : "dark";
+    changeTheme(newTheme);
 }
 
 function resetContactForm() {
@@ -78,6 +96,10 @@ function handleMobileButtonClick() {
     changeMobileButtonIcon();
 }
 
+function handleThemeTogglerButtonClick() {
+    toggleThemes();
+}
+
 function handleHeaderLinkClick() {
     header.classList.remove("active");
     changeMobileButtonIcon();
@@ -89,6 +111,7 @@ function initializeEmailJS() {
 
 function initializeEventHandlers() {
     mobileButton.addEventListener("click", handleMobileButtonClick);
+    themeTogglerButton.addEventListener("click", handleThemeTogglerButtonClick);
     headerLinks.forEach(link => link.addEventListener("click", handleHeaderLinkClick));
     contactForm.addEventListener("submit", handleContactFormSubmit);
 }
