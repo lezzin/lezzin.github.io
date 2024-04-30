@@ -12,6 +12,7 @@ const contactFormSubmitButton = contactForm.querySelector("button");
 
 const EMAIL_SERVICE_ID = "service_65278fy";
 const EMAIL_TEMPLATE_ID = "template_ekqvr1p";
+const STORAGE_THEME_KEY = "PORTFOLIO_THEME";
 
 function changeMobileButtonIcon() {
     const isHeaderActive = header.classList.contains("active");
@@ -25,17 +26,17 @@ function changeMobileButtonIcon() {
 }
 
 function loadTheme() {
-    const storageTheme = localStorage.getItem("PORTFOLIO_THEME") || "dark";
+    const storageTheme = localStorage.getItem(STORAGE_THEME_KEY) || "dark";
     document.body.setAttribute("data-theme", storageTheme);
 }
 
 function changeTheme(theme) {
     document.body.setAttribute("data-theme", theme);
-    localStorage.setItem("PORTFOLIO_THEME", theme);
+    localStorage.setItem(STORAGE_THEME_KEY, theme);
 }
 
 function toggleThemes() {
-    const previousTheme = localStorage.getItem("PORTFOLIO_THEME") || "dark";
+    const previousTheme = localStorage.getItem(STORAGE_THEME_KEY) || "dark";
     const newTheme = previousTheme == "dark" ? "light" : "dark";
     changeTheme(newTheme);
 }
@@ -119,6 +120,7 @@ function initializeEventHandlers() {
 function initialize() {
     initializeEmailJS();
     initializeEventHandlers();
+    loadTheme();
 }
 
 addEventListener("load", initialize);
