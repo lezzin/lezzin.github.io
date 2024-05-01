@@ -12,7 +12,26 @@ const contactFormSubmitButton = contactForm.querySelector("button");
 
 const EMAIL_SERVICE_ID = "service_65278fy";
 const EMAIL_TEMPLATE_ID = "template_ekqvr1p";
-const STORAGE_THEME_KEY = "PORTFOLIO_THEME";
+
+const THEME_STORAGE_KEY = "PORTFOLIO_THEME";
+const LIGHT_THEME = "light";
+const DARK_THEME = "dark";
+
+function loadTheme() {
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    const theme = storedTheme || DARK_THEME;
+    setTheme(theme);
+}
+
+function setTheme(theme) {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.body.getAttribute("data-theme") === DARK_THEME ? LIGHT_THEME : DARK_THEME;
+    setTheme(currentTheme);
+}
 
 function changeMobileButtonIcon() {
     const isHeaderActive = header.classList.contains("active");
@@ -23,22 +42,6 @@ function changeMobileButtonIcon() {
     const newButtonTitle = `${isHeaderActive ? "Fechar" : "Abrir"} menu`;
     mobileButton.setAttribute("title", newButtonTitle);
     mobileButton.setAttribute("aria-expanded", isHeaderActive ? "false" : "true");
-}
-
-function loadTheme() {
-    const storageTheme = localStorage.getItem(STORAGE_THEME_KEY) || "dark";
-    document.body.setAttribute("data-theme", storageTheme);
-}
-
-function changeTheme(theme) {
-    document.body.setAttribute("data-theme", theme);
-    localStorage.setItem(STORAGE_THEME_KEY, theme);
-}
-
-function toggleThemes() {
-    const previousTheme = localStorage.getItem(STORAGE_THEME_KEY) || "dark";
-    const newTheme = previousTheme == "dark" ? "light" : "dark";
-    changeTheme(newTheme);
 }
 
 function resetContactForm() {
@@ -98,7 +101,7 @@ function handleMobileButtonClick() {
 }
 
 function handleThemeTogglerButtonClick() {
-    toggleThemes();
+    toggleTheme();
 }
 
 function handleHeaderLinkClick() {
@@ -120,7 +123,7 @@ function initializeEventHandlers() {
 function initialize() {
     initializeEmailJS();
     initializeEventHandlers();
-    loadTheme();
 }
 
-addEventListener("load", initialize);
+document.addEventListener("DOMContentLoaded", loadTheme);
+window.addEventListener("load", initialize);
