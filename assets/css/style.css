@@ -10,7 +10,7 @@
 }
 
 :root {
-    font-family: 'Tauri', system-ui, -apple-system, sans-serif;
+    font-family: Tauri, system-ui, -apple-system, sans-serif;
     font-weight: 400;
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -292,7 +292,7 @@ main {
             margin: 0 auto;
         }
 
-        &#s_home {
+        &#home-section {
             .container {
                 margin-top: 8vh;
                 min-height: unset;
@@ -345,7 +345,7 @@ main {
             }
         }
 
-        &#s_apresentacao {
+        &#presentation-section {
             .presentation-container {
                 display: flex;
                 align-items: stretch;
@@ -386,7 +386,7 @@ main {
             }
         }
 
-        &#s_habilidades {
+        &#skills-section {
             h4 {
                 margin: 3rem 0 1rem;
                 font-size: 2rem;
@@ -436,7 +436,7 @@ main {
             }
         }
 
-        &#s_projetos {
+        &#projects-section {
             .projects {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -489,7 +489,7 @@ main {
             }
         }
 
-        &#s_contato {
+        &#contact-section {
             form {
                 display: grid;
                 gap: 1.2rem;
@@ -545,7 +545,7 @@ footer {
     font-size: 1.6rem;
     border-top: 1px solid var(--border);
 
-    .social_media {
+    .social-media {
         nav {
             display: flex;
             justify-content: center;
