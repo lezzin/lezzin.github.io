@@ -109,6 +109,37 @@ function handleHeaderLinkClick() {
     changeMobileButtonIcon();
 }
 
+function initializeSmoothScroll() {
+    // Smooth scroll on mouse wheel
+    window.addEventListener('wheel', event => {
+        event.preventDefault();
+
+        const deltaY = event.deltaY;
+        const scrollValue = deltaY > 0 ? '+=100' : '-=100';
+
+        window.scrollBy({
+            top: scrollValue,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Smooth scroll on arrow keys
+    document.addEventListener("keydown", event => {
+        const isArrowUp = event.code == "ArrowUp";
+        const isArrowDown = event.code == "ArrowDown";
+
+        if (isArrowUp || isArrowDown) {
+            event.preventDefault();
+            const direction = isArrowUp ? '-=100' : '+=100';
+            
+            window.scrollBy({
+                top: direction,
+                behavior: 'smooth'
+            });
+        }
+    });
+}
+
 function initializeEmailJS() {
     emailjs.init({ publicKey: "w4ibtr02pG80RpOng" });
 };
@@ -123,6 +154,7 @@ function initializeEventHandlers() {
 function initialize() {
     initializeEmailJS();
     initializeEventHandlers();
+    initializeSmoothScroll();
 }
 
 document.addEventListener("DOMContentLoaded", loadTheme);
