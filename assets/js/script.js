@@ -125,7 +125,6 @@ function initializeEventHandlers() {
 function initialize() {
     initializeEmailJS();
     initializeEventHandlers();
-    document.body.classList.add("loaded");
 }
 
 document.addEventListener("DOMContentLoaded", loadTheme);
