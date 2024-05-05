@@ -89,10 +89,67 @@ button {
     border: none;
 }
 
+.toast {
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    z-index: 999;
+    display: grid;
+    grid-template-columns: 2rem auto;
+    background-color: var(--font-button-color, var(--tertiary-background));
+    border-radius: 5px 0 0 5px;
+    border: 1px solid var(--border-color);
+    border-right: none;
+    overflow: hidden;
+    min-width: 20%;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: all .6s ease-in-out;
+
+    &.toast-active {
+        transform: translateX(0);
+        pointer-events: all;
+    }
+
+    &.toast-success {
+
+        .toast-banner,
+        .toast-icon {
+            background-color: var(--toast-success-color);
+        }
+    }
+
+    &.toast-error {
+
+        .toast-banner,
+        .toast-icon {
+            background-color: var(--toast-error-color);
+        }
+    }
+
+    .toast-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.3rem;
+
+        .toast-title {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .toast-text {
+            font-size: 1.4rem;
+        }
+    }
+}
+
 .btn,
 .btn-secondary {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0.6rem;
     cursor: pointer;
     border-radius: .25rem;
@@ -102,10 +159,6 @@ button {
 
 .btn {
     padding: .6rem 1rem;
-
-    &#theme-toggler i {
-        transform: translateY(-0.1rem);
-    }
 
     &.success {
         color: var(--font-button-color, var(--font-primary-color));
@@ -122,17 +175,12 @@ button {
     filter: brightness(80%);
 }
 
-.animate {
-    --delay: 0s;
-
-    transition: all 1s ease var(--delay);
-    transform: translateY(-2rem);
-    opacity: 0;
-
-    &.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-primary-color);
+    gap: .6rem;
 }
 
 header {
@@ -315,6 +363,10 @@ main {
                 height: 92vh;
                 gap: 5rem;
 
+                .social-media {
+                    margin-top: 2rem;
+                }
+
                 @media (width <=768px) {
                     padding: 8rem 1rem;
                     align-items: center;
@@ -350,7 +402,7 @@ main {
             .hero-image {
                 order: 2;
                 border-radius: 50%;
-                background-color: var(--tertiary-background);
+                background-color: var(--primary-color);
 
                 @media (width <=768px) {
                     max-width: 70%;
@@ -385,15 +437,9 @@ main {
                     flex-direction: column;
                     gap: 1.6rem;
 
-                    nav {
-                        display: flex;
+                    .social-media {
+                        align-self: flex-start;
                         margin-top: auto;
-                        gap: .6rem;
-                        color: var(--font-primary-color);
-
-                        @media (width <=768px) {
-                            margin-top: 1.2rem;
-                        }
                     }
                 }
             }
@@ -417,16 +463,30 @@ main {
                     min-width: 156px;
                     aspect-ratio: 1/1;
                     cursor: default;
-                    transition: border-color .6s ease;
+                    transition: border-color .6s ease, box-shadow .3s ease;
 
                     &:hover {
                         border-color: var(--primary-color);
+                        box-shadow: 0 .25rem .5rem rgb(0 0 0 / 15%);
+
+                        .skill-image {
+                            transform: rotate(3deg) scale(1.03);
+                        }
+
+                        .skill-name {
+                            color: var(--primary-color);
+                        }
+                    }
+
+                    .skill-image {
+                        transition: transform .6s ease;
                     }
 
                     .skill-name {
                         margin-top: 1rem;
                         font-weight: 500;
                         text-align: center;
+                        transition: color .6s ease;
                     }
                 }
             }
@@ -445,10 +505,11 @@ main {
                     grid-template-rows: auto 1fr;
                     border: 1px solid var(--border-color);
                     background-color: var(--tertiary-background);
-                    transition: border-color .6s ease;
+                    transition: border-color .6s ease, box-shadow .3s ease;
 
                     &:hover {
                         border-color: var(--primary-color);
+                        box-shadow: 0 .25rem .5rem rgb(0 0 0 / 15%);
                     }
 
                     .project-buttons,
@@ -486,6 +547,14 @@ main {
         }
 
         &#contact-section {
+            .section-title {
+                margin-bottom: 1rem;
+
+                ~p {
+                    margin-bottom: 3rem;
+                }
+            }
+
             form {
                 display: grid;
                 gap: 1.2rem;
@@ -514,85 +583,17 @@ main {
 }
 
 footer {
-    display: grid;
-    place-items: center;
     text-align: center;
-    gap: 1rem;
-    padding: 5rem 3rem 3rem;
+    padding: 3rem;
     color: var(--font-secondary-color);
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     border-top: 1px solid var(--border-color);
 
-    .social-media {
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: .6rem;
-            margin-top: 1rem;
-            color: var(--font-primary-color);
-        }
-    }
-
     .copyright {
+        margin-top: 2rem;
         display: grid;
         place-items: center;
         gap: 1rem;
-        margin-top: 3rem;
-        font-size: 1.2rem;
-    }
-}
-
-.toast {
-    position: fixed;
-    top: 1rem;
-    right: 0;
-    z-index: 999;
-    display: grid;
-    grid-template-columns: 2rem auto;
-    background-color: var(--font-button-color, var(--tertiary-background));
-    border-radius: 5px 0 0 5px;
-    border: 1px solid var(--border-color);
-    border-right: none;
-    overflow: hidden;
-    min-width: 20%;
-    transform: translateX(100%);
-    pointer-events: none;
-    transition: all .6s ease-in-out;
-
-    &.toast-active {
-        transform: translateX(0);
-        pointer-events: all;
-    }
-
-    &.toast-success {
-        .toast-banner,
-        .toast-icon {
-            background-color: var(--toast-success-color);
-        }
-    }
-
-    &.toast-error {
-        .toast-banner,
-        .toast-icon {
-            background-color: var(--toast-error-color);
-        }
-    }
-
-    .toast-content {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 1rem 1.5rem;
-        gap: 0.3rem;
-
-        .toast-title {
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
-
-        .toast-text {
-            font-size: 1.4rem;
-        }
     }
 }
 
