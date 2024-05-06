@@ -16,6 +16,7 @@ html {
 }
 
 body {
+    --hero-image-bg: var(--primary-color);
     --primary-color: #0E6212;
     --toast-success-color: #008cff;
     --toast-error-color: #f04f4f;
@@ -43,11 +44,15 @@ body {
         --tertiary-background: #8ba78d;
         --border-color: #afc0b0;
         --primary-color: #16911c;
+        --hero-image-bg: var(--tertiary-background);
 
         .logo,
-        .btn.dark img,
         .btn-secondary img {
             filter: brightness(30%);
+        }
+
+        .btn.dark img {
+            filter: brightness(25%);
         }
 
         #theme-toggler {
@@ -174,10 +179,10 @@ button {
 
 .social-media {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     color: var(--font-primary-color);
-    gap: .6rem;
+    gap: .3rem;
 }
 
 header {
@@ -398,7 +403,7 @@ main {
         .hero-image {
             order: 2;
             border-radius: 50%;
-            background-color: var(--primary-color);
+            background-color: var(--hero-image-bg);
 
             @media (width <=768px) {
                 max-width: 70%;
@@ -430,11 +435,6 @@ main {
                 display: flex;
                 flex-direction: column;
                 gap: 1.6rem;
-
-                .social-media {
-                    align-self: flex-start;
-                    margin-top: auto;
-                }
             }
         }
 
@@ -564,14 +564,19 @@ footer {
     text-align: center;
     padding: 3rem;
     color: var(--font-secondary-color);
-    font-size: 1.2rem;
     border-top: 1px solid var(--border-color);
 
+    .social-media {
+        font-size: 1.6rem;
+    }
+
+    .quote {
+        font-size: 1.4rem;
+        margin: 2rem 0 1rem;
+    }
+
     .copyright {
-        margin-top: 2rem;
-        display: grid;
-        place-items: center;
-        gap: 1rem;
+        font-size: 1.2rem;
     }
 }
 
