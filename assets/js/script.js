@@ -115,6 +115,20 @@ function initializeEmailJS() {
     emailjs.init({ publicKey: "w4ibtr02pG80RpOng" });
 };
 
+function initializeScrollReveal() {
+    const sr = ScrollReveal({
+        origin: "top",
+        distance: "50px",
+        duration: 1500,
+    });
+
+    sr.reveal(".delay-small", { delay: 200 });
+    sr.reveal(".delay-medium", { delay: 300 });
+    sr.reveal(".delay-large", { delay: 400 });
+    sr.reveal(".interval-small", { interval: 200 });
+    sr.reveal(".interval-large", { interval: 300 });
+};
+
 function initializeEventHandlers() {
     mobileButton.addEventListener("click", handleMobileButtonClick);
     themeTogglerButton.addEventListener("click", handleThemeTogglerButtonClick);
@@ -122,10 +136,35 @@ function initializeEventHandlers() {
     contactForm.addEventListener("submit", handleContactFormSubmit);
 }
 
-function initialize() {
+function preloadImages() {
+    const images = [
+        "assets/images/projects/barbershop.webp",
+        "assets/images/projects/ecommerce.webp",
+        "assets/images/projects/ferramentas-dev.webp",
+        "assets/images/projects/iniciacao-cientifica.webp",
+        "assets/images/projects/minezzin.webp",
+        "assets/images/projects/rockscape.webp",
+        "assets/images/projects/taskflow.webp",
+        "assets/images/presentation-image.svg",
+        "assets/images/hero-image.svg",
+        "assets/images/lezzin.svg"
+    ];
+
+    images.forEach(imageURL => {
+        (new Image()).src = imageURL;
+    });
+}
+
+function initializeWindowEvents() {
     initializeEmailJS();
+    initializeScrollReveal();
     initializeEventHandlers();
 }
 
-document.addEventListener("DOMContentLoaded", loadTheme);
-window.addEventListener("load", initialize);
+function initializeDocumentEvents() {
+    preloadImages();
+    loadTheme();
+}
+
+document.addEventListener("DOMContentLoaded", initializeDocumentEvents);
+window.addEventListener("load", initializeWindowEvents);
