@@ -11,8 +11,8 @@ const contactFormSubmitButton = contactForm.querySelector("button");
 
 const toast = document.querySelector(".toast");
 
-const EMAIL_SERVICE_ID = "service_65278fy";
-const EMAIL_TEMPLATE_ID = "template_ekqvr1p";
+const EMAIL_SERVICE_ID = "service_svh7f4w";
+const EMAIL_TEMPLATE_ID = "template_12gipiu";
 
 const TOAST_MESSAGE_TIMER = 2500;
 
