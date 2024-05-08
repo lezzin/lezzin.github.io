@@ -13,6 +13,7 @@ const toast = document.querySelector(".toast");
 
 const EMAIL_SERVICE_ID = "service_svh7f4w";
 const EMAIL_TEMPLATE_ID = "template_12gipiu";
+const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
 
 const TOAST_MESSAGE_TIMER = 2500;
 
@@ -112,7 +113,7 @@ function handleHeaderLinkClick() {
 }
 
 function initializeEmailJS() {
-    emailjs.init({ publicKey: "w4ibtr02pG80RpOng" });
+    emailjs.init({ publicKey: EMAIL_PUBLIC_KEY });
 };
 
 function initializeScrollReveal() {
@@ -159,6 +160,7 @@ function initializeWindowEvents() {
     initializeEmailJS();
     initializeScrollReveal();
     initializeEventHandlers();
+    document.body.classList.add("loaded");
 }
 
 function initializeDocumentEvents() {

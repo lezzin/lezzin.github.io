@@ -3,6 +3,20 @@
     src: url("../fonts/tauri.ttf");
 }
 
+@keyframes pulsate {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -144,6 +158,27 @@ button {
         .toast-text {
             font-size: 1.4rem;
         }
+    }
+}
+
+body.loaded .loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: calc(var(--header-index) * 2);
+    background-color: var(--primary-background);
+    transition: background-color .3s linear, oapcity .6s ease-out;
+
+    img {
+        border-radius: 50%;
+        background-color: var(--tertiary-background);
+        animation: pulsate 2s infinite ease-in-out;
     }
 }
 
