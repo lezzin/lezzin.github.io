@@ -158,7 +158,6 @@ function preloadImages() {
 
 function initializeWindowEvents() {
     initializeEmailJS();
-    initializeScrollReveal();
     initializeEventHandlers();
     document.body.classList.add("loaded");
 }
@@ -166,6 +165,7 @@ function initializeWindowEvents() {
 function initializeDocumentEvents() {
     preloadImages();
     loadTheme();
+    initializeScrollReveal();
 }
 
 document.addEventListener("DOMContentLoaded", initializeDocumentEvents);
