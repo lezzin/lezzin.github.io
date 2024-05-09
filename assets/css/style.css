@@ -173,7 +173,7 @@ body.loaded .loader {
     place-items: center;
     z-index: calc(var(--header-index) * 2);
     background-color: var(--primary-background);
-    transition: background-color .3s linear, oapcity .6s ease-out;
+    transition: background-color .3s linear, opacity .6s ease-out;
 
     img {
         border-radius: 50%;
