@@ -179,6 +179,7 @@ body.loaded .loader {
         border-radius: 50%;
         background-color: var(--tertiary-background);
         animation: pulsate 2s infinite ease-in-out;
+        transition: background-color .3s linear;
     }
 }
 
