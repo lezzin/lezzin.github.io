@@ -127,7 +127,7 @@ function initializeScrollReveal() {
     sr.reveal(".delay-medium", { delay: 300 });
     sr.reveal(".delay-large", { delay: 400 });
     sr.reveal(".interval-small", { interval: 200 });
-    sr.reveal(".interval-large", { interval: 300 });
+    sr.reveal(".interval-medium", { interval: 300 });
 };
 
 function initializeEventHandlers() {
