@@ -142,7 +142,6 @@ function preloadImages() {
         "assets/images/projects/barbershop.webp",
         "assets/images/projects/ecommerce.webp",
         "assets/images/projects/ferramentas-dev.webp",
-        "assets/images/projects/iniciacao-cientifica.webp",
         "assets/images/projects/minezzin.webp",
         "assets/images/projects/rockscape.webp",
         "assets/images/projects/taskflow.webp",
