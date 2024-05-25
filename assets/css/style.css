@@ -439,7 +439,7 @@ main {
             align-items: stretch;
             gap: 3rem;
             margin: 0 auto;
-            padding: 3rem;
+            padding: 2rem;
             width: 100%;
             background: var(--tertiary-background);
             overflow: hidden;
@@ -455,14 +455,19 @@ main {
             }
 
             .presentation-texts {
-                h3 {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+                gap: 1.6rem;
+
+                @media (width <=768px) {
+                    margin-top: 0;
+                }
+
+                .section-title {
                     text-align: left;
                     margin-bottom: 1rem;
                 }
-
-                display: flex;
-                flex-direction: column;
-                gap: 1.6rem;
             }
         }
 
@@ -533,14 +538,7 @@ main {
                     align-items: start;
                     min-height: 19rem;
                     padding: 1rem;
-
-                    .project-name {
-                        margin-bottom: 1rem;
-                    }
-
-                    .project-description {
-                        margin-bottom: .8rem;
-                    }
+                    position: relative;
 
                     .project-skills {
                         display: flex;
@@ -553,6 +551,14 @@ main {
                             padding: .25rem .5rem;
                             border-radius: 3px;
                         }
+                    }
+
+                    .project-name {
+                        margin-bottom: 1rem;
+                    }
+
+                    .project-description {
+                        margin-bottom: .8rem;
                     }
 
                     .project-buttons {
