@@ -31,7 +31,7 @@ body {
     --font-secondary-color: #ccc;
     --primary-background: #0F0F0F;
     --secondary-background: #151515;
-    --tertiary-background: #222;
+    --tertiary-background: #252525;
     --border-color: #222;
     --header-index: 999;
 
@@ -64,6 +64,10 @@ body {
 
         #theme-toggler {
             filter: unset;
+        }
+
+        #home-section::after {
+            filter: sepia(30%);
         }
     }
 }
@@ -381,23 +385,36 @@ main {
             margin: 0 auto;
         }
 
-        &#home-section .container {
-            margin-top: 8vh;
-            min-height: unset;
-            justify-content: space-between;
-            flex-direction: row;
-            height: 92vh;
-            gap: 5rem;
+        &#home-section {
+            position: relative;
 
-            .social-media {
-                margin-top: 2rem;
+            &::after {
+                position: absolute;
+                inset: 0;
+                content: "";
+                background: url("../images/home-background.png") no-repeat;
+                background-size: cover;
+                z-index: -1;
             }
 
-            @media (width <=768px) {
-                padding: 8rem 1rem;
-                align-items: center;
-                flex-direction: column;
-                height: auto;
+            .container {
+                margin-top: 8vh;
+                min-height: unset;
+                justify-content: space-between;
+                flex-direction: row;
+                height: 92vh;
+                gap: 5rem;
+
+                .social-media {
+                    margin-top: 2rem;
+                }
+
+                @media (width <=768px) {
+                    padding: 8rem 1rem;
+                    align-items: center;
+                    flex-direction: column;
+                    height: auto;
+                }
             }
         }
 
@@ -414,12 +431,13 @@ main {
             }
 
             h1 {
+                color: #fff;
                 font-size: 4.6rem;
             }
 
             h2 {
+                color: #ccc;
                 font-size: 2.4rem;
-                color: var(--font-secondary-color);
             }
         }
 
