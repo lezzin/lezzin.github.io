@@ -67,7 +67,7 @@ body {
         }
 
         #home-section::after {
-            filter: sepia(30%);
+            opacity: 0.15;
         }
     }
 }
@@ -213,7 +213,7 @@ body.loaded .loader {
     align-items: stretch;
     justify-content: center;
     color: var(--font-primary-color);
-    gap: .3rem;
+    gap: .45rem;
 }
 
 header {
@@ -395,60 +395,35 @@ main {
                 background: url("../images/home-background.png") no-repeat;
                 background-size: cover;
                 z-index: -1;
+                opacity: 0.4;
             }
 
             .container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
                 margin-top: 8vh;
-                min-height: unset;
-                justify-content: space-between;
-                flex-direction: row;
-                height: 92vh;
-                gap: 5rem;
+                min-height: 92vh;
+
+                .hero-image {
+                    margin-bottom: 1.5rem;
+                    background-color: var(--hero-image-bg);
+                    border-radius: 50%;
+                }
+
+                h1 {
+                    font-size: 4.6rem;
+                }
+
+                h2 {
+                    color: var(--font-secondary-color);
+                    font-size: 2.4rem;
+                }
 
                 .social-media {
                     margin-top: 2rem;
                 }
-
-                @media (width <=768px) {
-                    padding: 8rem 1rem;
-                    align-items: center;
-                    flex-direction: column;
-                    height: auto;
-                }
-            }
-        }
-
-        .profile-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            order: 1;
-
-            @media (width <=768px) {
-                align-items: center;
-                text-align: center;
-                order: 2;
-            }
-
-            h1 {
-                color: #fff;
-                font-size: 4.6rem;
-            }
-
-            h2 {
-                color: #ccc;
-                font-size: 2.4rem;
-            }
-        }
-
-        .hero-image {
-            order: 2;
-            border-radius: 50%;
-            background-color: var(--hero-image-bg);
-
-            @media (width <=768px) {
-                max-width: 70%;
-                order: 1;
             }
         }
 
