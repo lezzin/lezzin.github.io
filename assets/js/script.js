@@ -112,6 +112,13 @@ function handleHeaderLinkClick() {
     changeMobileButtonIcon();
 }
 
+function initializeCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    const element = document.querySelector("#copyright-year");
+
+    element.textContent = currentYear.toString();
+}
+
 function initializeEmailJS() {
     emailjs.init({ publicKey: EMAIL_PUBLIC_KEY });
 };
@@ -137,24 +144,6 @@ function initializeEventHandlers() {
     contactForm.addEventListener("submit", handleContactFormSubmit);
 }
 
-function preloadImages() {
-    const images = [
-        "assets/images/projects/barbershop.webp",
-        "assets/images/projects/ecommerce.webp",
-        "assets/images/projects/ferramentas-dev.webp",
-        "assets/images/projects/minezzin.webp",
-        "assets/images/projects/rockscape.webp",
-        "assets/images/projects/taskflow.webp",
-        "assets/images/presentation-image.svg",
-        "assets/images/hero-image.svg",
-        "assets/images/lezzin.svg"
-    ];
-
-    images.forEach(imageURL => {
-        (new Image()).src = imageURL;
-    });
-}
-
 function initializeWindowEvents() {
     initializeEmailJS();
     initializeEventHandlers();
@@ -162,8 +151,8 @@ function initializeWindowEvents() {
 }
 
 function initializeDocumentEvents() {
-    preloadImages();
     loadTheme();
+    initializeCopyrightYear();
     initializeScrollReveal();
 }
 

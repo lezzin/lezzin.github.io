@@ -427,39 +427,49 @@ main {
             }
         }
 
-        &#presentation-section .presentation-container {
-            display: flex;
-            align-items: stretch;
-            gap: 3rem;
-            margin: 0 auto;
-            padding: 2rem;
-            width: 100%;
-            background: var(--tertiary-background);
-            overflow: hidden;
-            border-radius: .25rem;
+        &#presentation-section {
+            padding: 5vh 0;
 
-            @media (width <=768px) {
-                justify-content: center;
-                flex-direction: column;
+            .container {
+                padding: 0;
             }
 
-            .presentation-image {
-                border-radius: .15rem;
-            }
-
-            .presentation-texts {
+            .presentation-container {
                 display: flex;
-                flex-direction: column;
-                margin-top: 1rem;
-                gap: 1.6rem;
+                align-items: stretch;
+                gap: 3rem;
+                margin: 0 auto;
+                padding: 2rem;
+                width: 100%;
+                background: var(--tertiary-background);
+                overflow: hidden;
+                border-radius: .25rem;
 
                 @media (width <=768px) {
-                    margin-top: 0;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                 }
 
-                .section-title {
-                    text-align: left;
-                    margin-bottom: 1rem;
+                .presentation-image {
+                    border-radius: .15rem;
+                }
+
+                .presentation-texts {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    margin-top: 1rem;
+                    gap: 1.6rem;
+
+                    @media (width <=768px) {
+                        margin-top: 0;
+                    }
+
+                    .section-title {
+                        text-align: left;
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }
@@ -597,6 +607,7 @@ main {
 }
 
 footer {
+    display: grid;
     text-align: center;
     padding: 3rem;
     color: var(--font-secondary-color);
@@ -607,12 +618,12 @@ footer {
     }
 
     .quote {
+        margin: 3rem 0 2rem;
         font-size: 1.4rem;
-        margin: 2rem 0 1rem;
     }
 
     .copyright {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 
