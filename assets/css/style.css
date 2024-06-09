@@ -23,7 +23,6 @@ html {
 }
 
 body {
-    --hero-image-bg: var(--primary-color);
     --primary-color: #0E6212;
     --toast-success-color: #008cff;
     --toast-error-color: #f04f4f;
@@ -31,7 +30,7 @@ body {
     --font-secondary-color: #ccc;
     --primary-background: #0F0F0F;
     --secondary-background: #151515;
-    --tertiary-background: #252525;
+    --tertiary-background: #262626;
     --border-color: #222;
     --header-index: 999;
 
@@ -51,7 +50,6 @@ body {
         --tertiary-background: #8ba78d;
         --border-color: #afc0b0;
         --primary-color: #16911c;
-        --hero-image-bg: var(--tertiary-background);
 
         .logo,
         .btn-secondary img {
@@ -104,7 +102,7 @@ button {
 
 .toast {
     position: fixed;
-    top: 1rem;
+    bottom: 1rem;
     right: 0;
     z-index: calc(var(--header-index) + 2);
     display: grid;
