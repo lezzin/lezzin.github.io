@@ -30,9 +30,13 @@ function showToast(type, message) {
     }, TOAST_MESSAGE_TIMER);
 }
 
+function getUserSystemTheme() {
+    const prefersDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDarkTheme ? DARK_THEME : LIGHT_THEME;
+}
+
 function loadTheme() {
-    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-    const theme = storedTheme || DARK_THEME;
+    const theme = localStorage.getItem(THEME_STORAGE_KEY) || getUserSystemTheme();
     setTheme(theme);
 }
 
