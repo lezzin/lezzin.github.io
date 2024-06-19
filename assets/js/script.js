@@ -151,7 +151,6 @@ function initializeEventHandlers() {
 function initializeWindowEvents() {
     initializeEmailJS();
     initializeEventHandlers();
-    document.body.classList.add("loaded");
 }
 
 function initializeDocumentEvents() {
