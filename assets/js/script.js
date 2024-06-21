@@ -1,3 +1,5 @@
+const images = document.querySelectorAll("img");
+
 const mobileButton = document.querySelector("#btn-mobile");
 const header = document.querySelector("#navbar");
 const headerLinks = header.querySelectorAll("a");
@@ -102,6 +104,18 @@ function submitFormMessage() {
     );
 }
 
+function loadImagesAnimations() {
+    const loaded = (element) => { element.classList.add("loaded") };
+
+    images.forEach(image => {
+        if (image.complete) {
+            loaded(image);
+        } else {
+            image.onload = loaded(image);
+        }
+    });
+}
+
 function handleMobileButtonClick() {
     header.classList.toggle("active");
     changeMobileButtonIcon();
@@ -151,6 +165,7 @@ function initializeEventHandlers() {
 function initializeWindowEvents() {
     initializeEmailJS();
     initializeEventHandlers();
+    loadImagesAnimations();
 }
 
 function initializeDocumentEvents() {
