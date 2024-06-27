@@ -65,7 +65,7 @@ body {
         }
 
         .home-banner-image {
-            opacity: 0.15;
+            opacity: 0.15 !important;
         }
 
         .projects+.btn-secondary:hover {
