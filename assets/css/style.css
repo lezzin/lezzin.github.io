@@ -20,6 +20,7 @@ h6 {
 }
 
 html {
+    font-display: swap;
     font-family: Tauri, system-ui, -apple-system, sans-serif;
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -570,7 +571,7 @@ body[data-theme="dark"] .home-banner-image {
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    aspect-ratio: 16/9;
+    min-height: 20rem;
     padding: 1rem;
 }
 
