@@ -194,7 +194,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
     max-width: 1080px;
     margin: 0 auto;
     height: 10vh;
@@ -554,7 +554,7 @@ body[data-theme="dark"] .home-banner-image {
 /* ------------------------------------- */
 #projects-section .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
     margin-bottom: 3rem;
     max-width: 100%;
@@ -575,7 +575,7 @@ body[data-theme="dark"] .home-banner-image {
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    min-height: 19rem;
+    aspect-ratio: 16/9;
     padding: 1rem;
 }
 
