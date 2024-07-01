@@ -156,11 +156,6 @@ body[data-theme="light"] .btn.secondary img {
     justify-content: center;
     flex-direction: column;
     padding: 1rem 1.5rem;
-    gap: 0.3rem;
-}
-
-.toast-content .toast-title {
-    font-size: 1.8rem;
 }
 
 .toast-content .toast-text {
