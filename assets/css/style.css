@@ -564,6 +564,10 @@ body[data-theme="dark"] .home-banner-image {
     transition: border-color .6s ease;
 }
 
+.project.hidden {
+    display: none;
+}
+
 .project-details {
     position: relative;
     display: flex;
