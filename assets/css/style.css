@@ -343,7 +343,6 @@ section {
     overflow: hidden;
     position: relative;
     font-size: 1.6rem;
-
 }
 
 section:nth-child(even) {
@@ -452,7 +451,7 @@ body[data-theme="dark"] .home-banner-image {
     gap: 2rem;
     margin: 0 auto;
     padding: 2rem;
-    width: 100%;
+    width: 90%;
     background: var(--tertiary-background);
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -464,6 +463,7 @@ body[data-theme="dark"] .home-banner-image {
         justify-content: center;
         flex-direction: column;
         padding-bottom: 4rem;
+        width: 100%;
     }
 }
 
@@ -481,12 +481,6 @@ body[data-theme="dark"] .home-banner-image {
 .presentation-texts .section-title {
     text-align: left;
     margin-bottom: 1.5rem;
-}
-
-@media (width <=768px) {
-    .presentation-texts {
-        margin-top: 0;
-    }
 }
 
 /* ------------------------------------- */
