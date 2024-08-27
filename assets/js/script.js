@@ -4,8 +4,6 @@ const mobileButton = document.querySelector("#btn-mobile");
 const header = document.querySelector("#navbar");
 const headerLinks = header.querySelectorAll("a");
 
-const themeTogglerButton = document.querySelector("#theme-toggler");
-
 const contactForm = document.querySelector("#contact-form");
 const contactFormEmailInput = contactForm.querySelector("#contact-email");
 const contactFormMessageInput = contactForm.querySelector("#contact-message");
@@ -19,10 +17,6 @@ const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
 
 const TOAST_MESSAGE_TIMER = 2500;
 
-const THEME_STORAGE_KEY = "PORTFOLIO_THEME";
-const LIGHT_THEME = "light";
-const DARK_THEME = "dark";
-
 function showToast(type, message) {
     toast.classList.add("toast-active", `toast-${type}`);
     toast.querySelector(".toast-text").textContent = message;
@@ -30,26 +24,6 @@ function showToast(type, message) {
     setTimeout(() => {
         toast.classList.remove("toast-active");
     }, TOAST_MESSAGE_TIMER);
-}
-
-function getUserSystemTheme() {
-    const prefersDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return prefersDarkTheme ? DARK_THEME : LIGHT_THEME;
-}
-
-function loadTheme() {
-    const theme = localStorage.getItem(THEME_STORAGE_KEY) || getUserSystemTheme();
-    setTheme(theme);
-}
-
-function setTheme(theme) {
-    document.body.setAttribute("data-theme", theme);
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
-}
-
-function toggleTheme() {
-    const currentTheme = document.body.getAttribute("data-theme") === DARK_THEME ? LIGHT_THEME : DARK_THEME;
-    setTheme(currentTheme);
 }
 
 function changeMobileButtonIcon() {
@@ -121,10 +95,6 @@ function handleMobileButtonClick() {
     changeMobileButtonIcon();
 }
 
-function handleThemeTogglerButtonClick() {
-    toggleTheme();
-}
-
 function handleHeaderLinkClick() {
     header.classList.remove("active");
     changeMobileButtonIcon();
@@ -157,7 +127,6 @@ function initializeScrollReveal() {
 
 function initializeEventHandlers() {
     mobileButton.addEventListener("click", handleMobileButtonClick);
-    themeTogglerButton.addEventListener("click", handleThemeTogglerButtonClick);
     headerLinks.forEach(link => link.addEventListener("click", handleHeaderLinkClick));
     contactForm.addEventListener("submit", handleContactFormSubmit);
 }
@@ -169,7 +138,6 @@ function initializeWindowEvents() {
 }
 
 function initializeDocumentEvents() {
-    loadTheme();
     initializeCopyrightYear();
     initializeScrollReveal();
 }
