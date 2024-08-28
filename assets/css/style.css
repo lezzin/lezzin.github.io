@@ -23,7 +23,7 @@
     --tertiary-background: #262626;
     --border-color: #222;
     --header-index: 999;
-    --border-radius: 15px;
+    --border-radius: .25rem;
 }
 
 * {
@@ -58,7 +58,7 @@ img {
     max-width: 100%;
     height: auto;
     opacity: 0;
-    transition: opacity .3s ease;
+    transition: .6s ease;
 }
 
 img.loaded {
@@ -68,7 +68,7 @@ img.loaded {
 a {
     color: inherit;
     text-decoration: none;
-    transition: color .6s ease;
+    transition: .6s ease;
 }
 
 input,
@@ -95,7 +95,7 @@ button {
     gap: 0.6rem;
     cursor: pointer;
     white-space: nowrap;
-    transition: all .6s ease;
+    transition: .6s ease;
     padding: .6rem 1rem;
     border-radius: var(--border-radius);
 }
@@ -118,36 +118,35 @@ button {
 }
 
 .animated-btn {
-    transition: all .3s ease;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 1rem 2rem;
-    border: 3px solid var(--font-secondary-color);
-    border-radius: var(--border-radius);
     position: relative;
     overflow: hidden;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--font-secondary-color);
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    transition: .6s ease;
 }
 
-.animated-btn:before {
-    content: '';
+.animated-btn::before {
+    content: "";
     position: absolute;
+    top: 0;
+    right: 100%;
+    background-color: var(--font-secondary-color);
+    bottom: 0;
+    left: 0;
     z-index: -1;
-    inset: 0 50% 0;
-    background-color: var(--primary-color);
-    opacity: 0;
-    transition: all .3s ease;
+    transition: .6s ease;
 }
 
 .animated-btn:hover,
 .animated-btn:focus {
-    border-color: var(--primary-color);
+    color: var(--primary-background);
 }
 
-.animated-btn:hover:before,
-.animated-btn:focus:before {
-    left: 0;
+.animated-btn:hover::before,
+.animated-btn:focus::before {
     right: 0;
-    opacity: 1;
 }
 
 .loader {
@@ -157,7 +156,7 @@ button {
     display: grid;
     place-items: center;
     background-color: var(--primary-background);
-    transition: opacity .3s ease-out;
+    transition: .6s ease;
     pointer-events: none;
 }
 
@@ -190,7 +189,7 @@ button {
     min-width: 20%;
     transform: translateX(100%);
     pointer-events: none;
-    transition: all .6s ease-in-out;
+    transition: .6s ease;
 }
 
 .toast.toast-active {
@@ -264,29 +263,22 @@ header nav a {
     padding: .25rem 0.375rem;
 }
 
-header nav a.animated-btn {
-    padding: .6rem 1.2rem;
-    text-transform: none;
-    border-width: 2px;
-    margin-left: .6rem;
-}
-
-header nav a:not(.animated-btn)::after {
+header nav a::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
-    transition: width .6s;
+    transition: .6s ease;
 }
 
-header nav a:not(.animated-btn):hover {
+header nav a:hover {
     color: var(--primary-color);
 }
 
-header nav a:not(.animated-btn):hover::after {
+header nav a:hover::after {
     width: 100%;
-    transition: width .3s;
+    transition: .6s ease;
 }
 
 @media (width <=768px) {
@@ -304,7 +296,7 @@ header nav a:not(.animated-btn):hover::after {
         padding: 2rem 0;
         opacity: 0;
         transform: translateX(100%);
-        transition: all .3s ease-in-out;
+        transition: .6s ease;
     }
 
     header nav.active {
@@ -354,7 +346,7 @@ header nav a:not(.animated-btn):hover::after {
     width: calc(100% - var(--padding) * 2);
     height: 2px;
     background-color: var(--font-secondary-color);
-    transition: all 400ms cubic-bezier(.84, .06, .52, 1.8);
+    transition: .6s ease;
     transform-origin: center;
 }
 
@@ -585,11 +577,11 @@ section .container {
     min-width: 148px;
     aspect-ratio: 1/1;
     cursor: default;
-    transition: border-color .6s ease;
+    transition: .6s ease;
 }
 
 .skill-image {
-    transition: transform .6s ease;
+    transition: .6s ease;
 }
 
 .skill-image.rounded {
@@ -635,7 +627,7 @@ section .container {
     overflow: hidden;
     border: 1px solid var(--border-color);
     background-color: var(--tertiary-background);
-    transition: border-color .6s ease;
+    transition: .6s ease;
 }
 
 .project-details {
@@ -660,7 +652,7 @@ section .container {
     background-color: var(--secondary-background);
     padding: .25rem .5rem;
     border-radius: calc(var(--border-radius) / 3);
-    transition: background-color .3s ease;
+    transition: .6s ease;
 }
 
 .project-skills .badge:hover {
@@ -733,7 +725,7 @@ section .container {
 }
 
 #contact-section form .rocket {
-    transition: all .3s ease;
+    transition: .6s ease;
     margin-right: .3rem;
 }
 
