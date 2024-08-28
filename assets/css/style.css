@@ -23,7 +23,7 @@
     --tertiary-background: #262626;
     --border-color: #222;
     --header-index: 999;
-    --border-radius: .25rem;
+    --border-radius: .5rem;
 }
 
 * {
@@ -105,6 +105,17 @@ button {
     background-color: var(--primary-color);
 }
 
+.btn.white {
+    color: var(--font-secondary-color);
+    border: 1px solid var(--font-secondary-color);
+}
+
+.btn.white:hover,
+.btn.white:focus {
+    color: var(--primary-background);
+    background-color: var(--font-secondary-color);
+}
+
 .btn.dark {
     background-color: var(--secondary-background);
 }
@@ -113,40 +124,9 @@ button {
     text-decoration: underline;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     filter: brightness(80%);
-}
-
-.animated-btn {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--font-secondary-color);
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    transition: .6s ease;
-}
-
-.animated-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 100%;
-    background-color: var(--font-secondary-color);
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    transition: .6s ease;
-}
-
-.animated-btn:hover,
-.animated-btn:focus {
-    color: var(--primary-background);
-}
-
-.animated-btn:hover::before,
-.animated-btn:focus::before {
-    right: 0;
 }
 
 .loader {
@@ -272,11 +252,13 @@ header nav a::after {
     transition: .6s ease;
 }
 
-header nav a:hover {
+header nav a:hover,
+header nav a:focus {
     color: var(--primary-color);
 }
 
-header nav a:hover::after {
+header nav a:hover::after,
+header nav a:focus::after {
     width: 100%;
     transition: .6s ease;
 }
@@ -308,7 +290,7 @@ header nav a:hover::after {
         padding: 1rem 2rem;
     }
 
-    header nav a.animated-btn {
+    header nav a.btn-animated {
         margin-top: .6rem;
         margin-left: 0;
     }
@@ -464,6 +446,12 @@ section .container {
 #home-section .btn-group {
     margin-top: 5rem;
     font-size: 1.8rem;
+}
+
+#home-section .btn-group .white {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    backdrop-filter: blur(10px);
 }
 
 @media (width<=768px) {
@@ -659,6 +647,10 @@ section .container {
     background-color: var(--primary-background);
 }
 
+.project-skills .badge:focus {
+    background-color: var(--primary-background);
+}
+
 .project-name {
     margin-bottom: 1rem;
 }
@@ -720,18 +712,26 @@ section .container {
     padding: 1rem;
 }
 
-#contact-section form button {
+#contact-section .btn {
     padding: 1rem;
 }
 
-#contact-section form .rocket {
-    transition: .6s ease;
-    margin-right: .3rem;
+#contact-section .btn .icon {
+    margin-right: 3px;
+    transform: rotate(5deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-#contact-section form button:focus .rocket,
-#contact-section form button:hover .rocket {
-    transform: rotate(15deg);
+#contact-section .btn .text {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#contact-section .btn:hover .icon {
+    transform: translateX(5px) rotate(45deg);
+}
+
+#contact-section .btn:hover .text {
+    transform: translateX(7px);
 }
 
 /* ------------------------------------- */
@@ -748,7 +748,7 @@ footer {
     padding: 3rem;
     color: var(--font-secondary-color);
     background: var(--primary-background);
-    border-top: 2px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 footer .social-media {
