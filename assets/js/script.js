@@ -100,6 +100,11 @@ function handleHeaderLinkClick() {
     changeMobileButtonIcon();
 }
 
+function removeLoader() {
+    const loader = document.querySelector(".loader");
+    loader.classList.add("loaded");
+}
+
 function initializeCopyrightYear() {
     const currentYear = new Date().getFullYear();
     const element = document.querySelector("#copyright-year");
@@ -123,6 +128,8 @@ function initializeScrollReveal() {
     sr.reveal(".delay-large", { delay: 400 });
     sr.reveal(".interval-small", { interval: 200 });
     sr.reveal(".interval-medium", { interval: 300 });
+
+    setTimeout(removeLoader, 500);
 };
 
 function initializeEventHandlers() {
@@ -132,15 +139,11 @@ function initializeEventHandlers() {
 }
 
 function initializeWindowEvents() {
-    initializeEmailJS();
-    initializeEventHandlers();
-    loadImagesAnimations();
-}
-
-function initializeDocumentEvents() {
-    initializeCopyrightYear();
     initializeScrollReveal();
+    initializeEmailJS();
+    loadImagesAnimations();
+    initializeCopyrightYear();
+    initializeEventHandlers();
 }
 
-document.addEventListener("DOMContentLoaded", initializeDocumentEvents);
 window.addEventListener("load", initializeWindowEvents);
