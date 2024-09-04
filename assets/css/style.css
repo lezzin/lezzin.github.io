@@ -106,12 +106,18 @@ button {
 }
 
 .btn.white {
+    color: var(--border-color);
+    background-color: var(--font-secondary-color);
+}
+
+.btn.out-white {
     color: var(--font-secondary-color);
     border: 1px solid var(--font-secondary-color);
 }
 
-.btn.white:hover,
-.btn.white:focus {
+.btn.out-white:hover,
+.btn.out-white:focus {
+    filter: none;
     color: var(--primary-background);
     background-color: var(--font-secondary-color);
 }
@@ -409,14 +415,14 @@ section .container {
     position: relative;
 }
 
-.home-banner-image {
+.home-banner {
     position: absolute;
     inset: 0;
-    z-index: -2;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4 !important;
+    filter: opacity(40%);
+    z-index: -2;
 }
 
 #home-section .container {
@@ -448,10 +454,15 @@ section .container {
     font-size: 1.8rem;
 }
 
-#home-section .btn-group .white {
+#home-section .btn-group>* {
     text-transform: uppercase;
     padding: 1rem 2rem;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
+}
+
+#home-section .btn-group>*:focus,
+#home-section .btn-group>*:hover {
+    letter-spacing: 1px;
 }
 
 @media (width<=768px) {
@@ -498,7 +509,7 @@ section .container {
 
 .presentation-image {
     border-radius: calc(var(--border-radius) / 2);
-    filter: saturate(80%);
+    filter: saturate(70%);
 }
 
 .presentation-texts {
@@ -520,6 +531,11 @@ section .container {
 
 .presentation-texts .social-media .btn {
     padding: .6rem .7rem;
+}
+
+.presentation-texts .social-media .btn:focus,
+.presentation-texts .social-media .btn:hover {
+    transform: scale(0.9);
 }
 
 @media (width <=768px) {
@@ -585,12 +601,13 @@ section .container {
 .skill:focus,
 .skill:focus-within {
     border-color: var(--primary-color);
+    letter-spacing: 1px;
 }
 
 .skill:hover .skill-image,
 .skill:focus .skill-image,
 .skill:focus-within .skill-image {
-    transform: rotate(3deg) scale(1.03);
+    transform: rotate(3deg) scale(1.05);
 }
 
 /* ------------------------------------- */
