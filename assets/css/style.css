@@ -535,7 +535,7 @@ section .container {
 
 .presentation-texts .social-media .btn:focus,
 .presentation-texts .social-media .btn:hover {
-    transform: scale(0.9);
+    transform: scale(1.08);
 }
 
 @media (width <=768px) {
