@@ -21,6 +21,7 @@
     --primary-background: #0F0F0F;
     --secondary-background: #151515;
     --tertiary-background: #1f1f1f;
+    --quaternary-background: #333;
     --border-color: #222;
     --header-index: 999;
     --border-radius: .5rem;
@@ -115,18 +116,6 @@ button {
     background-color: var(--font-secondary-color);
 }
 
-.btn.out-success:hover,
-.btn.out-success:focus {
-    filter: none;
-    background-color: var(--primary-color);
-    color: var(--font-secondary-color);
-}
-
-.btn.out-success:hover svg,
-.btn.out-success:focus svg {
-    fill: var(--font-secondary-color);
-}
-
 .btn.white {
     color: var(--border-color);
     background-color: var(--font-secondary-color);
@@ -144,8 +133,12 @@ button {
     background-color: var(--font-secondary-color);
 }
 
-.btn.dark {
+.btn.dark-secondary {
     background-color: var(--secondary-background);
+}
+
+.btn.dark-quaternary {
+    background-color: var(--quaternary-background);
 }
 
 .btn.secondary {
