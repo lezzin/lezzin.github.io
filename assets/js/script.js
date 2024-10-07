@@ -50,7 +50,7 @@ function changeMobileButtonIcon() {
 }
 
 function resetContactForm() {
-    contactFormSubmitButton.innerText = "Enviar mensagem";
+    contactFormSubmitButton.innerHTML = `<img class="icon" src="./assets/icons/rocket.svg" alt="Ícone de foguete" width="16" height="16"><span class="text">Enviar mensagem</span>`;
     contactForm.reset();
 }
 
