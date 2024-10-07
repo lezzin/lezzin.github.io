@@ -1,21 +1,33 @@
 const images = document.querySelectorAll("img");
+const toast = document.querySelector(".toast");
 
+const header = document.querySelector("header");
 const mobileButton = document.querySelector("#btn-mobile");
-const header = document.querySelector("#navbar");
-const headerLinks = header.querySelectorAll("a");
+const navbar = document.querySelector("#navbar");
+const navbarLinks = navbar.querySelectorAll("a");
 
 const contactForm = document.querySelector("#contact-form");
 const contactFormEmailInput = contactForm.querySelector("#contact-email");
 const contactFormMessageInput = contactForm.querySelector("#contact-message");
 const contactFormSubmitButton = contactForm.querySelector("button");
 
-const toast = document.querySelector(".toast");
-
 const EMAIL_SERVICE_ID = "service_svh7f4w";
 const EMAIL_TEMPLATE_ID = "template_12gipiu";
 const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
-
 const TOAST_MESSAGE_TIMER = 2500;
+
+let isMobile = innerWidth <= 768;
+
+function checkScroll() {
+    const isScrollGreaterThanViewport = scrollY > (innerHeight / 2);
+
+    if (isMobile) {
+        header.classList.add("show");
+        return;
+    }
+
+    header.classList.toggle("show", isScrollGreaterThanViewport);
+}
 
 function showToast(type, message) {
     toast.classList.add("toast-active", `toast-${type}`);
@@ -27,7 +39,7 @@ function showToast(type, message) {
 }
 
 function changeMobileButtonIcon() {
-    const isHeaderActive = header.classList.contains("active");
+    const isHeaderActive = navbar.classList.contains("active");
 
     const mobileButtonLines = document.querySelectorAll("#btn-mobile .line");
     mobileButtonLines.forEach(line => line.classList.toggle('animated', isHeaderActive));
@@ -91,12 +103,12 @@ function loadImagesAnimations() {
 }
 
 function handleMobileButtonClick() {
-    header.classList.toggle("active");
+    navbar.classList.toggle("active");
     changeMobileButtonIcon();
 }
 
 function handleHeaderLinkClick() {
-    header.classList.remove("active");
+    navbar.classList.remove("active");
     changeMobileButtonIcon();
 }
 
@@ -134,7 +146,7 @@ function initializeScrollReveal() {
 
 function initializeEventHandlers() {
     mobileButton.addEventListener("click", handleMobileButtonClick);
-    headerLinks.forEach(link => link.addEventListener("click", handleHeaderLinkClick));
+    navbarLinks.forEach(link => link.addEventListener("click", handleHeaderLinkClick));
     contactForm.addEventListener("submit", handleContactFormSubmit);
 }
 
@@ -144,6 +156,18 @@ function initializeWindowEvents() {
     loadImagesAnimations();
     initializeCopyrightYear();
     initializeEventHandlers();
+    checkScroll();
 }
 
 window.addEventListener("load", initializeWindowEvents);
+
+
+window.addEventListener("resize", function () {
+    isMobile = innerWidth <= 768;
+    checkScroll();
+});
+
+
+window.addEventListener("scroll", function () {
+    checkScroll();
+});
