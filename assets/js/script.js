@@ -9,7 +9,7 @@ const navbarLinks = navbar.querySelectorAll("a");
 const contactForm = document.querySelector("#contact-form");
 const contactFormEmailInput = contactForm.querySelector("#contact-email");
 const contactFormMessageInput = contactForm.querySelector("#contact-message");
-const contactFormSubmitButton = contactForm.querySelector("button");
+const contactFormSubmitButton = contactForm.querySelector('button[type="submit"]');
 
 const EMAIL_SERVICE_ID = "service_svh7f4w";
 const EMAIL_TEMPLATE_ID = "template_12gipiu";
@@ -50,7 +50,7 @@ function changeMobileButtonIcon() {
 }
 
 function resetContactForm() {
-    contactFormSubmitButton.innerHTML = `<img class="icon" src="./assets/icons/rocket.svg" alt="Ícone de foguete" width="16" height="16"><span class="text">Enviar mensagem</span>`;
+    contactFormSubmitButton.innerText = "Mensagem já enviada";
     contactForm.reset();
 }
 
@@ -77,6 +77,7 @@ function submitFormMessage() {
     }
 
     contactFormSubmitButton.innerText = "Carregando...";
+    contactFormSubmitButton.disabled = true;
 
     emailjs.send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, params).then(
         (_response) => {

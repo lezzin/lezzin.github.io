@@ -769,6 +769,11 @@ section .container {
     padding: 1rem;
 }
 
+#contact-section .btn:disabled {
+    opacity: .8;
+    pointer-events: none;
+}
+
 #contact-section .btn .icon {
     margin-right: 3px;
     transform: rotate(5deg);
