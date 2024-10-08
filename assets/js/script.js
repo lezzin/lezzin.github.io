@@ -17,6 +17,7 @@ const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
 const TOAST_MESSAGE_TIMER = 2500;
 
 let isMobile = innerWidth <= 768;
+let isMessageSended = false;
 
 function checkScroll() {
     const isScrollGreaterThanViewport = scrollY > (innerHeight / 2);
@@ -50,12 +51,17 @@ function changeMobileButtonIcon() {
 }
 
 function resetContactForm() {
-    contactFormSubmitButton.innerText = "Mensagem já enviada";
+    contactFormSubmitButton.innerText = "Mensagem enviada";
     contactForm.reset();
 }
 
 function handleContactFormSubmit(event) {
     event.preventDefault();
+
+    if(isMessageSended) {
+        showToast("error", "Você já enviou uma mensagem!");
+        return;
+    }
 
     const email = contactFormEmailInput.value;
     const message = contactFormMessageInput.value;
@@ -82,6 +88,7 @@ function submitFormMessage() {
     emailjs.send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, params).then(
         (_response) => {
             showToast("success", "Mensagem enviada com sucesso!");
+            isMessageSended = true;
             resetContactForm();
         },
         (_error) => {

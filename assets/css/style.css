@@ -274,14 +274,15 @@ header nav a::after {
     content: '';
     display: block;
     width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
+    height: 1px;
+    margin-top: 0.25rem;
+    background-color: var(--font-primary-color);
     transition: .6s ease;
 }
 
 header nav a:hover,
 header nav a:focus {
-    color: var(--primary-color);
+    color: var(--font-primary-color);
 }
 
 header nav a:hover::after,
@@ -442,7 +443,7 @@ section .container {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: opacity(40%) contrast(110%);
+    filter: opacity(40%);
     z-index: -2;
 }
 
@@ -459,12 +460,6 @@ section .container {
         margin-top: 8vh;
         min-height: 92vh;
     }
-}
-
-#home-section .hero-image {
-    margin-bottom: 1.5rem;
-    background-color: var(--hero-image-bg);
-    border-radius: 50%;
 }
 
 #home-section h1 {
@@ -770,7 +765,8 @@ section .container {
 }
 
 #contact-section .btn:disabled {
-    opacity: .8;
+    background-color: var(--quaternary-background);
+    color: var(--font-secondary-color);
     pointer-events: none;
 }
 
