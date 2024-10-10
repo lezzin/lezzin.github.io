@@ -1,0 +1,34 @@
+<script>
+import Skill from "../components/Skill.vue";
+export default {
+    components: {
+        Skill
+    },
+    props: ["skills"]
+}
+</script>
+
+<template>
+    <section id="skills-section">
+        <div class="container">
+            <h3 class="section-title delay-small">Habilidades</h3>
+            <div class="skills">
+                <Skill v-for="(skill, index) in skills" :key="index" :skill="skill" />
+            </div>
+        </div>
+    </section>
+</template>
+
+<style scoped>
+section {
+    padding: 5vh 0;
+}
+
+.skills {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+</style>
