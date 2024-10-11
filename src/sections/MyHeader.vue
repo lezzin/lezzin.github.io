@@ -1,32 +1,27 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
-// Reactive variables
 const isMobile = ref(window.innerWidth <= 768);
 const canShow = ref(false);
-const isHeaderActive = ref(false); // Controls the navbar state
+const isHeaderActive = ref(false);
 const mobileButtonTitle = ref("Abrir menu");
 const ariaExpanded = ref("false");
 
-// Function to toggle mobile button icon and title
 function changeMobileButtonIcon() {
     mobileButtonTitle.value = `${isHeaderActive.value ? "Fechar" : "Abrir"} menu`;
     ariaExpanded.value = isHeaderActive.value ? "true" : "false";
 }
 
-// Handle mobile button click to toggle navbar
 function handleMobileButtonClick() {
     isHeaderActive.value = !isHeaderActive.value;
     changeMobileButtonIcon();
 }
 
-// Handle link clicks to close navbar on mobile
 function handleHeaderLinkClick() {
     isHeaderActive.value = false;
     changeMobileButtonIcon();
 }
 
-// Function to check scroll position and set navbar visibility
 function checkScroll() {
     const isScrollGreaterThanViewport = window.scrollY > (window.innerHeight / 2);
 
@@ -37,7 +32,6 @@ function checkScroll() {
     }
 }
 
-// Event listeners for resize and scroll
 onMounted(() => {
     checkScroll();
 
@@ -53,7 +47,6 @@ onMounted(() => {
     window.addEventListener("resize", resizeListener);
     window.addEventListener("scroll", scrollListener);
 
-    // Cleanup listeners on unmount
     onUnmounted(() => {
         window.removeEventListener("resize", resizeListener);
         window.removeEventListener("scroll", scrollListener);
@@ -68,7 +61,6 @@ onMounted(() => {
                 <img src="/images/lezzin.svg" alt="Logo do website - lezzin" width="80" height="26" />
             </a>
 
-            <!-- Mobile button -->
             <button id="btn-mobile" :title="mobileButtonTitle" :aria-expanded="ariaExpanded"
                 @click="handleMobileButtonClick">
                 <div class="line" :class="{ animated: isHeaderActive }"></div>
@@ -76,7 +68,6 @@ onMounted(() => {
                 <div class="line" :class="{ animated: isHeaderActive }"></div>
             </button>
 
-            <!-- Navbar -->
             <nav id="navbar" role="navigation" :class="{ active: isHeaderActive }">
                 <a href="#presentation-section" @click="handleHeaderLinkClick"
                     title="Ir para a apresentação">Apresentação</a>

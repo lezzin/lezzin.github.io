@@ -1,4 +1,4 @@
-[
+const projects = [
     {
         "image": "erupcao-das-letras.webp",
         "name": "Erupção das Letras",
@@ -81,3 +81,5 @@
         "docsUrl": "https://docs.google.com/document/d/1D-D_juSptjhfYBQKPmFI8yjv8h6LqUr4GLOfJxoSOTY/edit?usp=sharing"
     }
 ]
+
+export default projects;

@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.3;
-    }
-}
-
 :root {
     --primary-color: #0E6212;
     --toast-success-color: #008cff;
@@ -142,29 +130,6 @@ button {
 .btn:hover,
 .btn:focus {
     filter: brightness(80%);
-}
-
-.loader {
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    display: grid;
-    place-items: center;
-    background-color: var(--primary-background);
-    transition: .6s ease;
-    pointer-events: none;
-}
-
-.loader.loaded {
-    opacity: 0;
-}
-
-.loader img {
-    background-color: var(--tertiary-background);
-    border-radius: 50%;
-    width: 64px;
-    animation: blink 1.2s infinite linear;
-    aspect-ratio: 1;
 }
 
 .social-media {
