@@ -1,10 +1,11 @@
 <script>
 import Skill from "../components/Skill.vue";
+
 export default {
+    props: ["skills"],
     components: {
         Skill
-    },
-    props: ["skills"]
+    }
 }
 </script>
 
@@ -12,6 +13,7 @@ export default {
     <section id="skills-section">
         <div class="container">
             <h3 class="section-title delay-small">Habilidades</h3>
+
             <div class="skills">
                 <Skill v-for="(skill, index) in skills" :key="index" :skill="skill" />
             </div>

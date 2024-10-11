@@ -2,22 +2,29 @@
 import { ref, onMounted, watch } from 'vue';
 import emailjs from '@emailjs/browser';
 
+import Toast from "../components/Toast.vue";
+
 const EMAIL_SERVICE_ID = "service_svh7f4w";
 const EMAIL_TEMPLATE_ID = "template_12gipiu";
 const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
+const GOOGLE_SITE_KEY = "6Ld7ObkpAAAAAP8J9NwPrytrO7IUy4-0wT96WTLJ";
 
 export default {
+    components: {
+        Toast
+    },
     setup() {
         const email = ref('');
         const message = ref('Parabéns pelo portfólio. Vamos nos conectar!');
         const emailError = ref('');
         const messageError = ref('');
-        const buttonText = ref('Enviar mensagem');
         const toast = ref({
             isActive: false,
             message: '',
             status: ''
         });
+
+        const submitBtn = ref(null); 
 
         const handleFormSubmit = () => {
             emailError.value = '';
@@ -45,7 +52,10 @@ export default {
                 'g-recaptcha-response': token
             };
 
-            buttonText.value = 'Carregando...';
+            if (submitBtn.value) {
+                submitBtn.value.querySelector("span").innerText = 'Carregando...';
+                submitBtn.value.disabled = true;
+            }
 
             emailjs.send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, params).then(
                 () => {
@@ -72,7 +82,10 @@ export default {
             message.value = 'Parabéns pelo portfólio. Vamos nos conectar!';
             emailError.value = '';
             messageError.value = '';
-            buttonText.value = 'Enviar mensagem';
+            if (submitBtn.value) {
+                submitBtn.value.querySelector("span").innerText = 'Enviar mensagem';
+                submitBtn.value.disabled = false;
+            }
 
             if (window.grecaptcha) {
                 window.grecaptcha.reset();
@@ -85,7 +98,7 @@ export default {
             if (window.grecaptcha) {
                 window.grecaptcha.ready(() => {
                     window.grecaptcha.render('g-recaptcha', {
-                        sitekey: '6Ld7ObkpAAAAAP8J9NwPrytrO7IUy4-0wT96WTLJ',
+                        sitekey: GOOGLE_SITE_KEY,
                         callback: submitFormMessage,
                         size: 'invisible'
                     });
@@ -93,14 +106,13 @@ export default {
             }
         });
 
+        let timeout;
         watch(toast, function (data) {
             if (data) {
-                setTimeout(() => {
-                    toast.value = {
-                        isActive: false,
-                        message: "",
-                        status: ""
-                    }
+                clearTimeout(timeout);
+
+                timeout = setTimeout(() => {
+                    toast.value.isActive = false;
                 }, 2500);
             }
         })
@@ -110,9 +122,9 @@ export default {
             message,
             emailError,
             messageError,
-            buttonText,
             handleFormSubmit,
-            toast
+            toast,
+            submitBtn 
         };
     }
 };
@@ -134,7 +146,7 @@ export default {
                     <textarea rows="3" name="message" class="form-control" v-model="message"></textarea>
                     <p class="form-message" v-if="messageError">{{ messageError }}</p>
                 </div>
-                <button type="submit" class="btn success interval-small" title="Enviar mensagem">
+                <button type="submit" class="btn success interval-small" title="Enviar mensagem" ref="submitBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-rocket-takeoff icon" viewBox="0 0 16 16">
                         <path fill="#fff"
@@ -144,19 +156,14 @@ export default {
                         <path fill="#fff"
                             d="M7.009 12.139a7.6 7.6 0 0 1-1.804-1.352A7.6 7.6 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z" />
                     </svg>
-                    <span class="text">{{ buttonText }}</span>
+                    <span class="text">Enviar mensagem</span>
                 </button>
             </form>
         </div>
         <div class="g-recaptcha" id="g-recaptcha"></div>
     </section>
 
-    <aside :class="['toast', toast.isActive && 'toast-active', toast.status]">
-        <div class="toast-banner"></div>
-        <div class="toast-content">
-            <p class="toast-text">{{ toast.message }}</p>
-        </div>
-    </aside>
+    <Toast :toast="toast" />
 </template>
 
 <style scoped>
@@ -213,52 +220,5 @@ form .form-group {
 .form-message {
     font-size: 1.2rem;
     color: var(--toast-error-color);
-}
-
-
-.toast {
-    --toast-radius: calc(var(--border-radius) / 2);
-
-    position: fixed;
-    bottom: 1rem;
-    right: 0;
-    z-index: calc(var(--header-index) + 2);
-    display: grid;
-    grid-template-columns: 2rem auto;
-    background-color: var(--tertiary-background);
-    border-radius: var(--toast-radius) 0 0 var(--toast-radius);
-    border: 1px solid var(--border-color);
-    border-right: none;
-    overflow: hidden;
-    min-width: 20%;
-    transform: translateX(100%);
-    pointer-events: none;
-    transition: .6s ease;
-}
-
-.toast.toast-active {
-    transform: translateX(0);
-    pointer-events: all;
-}
-
-.toast-success .toast-banner,
-.toast-success .toast-icon {
-    background-color: var(--toast-success-color);
-}
-
-.toast-error .toast-banner,
-.toast-error .toast-icon {
-    background-color: var(--toast-error-color);
-}
-
-.toast-content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 1rem 1.5rem;
-}
-
-.toast-content .toast-text {
-    font-size: 1.4rem;
 }
 </style>

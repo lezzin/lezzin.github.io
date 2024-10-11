@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <section id="home-section">
         <img src="/images/home-background.webp" alt="Banner com meus projetos de fundo" class="home-banner">
@@ -42,13 +39,6 @@ section .container {
     min-height: 100vh;
 }
 
-@media (width <=768px) {
-    section .container {
-        margin-top: 8vh;
-        min-height: 92vh;
-    }
-}
-
 section h1 {
     font-size: 6rem;
 }
@@ -75,6 +65,11 @@ section .btn-group>*:focus {
 }
 
 @media (width<=768px) {
+    section .container {
+        margin-top: 8vh;
+        min-height: 92vh;
+    }
+    
     section h1 {
         font-size: 4.2rem;
     }
