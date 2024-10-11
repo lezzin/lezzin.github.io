@@ -73,8 +73,6 @@ onMounted(() => {
                     title="Ir para a apresentação">Apresentação</a>
                 <a href="#skills-section" @click="handleHeaderLinkClick" title="Ir para as habilidades">Habilidades</a>
                 <a href="#projects-section" @click="handleHeaderLinkClick" title="Ir para os projetos">Projetos</a>
-                <a href="#contact-section" @click="handleHeaderLinkClick"
-                    title="Ir para o formulário de contato">Contato</a>
             </nav>
         </div>
     </header>

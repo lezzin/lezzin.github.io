@@ -8,7 +8,6 @@ import Home from './sections/Home.vue';
 import Presentation from './sections/Presentation.vue';
 import Skills from './sections/Skills.vue';
 import Projects from './sections/Projects.vue';
-import Contact from './sections/Contact.vue';
 
 import Loader from './components/Loader.vue';
 
@@ -23,7 +22,6 @@ export default {
         Presentation,
         Skills,
         Projects,
-        Contact,
         Loader
     },
     setup() {
@@ -73,7 +71,6 @@ export default {
         <Presentation />
         <Skills :skills="mySkills" />
         <Projects :projects="myProjects" />
-        <Contact />
     </main>
 
     <MyFooter />
