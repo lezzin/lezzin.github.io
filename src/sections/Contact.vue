@@ -92,12 +92,10 @@ export default {
         onMounted(() => {
             emailjs.init(EMAIL_PUBLIC_KEY);
 
-            grecaptcha.ready(() => {
-                grecaptcha.render('g-recaptcha', {
-                    sitekey: GOOGLE_SITE_KEY,
-                    callback: submitFormMessage,
-                    size: 'invisible'
-                });
+            grecaptcha.render('g-recaptcha', {
+                'sitekey': GOOGLE_SITE_KEY,
+                'callback': submitFormMessage,
+                'size': 'invisible'
             });
         });
 
@@ -135,11 +133,13 @@ export default {
                         placeholder="usuario@gmail.com" />
                     <p class="form-message" v-if="emailError">{{ emailError }}</p>
                 </div>
+
                 <div class="form-group interval-small">
                     <label for="contact-message">Mensagem</label>
                     <textarea rows="3" name="message" class="form-control" v-model="message"></textarea>
                     <p class="form-message" v-if="messageError">{{ messageError }}</p>
                 </div>
+
                 <button type="submit" class="btn success interval-small" title="Enviar mensagem" ref="submitBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-rocket-takeoff icon" viewBox="0 0 16 16">
@@ -154,6 +154,7 @@ export default {
                 </button>
             </form>
         </div>
+        
         <div class="g-recaptcha" id="g-recaptcha"></div>
     </section>
 
