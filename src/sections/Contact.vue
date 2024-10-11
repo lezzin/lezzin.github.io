@@ -8,7 +8,6 @@ const EMAIL_SERVICE_ID = "service_svh7f4w";
 const EMAIL_TEMPLATE_ID = "template_12gipiu";
 const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
 const GOOGLE_SITE_KEY = "6Ld7ObkpAAAAAP8J9NwPrytrO7IUy4-0wT96WTLJ";
-
 export default {
     components: {
         Toast
@@ -24,7 +23,7 @@ export default {
             status: ''
         });
 
-        const submitBtn = ref(null); 
+        const submitBtn = ref(null);
 
         const handleFormSubmit = () => {
             emailError.value = '';
@@ -40,9 +39,7 @@ export default {
 
             if (!email.value || !message.value) return;
 
-            if (window.grecaptcha) {
-                window.grecaptcha.execute();
-            }
+            grecaptcha.execute();
         };
 
         const submitFormMessage = (token) => {
@@ -69,7 +66,7 @@ export default {
                 (err) => {
                     toast.value = {
                         isActive: true,
-                        message: 'Erro ao enviar mensagem' + err,
+                        message: 'Erro ao enviar mensagem: ' + err,
                         status: 'toast-error'
                     };
                     resetContactForm();
@@ -82,40 +79,36 @@ export default {
             message.value = 'Parabéns pelo portfólio. Vamos nos conectar!';
             emailError.value = '';
             messageError.value = '';
+
             if (submitBtn.value) {
                 submitBtn.value.querySelector("span").innerText = 'Enviar mensagem';
                 submitBtn.value.disabled = false;
             }
 
-            if (window.grecaptcha) {
-                window.grecaptcha.reset();
-            }
+            grecaptcha.reset();
         };
 
         onMounted(() => {
-            emailjs.init({ publicKey: EMAIL_PUBLIC_KEY });
+            emailjs.init(EMAIL_PUBLIC_KEY);
 
-            if (window.grecaptcha) {
-                window.grecaptcha.ready(() => {
-                    window.grecaptcha.render('g-recaptcha', {
-                        sitekey: GOOGLE_SITE_KEY,
-                        callback: submitFormMessage,
-                        size: 'invisible'
-                    });
+            grecaptcha.ready(() => {
+                grecaptcha.render('g-recaptcha', {
+                    sitekey: GOOGLE_SITE_KEY,
+                    callback: submitFormMessage,
+                    size: 'invisible'
                 });
-            }
+            });
         });
 
         let timeout;
-        watch(toast, function (data) {
-            if (data) {
+        watch(toast, (data) => {
+            if (data.isActive) {
                 clearTimeout(timeout);
-
                 timeout = setTimeout(() => {
                     toast.value.isActive = false;
                 }, 2500);
             }
-        })
+        });
 
         return {
             email,
@@ -124,7 +117,7 @@ export default {
             messageError,
             handleFormSubmit,
             toast,
-            submitBtn 
+            submitBtn
         };
     }
 };
