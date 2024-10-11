@@ -4,15 +4,16 @@ import emailjs from '@emailjs/browser';
 
 import Toast from "../components/Toast.vue";
 
-const EMAIL_SERVICE_ID = "service_svh7f4w";
-const EMAIL_TEMPLATE_ID = "template_12gipiu";
-const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
-const GOOGLE_SITE_KEY = "6Ld7ObkpAAAAAP8J9NwPrytrO7IUy4-0wT96WTLJ";
 export default {
     components: {
         Toast
     },
     setup() {
+        const EMAIL_SERVICE_ID = "service_svh7f4w";
+        const EMAIL_TEMPLATE_ID = "template_12gipiu";
+        const EMAIL_PUBLIC_KEY = "iwzLyfgc_NAdfVZiN";
+        const GOOGLE_SITE_KEY = "6Ld7ObkpAAAAAP8J9NwPrytrO7IUy4-0wT96WTLJ";
+
         const email = ref('');
         const message = ref('Parabéns pelo portfólio. Vamos nos conectar!');
         const emailError = ref('');
