@@ -1,29 +1,31 @@
-<script>
-export default {
-    props: ["project"],
-    methods: {
-        imageUrl(image) {
-            return `/images/projects/${image}`;
-        }
+<script setup>
+const props = defineProps({
+    project: {
+        type: Object,
+        required: true
     }
+});
+
+const imageUrl = (image) => {
+    return `/images/projects/${image}`;
 }
 </script>
 
 <template>
     <article class="project interval-medium">
-        <img class="project-image" :src="imageUrl(project.image)" width="480" height="270"
+        <img class="project-image" :src="imageUrl(props.project.image)" width="480" height="270"
             alt="Pré-visualização do projeto" loading="lazy">
         <div class="project-details">
             <div>
-                <h3 class="project-name">{{ project.name }}</h3>
-                <p class="project-description">{{ project.description }}</p>
+                <h3 class="project-name">{{ props.project.name }}</h3>
+                <p class="project-description">{{ props.project.description }}</p>
                 <p class="project-skills">
-                    <span class="badge" v-for="(skill, index) in project.skills">{{ skill }}</span>
+                    <span class="badge" v-for="(skill, index) in props.project.skills">{{ skill }}</span>
                 </p>
             </div>
             <div class="project-buttons">
-                <a class="btn success full" role="button" :href="project.deployUrl" target="_blank"
-                    rel="noopener noreferrer" title="Acessar deploy do projeto" v-if="project.deployUrl">
+                <a class="btn success full" role="button" :href="props.project.deployUrl" target="_blank"
+                    rel="noopener noreferrer" title="Acessar deploy do projeto" v-if="props.project.deployUrl">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-link-45deg" viewBox="0 0 16 16">
                         <path
@@ -33,8 +35,8 @@ export default {
                     </svg>
                     Visualizar projeto
                 </a>
-                <a class="btn dark-quaternary" role="button" :href="project.codeUrl" target="_blank"
-                    rel="noopener noreferrer" title="Acessar código do projeto no GitHub" v-if="project.codeUrl">
+                <a class="btn dark-quaternary" role="button" :href="props.project.codeUrl" target="_blank"
+                    rel="noopener noreferrer" title="Acessar código do projeto no GitHub" v-if="props.project.codeUrl">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="16" height="16"
                         fill="currentColor">
                         <path
@@ -42,8 +44,9 @@ export default {
                     </svg>
                     Código-fonte
                 </a>
-                <a class="btn dark-quaternary" role="button" :href="project.docsUrl" target="_blank"
-                    rel="noopener noreferrer" title="Acessar documentação do projeto no Drive" v-if="project.docsUrl">
+                <a class="btn dark-quaternary" role="button" :href="props.project.docsUrl" target="_blank"
+                    rel="noopener noreferrer" title="Acessar documentação do projeto no Drive"
+                    v-if="props.project.docsUrl">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-file-code" viewBox="0 0 16 16">
                         <path

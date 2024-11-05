@@ -1,20 +1,22 @@
-<script>
-export default {
-    props: ["skill"],
-    methods: {
-        imageUrl(skill) {
-            const lowerName = String(skill).toLowerCase();
-            return `/icons/${lowerName}.svg`;
-        }
+<script setup>
+const props = defineProps({
+    skill: {
+        type: String,
+        required: true
     }
+});
+
+const imageUrl = (skill) => {
+    const lowerName = String(skill).toLowerCase();
+    return `/icons/${lowerName}.svg`;
 }
 </script>
 
 <template>
-    <div class="skill interval-medium" tabindex="0" :aria-label="skill">
-        <img :src="imageUrl(skill)" class="skill-image" :alt="'Logo da tecnologia ' + skill" width="88" height="88"
-            loading="lazy">
-        <p class="skill-name">{{ skill }}</p>
+    <div class="skill interval-medium" tabindex="0" :aria-label="props.skill">
+        <img :src="imageUrl(props.skill)" class="skill-image" :alt="`Logo da tecnologia ${props.skill}`" width="88"
+            height="88" loading="lazy">
+        <p class="skill-name">{{ props.skill }}</p>
     </div>
 </template>
 

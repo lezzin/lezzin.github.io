@@ -1,11 +1,14 @@
-<script>
-export default {
-    props: ["loading"]
-}
+<script setup>
+const props = defineProps({
+    loading: {
+        type: Boolean,
+        required: true
+    }
+});
 </script>
 
 <template>
-    <div :class="['loader', !loading && 'loaded']">
+    <div :class="['loader', !props.loading && 'loaded']">
         <img src="/images/loader-icon.svg" alt="Imagem do loader">
     </div>
 </template>

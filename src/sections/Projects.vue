@@ -1,22 +1,23 @@
-<script>
+<script setup>
 import Project from "../components/Project.vue";
 
-export default {
-    props: ["projects"],
-    components: {
-        Project
+const props = defineProps({
+    projects: {
+        type: Object,
+        required: true
     }
-}
+})
 </script>
+
 <template>
     <section id="projects-section">
         <div class="container">
             <h3 class="section-title delay-small">Projetos</h3>
 
             <div class="projects">
-                <Project v-for="(project, index) in projects" :key="index" :project="project" />
+                <Project v-for="(project, index) in props.projects" :key="index" :project="project" />
             </div>
-            
+
             <a class="btn secondary delay-small" href="https://github.com/lezzin?tab=repositories" target="_blank"
                 rel="noopener noreferrer" title="Acessar mais projetos no GitHub">
                 <img src="/icons/github.svg" alt="Logo do GitHub" width="16" height="16">

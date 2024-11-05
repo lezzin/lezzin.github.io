@@ -1,12 +1,12 @@
-<script>
+<script setup>
 import Skill from "../components/Skill.vue";
 
-export default {
-    props: ["skills"],
-    components: {
-        Skill
+const props = defineProps({
+    skills: {
+        type: Array,
+        required: true
     }
-}
+});
 </script>
 
 <template>
@@ -15,7 +15,7 @@ export default {
             <h3 class="section-title delay-small">Habilidades</h3>
 
             <div class="skills">
-                <Skill v-for="(skill, index) in skills" :key="index" :skill="skill" />
+                <Skill v-for="(skill, index) in props.skills" :key="index" :skill="skill" />
             </div>
         </div>
     </section>
