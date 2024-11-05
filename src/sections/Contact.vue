@@ -1,12 +1,9 @@
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, reactive, ref, watch } from "vue";
 import emailjs from "@emailjs/browser";
 
-const formStatus = reactive({
-    show: false,
-    type: "",
-    text: "",
-});
+import 'vue3-toastify/dist/index.css';
+import { toast } from 'vue3-toastify';
 
 const name = ref("");
 const email = ref("");
@@ -14,14 +11,16 @@ const message = ref("");
 const isSending = ref(false);
 const errors = reactive({ name: "", email: "", message: "" });
 
+watch(name, () => errors.name = "");
+watch(email, () => errors.email = "");
+watch(message, () => errors.message = "");
+
 const validateForm = () => {
     let valid = true;
-
 
     Object.keys(errors).forEach(key => {
         errors[key] = "";
     });
-
 
     if (!name.value) {
         errors.name = "Por favor, insira seu nome.";
@@ -62,24 +61,31 @@ const sendMessage = () => {
 };
 
 const handleResponse = () => {
-    showMessage("success", "Mensagem enviada com sucesso!");
+    showToast("Mensagem enviada com sucesso!", "success");
     resetForm();
 };
 
 const handleError = () => {
-    showMessage("error", "Erro ao enviar mensagem. Tente novamente.");
+    showToast("Erro ao enviar mensagem. Tente novamente.", "error");
 };
 
-const showMessage = (type, text) => {
-    formStatus.show = true;
-    formStatus.type = type;
-    formStatus.text = text;
+const showToast = (message, type) => {
+    if (type === "success") {
+        toast.success(message, {
+            autoClose: 5000,
+            style: {
+                fontSize: '1.4rem'
+            }
+        });
 
-    setTimeout(() => {
-        formStatus.show = false;
-        formStatus.type = "";
-        formStatus.text = "";
-    }, 5000);
+        return;
+    }
+
+    toast.error(message, {
+        style: {
+            fontSize: '1.4rem'
+        }
+    });
 };
 
 const resetForm = () => {
@@ -94,11 +100,6 @@ const resetForm = () => {
 onMounted(() => {
     emailjs.init({
         publicKey: "iwzLyfgc_NAdfVZiN",
-        blockHeadless: true,
-        limitRate: {
-            id: 'app',
-            throttle: 10000,
-        },
     });
 });
 </script>
@@ -109,10 +110,6 @@ onMounted(() => {
             <h3 class="section-title delay-small">Contato</h3>
 
             <form class="delay-medium" @submit.prevent="sendMessage">
-                <div v-if="formStatus.show" :class="`form-message ${formStatus.type}`" role="alert">
-                    <p>{{ formStatus.text }}</p>
-                </div>
-
                 <div :class="{ 'form-error': errors.name }">
                     <input type="text" aria-label="Nome" placeholder="Nome" v-model="name">
                     <p class="form-error-message" v-if="errors.name">{{ errors.name }}</p>
@@ -169,7 +166,6 @@ button {
     }
 }
 
-
 .form-error :where(input, textarea) {
     border-color: var(--error-color);
 }
@@ -178,22 +174,5 @@ button {
     color: var(--error-color);
     font-size: 1.4rem;
     margin-top: 0.25rem;
-}
-
-.form-message {
-    padding: 1.5rem;
-    text-align: center;
-    border-radius: var(--border-radius);
-    margin-bottom: 1rem;
-
-    &.success {
-        color: var(--success-color);
-        background-color: var(--background-success);
-    }
-
-    &.error {
-        color: var(--error-color);
-        background-color: var(--background-error);
-    }
 }
 </style>
