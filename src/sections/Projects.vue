@@ -9,13 +9,15 @@ const props = defineProps({
     }
 });
 
+const orderByName = (a, b) => a.name.localeCompare(b.name);
+
 const skillList = ref([]);
 const activeSkill = ref(null);
 
 const filteredProjects = computed(() => {
     return activeSkill.value
-        ? props.projects.filter(project => project.skills.includes(activeSkill.value))
-        : props.projects;
+        ? props.projects.filter(project => project.skills.includes(activeSkill.value)).sort(orderByName)
+        : props.projects.sort(orderByName);
 });
 
 const filterProjectsBySkill = (skillName) => {
@@ -31,7 +33,7 @@ const calculateSkillsCount = (projects) => {
 
     return Object.entries(skillCounts)
         .map(([name, quantity]) => ({ name, quantity })) // Transforma o array em objeto
-        .sort((a, b) => a.name.localeCompare(b.name)); // Ordena em ordem alfabética
+        .sort(orderByName); // Ordena em ordem alfabética
 };
 
 onMounted(() => {
@@ -44,12 +46,11 @@ onMounted(() => {
         <div class="container">
             <h3 class="section-title delay-small">Projetos</h3>
 
-            <div class="btn-group">
+            <div class="btn-group delay-medium">
                 <button v-for="skill in skillList" :key="skill.name"
                     :class="['skill', 'btn', 'dark-quaternary', { 'active': activeSkill === skill.name }]"
                     @click="filterProjectsBySkill(skill.name)">
-                    <span>{{ skill.name }}</span>
-                    <span class="skill-quantity">({{ skill.quantity }})</span>
+                    {{ skill.name }} ({{ skill.quantity }})
                 </button>
             </div>
 
@@ -80,16 +81,13 @@ section {
 }
 
 .btn-group {
-    margin-bottom: 3rem;
-    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+    gap: 0.8rem;
 }
 
 .btn-group .btn.active {
     color: var(--font-primary-color);
     background-color: var(--primary-color);
-}
-
-.skill-quantity {
-    font-size: 1.4rem;
 }
 </style>
