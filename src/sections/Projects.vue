@@ -2,7 +2,6 @@
 import { onMounted, ref, computed } from "vue";
 import Project from "../components/Project.vue";
 
-// Definindo as props do componente
 const props = defineProps({
     projects: {
         type: Array,
@@ -10,23 +9,19 @@ const props = defineProps({
     }
 });
 
-// Variáveis reativas
 const skillList = ref([]);
 const activeSkill = ref(null);
 
-// Computed para filtrar os projetos de acordo com a skill ativa
 const filteredProjects = computed(() => {
     return activeSkill.value
         ? props.projects.filter(project => project.skills.includes(activeSkill.value))
         : props.projects;
 });
 
-// Função para alternar a skill ativa
 const filterProjectsBySkill = (skillName) => {
     activeSkill.value = activeSkill.value === skillName ? null : skillName;
 };
 
-// Função para calcular a contagem de skills
 const calculateSkillsCount = (projects) => {
     const allSkills = projects.flatMap(project => project.skills);
     const skillCounts = allSkills.reduce((counts, skill) => {
@@ -37,7 +32,6 @@ const calculateSkillsCount = (projects) => {
     return Object.entries(skillCounts).map(([name, quantity]) => ({ name, quantity })).sort((a, b) => a.name.localeCompare(b.name));
 };
 
-// Populando a lista de skills e suas quantidades quando o componente é montado
 onMounted(() => {
     skillList.value = calculateSkillsCount(props.projects);
 });
