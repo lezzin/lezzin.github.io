@@ -13,6 +13,7 @@ import Loader from './components/Loader.vue';
 
 import projectsJson from "./data/projects.js";
 import skillsJson from "./data/skills.js";
+import Contact from "./sections/Contact.vue";
 
 const isLoading = ref(true);
 const myProjects = computed(() => projectsJson);
@@ -52,6 +53,7 @@ onMounted(() => {
         <Presentation />
         <Skills :skills="mySkills" />
         <Projects :projects="myProjects" />
+        <Contact />
     </main>
 
     <MyFooter />
