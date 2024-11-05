@@ -2,12 +2,10 @@
 
 :root {
     --primary-color: #0E6212;
-
     --success-color: #4caf50;
-    --background-success: rgba(76, 175, 80, 0.1);
+    --background-success: #4caf501a;
     --error-color: #f44336;
-    --background-error: rgba(244, 67, 54, 0.1);
-
+    --background-error: #f443361a;
     --font-primary-color: #fff;
     --font-secondary-color: #ccc;
     --primary-background: #0F0F0F;
