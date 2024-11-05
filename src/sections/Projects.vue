@@ -25,11 +25,13 @@ const filterProjectsBySkill = (skillName) => {
 const calculateSkillsCount = (projects) => {
     const allSkills = projects.flatMap(project => project.skills);
     const skillCounts = allSkills.reduce((counts, skill) => {
-        counts[skill] = (counts[skill] || 0) + 1;
+        counts[skill] = (counts[skill] || 0) + 1; // Quantidade de vezes que a skill aparece
         return counts;
     }, {});
 
-    return Object.entries(skillCounts).map(([name, quantity]) => ({ name, quantity })).sort((a, b) => a.name.localeCompare(b.name));
+    return Object.entries(skillCounts)
+        .map(([name, quantity]) => ({ name, quantity })) // Transforma o array em objeto
+        .sort((a, b) => a.name.localeCompare(b.name)); // Ordena em ordem alfabética
 };
 
 onMounted(() => {
