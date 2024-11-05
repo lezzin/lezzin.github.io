@@ -5,7 +5,6 @@ const projects = [
         "description": "Rede social para autores e leitores, permitindo publicação, venda direta e apoio financeiro de obras.",
         "skills": [
             "PHP",
-            "CSS",
             "jQuery",
             "MySQL",
             "Stripe"
@@ -17,8 +16,6 @@ const projects = [
         "name": "Blog de Wellyoza",
         "description": "Blog desenvolvido para um colega de faculdade, com foco em tecnologia.",
         "skills": [
-            "HTML",
-            "SCSS",
             "Vue.js",
             "Firebase"
         ],
@@ -30,10 +27,8 @@ const projects = [
         "name": "TaskFlow",
         "description": "Plataforma intuitiva para gerenciar tarefas e otimizar a produtividade diária.",
         "skills": [
-            "HTML",
-            "CSS",
             "Vue.js",
-            "Firebase"
+            "Firebase",
         ],
         "deployUrl": "https://mytaskflow.vercel.app",
         "codeUrl": "https://github.com/lezzin/tasks_manager",
@@ -44,8 +39,6 @@ const projects = [
         "name": "Ferramentas para Devs",
         "description": "Repositório de links essenciais com recursos gratuitos voltados para desenvolvedores.",
         "skills": [
-            "HTML",
-            "SCSS",
             "Vue.js",
             "Firebase"
         ],
@@ -58,8 +51,6 @@ const projects = [
         "name": "Rock Scape",
         "description": "Jogo 2D no estilo Dino, com sistema de ranking para competir com amigos.",
         "skills": [
-            "HTML",
-            "CSS",
             "jQuery",
             "Firebase"
         ],
@@ -72,8 +63,6 @@ const projects = [
         "name": "Placar",
         "description": "Placar para partidas de vôlei.",
         "skills": [
-            "HTML",
-            "CSS",
             "Vue.js"
         ],
         "deployUrl": "https://placar-volei.vercel.app/",
