@@ -16,19 +16,17 @@ const selectedProject = ref(null);
 const filteredProjects = ref(props.projects.sort(orderByName));
 const isProjectDetailsActive = ref(false);
 
-// Slider states
 const currentIndex = ref(0);
-const projectsPerPage = 3; // Quantidade de projetos exibidos por slide em telas grandes
+const projectsPerPage = 3;
 const isLargeScreen = ref(window.innerWidth > 768);
 
-// Computed para calcular os projetos visíveis com base no índice atual e no tamanho da tela
 const visibleProjects = computed(() => {
     if (isLargeScreen.value) {
         const start = currentIndex.value * projectsPerPage;
         const end = start + projectsPerPage;
         return filteredProjects.value.slice(start, end);
     } else {
-        return filteredProjects.value; // Exibe todos os projetos em telas pequenas
+        return filteredProjects.value;
     }
 });
 
@@ -44,10 +42,9 @@ const closeProjectDetails = () => {
 
 const filterProjectsBySkill = (filtered) => {
     filteredProjects.value = filtered;
-    currentIndex.value = 0; // Reiniciar o índice quando houver uma nova filtragem
+    currentIndex.value = 0;
 };
 
-// Funções para navegar entre os slides (somente em telas grandes)
 const nextSlide = () => {
     if (isLargeScreen.value && (currentIndex.value + 1) * projectsPerPage < filteredProjects.value.length) {
         currentIndex.value++;
@@ -60,7 +57,6 @@ const prevSlide = () => {
     }
 };
 
-// Atualiza o valor de isLargeScreen quando a janela é redimensionada
 window.addEventListener('resize', () => {
     isLargeScreen.value = window.innerWidth > 768;
 });
@@ -83,7 +79,7 @@ watch(isProjectDetailsActive, (value) => {
                         @openDetails="openProjectDetails" />
                 </TransitionGroup>
 
-                <div v-if="isLargeScreen" class="slider-controls">
+                <div v-if="isLargeScreen" class="slider-controls delay-small">
                     <button @click="prevSlide" :disabled="currentIndex === 0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-chevron-left" viewBox="0 0 16 16">
