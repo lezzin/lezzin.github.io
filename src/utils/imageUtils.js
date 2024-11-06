@@ -1,3 +1,3 @@
-export const imageUrl = (image) => {
-    return `/images/projects/${image}`;
+export const imageUrl = (image, path = 'projects') => {
+    return `/images/${path}/${image}`;
 }

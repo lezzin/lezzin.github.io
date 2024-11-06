@@ -3,26 +3,29 @@ import { imageUrl } from '../utils/imageUtils';
 
 const props = defineProps({
     project: {
-        type: Object,
-        default() {
-            return []
-        }
+        type: Object
     }
 })
 </script>
 
 <template>
     <aside class="modal">
-        <div class="modal__dialog" aria-modal="true">
+        <div class="modal__dialog">
             <header class="modal__header">
                 <h3>{{ project.name }}</h3>
                 <button @click="$emit('close')" class="btn" title="Fechar detalhes">X</button>
             </header>
 
             <div class="modal__body">
-                <img :src="imageUrl(props.project.image)" width="720" alt="Pré-visualização do projeto" loading="lazy">
+                <div class="details" v-html="project.detailedDescription"></div>
 
-                <p>{{ project.detailedDescription }}</p>
+                <div class="images" v-if="props.project.imageDetails">
+                    <figure v-for="image in props.project.imageDetails">
+                        <img :src="imageUrl(image.src, 'details')" width="720" alt="Pré-visualização do projeto"
+                            loading="lazy">
+                        <figcaption>{{ image.label }}</figcaption>
+                    </figure>
+                </div>
             </div>
 
             <footer class="modal__footer">
@@ -76,17 +79,26 @@ const props = defineProps({
     inset: 0;
     font-size: 1.6rem;
     backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 }
 
 .modal__dialog {
+    --__modal-padding: 1.5rem;
+
+    display: grid;
+    grid-template-rows: 10vh calc(80dvh - 5rem) auto;
     background: var(--secondary-background);
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     color: var(--font-primary-color);
+    box-shadow: 0 .5rem 1rem #00000026;
     max-width: 720px;
     width: 90%;
-    max-height: 80dvh;
-    overflow-y: auto;
+}
+
+.modal__dialog>:nth-child(odd) {
+    background: var(--tertiary-background);
+    padding: var(--__modal-padding);
 }
 
 .modal__header {
@@ -94,8 +106,7 @@ const props = defineProps({
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    background: var(--tertiary-background);
-    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .modal__header h3 {
@@ -103,19 +114,59 @@ const props = defineProps({
 }
 
 .modal__body {
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--__modal-padding) * 2) var(--__modal-padding);
+    overflow-y: auto;
+    gap: var(--__modal-padding);
 }
 
 .modal__footer {
-    padding: 1rem 2rem 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 50px;
 }
 
 .btn-group {
     justify-content: flex-start;
+
+    @media(max-width:768px) {
+        .btn {
+            width: 100%;
+        }
+    }
 }
 
-img {
-    border-radius: var(--border-radius);
-    margin-bottom: 1rem;
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    line-height: 150%;
+}
+
+.images {
+    display: grid;
+    gap: 2rem;
+
+    img {
+        border-radius: var(--border-radius);
+    }
+
+    figcaption {
+        margin-left: 0.5rem;
+        color: var(--font-secondary-color);
+        font-size: 1.4rem;
+    }
 }
 </style>

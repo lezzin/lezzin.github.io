@@ -111,17 +111,17 @@ onMounted(() => {
 
             <form class="delay-medium" @submit.prevent="sendMessage">
                 <div :class="{ 'form-error': errors.name }">
-                    <input type="text" aria-label="Nome" placeholder="Nome" v-model="name">
+                    <input type="text" aria-label="Nome" name="nome" placeholder="Nome" v-model="name">
                     <p class="form-error-message" v-if="errors.name">{{ errors.name }}</p>
                 </div>
 
                 <div :class="{ 'form-error': errors.email }">
-                    <input type="email" aria-label="Email" placeholder="Email" v-model="email">
+                    <input type="email" aria-label="Email" name="email" placeholder="Email" v-model="email">
                     <p class="form-error-message" v-if="errors.email">{{ errors.email }}</p>
                 </div>
 
                 <div :class="{ 'form-error': errors.message }">
-                    <textarea aria-label="Mensagem" rows="5" placeholder="Digite aqui a sua mensagem"
+                    <textarea aria-label="Mensagem" name="mensagem" rows="5" placeholder="Digite aqui a sua mensagem"
                         v-model="message"></textarea>
                     <p class="form-error-message" v-if="errors.message">{{ errors.message }}</p>
                 </div>

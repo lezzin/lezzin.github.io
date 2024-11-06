@@ -1,7 +1,9 @@
 <script setup>
-import { onMounted, ref, computed } from "vue";
+import { ref, watch } from 'vue';
 import Project from "../components/Project.vue";
 import ProjectDetails from "../components/ProjectDetails.vue";
+import SkillFilter from "../components/SkillFilter.vue";
+import { orderByName } from '../utils/orderUtils';
 
 const props = defineProps({
     projects: {
@@ -10,35 +12,10 @@ const props = defineProps({
     }
 });
 
-const orderByName = (a, b) => a.name.localeCompare(b.name);
-
-const skillList = ref([]);
-const activeSkill = ref(null);
-
 const selectedProject = ref(null);
+const filteredProjects = ref(props.projects.sort(orderByName));
+
 const isProjectDetailsActive = ref(false);
-
-const filteredProjects = computed(() => {
-    return activeSkill.value
-        ? props.projects.filter(project => project.skills.includes(activeSkill.value)).sort(orderByName)
-        : props.projects.sort(orderByName);
-});
-
-const filterProjectsBySkill = (skillName) => {
-    activeSkill.value = activeSkill.value === skillName ? null : skillName;
-};
-
-const calculateSkillsCount = (projects) => {
-    const allSkills = projects.flatMap(project => project.skills);
-    const skillCounts = allSkills.reduce((counts, skill) => {
-        counts[skill] = (counts[skill] || 0) + 1; // Quantidade de vezes que a skill aparece
-        return counts;
-    }, {});
-
-    return Object.entries(skillCounts)
-        .map(([name, quantity]) => ({ name, quantity })) // Transforma o array em objeto
-        .sort(orderByName); // Ordena em ordem alfabética
-};
 
 const openProjectDetails = (project) => {
     isProjectDetailsActive.value = true;
@@ -50,9 +27,13 @@ const closeProjectDetails = () => {
     selectedProject.value = null;
 }
 
-onMounted(() => {
-    skillList.value = calculateSkillsCount(props.projects);
-});
+const filterProjectsBySkill = (filtered) => {
+    filteredProjects.value = filtered;
+}
+
+watch(isProjectDetailsActive, (value) => {
+    document.body.classList.toggle("hide-scroll", !!value);
+})
 </script>
 
 <template>
@@ -60,17 +41,13 @@ onMounted(() => {
         <div class="container">
             <h3 class="section-title delay-small">Projetos</h3>
 
-            <div class="btn-group delay-medium">
-                <button v-for="skill in skillList" :key="skill.name"
-                    :class="['skill', 'btn', 'dark-quaternary', { 'active': activeSkill === skill.name }]"
-                    @click="filterProjectsBySkill(skill.name)">
-                    {{ skill.name }} <span class="skill-count-badge">{{ skill.quantity }}</span>
-                </button>
-            </div>
+            <SkillFilter :projects="props.projects" @filter="filterProjectsBySkill" />
 
             <div class="projects">
-                <Project v-for="(project, index) in filteredProjects" :key="index" :project="project"
-                    @openDetails="openProjectDetails" />
+                <TransitionGroup>
+                    <Project v-for="(project, index) in filteredProjects" :key="index" :project="project"
+                        @openDetails="openProjectDetails" />
+                </TransitionGroup>
             </div>
 
             <a class="btn secondary delay-small" href="https://github.com/lezzin?tab=repositories" target="_blank"
@@ -109,31 +86,5 @@ section {
     gap: 1rem;
     margin-bottom: 3rem;
     max-width: 100%;
-}
-
-.btn-group {
-    margin-bottom: 4rem;
-    font-size: 1.5rem;
-    gap: 0.8rem;
-}
-
-.btn-group .btn {
-    padding-inline: 1.5rem 1rem;
-
-    &.active {
-        color: var(--font-primary-color);
-        background-color: var(--primary-color);
-    }
-}
-
-.skill-count-badge {
-    background: var(--tertiary-background);
-    border-radius: 50%;
-    aspect-ratio: 1;
-    width: 2rem;
-    display: grid;
-    place-items: center;
-    margin-left: .5rem;
-    font-size: 1.2rem;
 }
 </style>

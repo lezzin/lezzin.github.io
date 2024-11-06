@@ -57,6 +57,7 @@ section .btn-group>* {
     text-transform: uppercase;
     padding: 1rem 2rem;
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 section .btn-group>*:hover,
@@ -69,7 +70,7 @@ section .btn-group>*:focus {
         margin-top: 8vh;
         min-height: 92vh;
     }
-    
+
     section h1 {
         font-size: 4.2rem;
     }
