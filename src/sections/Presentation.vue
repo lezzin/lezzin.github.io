@@ -1,9 +1,13 @@
+<script setup>
+import SocialLinks from "../components/SocialLinks.vue";
+</script>
+
 <template>
     <section id="presentation-section">
         <div class="container">
             <div class="presentation-container delay-medium">
-                <img class="presentation-image interval-small" src="/images/profile.webp"
-                    alt="Minha foto de perfil" width="360" height="360" loading="lazy">
+                <img class="presentation-image interval-small" src="/images/profile.webp" alt="Minha foto de perfil"
+                    width="360" height="360" loading="lazy">
                 <div class="presentation-texts delay-large">
                     <h3 class="section-title interval-small">Apresentação</h3>
 
@@ -26,20 +30,7 @@
                         Vamos conversar e transformar suas ideias em realidade!
                     </p>
 
-                    <nav class="social-media interval-small">
-                        <a class="btn dark-secondary" href="https://www.linkedin.com/in/leandro-adrian/" target="_blank"
-                            rel="noopener noreferrer" title="Acessar Linkedin">
-                            <img src="/icons/linkedin.svg" alt="Logo do linkedin" width="18" height="18">
-                        </a>
-                        <a class="btn dark-secondary" href="https://www.instagram.com/leandroadrian_/" target="_blank"
-                            rel="noopener noreferrer" title="Acessar Instagram">
-                            <img src="/icons/instagram.svg" alt="Logo do instagram" width="18" height="18">
-                        </a>
-                        <a class="btn dark-secondary" href="https://github.com/lezzin/" target="_blank"
-                            rel="noopener noreferrer" title="Acessar GitHub">
-                            <img src="/icons/github.svg" alt="Logo do github" width="18" height="18">
-                        </a>
-                    </nav>
+                    <SocialLinks />
                 </div>
             </div>
         </div>
