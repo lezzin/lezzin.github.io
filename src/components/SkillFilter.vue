@@ -53,7 +53,6 @@ onMounted(() => {
 
 <style scoped>
 .btn-group {
-    margin-bottom: 4rem;
     font-size: 1.5rem;
     gap: 0.8rem;
 }
