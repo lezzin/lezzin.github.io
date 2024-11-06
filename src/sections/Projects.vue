@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref, computed } from "vue";
 import Project from "../components/Project.vue";
+import ProjectDetails from "../components/ProjectDetails.vue";
 
 const props = defineProps({
     projects: {
@@ -13,6 +14,9 @@ const orderByName = (a, b) => a.name.localeCompare(b.name);
 
 const skillList = ref([]);
 const activeSkill = ref(null);
+
+const selectedProject = ref(null);
+const isProjectDetailsActive = ref(false);
 
 const filteredProjects = computed(() => {
     return activeSkill.value
@@ -36,6 +40,16 @@ const calculateSkillsCount = (projects) => {
         .sort(orderByName); // Ordena em ordem alfabética
 };
 
+const openProjectDetails = (project) => {
+    isProjectDetailsActive.value = true;
+    selectedProject.value = project;
+}
+
+const closeProjectDetails = () => {
+    isProjectDetailsActive.value = false;
+    selectedProject.value = null;
+}
+
 onMounted(() => {
     skillList.value = calculateSkillsCount(props.projects);
 });
@@ -50,12 +64,13 @@ onMounted(() => {
                 <button v-for="skill in skillList" :key="skill.name"
                     :class="['skill', 'btn', 'dark-quaternary', { 'active': activeSkill === skill.name }]"
                     @click="filterProjectsBySkill(skill.name)">
-                    {{ skill.name }} ({{ skill.quantity }})
+                    {{ skill.name }} <span class="skill-count-badge">{{ skill.quantity }}</span>
                 </button>
             </div>
 
             <div class="projects">
-                <Project v-for="(project, index) in filteredProjects" :key="index" :project="project" />
+                <Project v-for="(project, index) in filteredProjects" :key="index" :project="project"
+                    @openDetails="openProjectDetails" />
             </div>
 
             <a class="btn secondary delay-small" href="https://github.com/lezzin?tab=repositories" target="_blank"
@@ -65,9 +80,25 @@ onMounted(() => {
             </a>
         </div>
     </section>
+
+    <Teleport to="#modal">
+        <Transition>
+            <ProjectDetails @close="closeProjectDetails" :project="selectedProject" v-if="isProjectDetailsActive" />
+        </Transition>
+    </Teleport>
 </template>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+
 section {
     padding: 5vh 0;
 }
@@ -86,8 +117,23 @@ section {
     gap: 0.8rem;
 }
 
-.btn-group .btn.active {
-    color: var(--font-primary-color);
-    background-color: var(--primary-color);
+.btn-group .btn {
+    padding-inline: 1.5rem 1rem;
+
+    &.active {
+        color: var(--font-primary-color);
+        background-color: var(--primary-color);
+    }
+}
+
+.skill-count-badge {
+    background: var(--tertiary-background);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 2rem;
+    display: grid;
+    place-items: center;
+    margin-left: .5rem;
+    font-size: 1.2rem;
 }
 </style>

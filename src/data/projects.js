@@ -3,6 +3,7 @@ const projects = [
         "image": "erupcao-das-letras.webp",
         "name": "Erupção das Letras",
         "description": "Rede social para autores e leitores, permitindo publicação, venda direta e apoio financeiro de obras.",
+        "detailedDescription": "Detalhes em construção...",
         "skills": [
             "PHP",
             "jQuery",
@@ -15,6 +16,7 @@ const projects = [
         "image": "blog.webp",
         "name": "Blog de Wellyoza",
         "description": "Blog desenvolvido para um colega de faculdade, com foco em tecnologia.",
+        "detailedDescription": "Detalhes em construção...",
         "skills": [
             "Vue.js",
             "Firebase"
@@ -26,6 +28,7 @@ const projects = [
         "image": "taskflow.webp",
         "name": "TaskFlow",
         "description": "Plataforma intuitiva para gerenciar tarefas e otimizar a produtividade diária.",
+        "detailedDescription": "Detalhes em construção...",
         "skills": [
             "Vue.js",
             "Firebase",
@@ -38,6 +41,7 @@ const projects = [
         "image": "ferramentas-dev.webp",
         "name": "Ferramentas para Devs",
         "description": "Repositório de links essenciais com recursos gratuitos voltados para desenvolvedores.",
+        "detailedDescription": "Detalhes em construção...",
         "skills": [
             "Vue.js",
             "Firebase"
@@ -50,6 +54,7 @@ const projects = [
         "image": "rockscape.webp",
         "name": "Rock Scape",
         "description": "Jogo 2D no estilo Dino, com sistema de ranking para competir com amigos.",
+        "detailedDescription": "Detalhes em construção...",
         "skills": [
             "jQuery",
             "Firebase"
@@ -62,6 +67,7 @@ const projects = [
         "image": "volei.webp",
         "name": "Placar",
         "description": "Placar para partidas de vôlei.",
+        "detailedDescription": "Detalhes em construção...",
         "skills": [
             "Vue.js"
         ],
