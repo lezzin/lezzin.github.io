@@ -21,41 +21,10 @@ function handleHeaderLinkClick() {
     isHeaderActive.value = false;
     changeMobileButtonIcon();
 }
-
-function checkScroll() {
-    const isScrollGreaterThanViewport = window.scrollY > (window.innerHeight / 2);
-
-    if (isMobile.value) {
-        canShow.value = true;
-    } else {
-        canShow.value = isScrollGreaterThanViewport;
-    }
-}
-
-onMounted(() => {
-    checkScroll();
-
-    const resizeListener = () => {
-        isMobile.value = window.innerWidth <= 768;
-        checkScroll();
-    };
-
-    const scrollListener = () => {
-        checkScroll();
-    };
-
-    window.addEventListener("resize", resizeListener);
-    window.addEventListener("scroll", scrollListener);
-
-    onUnmounted(() => {
-        window.removeEventListener("resize", resizeListener);
-        window.removeEventListener("scroll", scrollListener);
-    });
-});
 </script>
 
 <template>
-    <header :class="{ show: canShow }">
+    <header>
         <div class="container">
             <a href="#home-section" class="logo" title="Ir para o inicio">
                 <img src="/images/lezzin.svg" alt="Logo do website - lezzin" width="80" height="26" />
@@ -89,12 +58,6 @@ header {
     background-color: var(--primary-background);
     border-bottom: 1px solid var(--border-color);
     font-size: 1.8rem;
-    transform: translateY(-100%);
-    transition: transform .6s ease;
-}
-
-header.show {
-    transform: translateY(0);
 }
 
 header .container {

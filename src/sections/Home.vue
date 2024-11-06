@@ -19,6 +19,7 @@
 section {
     position: relative;
     background: transparent;
+    padding-top: 5vh;
 }
 
 section .home-banner {
