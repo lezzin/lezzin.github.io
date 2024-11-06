@@ -17,18 +17,6 @@ const props = defineProps({
             </header>
 
             <div class="modal__body">
-                <div class="details" v-html="project.detailedDescription"></div>
-
-                <div class="images" v-if="props.project.imageDetails">
-                    <figure v-for="image in props.project.imageDetails">
-                        <img :src="imageUrl(image.src, 'details')" width="720" alt="Pré-visualização do projeto"
-                            loading="lazy">
-                        <figcaption>{{ image.label }}</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            <footer class="modal__footer">
                 <div class="btn-group">
                     <a class="btn success full" role="button" :href="props.project.deployUrl" target="_blank"
                         rel="noopener noreferrer" title="Acessar deploy do projeto" v-if="props.project.deployUrl">
@@ -64,67 +52,28 @@ const props = defineProps({
                         Documentação
                     </a>
                 </div>
-            </footer>
+
+                <hr>
+
+                <p class="skills">
+                    <span class="badge" v-for="skill in props.project.skills">{{ skill }}</span>
+                </p>
+
+                <div class="details" v-html="project.detailedDescription"></div>
+
+                <div class="images" v-if="props.project.imageDetails">
+                    <figure v-for="image in props.project.imageDetails">
+                        <img :src="imageUrl(image.src, 'details')" width="720" alt="Pré-visualização do projeto"
+                            loading="lazy">
+                        <figcaption>{{ image.label }}</figcaption>
+                    </figure>
+                </div>
+            </div>
         </div>
     </aside>
 </template>
 
 <style scoped>
-.modal {
-    display: grid;
-    place-items: center;
-    position: fixed;
-    background-color: #00000099;
-    z-index: var(--header-index);
-    inset: 0;
-    font-size: 1.6rem;
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-}
-
-.modal__dialog {
-    --__modal-padding: 1.5rem;
-
-    display: grid;
-    grid-template-rows: 10vh calc(80dvh - 5rem) auto;
-    background: var(--secondary-background);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    color: var(--font-primary-color);
-    box-shadow: 0 .5rem 1rem #00000026;
-    max-width: 720px;
-    width: 90%;
-}
-
-.modal__dialog>:nth-child(odd) {
-    background: var(--tertiary-background);
-    padding: var(--__modal-padding);
-}
-
-.modal__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.modal__header h3 {
-    font-size: 2.4rem;
-}
-
-.modal__body {
-    display: flex;
-    flex-direction: column;
-    padding: calc(var(--__modal-padding) * 2) var(--__modal-padding);
-    overflow-y: auto;
-    gap: var(--__modal-padding);
-}
-
-.modal__footer {
-    border-top: 1px solid var(--border-color);
-}
-
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -136,6 +85,76 @@ const props = defineProps({
 ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 50px;
+}
+
+hr {
+    border-color: var(--font-secondary-color);
+}
+
+.modal {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    background-color: #00000099;
+    color: var(--font-secondary-color);
+    z-index: var(--header-index);
+    inset: 0;
+    font-size: 1.6rem;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.modal__dialog {
+    --__modal-padding: 1.5rem;
+
+    display: grid;
+    grid-template-rows: 10vh 80vh;
+    background: var(--secondary-background);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    color: var(--font-primary-color);
+    box-shadow: 0 .5rem 1rem #00000026;
+    max-width: 720px;
+    width: 90%;
+}
+
+.modal__header {
+    background: var(--tertiary-background);
+    padding: var(--__modal-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    gap: 2rem;
+}
+
+.modal__header h3 {
+    font-size: 2.4rem;
+}
+
+.modal__body {
+    display: flex;
+    flex-direction: column;
+    padding: var(--__modal-padding) var(--__modal-padding) calc(var(--__modal-padding) * 2);
+    gap: var(--__modal-padding);
+    overflow-y: auto;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    gap: 0.2rem;
+}
+
+.skills .badge {
+    padding: .25rem .5rem;
+    border-radius: calc(var(--border-radius) / 3);
+    transition: .6s ease;
+
+    &::before {
+        content: "#"
+    }
 }
 
 .btn-group {
