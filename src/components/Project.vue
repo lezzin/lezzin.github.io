@@ -30,7 +30,7 @@ const props = defineProps({
                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
                 </svg>
 
-                Visualizar detalhes
+                <span>Visualizar detalhes</span>
             </button>
         </div>
     </article>
@@ -62,6 +62,26 @@ const props = defineProps({
     padding: 1rem;
 }
 
+.project-details button {
+    border-radius: calc(var(--border-radius) / 2);
+    width: 100%;
+}
+
+.project-details button svg {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.project-details button:hover svg,
+.project-details button:focus svg {
+    transform: rotate(20deg);
+}
+
+.project:hover,
+.project:focus,
+.project:focus-within {
+    border-color: var(--primary-color);
+}
+
 .project-skills {
     display: flex;
     gap: 0.5rem;
@@ -87,36 +107,5 @@ const props = defineProps({
 
 .project-description {
     margin-bottom: 1.2rem;
-}
-
-.project-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    width: 100%;
-}
-
-.project-buttons .btn {
-    flex-grow: 1;
-    border-radius: calc(var(--border-radius) / 2);
-}
-
-.project-buttons .btn.full {
-    width: 100%;
-}
-
-.project-buttons .btn svg {
-    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-.project-buttons .btn:hover svg,
-.project-buttons .btn:focus svg {
-    transform: rotate(20deg);
-}
-
-.project:hover,
-.project:focus,
-.project:focus-within {
-    border-color: var(--primary-color);
 }
 </style>

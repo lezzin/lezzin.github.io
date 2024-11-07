@@ -18,7 +18,7 @@ const props = defineProps({
 
             <div class="modal__body">
                 <div class="btn-group">
-                    <a class="btn success full" role="button" :href="props.project.deployUrl" target="_blank"
+                    <a class="btn success" role="button" :href="props.project.deployUrl" target="_blank"
                         rel="noopener noreferrer" title="Acessar deploy do projeto" v-if="props.project.deployUrl">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-link-45deg" viewBox="0 0 16 16">
@@ -159,12 +159,26 @@ hr {
 
 .btn-group {
     justify-content: flex-start;
+    gap: 0.5rem;
 
     @media(max-width:768px) {
         .btn {
             width: 100%;
         }
     }
+}
+
+.btn-group .btn {
+    border-radius: calc(var(--border-radius) / 2);
+}
+
+.btn-group .btn svg {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn-group .btn:hover svg,
+.btn-group .btn:focus svg {
+    transform: rotate(20deg);
 }
 
 .details {
