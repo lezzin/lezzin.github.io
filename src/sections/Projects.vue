@@ -1,8 +1,8 @@
 <script setup>
-import { ref, computed, watch } from 'vue';
-import Project from "../components/Project.vue";
-import ProjectDetails from "../components/ProjectDetails.vue";
-import SkillFilter from "../components/SkillFilter.vue";
+import { ref, watch } from 'vue';
+import Project from "../components/project/Project.vue";
+import ProjectDetails from "../components/project/ProjectDetails.vue";
+import SkillFilter from "../components/skill/SkillFilter.vue";
 import { orderByName } from '../utils/orderUtils';
 
 const props = defineProps({
@@ -37,7 +37,7 @@ watch(isProjectDetailsActive, (value) => {
 </script>
 
 <template>
-    <section id="projects-section">
+    <section id="projects-section" class="delay-small">
         <div class="container">
             <h3 class="section-title delay-small">Projetos</h3>
 

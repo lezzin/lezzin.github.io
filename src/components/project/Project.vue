@@ -1,5 +1,5 @@
 <script setup>
-import { imageUrl } from '../utils/imageUtils';
+import { imageUrl } from '../../utils/imageUtils';
 
 const props = defineProps({
     project: {

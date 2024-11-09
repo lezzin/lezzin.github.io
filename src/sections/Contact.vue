@@ -184,8 +184,6 @@ textarea {
 button {
     padding: 1rem 0;
 
-    &:hover {}
-
     &:disabled {
         cursor: not-allowed;
         opacity: .6;

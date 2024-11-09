@@ -1,8 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 
-const isMobile = ref(window.innerWidth <= 768);
-const canShow = ref(false);
 const isHeaderActive = ref(false);
 const mobileButtonTitle = ref("Abrir menu");
 const ariaExpanded = ref("false");

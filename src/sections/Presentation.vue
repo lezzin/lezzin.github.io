@@ -1,5 +1,5 @@
 <script setup>
-import SocialLinks from "../components/SocialLinks.vue";
+import SocialLinks from "../components/shared/SocialLinks.vue";
 </script>
 
 <template>

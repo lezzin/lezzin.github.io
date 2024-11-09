@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { orderByName } from '../utils/orderUtils';
+import { orderByName } from '../../utils/orderUtils';
 
 const emit = defineEmits(["filter"]);
 
@@ -42,7 +42,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <p>Filtrar projetos por habilidades:</p>
+    <p class="delay-small">Filtrar projetos por habilidades:</p>
     <div class="btn-group delay-medium">
         <button v-for="skill in skillList" :key="skill.name"
             :class="['skill', 'btn', 'dark-quaternary', { 'active': activeSkill === skill.name }]"

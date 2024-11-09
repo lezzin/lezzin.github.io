@@ -9,7 +9,7 @@ import Presentation from './sections/Presentation.vue';
 import Skills from './sections/Skills.vue';
 import Projects from './sections/Projects.vue';
 
-import Loader from './components/Loader.vue';
+import Loader from './components/shared/Loader.vue';
 
 import projectsJson from "./data/projects.js";
 import skillsJson from "./data/skills.js";

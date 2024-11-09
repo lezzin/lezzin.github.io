@@ -1,5 +1,5 @@
 <script setup>
-import Skill from "../components/Skill.vue";
+import Skill from "../components/skill/Skill.vue";
 
 const props = defineProps({
     skills: {
