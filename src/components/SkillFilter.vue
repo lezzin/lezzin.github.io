@@ -42,6 +42,7 @@ onMounted(() => {
 </script>
 
 <template>
+    <p>Filtrar projetos por habilidades:</p>
     <div class="btn-group delay-medium">
         <button v-for="skill in skillList" :key="skill.name"
             :class="['skill', 'btn', 'dark-quaternary', { 'active': activeSkill === skill.name }]"
@@ -52,6 +53,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
+p {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 .btn-group {
     font-size: 1.5rem;
     gap: 0.8rem;
@@ -59,6 +65,8 @@ onMounted(() => {
 
 .btn-group .btn {
     padding-inline: 1.5rem 1rem;
+    z-index: 1;
+    box-shadow: 0 .25rem 1rem rgb(0 0 0 / 17.5%);
 
     &.active {
         color: var(--font-primary-color);

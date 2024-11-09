@@ -76,6 +76,38 @@ watch(isProjectDetailsActive, (value) => {
     opacity: 0;
 }
 
+section {
+    position: relative;
+
+    &::after,
+    &::before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        background: url("/public/images/background-image.png") no-repeat;
+        inset: 0;
+    }
+
+    &::after {
+        background-size: 50%;
+        background-position: bottom left;
+        transform: rotateY(180deg) rotateX(180deg);
+
+        @media(max-width: 768px) {
+            background-size: 100%;
+        }
+    }
+
+    &::before {
+        background-size: 35%;
+        background-position: bottom left;
+
+        @media(max-width: 768px) {
+            background-size: 80%;
+        }
+    }
+}
+
 @media(max-width: 768px) {
     section {
         padding: 5vh 0;

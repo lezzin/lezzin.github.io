@@ -26,7 +26,8 @@ const imageUrl = (skill) => {
     place-items: center;
     padding: 1rem;
     border: 1px solid var(--border-color);
-    background-color: var(--secondary-background);
+    background-color: rgb(0 0 0 / 40%);
+    backdrop-filter: blur(5px);
     border-radius: var(--border-radius);
     min-width: 148px;
     aspect-ratio: 1/1;

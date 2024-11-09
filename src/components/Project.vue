@@ -46,6 +46,7 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 1;
 
     @media(min-width: 768px) {
         min-height: 53vh;

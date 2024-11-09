@@ -1,16 +1,19 @@
 <template>
     <section id="home-section">
-        <img src="/images/home-background.webp" alt="Banner com meus projetos de fundo" class="home-banner">
-
         <div class="container">
-            <h1 class="interval-small">Leandro Adrian da Silva</h1>
-            <h2 class="interval-small">Desenvolvedor Full Stack</h2>
+            <div class="home-informations interval-small">
+                <h2 class="interval-small">Olá, sou o Leandro</h2>
+                <h1 class="interval-small">Desenvolvedor Full Stack</h1>
 
-            <div class="btn-group delay-medium">
-                <a href="#skills-section" class="btn out-white interval-small"
-                    title="Ir para as habilidades">Habilidades</a>
-                <a href="#projects-section" class="btn white interval-small" title="Ir para os projetos">Projetos</a>
+                <div class="btn-group delay-medium">
+                    <a href="#skills-section" class="btn out-white interval-small"
+                        title="Ir para as habilidades">Habilidades</a>
+                    <a href="#projects-section" class="btn white interval-small"
+                        title="Ir para os projetos">Projetos</a>
+                </div>
             </div>
+
+            <img class="interval-medium" src="/public/images/loader-icon.svg" alt="Logo">
         </div>
     </section>
 </template>
@@ -20,68 +23,100 @@ section {
     position: relative;
     background: transparent;
     padding-top: 5vh;
+    background: url("/public/images/background-image.png") no-repeat top left;
+    background-size: 60%;
+
+    @media(max-width: 768px) {
+        background-size: 100%;
+    }
 }
 
-section .home-banner {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: opacity(40%);
-    z-index: -2;
-}
-
-section .container {
-    flex-direction: column;
+.container {
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    gap: 10rem;
+
+    @media(max-width: 768px) {
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        img {
+            order: 1;
+            max-width: 80%;
+        }
+
+        .home-informations {
+            text-align: center;
+            order: 2;
+
+            .btn-group {
+                justify-content: center;
+            }
+        }
+    }
 }
 
-section h1 {
-    font-size: 6rem;
+img {
+    border-radius: 50%;
+    border: 6px solid var(--font-secondary-color);
+    background: var(--secondary-background);
 }
 
-section h2 {
-    color: var(--font-secondary-color);
-    font-size: 3.6rem;
-}
+.home-informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-align: left;
 
-section .btn-group {
-    margin-top: 5rem;
-    font-size: 1.8rem;
-}
-
-section .btn-group>* {
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-}
-
-section .btn-group>*:hover,
-section .btn-group>*:focus {
-    letter-spacing: 1px;
-}
-
-@media (width<=768px) {
-    section .container {
-        margin-top: 8vh;
-        min-height: 92vh;
+    h2 {
+        font-size: 3.5rem;
     }
 
-    section h1 {
-        font-size: 4.2rem;
+    h1 {
+        font-size: 8rem;
+        font-weight: 500;
+        line-height: 1;
     }
 
-    section h2 {
-        font-size: 2.4rem;
+    .btn-group {
+        justify-content: flex-start;
+        margin-top: 2rem;
+        font-size: 1.8rem;
     }
 
-    section .btn-group {
-        font-size: 1.4rem;
+    .btn-group>* {
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+
+    .btn-group>*:hover,
+    .btn-group>*:focus {
+        letter-spacing: 1px;
+    }
+
+    @media (width<=768px) {
+        .container {
+            margin-top: 8vh;
+            min-height: 92vh;
+        }
+
+        h1 {
+            font-size: 4.2rem;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+        }
+
+        .btn-group {
+            font-size: 1.4rem;
+        }
     }
 }
 </style>

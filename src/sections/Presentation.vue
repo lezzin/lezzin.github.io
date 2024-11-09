@@ -40,6 +40,8 @@ import SocialLinks from "../components/SocialLinks.vue";
 <style scoped>
 section {
     padding: 5vh 0;
+    background: var(--primary-background);
+    background: linear-gradient(180deg, var(--primary-background) 0%, var(--secondary-background) 100%);
 }
 
 section .container {

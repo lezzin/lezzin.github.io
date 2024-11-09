@@ -7,7 +7,7 @@
     --error-color: #f44336;
     --background-error: #f443361a;
     --font-primary-color: #fff;
-    --font-secondary-color: #ccc;
+    --font-secondary-color: #a7a7a7;
     --primary-background: #0F0F0F;
     --secondary-background: #151515;
     --tertiary-background: #1f1f1f;
@@ -151,14 +151,6 @@ section {
     overflow: hidden;
     position: relative;
     font-size: 1.6rem;
-}
-
-section:nth-child(even) {
-    background: var(--secondary-background);
-}
-
-section:nth-child(odd):not(:first-of-type) {
-    background: var(--primary-background);
 }
 
 .section-title {
