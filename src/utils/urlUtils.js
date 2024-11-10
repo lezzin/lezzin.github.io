@@ -7,7 +7,7 @@ export const imageUrl = (image, path = null) => {
         return `${IMAGE_PATH}/${path}/${getImageName(image)}`;
     }
 
-    return `/${IMAGE_PATH}/${getImageName(image)}`;
+    return `${IMAGE_PATH}/${getImageName(image)}`;
 }
 
 export const iconUrl = (image, path = null) => {
