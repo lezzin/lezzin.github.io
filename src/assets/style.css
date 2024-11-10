@@ -186,11 +186,11 @@ main .container {
     }
 
     &.overlay--1::before {
-        background: url("/images/overlays/1.png") no-repeat;
+        background: url("/src/assets/images/overlays/1.png") no-repeat;
     }
 
     &.overlay--2::before {
-        background: url("/images/overlays/2.png") no-repeat;
+        background: url("/src/assets/images/overlays/2.png") no-repeat;
     }
 }
 
