@@ -1,5 +1,5 @@
 <template>
-    <section id="home-section">
+    <section id="home-section" class="delay-small overlay overlay--1">
         <div class="container">
             <div class="home-informations interval-small">
                 <h2 class="interval-small">Olá, sou o Leandro</h2>
@@ -13,21 +13,22 @@
                 </div>
             </div>
 
-            <img class="interval-medium" src="/public/images/loader-icon.svg" alt="Logo">
+            <img class="interval-medium" src="/images/loader-icon.svg" alt="Logo">
         </div>
     </section>
 </template>
 
 <style scoped>
 section {
-    position: relative;
-    background: transparent;
     padding-top: 5vh;
-    background: url("/public/images/background-image.png") no-repeat top left;
-    background-size: 60%;
 
-    @media(max-width: 768px) {
-        background-size: 100%;
+    &.overlay::before {
+        background-size: 60%;
+        background-position: left top;
+
+        @media(max-width: 768px) {
+            background-size: 100%;
+        }
     }
 }
 
@@ -44,8 +45,7 @@ section {
         gap: 2rem;
 
         img {
-            order: 1;
-            max-width: 80%;
+            max-width: 60%;
         }
 
         .home-informations {
@@ -61,7 +61,7 @@ section {
 
 img {
     border-radius: 50%;
-    border: 6px solid var(--font-secondary-color);
+    border: 6px solid #fff;
     background: var(--secondary-background);
 }
 

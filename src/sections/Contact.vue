@@ -109,7 +109,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section id="contact-section">
+    <section id="contact-section" class="delay-medium overlay overlay--2">
         <div class="container">
             <h3 class="section-title delay-small">Contato</h3>
 
@@ -163,6 +163,15 @@ onMounted(() => {
 </template>
 
 <style scoped>
+section.overlay--2::before {
+    background-position: right bottom;
+    background-size: 55%;
+
+    @media(max-width: 768px) {
+        background-size: 100%;
+    }
+}
+
 form {
     width: 100%;
     max-width: 600px;

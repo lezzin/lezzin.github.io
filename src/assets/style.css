@@ -7,7 +7,7 @@
     --error-color: #f44336;
     --background-error: #f443361a;
     --font-primary-color: #fff;
-    --font-secondary-color: #a7a7a7;
+    --font-secondary-color: #aaa;
     --primary-background: #0F0F0F;
     --secondary-background: #151515;
     --tertiary-background: #1f1f1f;
@@ -173,4 +173,23 @@ main .container-fluid {
 
 main .container {
     max-width: 1080px;
+}
+
+.overlay {
+    position: relative;
+
+    &::before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+    }
+
+    &.overlay--1::before {
+        background: url("/images/overlays/1.png") no-repeat;
+    }
+
+    &.overlay--2::before {
+        background: url("/images/overlays/2.png") no-repeat;
+    }
 }

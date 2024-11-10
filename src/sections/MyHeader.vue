@@ -36,6 +36,7 @@ function handleHeaderLinkClick() {
             </button>
 
             <nav id="navbar" role="navigation" :class="{ active: isHeaderActive }">
+                <a href="#home-section" @click="handleHeaderLinkClick" title="Ir para o início">Início</a>
                 <a href="#presentation-section" @click="handleHeaderLinkClick"
                     title="Ir para a apresentação">Apresentação</a>
                 <a href="#skills-section" @click="handleHeaderLinkClick" title="Ir para as habilidades">Habilidades</a>
@@ -84,7 +85,7 @@ header nav a::after {
     content: '';
     display: block;
     width: 0;
-    height: 1px;
+    height: 2px;
     margin-top: 0.25rem;
     background-color: var(--font-primary-color);
     transition: .6s ease;
