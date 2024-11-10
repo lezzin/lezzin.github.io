@@ -6,8 +6,9 @@ import { iconUrl } from '../utils/urlUtils';
     <section id="home-section" class="delay-small overlay overlay--1">
         <div class="container">
             <div class="home-informations interval-small">
-                <h2 class="interval-small">Olá, sou o Leandro</h2>
+                <h2 class="interval-small">Olá! sou o Leandro,</h2>
                 <h1 class="interval-small">Desenvolvedor Full Stack</h1>
+                <h3 class="interval-small">com paixão por tecnologia e inovação</h3>
 
                 <div class="btn-group delay-medium">
                     <a href="#skills-section" class="btn out-white interval-small"
@@ -76,19 +77,23 @@ img {
     gap: 1rem;
     text-align: left;
 
-    h2 {
-        font-size: 3.5rem;
-    }
-
     h1 {
         font-size: 8rem;
         font-weight: 500;
         line-height: 1;
     }
 
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+    }
+
     .btn-group {
         justify-content: flex-start;
-        margin-top: 2rem;
+        margin-top: 3rem;
         font-size: 1.8rem;
     }
 
