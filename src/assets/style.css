@@ -6,8 +6,8 @@
     --background-success: #4caf501a;
     --error-color: #f44336;
     --background-error: #f443361a;
-    --font-primary-color: #fff;
-    --font-secondary-color: #aaa;
+    --font-primary-color: #E0E0E0;
+    --font-secondary-color: #B3B3B3;
     --primary-background: #0F0F0F;
     --secondary-background: #151515;
     --tertiary-background: #1f1f1f;
@@ -52,6 +52,9 @@ body.hide-scroll {
 img {
     max-width: 100%;
     height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    shape-margin: 1rem;
 }
 
 a {
@@ -123,6 +126,10 @@ button {
 
 .btn.dark-secondary {
     background-color: var(--secondary-background);
+}
+
+.btn.dark-tertiary {
+    background-color: var(--tertiary-background);
 }
 
 .btn.dark-quaternary {
