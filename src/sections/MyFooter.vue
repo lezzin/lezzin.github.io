@@ -4,15 +4,18 @@ import SocialLinks from "../components/shared/SocialLinks.vue";
 
 <template>
     <footer>
-        <SocialLinks />
+        <SocialLinks :isDark="false" />
 
         <blockquote>
             <p class="quote">
                 “Programadores e artistas são os únicos profissionais que tem como hobby a própria profissão”
             </p>
         </blockquote>
-        <p class="copyright">&copy; <span id="copyright-year">{{ new Date().getFullYear().toString() }}</span> - Leandro
-            Adrian da Silva</p>
+
+        <p class="copyright">
+            &copy; <span id="copyright-year">{{ new Date().getFullYear().toString() }}</span> -
+            Leandro Adrian da Silva
+        </p>
     </footer>
 </template>
 
