@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { iconUrl } from "../utils/urlUtils";
 
 const isHeaderActive = ref(false);
 const mobileButtonTitle = ref("Abrir menu");
@@ -25,7 +26,7 @@ function handleHeaderLinkClick() {
     <header>
         <div class="container">
             <a href="#home-section" class="logo" title="Ir para o inicio">
-                <img src="/images/lezzin.svg" alt="Logo do website - lezzin" width="80" height="26" />
+                <img :src="iconUrl('lezzin.svg')" alt="Logo do website - lezzin" width="80" height="26" />
             </a>
 
             <button id="btn-mobile" :title="mobileButtonTitle" :aria-expanded="ariaExpanded"

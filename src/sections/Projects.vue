@@ -52,7 +52,7 @@ watch(isProjectDetailsActive, (value) => {
 
             <a class="btn secondary delay-small" href="https://github.com/lezzin?tab=repositories" target="_blank"
                 rel="noopener noreferrer" title="Acessar mais projetos no GitHub">
-                <img src="/icons/github.svg" alt="Logo do GitHub" width="16" height="16">
+                <img src="/src/assets/icons/media/github.svg" alt="Logo do GitHub" width="16" height="16">
                 Visualizar mais projetos
             </a>
         </div>

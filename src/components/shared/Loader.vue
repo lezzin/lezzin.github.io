@@ -1,6 +1,10 @@
+<script setup>
+import { iconUrl } from '../../utils/urlUtils';
+</script>
+
 <template>
     <div class="loader">
-        <img src="/images/loader-icon.svg" alt="Imagem do loader">
+        <img :src="iconUrl('loader.svg')" alt="Imagem do loader">
     </div>
 </template>
 

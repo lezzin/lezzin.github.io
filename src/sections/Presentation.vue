@@ -1,13 +1,14 @@
 <script setup>
 import SocialLinks from "../components/shared/SocialLinks.vue";
+import { imageUrl } from "../utils/urlUtils";
 </script>
 
 <template>
     <section id="presentation-section">
         <div class="container">
             <div class="presentation-container delay-medium">
-                <img class="presentation-image interval-small" src="/images/profile.webp" alt="Minha foto de perfil"
-                    width="360" height="360" loading="lazy">
+                <img class="presentation-image interval-small" :src="imageUrl('profile.webp')"
+                    alt="Minha foto de perfil" width="360" height="360" loading="lazy">
                 <div class="presentation-texts delay-large">
                     <h3 class="section-title interval-small">Apresentação</h3>
 

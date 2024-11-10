@@ -1,3 +1,7 @@
+<script setup>
+import { iconUrl } from '../utils/urlUtils';
+</script>
+
 <template>
     <section id="home-section" class="delay-small overlay overlay--1">
         <div class="container">
@@ -13,7 +17,7 @@
                 </div>
             </div>
 
-            <img class="interval-medium" src="/images/loader-icon.svg" alt="Logo">
+            <img class="interval-medium" :src="iconUrl('loader.svg')" alt="Logo">
         </div>
     </section>
 </template>
