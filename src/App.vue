@@ -58,5 +58,9 @@ onMounted(() => {
 
     <MyFooter />
 
-    <Loader :loading="isLoading" />
+    <Teleport to="#loader">
+        <Transition>
+            <Loader v-if="isLoading" />
+        </Transition>
+    </Teleport>
 </template>

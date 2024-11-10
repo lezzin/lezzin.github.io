@@ -1,14 +1,5 @@
-<script setup>
-const props = defineProps({
-    loading: {
-        type: Boolean,
-        required: true
-    }
-});
-</script>
-
 <template>
-    <div :class="['loader', !props.loading && 'loaded']">
+    <div class="loader">
         <img src="/images/loader-icon.svg" alt="Imagem do loader">
     </div>
 </template>
@@ -35,10 +26,6 @@ const props = defineProps({
     background-color: var(--primary-background);
     transition: .6s ease;
     pointer-events: none;
-}
-
-.loader.loaded {
-    opacity: 0;
 }
 
 .loader img {
