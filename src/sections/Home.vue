@@ -8,7 +8,7 @@ import { iconUrl } from '../utils/urlUtils';
             <div class="home-informations interval-small">
                 <p class="interval-small">Olá! sou o Leandro,</p>
                 <h1 class="interval-small">Desenvolvedor Full Stack</h1>
-                <h3 class="interval-small">com paixão por tecnologia e inovação</h3>
+                <h2 class="interval-small">com paixão por tecnologia e inovação</h2>
 
                 <div class="btn-group delay-medium">
                     <a href="#skills-section" class="btn out-white interval-small"
@@ -88,7 +88,7 @@ img {
         line-height: 1;
     }
 
-    h3 {
+    h2 {
         font-size: 2.4rem;
     }
 
