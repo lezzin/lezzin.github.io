@@ -24,6 +24,7 @@ const props = defineProps({
     padding: 1rem;
     border: 1px solid var(--border-color);
     background-color: rgb(0 0 0 / 40%);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-radius: var(--border-radius);
     min-width: 148px;

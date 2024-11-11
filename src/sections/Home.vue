@@ -6,7 +6,7 @@ import { iconUrl } from '../utils/urlUtils';
     <section id="home-section" class="delay-small overlay overlay--1">
         <div class="container">
             <div class="home-informations interval-small">
-                <h2 class="interval-small">Olá! sou o Leandro,</h2>
+                <p class="interval-small">Olá! sou o Leandro,</p>
                 <h1 class="interval-small">Desenvolvedor Full Stack</h1>
                 <h3 class="interval-small">com paixão por tecnologia e inovação</h3>
 
@@ -18,7 +18,7 @@ import { iconUrl } from '../utils/urlUtils';
                 </div>
             </div>
 
-            <img class="interval-medium" :src="iconUrl('loader.svg')" alt="Logo">
+            <img class="interval-medium" :src="iconUrl('loader.svg')" alt="Logo" width="480" height="480">
         </div>
     </section>
 </template>
@@ -51,6 +51,7 @@ section {
 
         img {
             max-width: 60%;
+            z-index: 1;
         }
 
         .home-informations {
@@ -77,14 +78,14 @@ img {
     gap: 1rem;
     text-align: left;
 
+    p {
+        font-size: 3.2rem;
+    }
+
     h1 {
         font-size: 8rem;
         font-weight: 500;
         line-height: 1;
-    }
-
-    h2 {
-        font-size: 3.2rem;
     }
 
     h3 {
@@ -100,8 +101,8 @@ img {
     .btn-group>* {
         text-transform: uppercase;
         padding: 1rem 2rem;
-        backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
     }
 
     .btn-group>*:hover,

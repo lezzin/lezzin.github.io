@@ -18,8 +18,8 @@ const filterProjectsBySkill = (skillName) => {
     activeSkill.value = activeSkill.value === skillName ? null : skillName;
 
     const filteredProjects = activeSkill.value
-        ? props.projects.filter(project => project.skills.includes(activeSkill.value)).sort(orderByName)
-        : props.projects.sort(orderByName);
+        ? props.projects.filter(project => project.skills.includes(activeSkill.value))
+        : props.projects;
 
     emit("filter", filteredProjects);
 };

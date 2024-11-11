@@ -31,30 +31,6 @@ const projects = [
         "deployUrl": "https://erupcaodasletras.com.br"
     },
     {
-        "image": "blog.webp",
-        "imageDetails": [
-            {
-                src: "blog-1.png",
-                label: "Página inicial"
-            },
-            {
-                src: "blog-2.png",
-                label: "Página do administrador"
-            }
-        ],
-        "name": "Blog de Wellyoza",
-        "description": "Blog desenvolvido para um colega de faculdade, com foco em tecnologia.",
-        "detailedDescription": `
-            <p>Este blog foi desenvolvido para um colega de faculdade, com o objetivo de compartilhar conteúdo sobre tecnologia. Utilizando Vue.js e Firebase, a plataforma oferece uma experiência interativa e dinâmica para os usuários. O conteúdo do blog está atrelado ao seu canal no YouTube, permitindo que os seguidores acompanhem tanto os vídeos quanto os artigos em um único espaço.</p>
-        `,
-        "skills": [
-            "Vue.js",
-            "Firebase"
-        ],
-        "deployUrl": "https://wellyngton-blog.vercel.app/",
-        "docsUrl": "https://docs.google.com/document/d/1UywrvVQGmPB1CkBdG7PX4AfZdiOekvqlkE05uMfsb6c/edit?usp=drive_link"
-    },
-    {
         "image": "taskflow.webp",
         "imageDetails": [
             {
@@ -91,6 +67,30 @@ const projects = [
         "deployUrl": "https://mytaskflow.vercel.app",
         "codeUrl": "https://github.com/lezzin/tasks_manager",
         "docsUrl": "https://docs.google.com/document/d/1OXHMNCdr_GWK0cbCZQPVm428zt4fm2YkKl_5KFTmCk0/edit?usp=drive_link"
+    },
+    {
+        "image": "blog.webp",
+        "imageDetails": [
+            {
+                src: "blog-1.png",
+                label: "Página inicial"
+            },
+            {
+                src: "blog-2.png",
+                label: "Página do administrador"
+            }
+        ],
+        "name": "Blog de Wellyoza",
+        "description": "Blog desenvolvido para um colega de faculdade, com foco em tecnologia.",
+        "detailedDescription": `
+            <p>Este blog foi desenvolvido para um colega de faculdade, com o objetivo de compartilhar conteúdo sobre tecnologia. Utilizando Vue.js e Firebase, a plataforma oferece uma experiência interativa e dinâmica para os usuários. O conteúdo do blog está atrelado ao seu canal no YouTube, permitindo que os seguidores acompanhem tanto os vídeos quanto os artigos em um único espaço.</p>
+        `,
+        "skills": [
+            "Vue.js",
+            "Firebase"
+        ],
+        "deployUrl": "https://wellyngton-blog.vercel.app/",
+        "docsUrl": "https://docs.google.com/document/d/1UywrvVQGmPB1CkBdG7PX4AfZdiOekvqlkE05uMfsb6c/edit?usp=drive_link"
     },
     {
         "image": "ferramentas-dev.webp",

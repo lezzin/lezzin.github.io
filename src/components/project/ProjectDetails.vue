@@ -108,8 +108,8 @@ const closeImageView = () => {
     z-index: var(--header-index);
     inset: 0;
     font-size: 1.6rem;
-    backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
 }
 
 .modal__dialog {

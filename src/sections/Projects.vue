@@ -1,7 +1,6 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, toRef, watch } from 'vue';
 
-import { orderByName } from '../utils/orderUtils';
 import { iconUrl } from '../utils/urlUtils';
 
 import Project from "../components/project/Project.vue";
@@ -16,7 +15,7 @@ const props = defineProps({
 });
 
 const selectedProject = ref(null);
-const filteredProjects = ref(props.projects.sort(orderByName));
+const filteredProjects = toRef(props.projects);
 const isProjectDetailsActive = ref(false);
 
 const openProjectDetails = (project) => {
