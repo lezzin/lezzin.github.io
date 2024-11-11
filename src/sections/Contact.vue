@@ -148,6 +148,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+section {
+    --error-color: #dd3b30;
+}
+
 section.overlay--2::before {
     background-position: right bottom;
     background-size: 55%;
@@ -163,6 +167,7 @@ form {
     margin: 0 auto;
     display: grid;
     gap: 1rem;
+    z-index: 1;
 }
 
 input,
@@ -185,6 +190,10 @@ button {
         &:hover {
             filter: none;
         }
+    }
+
+    &:hover {
+        letter-spacing: 1px;
     }
 }
 

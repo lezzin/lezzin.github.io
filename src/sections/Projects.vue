@@ -30,7 +30,6 @@ const closeProjectDetails = () => {
 
 const filterProjectsBySkill = (filtered) => {
     filteredProjects.value = filtered;
-    currentIndex.value = 0;
 };
 
 watch(isProjectDetailsActive, (value) => {
@@ -68,6 +67,11 @@ watch(isProjectDetailsActive, (value) => {
 </template>
 
 <style scoped>
+section {
+    background: var(--secondary-background);
+    background: linear-gradient(to bottom, var(--secondary-background) 0%, var(--primary-background) 100%);
+}
+
 @media(max-width: 768px) {
     section {
         padding: 5vh 0;

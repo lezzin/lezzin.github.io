@@ -24,8 +24,7 @@ const props = defineProps({
 <style scoped>
 section {
     padding: 5vh 0;
-    background: var(--primary-background);
-    background: linear-gradient(180deg, var(--secondary-background) 0%, var(--primary-background)100%);
+    background: var(--secondary-background);
 }
 
 .skills {

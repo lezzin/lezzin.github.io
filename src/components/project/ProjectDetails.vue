@@ -56,7 +56,7 @@ const closeImageView = () => {
 
                     <p class="details__skills">
                         <span>Habilidades utilizadas:</span>
-                        <span class="skills__badge" v-for="skill in props.project.skills">{{ skill }}</span>
+                        <span class="skill-badge" v-for="skill in props.project.skills">{{ skill }}</span>
                     </p>
                 </div>
 
@@ -148,7 +148,7 @@ const closeImageView = () => {
     overflow-y: auto;
 }
 
-.skills {
+.details__skills {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -156,7 +156,7 @@ const closeImageView = () => {
     gap: 0.5rem;
 }
 
-.skills__badge {
+.skill-badge {
     background: var(--tertiary-background);
     padding: .25rem .5rem;
     border-radius: var(--border-radius);
