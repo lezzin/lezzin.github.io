@@ -205,10 +205,14 @@ const closeImageView = () => {
     gap: 2rem;
 
     img {
+        aspect-ratio: 16/9;
         border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+        cursor: zoom-in;
     }
 
     figcaption {
+        margin-top: 0.25rem;
         margin-left: 0.5rem;
         color: var(--font-secondary-color);
         font-size: 1.2rem;

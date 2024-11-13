@@ -97,15 +97,23 @@ const projects = [
         "imageDetails": [
             {
                 src: "ferramentas-dev-1.png",
-                label: "Página inicial"
+                label: "Página inicial (light)"
             },
             {
                 src: "ferramentas-dev-2.png",
-                label: "Página da categoria selecionada (usuário)"
+                label: "Página inicial (dark)"
             },
             {
                 src: "ferramentas-dev-3.png",
-                label: "Página da categoria selecionada (admin)"
+                label: "Página da categoria selecionada (light - usuário)"
+            },
+            {
+                src: "ferramentas-dev-4.png",
+                label: "Página da categoria selecionada (dark - usuário)"
+            },
+            {
+                src: "ferramentas-dev-5.png",
+                label: "Página da categoria selecionada (dark - admin)"
             }
         ],
         "name": "Ferramentas para Devs",
@@ -115,6 +123,7 @@ const projects = [
         `,
         "skills": [
             "Vue.js",
+            "Quasar",
             "Firebase"
         ],
         "deployUrl": "https://mydevresources.vercel.app",

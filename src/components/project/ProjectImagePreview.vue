@@ -14,8 +14,12 @@ const emit = defineEmits(["close"]);
 
 <template>
     <div class="preview" v-if="props.image" @click.self="emit('close')">
-        <button @click="emit('close')" class="btn preview__close">X</button>
-        <img :src="imageUrl(props.image.src, 'details')" :alt="props.image.label">
+        <figure class="preview__content">
+            <button type="button" @click="emit('close')" class="btn preview__close" title="Fechar modal">X</button>
+
+            <img :src="imageUrl(props.image.src, 'details')" :alt="props.image.label">
+            <figcaption>Legenda: {{ props.image.label }}</figcaption>
+        </figure>
     </div>
 </template>
 
@@ -30,21 +34,40 @@ const emit = defineEmits(["close"]);
     z-index: 1000;
 }
 
-.preview img {
-    max-width: 90%;
-    max-height: 90%;
+.preview__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--primary-background);
+    max-width: 1080px;
+    width: 90%;
     border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+.preview__content img {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.preview__content figcaption {
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
 }
 
 .preview__close {
     position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
+    top: 3rem;
+    right: 3rem;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1.6rem;
     cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 </style>
