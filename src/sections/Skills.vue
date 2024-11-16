@@ -9,15 +9,15 @@ const props = defineProps({
     }
 });
 
-function showDescription(value) {
-    description.value = value;
+const description = ref('');
+
+function showDescription(skill) {
+    description.value = `${skill.name}: ${skill.description}`;
 }
 
 function hideDescription() {
     description.value = '';
 }
-
-const description = ref('');
 </script>
 
 <template>
@@ -26,8 +26,8 @@ const description = ref('');
             <h3 class="section-title delay-small">Habilidades</h3>
 
             <div class="skills">
-                <Skill v-for="(skill, index) in skills" :key="index" :skill="skill"
-                    @mouseover="showDescription(skill.description)" @mouseleave="hideDescription" />
+                <Skill v-for="(skill, index) in skills" :key="index" :skill="skill" @mouseover="showDescription(skill)"
+                    @mouseleave="hideDescription" />
             </div>
 
             <p class="skill-description">{{ description }}</p>
@@ -50,7 +50,7 @@ section {
 }
 
 .skill-description {
-    margin-top: 3rem;
+    margin-top: 4rem;
     min-height: 2rem;
     text-align: center;
 }

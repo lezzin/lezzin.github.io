@@ -64,9 +64,10 @@ p {
 }
 
 .btn-group .btn {
+    font-weight: 500;
     padding-inline: 1.5rem 1rem;
-    z-index: 1;
     box-shadow: 0 .25rem 1rem rgb(0 0 0 / 17.5%);
+    z-index: 1;
 
     &.active {
         color: var(--font-primary-color);

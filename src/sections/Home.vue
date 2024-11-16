@@ -42,26 +42,16 @@ section {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
     min-height: 100vh;
     gap: 10rem;
 
     @media(max-width: 768px) {
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 1rem;
 
         img {
-            max-width: 60%;
+            max-width: 80%;
             z-index: 1;
-        }
-
-        .home-informations {
-            text-align: center;
-            order: 2;
-
-            .btn-group {
-                justify-content: center;
-            }
         }
     }
 }
@@ -76,15 +66,15 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    font-weight: 500;
     gap: 1rem;
-    text-align: left;
 
     p {
         font-size: 3.2rem;
     }
 
     h1 {
-        font-size: 8rem;
+        font-size: clamp(4rem, 10vw, 8rem);
         font-weight: 500;
         line-height: 1;
     }
@@ -108,21 +98,11 @@ img {
     }
 
     @media (width<=768px) {
-        .container {
-            margin-top: 8vh;
-            min-height: 92vh;
-        }
-
-        h1 {
-            font-size: 4.2rem;
-        }
-
-        h2 {
-            font-size: 2.4rem;
-        }
+        text-align: center;
+        order: 2;
 
         .btn-group {
-            font-size: 1.4rem;
+            justify-content: center;
         }
     }
 }

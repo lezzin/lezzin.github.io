@@ -30,11 +30,9 @@ import { imageUrl } from "../utils/urlUtils";
                         aprimorar minhas habilidades.
                     </p>
 
-                    <p class="interval-small">
-                        Vamos conversar e transformar suas ideias em realidade? Seja para colaborar como freelancer ou
-                        para integrar uma equipe, estou pronto para fazer parte de novos projetos e criar algo incrível.
-                    </p>
-                    <SocialLinks />
+                    <div class="presentation-texts-bottom">
+                        <SocialLinks />
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,8 +57,8 @@ section .container {
     margin: 0 auto;
     padding: 2rem;
     width: 100%;
-    background: var(--tertiary-background);
     overflow: hidden;
+    background: var(--tertiary-background);
     border-radius: var(--border-radius);
 }
 
@@ -75,19 +73,23 @@ section .container {
     flex-direction: column;
     gap: 1.5rem;
     margin: calc(var(--border-radius) / 2) 0;
+    line-height: 150%;
+}
+
+.presentation-texts p:last-of-type {
+    margin-bottom: 2rem;
 }
 
 .presentation-texts .section-title {
-    text-align: left;
     font-size: 2.8rem;
     margin-bottom: 1rem;
 }
-
 
 @media (width <=768px) {
     .presentation-container {
         justify-content: center;
         flex-direction: column;
+        padding: 1rem;
         padding-bottom: 4rem;
         width: 100%;
     }

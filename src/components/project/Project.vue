@@ -81,6 +81,7 @@ const props = defineProps({
 .project-skills {
     display: flex;
     gap: 0.5rem;
+    font-weight: 500;
     flex-wrap: wrap;
     font-size: 1.1rem;
 }
@@ -98,6 +99,7 @@ const props = defineProps({
 }
 
 .project-name {
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 

@@ -31,7 +31,7 @@ const projects = [
         "description": "Aplicação para gestão de tarefas, com visualização Kanban, sugestões por IA e categorização de projetos.",
         "detailedDescription": `
         <p><b>Descrição:</b> TaskFlow é uma plataforma intuitiva para organizar tarefas, utilizando Vue.js e Firebase. Permite aos usuários criar, editar e acompanhar atividades com foco em produtividade, oferecendo visualização Kanban e categorização por tópicos.</p>
-        <p><b>Diferenciais:</b> Além dos recursos de organização, TaskFlow utiliza inteligência artificial para sugerir novas tarefas relacionadas às já adicionadas. Basta clicar em um botão para receber sugestões automáticas, otimizando ainda mais o planejamento do usuário. O sistema também conta com modais para edição fluida, feedback por toasts, e uma experiência de usuário cuidadosamente projetada.</p>
+        <p><b>Diferenciais:</b> Além dos recursos de organização, TaskFlow utiliza inteligência artificial para sugerir novas tarefas relacionadas às já adicionadas. Basta clicar em um botão para receber sugestões automáticas, otimizando ainda mais o planejamento do usuário. </p>
     `,
         "skills": ["Vue.js"],
         "deployUrl": "https://mytaskflow.vercel.app",
@@ -66,7 +66,7 @@ const projects = [
         "name": "Blog de Wellyoza",
         "description": "Blog sobre tecnologia.",
         "detailedDescription": `
-            <p><b>Descrição:</b> Desenvolvido para um colega de faculdade, com o objetivo de centralizar todos os seus vídeos do Youtube em um único lugar.</p>
+            <p><b>Descrição:</b> Meu segundo projeto utilizando o Quasar. Desenvolvido para um colega de faculdade, com o objetivo de centralizar todos os seus vídeos do Youtube em um único lugar.</p>
         `,
         "skills": ["Vue.js", "Quasar"],
         "deployUrl": "https://wellyngton-blog.vercel.app/"

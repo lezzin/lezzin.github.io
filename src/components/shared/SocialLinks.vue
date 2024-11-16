@@ -34,11 +34,16 @@ const bgColor = computed(() => (props.isDark ? 'dark-secondary' : 'dark-tertiary
 
 <style scoped>
 .social-media {
-    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: var(--font-primary-color);
+    font-size: 1.4rem;
+    gap: .45rem;
 }
 
 .social-media .btn {
-    padding: .6rem .7rem;
+    padding: .5rem 1rem;
 }
 
 .social-media .btn img {
@@ -51,6 +56,12 @@ const bgColor = computed(() => (props.isDark ? 'dark-secondary' : 'dark-tertiary
 
     img {
         transform: scale(1.06);
+    }
+}
+
+@media (width <=768px) {
+    .desktop-only {
+        display: none;
     }
 }
 </style>

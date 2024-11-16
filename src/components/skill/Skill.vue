@@ -23,7 +23,7 @@ const props = defineProps({
     place-items: center;
     padding: 1rem;
     border: 1px solid var(--border-color);
-    background-color: rgb(0 0 0 / 40%);
+    background-color: var(--primary-background);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-radius: var(--border-radius);
@@ -44,6 +44,7 @@ const props = defineProps({
 .skill-name {
     margin-top: 1rem;
     text-align: center;
+    font-weight: 500;
 }
 
 .skill:hover,

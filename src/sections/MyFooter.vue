@@ -4,47 +4,42 @@ import SocialLinks from "../components/shared/SocialLinks.vue";
 
 <template>
     <footer>
-        <SocialLinks :isDark="false" />
+        <div class="container">
+            <SocialLinks :isDark="false" />
 
-        <blockquote>
-            <p class="quote">
-                “Programadores e artistas são os únicos profissionais que tem como hobby a própria profissão”
+            <blockquote>
+                <p class="quote">
+                    “Programadores e artistas são os únicos profissionais que tem como hobby a própria profissão”
+                </p>
+            </blockquote>
+
+            <p class="copyright">
+                &copy; <span id="copyright-year">{{ new Date().getFullYear().toString() }}</span> -
+                Leandro Adrian da Silva
             </p>
-        </blockquote>
-
-        <p class="copyright">
-            &copy; <span id="copyright-year">{{ new Date().getFullYear().toString() }}</span> -
-            Leandro Adrian da Silva
-        </p>
+        </div>
     </footer>
 </template>
 
 <style scoped>
 footer {
-    display: grid;
-    text-align: center;
-    padding: 3rem;
     color: var(--font-secondary-color);
     background: var(--primary-background);
     border-top: 1px solid var(--border-color);
 }
 
-footer .social-media {
-    font-size: 1.6rem;
+.container {
+    padding-block: 3rem;
+    text-align: center;
 }
 
 footer .quote {
     margin: 3rem 0 1rem;
     font-size: 1.4rem;
+    font-weight: 500;
 }
 
 footer .copyright {
-    font-size: 1rem;
-}
-
-@media (width <=768px) {
-    footer .desktop-only {
-        display: none;
-    }
+    font-size: 1.2rem;
 }
 </style>
