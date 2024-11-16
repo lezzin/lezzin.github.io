@@ -3,7 +3,7 @@ import { iconUrl } from '../utils/urlUtils';
 </script>
 
 <template>
-    <section id="home-section" class="delay-small overlay overlay--1">
+    <section id="home-section" class="overlay overlay--1">
         <div class="container">
             <div class="home-informations interval-small">
                 <p class="interval-small">Olá! sou o Leandro,</p>

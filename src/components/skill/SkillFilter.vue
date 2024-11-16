@@ -44,8 +44,8 @@ onMounted(() => {
 <template>
     <p class="delay-small">Filtrar projetos por habilidades:</p>
     <div class="btn-group delay-medium">
-        <button v-for="skill in skillList" :key="skill.name"
-            :class="['skill', 'btn', 'dark-quaternary', { 'active': activeSkill === skill.name }]"
+        <button v-for="(skill, index) in skillList" :key="index"
+            :class="['skill btn dark-quaternary', { 'active': activeSkill === skill.name }]"
             @click="filterProjectsBySkill(skill.name)">
             {{ skill.name }} <span class="skill-count-badge">{{ skill.quantity }}</span>
         </button>

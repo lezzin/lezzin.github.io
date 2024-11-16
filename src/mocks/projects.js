@@ -64,7 +64,7 @@ const projects = [
             { src: "blog-3.png", label: "Página do administrador" }
         ],
         "name": "Blog de Wellyoza",
-        "description": "Blog sobre tecnologia.",
+        "description": "Blog para um colega de faculdade.",
         "detailedDescription": `
             <p><b>Descrição:</b> Meu segundo projeto utilizando o Quasar. Desenvolvido para um colega de faculdade, com o objetivo de centralizar todos os seus vídeos do Youtube em um único lugar.</p>
         `,

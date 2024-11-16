@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted } from "vue";
 import ScrollReveal from "scrollreveal";
 
 import MyHeader from './sections/MyHeader.vue';
@@ -8,22 +8,20 @@ import Home from './sections/Home.vue';
 import Presentation from './sections/Presentation.vue';
 import Skills from './sections/Skills.vue';
 import Projects from './sections/Projects.vue';
+import Contact from "./sections/Contact.vue";
 
 import Loader from './components/shared/Loader.vue';
 
 import projectsJson from "./mocks/projects.js";
 import skillsJson from "./mocks/skills.js";
-import Contact from "./sections/Contact.vue";
 
 const isLoading = ref(true);
-const myProjects = computed(() => projectsJson);
-const mySkills = computed(() => skillsJson);
 
 const loadScrollReveal = () => {
     const sr = ScrollReveal({
+        distance: "20px",
+        duration: 1000,
         origin: "top",
-        distance: "50px",
-        duration: 1500,
     });
 
     sr.reveal(".delay-small", { delay: 200 });
@@ -51,8 +49,8 @@ onMounted(() => {
     <main>
         <Home />
         <Presentation />
-        <Skills :skills="mySkills" />
-        <Projects :projects="myProjects" />
+        <Skills :skills="skillsJson" />
+        <Projects :projects="projectsJson" />
         <Contact />
     </main>
 

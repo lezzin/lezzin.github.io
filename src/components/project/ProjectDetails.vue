@@ -49,14 +49,15 @@ const closeImageView = () => {
 
                     <p class="details__skills">
                         <span>Habilidades utilizadas:</span>
-                        <span class="skill-badge" v-for="skill in project.skills">{{ skill }}</span>
+                        <span class="skill-badge" v-for="(skill, index) in project.skills" :key="index">{{ skill
+                            }}</span>
                     </p>
                 </div>
 
                 <p class="helper-text">* clique na imagem para poder visualizá-la</p>
 
                 <div class="project__images" v-if="project.imageDetails">
-                    <figure v-for="image in project.imageDetails" @click="viewImage(image)">
+                    <figure v-for="(image, index) in project.imageDetails" @click="viewImage(image)" :key="index">
                         <img :src="imageUrl(image.src, 'details')" alt="Pré-visualização do projeto" loading="lazy">
                         <figcaption>{{ image.label }}</figcaption>
                     </figure>

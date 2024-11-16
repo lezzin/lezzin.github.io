@@ -19,7 +19,7 @@ const props = defineProps({
                 <h3 class="project-name">{{ project.name }}</h3>
                 <p class="project-description">{{ project.description }}</p>
                 <p class="project-skills">
-                    <span class="badge" v-for="(skill, index) in project.skills">{{ skill }}</span>
+                    <span class="badge" v-for="(skill, index) in project.skills" :key="index">{{ skill }}</span>
                 </p>
             </div>
 

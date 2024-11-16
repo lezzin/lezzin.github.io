@@ -103,7 +103,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section id="contact-section" class="delay-medium overlay overlay--2">
+    <section id="contact-section" class="overlay overlay--2">
         <div class="container">
             <h3 class="section-title delay-small">Contato</h3>
 

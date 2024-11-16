@@ -38,7 +38,7 @@ watch(isProjectDetailsActive, (value) => {
 </script>
 
 <template>
-    <section id="projects-section" class="delay-small">
+    <section id="projects-section">
         <div class="container">
             <h3 class="section-title delay-small">Projetos</h3>
 
