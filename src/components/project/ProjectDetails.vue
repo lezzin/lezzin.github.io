@@ -43,12 +43,6 @@ const closeImageView = () => {
                         <fa icon="code" />
                         Código-fonte
                     </a>
-                    <a class="btn dark-quaternary" role="button" :href="props.project.docsUrl" target="_blank"
-                        rel="noopener noreferrer" title="Acessar documentação do projeto no Drive"
-                        v-if="props.project.docsUrl">
-                        <fa icon="file-code" />
-                        Documentação
-                    </a>
                 </div>
 
                 <div class="details">

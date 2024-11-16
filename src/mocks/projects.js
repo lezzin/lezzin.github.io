@@ -1,35 +1,35 @@
 const projects = [
-    {
-        "image": "erupcao-das-letras.webp",
-        "imageDetails": [
-            {
-                src: "erupcao-1.png",
-                label: "Página como estava antes do freelance"
-            },
-            {
-                src: "erupcao-2.png",
-                label: "Página inicial do feed (não atualizado)"
-            }
-        ],
-        "name": "Erupção das Letras",
-        "description": "Plataforma de rede social para autores e leitores, permitindo a publicação, venda direta e apoio financeiro de obras.",
-        "detailedDescription": `
-            <p>Este foi o meu primeiro projeto como freelancer, iniciado em junho de 2024, apenas 4 meses após minha colação de grau como Técnico em Informática. Foi um dos maiores desafios da minha carreira até o momento. Nunca havia trabalhado com várias das tecnologias e funcionalidades solicitadas, como a integração com plataformas de pagamento e envio de emails, o que exigiu bastante pesquisa e aprendizado durante o desenvolvimento.</p>
+    // {
+    //     "image": "erupcao-das-letras.webp",
+    //     "imageDetails": [
+    //         {
+    //             src: "erupcao-1.png",
+    //             label: "Página como estava antes do freelance"
+    //         },
+    //         {
+    //             src: "erupcao-2.png",
+    //             label: "Página inicial do feed (não atualizado)"
+    //         }
+    //     ],
+    //     "name": "Erupção das Letras",
+    //     "description": "Plataforma de rede social para autores e leitores, permitindo a publicação, venda direta e apoio financeiro de obras.",
+    //     "detailedDescription": `
+    //         <p>Este foi o meu primeiro projeto como freelancer, iniciado em junho de 2024, apenas 4 meses após minha colação de grau como Técnico em Informática. Foi um dos maiores desafios da minha carreira até o momento. Nunca havia trabalhado com várias das tecnologias e funcionalidades solicitadas, como a integração com plataformas de pagamento e envio de emails, o que exigiu bastante pesquisa e aprendizado durante o desenvolvimento.</p>
 
-            <p>Inicialmente, a tarefa era criar um feed simples em formato grid para postagens, com opções de curtir e não curtir. Porém, conforme o projeto avançava, surgiram novas demandas, como sistema de comentários, favoritos, notificações, renderização de PDFs, integração de pagamento com Stripe para compra e venda de livros, criação de páginas de perfil, login com Google, seguir/ser seguido e carregamento dinâmico de conteúdo com AJAX, além de uma página de contato e confirmação de e-mail.</p>
+    //         <p>Inicialmente, a tarefa era criar um feed simples em formato grid para postagens, com opções de curtir e não curtir. Porém, conforme o projeto avançava, surgiram novas demandas, como sistema de comentários, favoritos, notificações, renderização de PDFs, integração de pagamento com Stripe para compra e venda de livros, criação de páginas de perfil, login com Google, seguir/ser seguido e carregamento dinâmico de conteúdo com AJAX, além de uma página de contato e confirmação de e-mail.</p>
 
-            <p>Cada nova funcionalidade representou um desafio técnico, mas, com dedicação, consegui implementar todas com sucesso. No fim, o cliente ficou muito satisfeito com o resultado, o que foi extremamente gratificante e me deu a confiança para encarar novos projetos no futuro."</p>
+    //         <p>Cada nova funcionalidade representou um desafio técnico, mas, com dedicação, consegui implementar todas com sucesso. No fim, o cliente ficou muito satisfeito com o resultado, o que foi extremamente gratificante e me deu a confiança para encarar novos projetos no futuro."</p>
 
-            <small>(Algumas das funcionalidades não foram publicadas)</small>
-        `,
-        "skills": [
-            "PHP",
-            "jQuery",
-            "MySQL",
-            "Stripe"
-        ],
-        "deployUrl": "https://erupcaodasletras.com.br"
-    },
+    //         <small>(Algumas das funcionalidades não foram publicadas)</small>
+    //     `,
+    //     "skills": [
+    //         "PHP",
+    //         "jQuery",
+    //         "MySQL",
+    //         "Stripe"
+    //     ],
+    //     "deployUrl": "https://erupcaodasletras.com.br"
+    // },
     {
         "image": "taskflow.webp",
         "imageDetails": [
@@ -66,7 +66,6 @@ const projects = [
         ],
         "deployUrl": "https://mytaskflow.vercel.app",
         "codeUrl": "https://github.com/lezzin/tasks_manager",
-        "docsUrl": "https://docs.google.com/document/d/1OXHMNCdr_GWK0cbCZQPVm428zt4fm2YkKl_5KFTmCk0/edit?usp=drive_link"
     },
     {
         "image": "ferramentas-dev.webp",
@@ -104,7 +103,6 @@ const projects = [
         ],
         "deployUrl": "https://mydevresources.vercel.app",
         "codeUrl": "https://github.com/lezzin/dev_resources",
-        "docsUrl": "https://docs.google.com/document/d/13NZD8NHy3Qt7Mof3ScI66R2LQpoKLho2C5uHUW1VJhs/edit?usp=sharing"
     },
     {
         "image": "blog.webp",
@@ -115,6 +113,10 @@ const projects = [
             },
             {
                 src: "blog-2.png",
+                label: "Página da publicação"
+            },
+            {
+                src: "blog-3.png",
                 label: "Página do administrador"
             }
         ],
@@ -125,10 +127,10 @@ const projects = [
         `,
         "skills": [
             "Vue.js",
-            "Firebase"
+            "Firebase",
+            "Quasar"
         ],
         "deployUrl": "https://wellyngton-blog.vercel.app/",
-        "docsUrl": "https://docs.google.com/document/d/1UywrvVQGmPB1CkBdG7PX4AfZdiOekvqlkE05uMfsb6c/edit?usp=drive_link"
     },
     {
         "image": "rockscape.webp",
@@ -157,7 +159,6 @@ const projects = [
         ],
         "deployUrl": "https://rockscape.vercel.app/",
         "codeUrl": "https://github.com/lezzin/rock_scape",
-        "docsUrl": "https://docs.google.com/document/d/1YzCcnLMaM-Xa8uxCCYfcodcgb0WCPSJPcezIJZuDmyE/edit?usp=sharing"
     },
     {
         "image": "volei.webp",
@@ -181,7 +182,6 @@ const projects = [
         ],
         "deployUrl": "https://placar-volei.vercel.app/",
         "codeUrl": "https://github.com/lezzin/placar_volei",
-        "docsUrl": "https://docs.google.com/document/d/1D-D_juSptjhfYBQKPmFI8yjv8h6LqUr4GLOfJxoSOTY/edit?usp=sharing"
     }
 ]
 

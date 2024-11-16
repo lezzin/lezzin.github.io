@@ -14,23 +14,26 @@ import { imageUrl } from "../utils/urlUtils";
                     <h3 class="section-title interval-small">Apresentação</h3>
 
                     <p class="interval-small">
-                        Sou Leandro Adrian da Silva, mais conhecido como Lezzin. Formado em Técnico em Informática e
-                        atualmente cursando Engenharia de Software, tenho experiência com diversas tecnologias como
-                        HTML, CSS, JavaScript, PHP e MySQL, além de frameworks modernos como Vue.js e CodeIgniter.
+                        Sou Leandro Adrian da Silva, mais conhecido como Lezzin.
+                        <strong>Formado em Técnico em Informática e atualmente cursando Engenharia de Software</strong>,
+                        tenho experiência com diversas tecnologias como
+                        <strong>HTML, CSS, JavaScript, PHP e MySQL</strong>,
+                        além de frameworks modernos como
+                        <strong>Vue.js e CodeIgniter.</strong>
                     </p>
 
                     <p class="interval-small">
-                        Minha trajetória combina técnica e criatividade, sempre com foco na resolução de problemas e na
-                        construção de soluções completas e eficientes, desde a concepção até a implementação final.
-                        Gosto de explorar novas tecnologias e enfrentar desafios que me permitam aprimorar minhas
-                        habilidades.
+                        Minha trajetória combina <strong>técnica e criatividade</strong>, sempre com foco na
+                        <strong>resolução de problemas</strong> e na
+                        <strong>construção de soluções completas e eficientes</strong>, desde a concepção até a
+                        implementação final. Gosto de explorar novas tecnologias e enfrentar desafios que me permitam
+                        aprimorar minhas habilidades.
                     </p>
 
                     <p class="interval-small">
                         Vamos conversar e transformar suas ideias em realidade? Seja para colaborar como freelancer ou
                         para integrar uma equipe, estou pronto para fazer parte de novos projetos e criar algo incrível.
                     </p>
-
                     <SocialLinks />
                 </div>
             </div>

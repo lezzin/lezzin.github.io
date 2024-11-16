@@ -45,10 +45,8 @@ watch(isProjectDetailsActive, (value) => {
             <SkillFilter :projects="props.projects" @filter="filterProjectsBySkill" />
 
             <div class="projects">
-                <TransitionGroup>
-                    <Project v-for="(project, index) in filteredProjects" :key="index" :project="project"
-                        @openDetails="openProjectDetails" />
-                </TransitionGroup>
+                <Project v-for="(project, index) in filteredProjects" :key="index" :project="project"
+                    @openDetails="openProjectDetails" />
             </div>
 
             <a class="btn secondary delay-small" href="https://github.com/lezzin?tab=repositories" target="_blank"

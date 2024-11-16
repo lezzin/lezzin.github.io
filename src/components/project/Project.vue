@@ -13,6 +13,7 @@ const props = defineProps({
     <article class="project interval-medium">
         <img class="project-image" :src="imageUrl(props.project.image, 'projects')" width="480" height="270"
             alt="Pré-visualização do projeto" loading="lazy">
+
         <div class="project-details">
             <div>
                 <h3 class="project-name">{{ props.project.name }}</h3>
@@ -24,7 +25,7 @@ const props = defineProps({
 
             <button type="button" class="btn success icon" @click="$emit('openDetails', props.project)">
                 <fa icon="circle-info" />
-                <span>Visualizar detalhes</span>
+                <span>Mais detalhes</span>
             </button>
         </div>
     </article>

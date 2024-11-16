@@ -3,17 +3,17 @@ import { iconUrl } from '../../utils/urlUtils';
 
 const props = defineProps({
     skill: {
-        type: String,
+        type: Object,
         required: true
     }
 });
 </script>
 
 <template>
-    <div class="skill interval-medium" tabindex="0" :aria-label="props.skill">
-        <img :src="iconUrl(`${props.skill}.svg`, 'skills')" class="skill-image"
-            :alt="`Logo da tecnologia ${props.skill}`" width="88" height="88" loading="lazy">
-        <p class="skill-name">{{ props.skill }}</p>
+    <div class="skill interval-medium" tabindex="0" :aria-label="props.skill.name">
+        <img :src="iconUrl(`${props.skill.name}.svg`, 'skills')" class="skill-image"
+            :alt="`Logo da tecnologia ${props.skill.name}`" width="88" height="88" loading="lazy">
+        <p class="skill-name">{{ props.skill.name }}</p>
     </div>
 </template>
 

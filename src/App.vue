@@ -11,8 +11,8 @@ import Projects from './sections/Projects.vue';
 
 import Loader from './components/shared/Loader.vue';
 
-import projectsJson from "./data/projects.js";
-import skillsJson from "./data/skills.js";
+import projectsJson from "./mocks/projects.js";
+import skillsJson from "./mocks/skills.js";
 import Contact from "./sections/Contact.vue";
 
 const isLoading = ref(true);
