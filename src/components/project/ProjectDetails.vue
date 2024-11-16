@@ -32,14 +32,13 @@ const closeImageView = () => {
 
             <div class="modal__body">
                 <div class="btn-group">
-                    <a class="btn success" role="button" :href="props.project.deployUrl" target="_blank"
-                        rel="noopener noreferrer" title="Acessar deploy do projeto" v-if="props.project.deployUrl">
+                    <a class="btn success" role="button" :href="project.deployUrl" target="_blank"
+                        rel="noopener noreferrer" title="Acessar deploy do projeto" v-if="project.deployUrl">
                         <fa icon="eye" />
                         Visualizar projeto
                     </a>
-                    <a class="btn dark-quaternary" role="button" :href="props.project.codeUrl" target="_blank"
-                        rel="noopener noreferrer" title="Acessar código do projeto no GitHub"
-                        v-if="props.project.codeUrl">
+                    <a class="btn dark-quaternary" role="button" :href="project.codeUrl" target="_blank"
+                        rel="noopener noreferrer" title="Acessar código do projeto no GitHub" v-if="project.codeUrl">
                         <fa icon="code" />
                         Código-fonte
                     </a>
@@ -50,17 +49,16 @@ const closeImageView = () => {
 
                     <p class="details__skills">
                         <span>Habilidades utilizadas:</span>
-                        <span class="skill-badge" v-for="skill in props.project.skills">{{ skill }}</span>
+                        <span class="skill-badge" v-for="skill in project.skills">{{ skill }}</span>
                     </p>
                 </div>
 
                 <p class="helper-text">* clique na imagem para poder visualizá-la</p>
 
-                <div class="project__images" v-if="props.project.imageDetails">
-                    <figure v-for="image in props.project.imageDetails" @click="viewImage(image)">
-                        <img :src="imageUrl(image.src, 'details')" width="720" alt="Pré-visualização do projeto"
-                            loading="lazy">
-                        <figcaption>Legenda: {{ image.label }}</figcaption>
+                <div class="project__images" v-if="project.imageDetails">
+                    <figure v-for="image in project.imageDetails" @click="viewImage(image)">
+                        <img :src="imageUrl(image.src, 'details')" alt="Pré-visualização do projeto" loading="lazy">
+                        <figcaption>{{ image.label }}</figcaption>
                     </figure>
                 </div>
             </div>
@@ -195,10 +193,11 @@ const closeImageView = () => {
 
 .project__images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 100%), 1fr));
     gap: 2rem;
 
     img {
+        width: 100%;
         aspect-ratio: 16/9;
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);

@@ -13,12 +13,12 @@ const emit = defineEmits(["close"]);
 </script>
 
 <template>
-    <div class="preview" v-if="props.image" @click.self="emit('close')">
+    <div class="preview" v-if="image" @click.self="emit('close')">
         <figure class="preview__content">
             <button type="button" @click="emit('close')" class="btn preview__close" title="Fechar modal">X</button>
 
-            <img :src="imageUrl(props.image.src, 'details')" :alt="props.image.label">
-            <figcaption>Legenda: {{ props.image.label }}</figcaption>
+            <img :src="imageUrl(image.src, 'details')" :alt="image.label">
+            <figcaption>Legenda: {{ image.label }}</figcaption>
         </figure>
     </div>
 </template>

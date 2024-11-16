@@ -10,10 +10,12 @@ import { iconUrl } from '../utils/urlUtils';
                 <h1 class="interval-small">Desenvolvedor Full Stack</h1>
 
                 <div class="btn-group delay-medium">
-                    <a href="#skills-section" class="btn out-white interval-small"
-                        title="Ir para as habilidades">Habilidades</a>
-                    <a href="#projects-section" class="btn white interval-small"
-                        title="Ir para os projetos">Projetos</a>
+                    <a href="#skills-section" class="btn out-white interval-small" title="Ir para as habilidades">
+                        Habilidades
+                    </a>
+                    <a href="#projects-section" class="btn white interval-small" title="Ir para os projetos">
+                        Projetos
+                    </a>
                 </div>
             </div>
 

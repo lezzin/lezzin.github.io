@@ -42,7 +42,7 @@ watch(isProjectDetailsActive, (value) => {
         <div class="container">
             <h3 class="section-title delay-small">Projetos</h3>
 
-            <SkillFilter :projects="props.projects" @filter="filterProjectsBySkill" />
+            <SkillFilter :projects="projects" @filter="filterProjectsBySkill" />
 
             <div class="projects">
                 <Project v-for="(project, index) in filteredProjects" :key="index" :project="project"

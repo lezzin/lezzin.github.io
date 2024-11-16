@@ -11,19 +11,19 @@ const props = defineProps({
 
 <template>
     <article class="project interval-medium">
-        <img class="project-image" :src="imageUrl(props.project.image, 'projects')" width="480" height="270"
+        <img class="project-image" :src="imageUrl(project.image, 'projects')" width="480" height="270"
             alt="Pré-visualização do projeto" loading="lazy">
 
         <div class="project-details">
             <div>
-                <h3 class="project-name">{{ props.project.name }}</h3>
-                <p class="project-description">{{ props.project.description }}</p>
+                <h3 class="project-name">{{ project.name }}</h3>
+                <p class="project-description">{{ project.description }}</p>
                 <p class="project-skills">
-                    <span class="badge" v-for="(skill, index) in props.project.skills">{{ skill }}</span>
+                    <span class="badge" v-for="(skill, index) in project.skills">{{ skill }}</span>
                 </p>
             </div>
 
-            <button type="button" class="btn success icon" @click="$emit('openDetails', props.project)">
+            <button type="button" class="btn success icon" @click="$emit('openDetails', project)">
                 <fa icon="circle-info" />
                 <span>Mais detalhes</span>
             </button>

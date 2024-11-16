@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue';
 import { iconUrl } from '../../utils/urlUtils';
 
 const props = defineProps({
@@ -6,25 +7,25 @@ const props = defineProps({
         type: Boolean,
         default: true
     }
-})
+});
+
+const bgColor = computed(() => (props.isDark ? 'dark-secondary' : 'dark-tertiary'));
 </script>
 
 <template>
     <nav class="social-media">
-        <a :class="`btn ${props.isDark ? 'dark-secondary' : 'dark-tertiary'}`"
-            href="https://www.linkedin.com/in/leandro-adrian/" target="_blank" rel="noopener noreferrer"
-            title="Acessar Linkedin">
+        <a :class="`btn ${bgColor}`" href="https://www.linkedin.com/in/leandro-adrian/" target="_blank"
+            rel="noopener noreferrer" title="Acessar Linkedin">
             <img :src="iconUrl('linkedin.svg', 'media')" alt="Logo do linkedin" width="16" height="16">
             <span class="desktop-only">LinkedIn</span>
         </a>
-        <a :class="`btn ${props.isDark ? 'dark-secondary' : 'dark-tertiary'}`"
-            href="https://www.instagram.com/leandroadrian_/" target="_blank" rel="noopener noreferrer"
-            title="Acessar Instagram">
+        <a :class="`btn ${bgColor}`" href="https://www.instagram.com/leandroadrian_/" target="_blank"
+            rel="noopener noreferrer" title="Acessar Instagram">
             <img :src="iconUrl('instagram.svg', 'media')" alt="Logo do instagram" width="16" height="16">
             <span class="desktop-only">Instagram</span>
         </a>
-        <a :class="`btn ${props.isDark ? 'dark-secondary' : 'dark-tertiary'}`" href="https://github.com/lezzin/"
-            target="_blank" rel="noopener noreferrer" title="Acessar GitHub">
+        <a :class="`btn ${bgColor}`" href="https://github.com/lezzin/" target="_blank" rel="noopener noreferrer"
+            title="Acessar GitHub">
             <img :src="iconUrl('github.svg', 'media')" alt="Logo do github" width="16" height="16">
             <span class="desktop-only">GitHub</span>
         </a>

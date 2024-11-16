@@ -30,13 +30,12 @@ const validateForm = () => {
         errors.name = "Por favor, insira seu nome.";
         valid = false;
     }
+
     if (!email.value) {
         errors.email = "Por favor, insira seu e-mail.";
         valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email.value)) {
-        errors.email = "Por favor, insira um e-mail válido.";
-        valid = false;
     }
+
     if (!message.value) {
         errors.message = "Por favor, insira sua mensagem.";
         valid = false;
@@ -59,9 +58,7 @@ const sendMessage = () => {
     emailjs.send('service_svh7f4w', 'template_12gipiu', params)
         .then(handleResponse)
         .catch(handleError)
-        .finally(() => {
-            isSending.value = false;
-        });
+        .finally(() => (isSending.value = false));
 };
 
 const handleResponse = () => {
@@ -77,18 +74,14 @@ const showToast = (message, type) => {
     if (type === "success") {
         toast.success(message, {
             autoClose: 5000,
-            style: {
-                fontSize: '1.4rem'
-            }
+            style: { fontSize: '1.4rem' }
         });
 
         return;
     }
 
     toast.error(message, {
-        style: {
-            fontSize: '1.4rem'
-        }
+        style: { fontSize: '1.4rem' }
     });
 };
 
@@ -96,6 +89,7 @@ const resetForm = () => {
     name.value = "";
     email.value = "";
     message.value = "";
+
     Object.keys(errors).forEach(key => {
         errors[key] = "";
     });

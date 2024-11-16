@@ -10,10 +10,10 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="skill interval-medium" tabindex="0" :aria-label="props.skill.name">
-        <img :src="iconUrl(`${props.skill.name}.svg`, 'skills')" class="skill-image"
-            :alt="`Logo da tecnologia ${props.skill.name}`" width="88" height="88" loading="lazy">
-        <p class="skill-name">{{ props.skill.name }}</p>
+    <div class="skill interval-medium" tabindex="0" :aria-label="skill.name">
+        <img :src="iconUrl(`${skill.name}.svg`, 'skills')" class="skill-image" :alt="`Logo da tecnologia ${skill.name}`"
+            width="88" height="88" loading="lazy">
+        <p class="skill-name">{{ skill.name }}</p>
     </div>
 </template>
 

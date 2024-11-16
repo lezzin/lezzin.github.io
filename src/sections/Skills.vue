@@ -26,7 +26,7 @@ const description = ref('');
             <h3 class="section-title delay-small">Habilidades</h3>
 
             <div class="skills">
-                <Skill v-for="(skill, index) in props.skills" :key="index" :skill="skill"
+                <Skill v-for="(skill, index) in skills" :key="index" :skill="skill"
                     @mouseover="showDescription(skill.description)" @mouseleave="hideDescription" />
             </div>
 
