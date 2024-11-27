@@ -40,7 +40,7 @@ watch(isProjectDetailsActive, (value) => {
 <template>
     <section id="projects-section">
         <div class="container">
-            <h3 class="section-title delay-small">Projetos</h3>
+            <h2 class="section-title delay-small">Projetos</h2>
 
             <SkillFilter :projects="projects" @filter="filterProjectsBySkill" />
 

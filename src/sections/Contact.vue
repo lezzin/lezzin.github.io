@@ -105,7 +105,7 @@ onMounted(() => {
 <template>
     <section id="contact-section" class="overlay overlay--2">
         <div class="container">
-            <h3 class="section-title delay-small">Contato</h3>
+            <h2 class="section-title delay-small">Contato</h2>
 
             <form class="delay-medium" @submit.prevent="sendMessage">
                 <div :class="{ 'form-error': errors.name }">

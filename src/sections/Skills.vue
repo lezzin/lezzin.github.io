@@ -23,7 +23,7 @@ function hideDescription() {
 <template>
     <section id="skills-section">
         <div class="container">
-            <h3 class="section-title delay-small">Habilidades</h3>
+            <h2 class="section-title delay-small">Habilidades</h2>
 
             <div class="skills">
                 <Skill v-for="(skill, index) in skills" :key="index" :skill="skill" @mouseover="showDescription(skill)"

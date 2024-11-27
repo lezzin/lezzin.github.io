@@ -11,7 +11,7 @@ import { imageUrl } from "../utils/urlUtils";
                     alt="Minha foto de perfil" width="360" height="360" loading="lazy">
 
                 <div class="presentation-texts delay-large">
-                    <h3 class="section-title interval-small">Apresentação</h3>
+                    <h2 class="section-title interval-small">Apresentação</h2>
 
                     <p class="interval-small">
                         Sou Leandro Adrian da Silva, mais conhecido como Lezzin.
