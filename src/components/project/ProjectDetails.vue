@@ -203,6 +203,7 @@ const closeImageView = () => {
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
         cursor: zoom-in;
+        object-fit: cover;
     }
 
     figcaption {

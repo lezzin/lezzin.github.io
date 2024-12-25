@@ -2,6 +2,7 @@ const projects = [
     {
         "image": "erupcao-das-letras.webp",
         "imageDetails": [
+            { src: "erupcao-6.png", label: "Painel do Lighthouse" },
             { src: "erupcao-1.png", label: "Página inicial antes do freelance" },
             { src: "erupcao-2.png", label: "Página inicial após freelance" },
             { src: "erupcao-3.png", label: "Página de login" },
