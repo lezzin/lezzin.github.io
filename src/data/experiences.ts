@@ -11,6 +11,6 @@ export default [
         company: "Ágil Empréstimos · Monte Belo",
         period: "Abril 2025 – Atual",
         description:
-            "Atuação como Desenvolvedor Backend Trainee, participando do desenvolvimento, manutenção e evolução de sistemas críticos sob acompanhamento de profissionais mais experientes. Envolvimento na criação de APIs e microserviços utilizando NestJS, seguindo padrões de arquitetura e boas práticas estabelecidas pelo time. Atuação na manutenção e refatoração de sistemas de backoffice legados desenvolvidos em CodeIgniter, contribuindo para melhorias de estabilidade e performance. Desenvolvimento de aplicações modernas em Laravel, além da criação de documentação técnica e design de sistemas, incluindo diagramas de arquitetura, fluxos e integrações, apoiando a padronização e evolução dos projetos."
+            "Desenvolvimento de APIs e microserviços com NestJS, implementando sistema de disparos multicanal (e-mail, SMS, push e WhatsApp) que processa mais de 100 mil faturas diárias. Utilização de RabbitMQ para filas e Redis para cache, melhorando escalabilidade. Manutenção de sistemas legados em CodeIgniter e desenvolvimento de novas aplicações em Laravel. Otimização de geração de relatórios, reduzindo tempo de processamento de 40 minutos para menos de 2 minutos. Criação de interfaces de monitoramento e auditoria, diminuindo chamados de suporte. Produção de documentação técnica e diagramas de arquitetura."
     },
 ] as Experience[];
