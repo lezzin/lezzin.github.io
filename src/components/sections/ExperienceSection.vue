@@ -18,9 +18,13 @@ import Title from '../ui/Title.vue';
                     <div class="space-y-2">
                         <h3 class="text-lg font-medium dark:text-gray-100">{{ experience.title }}</h3>
                         <p class="text-gray-500 dark:text-gray-300 font-medium">{{ experience.company }}</p>
-                        <p class="text-gray-500 dark:text-gray-300 leading-relaxed pt-2">
-                            {{ experience.description }}
-                        </p>
+                        <ul class="space-y-3 pt-3">
+                            <li v-for="(item, itemIndex) in experience.description" :key="itemIndex"
+                                class="text-gray-600 dark:text-gray-300 leading-relaxed flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>{{ item }}</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </article>

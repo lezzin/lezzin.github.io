@@ -5,35 +5,38 @@ export interface SkillCategory {
 
 export default [
     {
-        category: "Arquitetura & Engenharia de Software",
+        category: "Arquitetura & Engenharia",
         skills: [
             "Clean Architecture",
-            "Arquitetura em Camadas",
             "SOLID",
+            "Microserviços",
+            "REST APIs",
         ],
     },
     {
-        category: "Linguagens",
-        skills: ["PHP", "TypeScript", "SQL"],
+        category: "Backend & Frameworks",
+        skills: ["PHP", "TypeScript", "Laravel", "NestJS", "Node.js", "CodeIgniter"],
     },
     {
-        category: "Backend",
-        skills: ["Laravel", "NestJS", "CodeIgniter"],
-    },
-    {
-        category: "Frontend",
-        skills: ["Vue.js", "Tailwind CSS", "Sass", "Bootstrap", "jQuery"],
+        category: "Mensageria & Performance",
+        skills: ["RabbitMQ", "Redis (Caching & Queues)", "Webhooks", "MinIO (Object Storage)"],
     },
     {
         category: "Bancos de Dados",
-        skills: ["PostgreSQL", "MySQL"],
-    },
-    {
-        category: "Mensageria & Cache",
-        skills: ["RabbitMQ", "Redis"],
+        skills: ["PostgreSQL", "MySQL", "Query Optimization", "Migrations"],
     },
     {
         category: "Infraestrutura & DevOps",
-        skills: ["Docker", "Kubernetes", "Linux", "Git"],
+        skills: [
+            "Docker",
+            "Kubernetes (Pods, Services, CronJobs)",
+            "K8s Debugging (Lens)",
+            "Linux (Ubuntu)",
+            "Git"
+        ],
+    },
+    {
+        category: "Frontend & Ferramentas",
+        skills: ["Vue.js", "Tailwind CSS", "Bootstrap", "Postman / Insomnia"],
     },
 ] as SkillCategory[];

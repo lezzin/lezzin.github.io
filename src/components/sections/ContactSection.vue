@@ -7,35 +7,37 @@ import Button from '../ui/Button.vue';
 
 <template>
     <section id="contact" class="py-20">
-        <Title class="!mb-4">Contato</Title>
+        <div class="max-w-3xl">
+            <Title class="!mb-4">Vamos conversar?</Title>
 
-        <Subtitle>
-            Aberto a novas oportunidades, projetos desafiadores e boas conversas técnicas.
-            Se quiser trocar uma ideia ou discutir uma possível colaboração, é só me chamar.
-        </Subtitle>
+            <Subtitle class="mb-8">
+                Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de sistemas
+                e oportunidades de colaboração no ecossistema Backend.
+            </Subtitle>
 
-        <div class="flex flex-wrap gap-2">
-            <Button variant="ghost" as-child href="mailto:leandrinsilva22@gmail.com" class="footer-link">
-                <Mail :size="16" />
-                <span>leandrinsilva22@gmail.com</span>
-            </Button>
+            <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-4">
+                <Button variant="default" as-child href="mailto:leandrinsilva22@gmail.com" class="footer-link px-6">
+                    <div class="flex items-center gap-3">
+                        <Mail :size="18" />
+                        <span>leandrinsilva22@gmail.com</span>
+                    </div>
+                </Button>
 
-            <Button variant="ghost" as-child href="https://github.com/lezzin" target="_blank" class="footer-link">
-                <Github :size="16" />
-                <span>GitHub</span>
-            </Button>
+                <Button variant="outline" as-child href="https://github.com/lezzin" target="_blank" class="footer-link">
+                    <div class="flex items-center gap-3">
+                        <Github :size="18" />
+                        <span>GitHub</span>
+                    </div>
+                </Button>
 
-            <Button variant="ghost" as-child href="https://www.linkedin.com/in/leandro-adrian/" target="_blank"
-                class="footer-link">
-                <Linkedin :size="16" />
-                <span>LinkedIn</span>
-            </Button>
+                <Button variant="outline" as-child href="https://www.linkedin.com/in/leandro-adrian" target="_blank"
+                    class="footer-link">
+                    <div class="flex items-center gap-3">
+                        <Linkedin :size="18" />
+                        <span>LinkedIn</span>
+                    </div>
+                </Button>
+            </div>
         </div>
     </section>
 </template>
-
-<style scoped lang="postcss">
-.footer-link {
-    @apply flex items-center gap-3;
-}
-</style>
