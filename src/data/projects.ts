@@ -29,7 +29,7 @@ export default [
         outcome:
             "Entrega de um sistema estável capaz de processar mais de 100 mil faturas por dia. Implementação de visibilidade operacional completa, permitindo que falhas de entrega sejam identificadas e tratadas por contrato de forma imediata.",
         technologies: [
-            "Laravel 12",
+            "Laravel 11",
             "CodeIgniter",
             "RabbitMQ",
             "Redis",
