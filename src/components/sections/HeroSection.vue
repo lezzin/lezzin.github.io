@@ -13,7 +13,8 @@ import Divider from '../ui/Divider.vue'
         </p>
 
         <h1
-          class="dark:text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance leading-[1.1]">
+          class="dark:text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance leading-[1.1]"
+        >
           Leandro Adrian <br class="hidden md:block" />
           da Silva
         </h1>
@@ -63,7 +64,6 @@ import Divider from '../ui/Divider.vue'
 }
 
 @keyframes bounce-subtle {
-
   0%,
   100% {
     transform: translateY(0);
