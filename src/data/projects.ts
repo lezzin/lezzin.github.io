@@ -76,7 +76,6 @@ export default [
         decisions: [
             "Refatoração para integração com a plataforma OMNE como intermediadora, visando utilizar seus relatórios nativos e acelerar a entrega de requisitos",
             "Desenvolvimento de tela de gerenciamento de templates, permitindo que a área de negócio cadastre IDs de templates da OMNE sem necessidade de novos deploys",
-            "Uso de NestJS para garantir alta performance e escalabilidade no processamento de mensagens críticas",
         ],
         tradeoffs:
             "A inclusão da OMNE como intermediária trouxe um custo de plataforma, mas o retorno em velocidade de entrega para o negócio e a redução de carga técnica compensaram o investimento.",

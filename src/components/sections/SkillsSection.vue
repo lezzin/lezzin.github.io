@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import skillCategories from '../../data/skills';
 import Divider from '../ui/Divider.vue';
+import SkillItem from '../ui/SkillItem.vue';
 import Title from '../ui/Title.vue';
 </script>
 
@@ -15,17 +16,7 @@ import Title from '../ui/Title.vue';
                 </h3>
 
                 <div class="flex flex-wrap gap-2">
-                    <span v-for="skill in category.skills" :key="skill" class="px-3 py-1.5 text-sm font-medium 
-                               bg-white dark:bg-gray-900 
-                               text-gray-700 dark:text-gray-300 
-                               border border-gray-200 dark:border-gray-800 
-                               rounded-lg shadow-sm
-                               transition-all duration-300
-                               hover:border-green-500 dark:hover:border-green-400 
-                               hover:translate-y-[-2px]
-                               cursor-default">
-                        {{ skill }}
-                    </span>
+                    <SkillItem v-for="skill in category.skills" :key="skill" :skill="skill" />
                 </div>
             </div>
         </div>

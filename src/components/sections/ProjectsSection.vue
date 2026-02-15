@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ProjectCard from '../ui/ProjectCard.vue';
+import ProjectCard from '../ui/ProjectItem.vue';
 import projects from '../../data/projects';
 import Title from '../ui/Title.vue';
 import Subtitle from '../ui/Subtitle.vue';
