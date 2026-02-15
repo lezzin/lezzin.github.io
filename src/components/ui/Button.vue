@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import { computed } from 'vue'
 
 type Variant =
@@ -29,7 +31,7 @@ const props = withDefaults(
 )
 
 const base =
-    'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors ' +
+    'bg-white dark:bg-slate-900 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors ' +
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 ' +
     'disabled:opacity-50 disabled:pointer-events-none'
 
@@ -49,11 +51,15 @@ const sizes: Record<Size, string> = {
     icon: 'h-10 w-10',
 }
 
-const classes = computed(() => [
-    base,
-    variants[props.variant],
-    sizes[props.size],
-])
+const classes = computed(() =>
+    twMerge(
+        clsx(
+            base,
+            variants[props.variant],
+            sizes[props.size]
+        )
+    )
+)
 </script>
 
 <template>
