@@ -10,7 +10,7 @@ import Title from '../ui/Title.vue';
 
         <div class="grid gap-x-12 gap-y-10 md:grid-cols-2">
             <div v-for="category in skillCategories" :key="category.category" class="group">
-                <h3 class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-5">
+                <h3 class="text-xs font-bold text-green-600 dark:text-green-400 uppercase tracking-widest mb-5">
                     {{ category.category }}
                 </h3>
 
@@ -21,8 +21,9 @@ import Title from '../ui/Title.vue';
                                border border-gray-200 dark:border-gray-800 
                                rounded-lg shadow-sm
                                transition-all duration-300
-                               hover:border-blue-500 dark:hover:border-blue-400 
-                               hover:translate-y-[-2px]">
+                               hover:border-green-500 dark:hover:border-green-400 
+                               hover:translate-y-[-2px]
+                               cursor-default">
                         {{ skill }}
                     </span>
                 </div>

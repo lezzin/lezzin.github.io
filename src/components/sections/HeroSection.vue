@@ -6,9 +6,9 @@ import Divider from '../ui/Divider.vue';
 
 <template>
     <section class="min-h-[85vh] flex flex-col justify-center py-20 md:py-32">
-        <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 max-w-2xl">
             <div class="space-y-3">
-                <p class="text-blue-600 dark:text-blue-400 text-sm font-bold tracking-widest uppercase">
+                <p class="text-green-600 dark:text-green-400 text-sm font-bold tracking-widest uppercase">
                     Desenvolvedor Backend
                 </p>
 
@@ -18,11 +18,12 @@ import Divider from '../ui/Divider.vue';
                 </h1>
             </div>
 
-            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 Desenvolvo sistemas backend de alta performance e arquiteturas resilientes.
                 Focado em transformar desafios de negócio em soluções escaláveis utilizando
-                <span class="text-gray-900 dark:text-gray-100 font-medium">NestJS, Laravel e mensageria
-                    distribuída.</span>
+                <span class="text-gray-900 dark:text-gray-100 font-medium">
+                    NestJS, Laravel e mensageria distribuída.
+                </span>
             </p>
 
             <div class="flex flex-wrap gap-4 pt-4">

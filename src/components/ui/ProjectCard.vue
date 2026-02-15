@@ -26,7 +26,7 @@ const expandedClass = computed(() => {
 </script>
 
 <template>
-    <article class="border border-gray-200 dark:border-gray-700 rounded-xl p-6 md:p-8">
+    <article class="border border-gray-300 dark:border-gray-600 rounded-xl p-6 md:p-8">
         <div class="flex flex-col gap-4 mb-6">
             <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                 {{ project.name }}
@@ -34,7 +34,7 @@ const expandedClass = computed(() => {
 
             <div class="flex flex-wrap gap-2">
                 <span v-for="tech in project.technologies.slice(0, 5)" :key="tech"
-                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-100 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800/50 rounded-md">
+                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-green-50 text-green-700 border border-green-100 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800/50 rounded-md">
                     {{ tech }}
                 </span>
             </div>
@@ -81,13 +81,14 @@ const expandedClass = computed(() => {
                     </section>
 
                     <section>
-                        <h4 class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-[0.15em] mb-4">
+                        <h4
+                            class="text-xs font-bold text-green-600 dark:text-green-400 uppercase tracking-[0.15em] mb-4">
                             Decisões de Engenharia
                         </h4>
                         <ul class="grid gap-4">
                             <li v-for="(decision, index) in project.decisions" :key="index"
                                 class="project-text flex gap-3 items-center">
-                                <CheckCircle2 :size="18" class="text-blue-500 mt-0.5 flex-shrink-0" />
+                                <CheckCircle2 :size="18" class="text-green-500 mt-0.5 flex-shrink-0" />
                                 <span>{{ decision }}</span>
                             </li>
                         </ul>

@@ -7,7 +7,7 @@ import Divider from '../ui/Divider.vue';
 </script>
 
 <template>
-    <section id="projects" class="pt-10">
+    <section id="projects" class="py-20">
         <Title> Projetos & Estudos de Caso</Title>
 
         <Subtitle>

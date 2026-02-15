@@ -55,7 +55,7 @@ export default [
         tradeoffs:
             "Foi necessária a criação de uma nova camada de aplicação, pois o sistema legado utilizava versões defasadas que não suportavam uma arquitetura assíncrona moderna de forma segura.",
         outcome:
-            "Redução do tempo de processamento de 40 minutos para menos de 1 minutos (melhoria de 97,5%). Erradicação de timeouts e queda expressiva no volume de chamados de suporte.",
+            "Redução do tempo de processamento de 40 minutos para menos de 1 minuto (melhoria de 97,5%). Erradicação de timeouts e queda expressiva no volume de chamados de suporte.",
         technologies: [
             "Laravel 12",
             "CodeIgniter",
@@ -87,7 +87,7 @@ export default [
             "TypeScript",
             "Redis",
             "API OMNE",
-            "Gupshup API",
+            "API Gupshup",
             "Node.js",
         ],
     },
