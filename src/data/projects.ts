@@ -12,22 +12,30 @@ export interface Project {
 export default [
   {
     name: 'Cronograma de Disparos de Faturas',
+
     context:
-      'Sistema especializado da Ágil Empréstimos focado na automação e controle do envio de faturas aos clientes através de múltiplos canais (E-mail, SMS, Push e WhatsApp).',
+      'Sistema responsável por automatizar o envio de faturas por E-mail, SMS, Push e WhatsApp, apoiando a régua de cobrança da empresa.',
+
     importance:
-      'Garantir a eficiência da régua de cobrança em uma operação de larga escala, assegurando que cada cliente receba sua fatura dentro do prazo para manter a saúde do fluxo de caixa.',
+      'Ajuda a manter o controle da inadimplência e a previsibilidade do fluxo de caixa.',
+
     problem:
-      'O processo era manual e centralizado em um único desenvolvedor, o que gerava riscos operacionais elevados, falta de previsibilidade e ausência de mecanismos de auditoria sobre o status de envio de cada contrato.',
+      'Parte do processo era manual e concentrado em uma única pessoa. Não havia rastreabilidade clara dos envios, o que gerava risco operacional e atrasos na cobrança.',
+
     decisions: [
-      'Arquitetura de processamento assíncrono com RabbitMQ para garantir o envio massivo de faturas sem perda de dados',
-      'Desenvolvimento de telas de auditoria detalhada, permitindo o acompanhamento do status de envio por contrato e visualização de informações vinculadas',
-      'Implementação de cache com Redis para acelerar a consulta de dados recorrentes dos contratos durante o processamento',
-      'Integração com MinIO para armazenamento de arquivos e QRCodes de pagamento, garantindo o desacoplamento do storage',
+      'Implementação de processamento assíncrono com filas (RabbitMQ)',
+      'Criação de tela de auditoria para acompanhar status de envio por contrato',
+      'Uso de Redis para melhorar desempenho nas consultas em banco de dados',
+      'Armazenamento de arquivos e QRCodes no MinIO',
+      'Implementação de regras de envio por canal (ex: Push para clientes com login < 30 dias e SMS para > 30 dias)'
     ],
+
     tradeoffs:
-      'A substituição do processo manual por uma arquitetura baseada em filas exigiu maior esforço inicial em infraestrutura e observabilidade, mas eliminou a dependência humana e permitiu a rastreabilidade total do processo.',
+      'Foi necessário aprender e aplicar o conceito de filas no Laravel e lidar com maior complexidade inicial. Em troca, o processo deixou de ser manual e passou a ser escalável.',
+
     outcome:
-      'Entrega de um sistema estável capaz de processar mais de 100 mil faturas por dia. Implementação de visibilidade operacional completa, permitindo que falhas de entrega sejam identificadas e tratadas por contrato de forma imediata.',
+      'Sistema capaz de processar mais de 100 mil faturas por dia, com rastreabilidade e menor risco operacional.',
+
     technologies: [
       'Laravel 11',
       'CodeIgniter',
@@ -38,42 +46,74 @@ export default [
       'jQuery',
     ],
   },
+
   {
     name: 'Processamento Assíncrono de Relatórios',
+
     context:
-      'API de processamento de dados responsável pela geração de relatórios operacionais e financeiros para as áreas internas da Ágil Empréstimos.',
+      'API responsável pela geração de relatórios operacionais e financeiros para as áreas internas.',
+
     importance:
-      'A disponibilidade desses relatórios é crítica para a operação diária. Falhas no modelo anterior comprometiam a produtividade das equipes e a confiabilidade das informações.',
+      'Os relatórios são essenciais para a operação diária e tomada de decisão.',
+
     problem:
-      'Aplicação legada em PHP com processamento síncrono via HTTP, gerando timeouts frequentes de até 40 minutos, bloqueio de recursos do servidor e alto volume de chamados de suporte.',
+      'O sistema antigo processava relatórios de forma síncrona, gerando timeouts de até 40 minutos. Quando falhava, era necessário acionar o DBA para gerar o relatório direto no banco.',
+
     decisions: [
-      'Migração do modelo síncrono para processamento assíncrono e paralelo utilizando filas com Redis',
-      'Implementação de geração de arquivos via streaming para reduzir drasticamente o consumo de memória',
-      'Armazenamento de relatórios no MinIO, desacoplando o processamento pesado do fluxo de download do usuário',
-      'Interface de acompanhamento do progresso e sistema de notificação automática por e-mail após a conclusão',
+      'Migração para processamento assíncrono com Redis',
+      'Geração de arquivos via streaming para reduzir uso de memória',
+      'Armazenamento dos relatórios no MinIO',
+      'Tela para acompanhamento de status e notificação por e-mail',
+      'Reprocessamento automático em caso de falha'
     ],
+
     tradeoffs:
-      'Foi necessária a criação de uma nova camada de aplicação, pois o sistema legado utilizava versões defasadas que não suportavam uma arquitetura assíncrona moderna de forma segura.',
+      'Foi necessário criar uma nova camada de aplicação por limitações do sistema legado.',
+
     outcome:
-      'Redução do tempo de processamento de 40 minutos para menos de 1 minuto (melhoria de 97,5%). Erradicação de timeouts e queda expressiva no volume de chamados de suporte.',
-    technologies: ['Laravel 12', 'CodeIgniter', 'Redis', 'MinIO', 'Bootstrap', 'jQuery'],
+      'Redução do tempo de processamento de 40 minutos para menos de 1 minuto. Fim dos timeouts e da dependência do DBA para exportações manuais.',
+
+    technologies: [
+      'Laravel 12',
+      'CodeIgniter',
+      'Redis',
+      'MinIO',
+      'Bootstrap',
+      'jQuery'
+    ],
   },
+
   {
     name: 'Refatoração do Microserviço de WhatsApp',
+
     context:
-      'Evolução do microserviço de mensageria utilizado para o envio de tokens (OTP), links de assinatura de contratos e faturas via WhatsApp.',
+      'Refatoração do serviço responsável pelo envio de OTP, links de contrato e faturas via WhatsApp.',
+
     importance:
-      'O WhatsApp é o canal vital de conversão. A agilidade na gestão de templates e o acesso a relatórios integrados impactam diretamente o tempo de resposta ao cliente.',
+      'O WhatsApp é um dos principais canais de comunicação com o cliente.',
+
     problem:
-      'A integração direta anterior (Gupshup) dificultava a gestão de templates e relatórios, exigindo constantes intervenções de DevOps e deploys para mudanças simples de negócio.',
+      'Os templates eram configurados via variável de ambiente. Qualquer alteração exigia deploy e apoio técnico, além de pouca visibilidade sobre os envios.',
+
     decisions: [
-      'Refatoração para integração com a plataforma OMNE como intermediadora, visando utilizar seus relatórios nativos e acelerar a entrega de requisitos',
-      'Desenvolvimento de tela de gerenciamento de templates, permitindo que a área de negócio cadastre IDs de templates da OMNE sem necessidade de novos deploys',
+      'Integração com a OMNE como intermediadora entre API interna e GUPSHUP',
+      'Criação de tela para gerenciamento de templates sem necessidade de deploy',
+      'Organização das configurações para reduzir dependência de DevOps'
     ],
+
     tradeoffs:
-      'A inclusão da OMNE como intermediária trouxe um custo de plataforma, mas o retorno em velocidade de entrega para o negócio e a redução de carga técnica compensaram o investimento.',
+      'A inclusão da OMNE adicionou um custo extra e mais um ponto na arquitetura.',
+
     outcome:
-      'Autonomia total para o time de Negócios na gestão de templates. Redução drástica do Lead Time de mudanças e maior clareza nos dados de entrega através de relatórios integrados.',
-    technologies: ['NestJS', 'TypeScript', 'Redis', 'API OMNE', 'API Gupshup', 'Node.js'],
-  },
+      'Time de Negócios passou a gerenciar templates sozinho, com mais visibilidade sobre os envios e menos dependência técnica.',
+
+    technologies: [
+      'NestJS',
+      'TypeScript',
+      'Redis',
+      'API OMNE',
+      'API Gupshup',
+      'Node.js'
+    ],
+  }
 ] as Project[]
