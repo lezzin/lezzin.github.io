@@ -6,26 +6,26 @@ import Divider from '../ui/Divider.vue'
 
 <template>
   <section class="min-h-[85vh] flex flex-col justify-center py-20 md:py-32">
-    <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 max-w-2xl">
+    <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 max-w-3xl">
       <div class="space-y-3">
         <p class="text-green-600 dark:text-green-400 text-sm font-bold tracking-widest uppercase">
           Desenvolvedor Backend
         </p>
 
         <h1
-          class="dark:text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance leading-[1.1]"
-        >
+          class="dark:text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance leading-[1.1]">
           Leandro Adrian <br class="hidden md:block" />
           da Silva
         </h1>
       </div>
 
       <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-        Desenvolvo sistemas backend de alta performance e arquiteturas resilientes. Focado em
-        transformar desafios de negócio em soluções escaláveis utilizando
+        Desenvolvo sistemas backend de alta performance e arquiteturas resilientes. Focado em transformar desafios de
+        negócio em soluções escaláveis e documentadas, utilizando o melhor de
         <span class="text-gray-900 dark:text-gray-100 font-medium">
-          NestJS, Laravel e mensageria distribuída.
+          NestJS, Laravel e Inteligência Artificial
         </span>
+        para acelerar entregas com qualidade.
       </p>
 
       <div class="flex flex-wrap gap-4 pt-4">
@@ -64,6 +64,7 @@ import Divider from '../ui/Divider.vue'
 }
 
 @keyframes bounce-subtle {
+
   0%,
   100% {
     transform: translateY(0);

@@ -24,10 +24,7 @@ export default [
 
     decisions: [
       'Implementação de processamento assíncrono com filas (RabbitMQ)',
-      'Criação de tela de auditoria para acompanhar status de envio por contrato',
-      'Uso de Redis para melhorar desempenho nas consultas em banco de dados',
-      'Armazenamento de arquivos e QRCodes no MinIO',
-      'Implementação de regras de envio por canal (ex: Push para clientes com login < 30 dias e SMS para > 30 dias)'
+      'Uso de Redis para cache de consultas frequentes e MinIO para persistência de QRCodes de pagamento e imagens dos templates.',
     ],
 
     tradeoffs:
@@ -57,14 +54,13 @@ export default [
       'Os relatórios são essenciais para a operação diária e tomada de decisão.',
 
     problem:
-      'O sistema antigo processava relatórios de forma síncrona, gerando timeouts de até 40 minutos. Quando falhava, era necessário acionar o DBA para gerar o relatório direto no banco.',
+      'Timeouts constantes de até 40 minutos em relatórios síncronos, exigindo intervenção manual do DBA para extração de dados.',
 
     decisions: [
       'Migração para processamento assíncrono com Redis',
-      'Geração de arquivos via streaming para reduzir uso de memória',
-      'Armazenamento dos relatórios no MinIO',
-      'Tela para acompanhamento de status e notificação por e-mail',
-      'Reprocessamento automático em caso de falha'
+      'Otimização de queries SQL e geração de arquivos via streaming para reduzir o consumo de memória do servidor.',
+      'Notificação de erro e sucesso por e-mail ao fim do processamento',
+      'Armazenamento dos arquivos .zip (contendo o CSV) dos relatórios no MinIO',
     ],
 
     tradeoffs:
@@ -93,19 +89,19 @@ export default [
       'O WhatsApp é um dos principais canais de comunicação com o cliente.',
 
     problem:
-      'Os templates eram configurados via variável de ambiente. Qualquer alteração exigia deploy e apoio técnico, além de pouca visibilidade sobre os envios.',
+      'Configurações de templates presas em variáveis de ambiente (ENV), exigindo deploys técnicos para simples alterações de texto.',
 
     decisions: [
-      'Integração com a OMNE como intermediadora entre API interna e GUPSHUP',
-      'Criação de tela para gerenciamento de templates sem necessidade de deploy',
+      'Integração com a OMNE como intermediadora entre API interna e GUPSHUP.',
+      'Desenvolvimento de interface para gerenciamento dinâmico de templates pelo time de negócio.',
       'Organização das configurações para reduzir dependência de DevOps'
     ],
 
     tradeoffs:
-      'A inclusão da OMNE adicionou um custo extra e mais um ponto na arquitetura.',
+      'A introdução de um intermediário (OMNE) adicionou um custo fixo e um novo ponto de falha na arquitetura. No entanto, o ganho em agilidade de negócio foi superior, permitindo que o marketing alterasse campanhas sem necessidade de novos deploys, além da visibilidade analítica dos envios através dos relatórios já integrados na OMNE.',
 
     outcome:
-      'Time de Negócios passou a gerenciar templates sozinho, com mais visibilidade sobre os envios e menos dependência técnica.',
+      'Autonomia total para o time de negócios e visibilidade analítica sobre o status de entrega das mensagens.',
 
     technologies: [
       'NestJS',

@@ -8,27 +8,37 @@ defineProps<{
 </script>
 
 <template>
-  <article class="group">
-    <div class="grid md:grid-cols-[200px_1fr] gap-4 md:gap-8">
-      <div class="relative">
-        <div class="sticky top-24">
-          <div class="text-sm text-gray-500 dark:text-gray-300">
-            {{ experience.period }}
-          </div>
-        </div>
-      </div>
+  <article class="group relative">
+    <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10">
 
-      <div class="space-y-2">
-        <h3 class="text-lg font-medium dark:text-gray-100">{{ experience.title }}</h3>
-        <p class="text-gray-500 dark:text-gray-300 font-medium">{{ experience.company }}</p>
-        <ul class="space-y-3 pt-3">
-          <li
-            v-for="(item, itemIndex) in experience.description"
-            :key="itemIndex"
-            class="flex gap-4 text-gray-700 dark:text-gray-300"
-          >
-            <span class="flex-shrink-0 w-1.5 h-1.5 mt-2.5 rounded-full bg-green-500"></span>
-            <p class="leading-relaxed" v-html="formatBold(item)"></p>
+      <aside class="relative">
+        <div class="md:sticky md:top-24">
+          <time class="text-sm font-medium tracking-wide text-gray-500 dark:text-gray-400">
+            {{ experience.period }}
+          </time>
+        </div>
+      </aside>
+
+      <div class="space-y-4">
+        <header class="space-y-1">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+            {{ experience.title }}
+          </h3>
+
+          <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+            {{ experience.company }}
+          </p>
+        </header>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          {{ experience.description }}
+        </p>
+
+        <ul class="space-y-3">
+          <li v-for="(item, index) in experience.bulletPoints" :key="index" class="flex items-start gap-3">
+            <span class="mt-2 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
+
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed" v-html="formatBold(item)" />
           </li>
         </ul>
       </div>
