@@ -53,13 +53,13 @@ onUnmounted(() => {
   >
     <!-- Progress Bar -->
     <div
-      class="absolute bottom-0 left-0 h-[2px] bg-green-600 dark:bg-green-400 transition-all duration-150"
+      class="absolute bottom-0 left-0 h-[3px] bg-zinc-900 dark:bg-white transition-all duration-150"
       :style="{ width: `${scrollProgress}%` }"
     ></div>
 
     <div class="max-w-4xl mx-auto px-6 md:px-8 flex items-center justify-between">
-      <a href="#" class="font-bold text-xl tracking-tighter text-zinc-900 dark:text-white">
-        L<span class="text-green-600 dark:text-green-400">.</span>Adrian
+      <a href="#" class="font-handwritten text-2xl tracking-tight text-zinc-900 dark:text-white">
+        L<span class="text-zinc-400">.</span>Adrian
       </a>
 
       <nav class="hidden md:flex items-center gap-8">
@@ -68,10 +68,10 @@ onUnmounted(() => {
           :key="item.name"
           :href="item.href"
           :class="[
-            'text-sm font-medium transition-colors hover:text-green-600 dark:hover:text-green-400',
+            'text-base font-bold transition-all hover:scale-110',
             activeSection === item.href.replace('#', '') || (item.href === '#' && activeSection === 'home')
-              ? 'text-green-600 dark:text-green-400'
-              : 'text-zinc-600 dark:text-zinc-400',
+              ? 'text-zinc-900 dark:text-white underline underline-offset-4 decoration-2'
+              : 'text-zinc-500 dark:text-zinc-400',
           ]"
         >
           {{ item.name }}

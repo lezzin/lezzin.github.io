@@ -26,7 +26,7 @@ const copyEmail = async () => {
     <div class="max-w-3xl">
       <Title class="!mb-4">Vamos conversar?</Title>
 
-      <Subtitle class="mb-8">
+      <Subtitle class="mb-12 font-handwritten text-xl">
         Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de sistemas
         e oportunidades de colaboração no ecossistema Backend.
       </Subtitle>

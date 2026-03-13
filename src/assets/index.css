@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  body {
+    @apply font-sans antialiased text-zinc-900 dark:text-zinc-100;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Excalidraw-like grid background */
+    background-image:
+      radial-gradient(circle, #e5e7eb 1px, transparent 1px),
+      radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+
+  .dark html {
+    background-image:
+      radial-gradient(circle, #1f2937 1px, transparent 1px),
+      radial-gradient(circle, #1f2937 1px, transparent 1px);
+  }
+}
+
+@layer components {
+  .rough-border {
+    border-width: 2px;
+    border-style: solid;
+    @apply border-zinc-900 dark:border-zinc-100 rounded-rough-1;
+    transform: rotate(-0.5deg);
+  }
+
+  .rough-border-alt {
+    border-width: 2px;
+    border-style: solid;
+    @apply border-zinc-900 dark:border-zinc-100 rounded-rough-2;
+    transform: rotate(0.5deg);
+  }
+
+  .rough-divider {
+    @apply h-1 w-full border-b-2 border-zinc-900 dark:border-zinc-100 opacity-50;
+    transform: rotate(-0.2deg) skewX(2deg);
+  }
+
+  .mark {
+    @apply bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 px-1 rounded-rough-2
+  }
 }

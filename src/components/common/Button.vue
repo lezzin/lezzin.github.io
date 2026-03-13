@@ -25,20 +25,20 @@ const props = withDefaults(
 )
 
 const base =
-  'bg-white dark:bg-zinc-950 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors ' +
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 ' +
-  'disabled:opacity-50 disabled:pointer-events-none'
+  'bg-white dark:bg-zinc-950 inline-flex items-center justify-center border-2 text-base font-bold transition-all ' +
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 ' +
+  'disabled:opacity-50 disabled:pointer-events-none active:scale-95'
 
 const variants: Record<Variant, string> = {
   default:
-    'bg-green-900 text-white hover:bg-green-800 dark:bg-green-100 dark:text-green-900 dark:hover:bg-green-300',
+    'bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-200 border-zinc-900 dark:border-zinc-100 rounded-rough-1',
   secondary:
-    'bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600',
+    'bg-zinc-200 text-zinc-900 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 border-zinc-900 dark:border-zinc-100 rounded-rough-2',
   outline:
-    'border border-zinc-300 hover:bg-zinc-100 dark:border-zinc-600 dark:hover:bg-zinc-800 dark:text-zinc-100',
-  ghost: 'hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-100',
-  destructive: 'bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600',
-  link: 'text-green-600 underline-offset-4 hover:underline dark:text-green-400',
+    'border-2 border-zinc-900 hover:bg-zinc-100 dark:border-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 rounded-rough-1',
+  ghost: 'hover:bg-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 border-transparent',
+  destructive: 'bg-red-500 text-white hover:bg-red-600 border-red-900 rounded-rough-2',
+  link: 'text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-100 border-transparent',
 }
 
 const sizes: Record<Size, string> = {

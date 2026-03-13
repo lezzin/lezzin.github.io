@@ -28,13 +28,8 @@ const toggleProject = (index: number) => {
     </Subtitle>
 
     <div class="space-y-6">
-      <ProjectCard 
-        v-for="(project, index) in projects" 
-        :key="index" 
-        :project="project"
-        :is-expanded="expandedProjectIndex === index"
-        @toggle="toggleProject(index)"
-      />
+      <ProjectCard v-for="(project, index) in projects" :key="index" :project="project"
+        :is-expanded="expandedProjectIndex === index" @toggle="toggleProject(index)" />
     </div>
 
     <Divider />

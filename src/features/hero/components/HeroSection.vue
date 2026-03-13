@@ -22,16 +22,9 @@ import Divider from '../../../components/common/Divider.vue'
       <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
         Desenvolvedor Backend focado na construção de sistemas robustos, escaláveis e de alta performance. Especializado
         em arquiteturas modernas com
-        <span class="text-gray-900 dark:text-gray-100 font-medium">NestJS e Laravel</span>,
+        <mark class="mark font-medium">NestJS e Laravel</mark>,
         busco transformar desafios técnicos em soluções eficientes, bem documentadas e de alto impacto para o negócio.
       </p>
-
-      <div class="flex flex-wrap gap-2 pt-2">
-        <span v-for="tech in ['NestJS', 'Laravel', 'Redis', 'RabbitMQ', 'Docker', 'Kubernetes']" :key="tech"
-          class="px-3 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-full text-xs font-semibold tracking-wide border border-zinc-200 dark:border-zinc-700">
-          {{ tech }}
-        </span>
-      </div>
 
       <div class="flex flex-wrap gap-4 pt-4">
         <Button variant="default" as-child href="#projects" class="px-6">

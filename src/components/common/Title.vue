@@ -1,23 +1,25 @@
 <template>
-  <h2 class="text-3xl md:text-4xl font-bold tracking-tighter mb-12 text-zinc-900 dark:text-white flex items-center gap-2">
+  <h2
+    class="text-3xl md:text-5xl font-handwritten tracking-tight mb-12 text-zinc-900 dark:text-white flex items-center gap-4">
     <slot></slot>
-    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse-slow"></span>
+    <span class="w-3 h-3 rounded-rough-1 bg-zinc-900 dark:bg-white animate-wobble"></span>
   </h2>
 </template>
 
 <style scoped>
-.animate-pulse-slow {
-  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.animate-wobble {
+  animation: wobble 4s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
+@keyframes wobble {
+
+  0%,
+  100% {
+    transform: rotate(-5deg) scale(1);
   }
+
   50% {
-    opacity: .5;
-    transform: scale(1.2);
+    transform: rotate(5deg) scale(1.1);
   }
 }
 </style>
