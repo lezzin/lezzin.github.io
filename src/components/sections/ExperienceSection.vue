@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import experiences from '../../data/experiences'
-import { formatBold } from '../../helper/markdown'
 import Divider from '../ui/Divider.vue'
 import ExperienceItem from '../ui/ExperienceItem.vue'
 import Title from '../ui/Title.vue'
@@ -11,11 +10,7 @@ import Title from '../ui/Title.vue'
     <Title>Experiência Profissional</Title>
 
     <div class="space-y-12">
-      <ExperienceItem
-        v-for="(experience, index) in experiences"
-        :key="index"
-        :experience="experience"
-      />
+      <ExperienceItem v-for="(experience, index) in experiences" :key="index" :experience="experience" />
     </div>
 
     <Divider />

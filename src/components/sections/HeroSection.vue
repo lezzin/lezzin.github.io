@@ -5,7 +5,7 @@ import Divider from '../ui/Divider.vue'
 </script>
 
 <template>
-  <section class="min-h-[85vh] flex flex-col justify-center py-20 md:py-32">
+<section id="home" class="min-h-[85vh] flex flex-col justify-center py-20 md:py-32">
     <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 max-w-3xl">
       <div class="space-y-3">
         <p class="text-green-600 dark:text-green-400 text-sm font-bold tracking-widest uppercase">
@@ -28,6 +28,14 @@ import Divider from '../ui/Divider.vue'
         para acelerar entregas com qualidade.
       </p>
 
+      <!-- Tech Stack Badges -->
+      <div class="flex flex-wrap gap-2 pt-2">
+        <span v-for="tech in ['NestJS', 'Laravel', 'Redis', 'RabbitMQ', 'Docker', 'Kubernetes']" :key="tech"
+          class="px-3 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-full text-xs font-semibold tracking-wide border border-zinc-200 dark:border-zinc-700">
+          {{ tech }}
+        </span>
+      </div>
+
       <div class="flex flex-wrap gap-4 pt-4">
         <Button variant="default" as-child href="#projects" class="px-6">
           <div class="flex items-center">
@@ -37,10 +45,10 @@ import Divider from '../ui/Divider.vue'
         </Button>
 
         <div class="flex gap-3">
-          <Button variant="outline" as-child href="#contact">
+          <Button variant="outline" as-child href="https://wa.me/5535984485559" target="_blank">
             <div class="flex items-center">
               <Mail class="mr-2 h-4 w-4" />
-              Contato
+              Agendar Conversa
             </div>
           </Button>
 
