@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Header from '../components/ui/Header.vue'
+import Header from './Header.vue'
 
 const currentYear = new Date().getFullYear()
 </script>

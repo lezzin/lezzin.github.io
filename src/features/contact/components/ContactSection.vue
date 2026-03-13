@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { Github, Linkedin, Mail, Copy, Check } from 'lucide-vue-next'
-import Title from '../ui/Title.vue'
-import Subtitle from '../ui/Subtitle.vue'
-import Button from '../ui/Button.vue'
+import Title from '../../../components/common/Title.vue'
+import Subtitle from '../../../components/common/Subtitle.vue'
+import Button from '../../../components/common/Button.vue'
 import { ref } from 'vue'
 
 const email = 'leandrinsilva22@gmail.com'

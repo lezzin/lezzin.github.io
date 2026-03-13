@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import experiences from '../../data/experiences'
-import Divider from '../ui/Divider.vue'
-import ExperienceItem from '../ui/ExperienceItem.vue'
-import Title from '../ui/Title.vue'
+import { experiences } from '../../../constants/experiences'
+import Divider from '../../../components/common/Divider.vue'
+import ExperienceItem from './ExperienceItem.vue'
+import Title from '../../../components/common/Title.vue'
 </script>
 
 <template>

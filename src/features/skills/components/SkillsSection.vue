@@ -1,25 +1,8 @@
 <script lang="ts" setup>
-import skillCategories from '../../data/skills'
-import Divider from '../ui/Divider.vue'
-import SkillItem from '../ui/SkillItem.vue'
-import Title from '../ui/Title.vue'
-import { 
-  Database, 
-  Layers, 
-  Server, 
-  Zap, 
-  Cloud, 
-  Monitor 
-} from 'lucide-vue-next'
-
-const categoryIcons: Record<string, any> = {
-  'Arquitetura & Engenharia': Layers,
-  'Backend & Frameworks': Server,
-  'Mensageria & Performance': Zap,
-  'Bancos de Dados': Database,
-  'Infraestrutura & DevOps': Cloud,
-  'Frontend & Ferramentas': Monitor
-}
+import { skillCategories } from '../../../constants/skills'
+import Divider from '../../../components/common/Divider.vue'
+import SkillItem from './SkillItem.vue'
+import Title from '../../../components/common/Title.vue'
 </script>
 
 <template>
@@ -30,7 +13,7 @@ const categoryIcons: Record<string, any> = {
       <div v-for="category in skillCategories" :key="category.category" 
         class="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-100 dark:border-zinc-800 hover:border-green-500/30 transition-all duration-300">
         <div class="flex items-center gap-3 mb-6">
-          <component :is="categoryIcons[category.category] || Server" 
+          <component :is="category.icon" 
             class="text-green-600 dark:text-green-400" :size="20" />
           <h3 class="text-sm font-bold text-gray-900 dark:text-gray-100 uppercase tracking-widest">
             {{ category.category }}

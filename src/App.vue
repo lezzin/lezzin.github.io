@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ContactSection from './components/sections/ContactSection.vue'
-import ExperienceSection from './components/sections/ExperienceSection.vue'
-import HeroSection from './components/sections/HeroSection.vue'
-import ProjectsSection from './components/sections/ProjectsSection.vue'
-import SkillsSection from './components/sections/SkillsSection.vue'
-import PrimaryLayout from './layout/PrimaryLayout.vue'
+import ContactSection from './features/contact/components/ContactSection.vue'
+import ExperienceSection from './features/experience/components/ExperienceSection.vue'
+import HeroSection from './features/hero/components/HeroSection.vue'
+import ProjectsSection from './features/projects/components/ProjectsSection.vue'
+import SkillsSection from './features/skills/components/SkillsSection.vue'
+import PrimaryLayout from './components/layout/PrimaryLayout.vue'
 </script>
 
 <template>

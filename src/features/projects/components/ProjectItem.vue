@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { ChevronDown, CheckCircle2 } from 'lucide-vue-next'
 import { computed } from 'vue'
-import { type Project } from '../../data/projects'
-import Button from './Button.vue'
-import { formatText } from '../../helper/markdown'
+import { type Project } from '../../../types/project'
+import Button from '../../../components/common/Button.vue'
+import { formatText } from '../../../utils/markdown'
 
 const props = defineProps<{
   project: Project

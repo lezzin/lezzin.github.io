@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Experience } from '../../data/experiences'
-import { formatText } from '../../helper/markdown'
+import type { Experience } from '../../../types/experience'
+import { formatText } from '../../../utils/markdown'
 
 defineProps<{
   experience: Experience

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import ProjectCard from '../ui/ProjectItem.vue'
-import projects from '../../data/projects'
-import Title from '../ui/Title.vue'
-import Subtitle from '../ui/Subtitle.vue'
-import Divider from '../ui/Divider.vue'
+import ProjectCard from './ProjectItem.vue'
+import { projects } from '../../../constants/projects'
+import Title from '../../../components/common/Title.vue'
+import Subtitle from '../../../components/common/Subtitle.vue'
+import Divider from '../../../components/common/Divider.vue'
 
 const expandedProjectIndex = ref<number | null>(null)
 
