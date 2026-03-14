@@ -18,7 +18,7 @@ const toggleProject = (index: number) => {
 </script>
 
 <template>
-  <section id="projects" class="py-20">
+  <section id="projects" class="py-20 scroll-mt-12">
     <Title> Projetos & Estudos de Caso</Title>
 
     <Subtitle>

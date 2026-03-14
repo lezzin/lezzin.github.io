@@ -22,7 +22,7 @@ const copyEmail = async () => {
 </script>
 
 <template>
-  <section id="contact" class="py-20 mb-10">
+  <section id="contact" class="py-20 scroll-mt-12">
     <div class="max-w-3xl">
       <Title class="!mb-4">Vamos conversar?</Title>
 
@@ -33,24 +33,15 @@ const copyEmail = async () => {
 
       <div class="flex flex-col gap-6">
         <div class="flex flex-wrap gap-4">
-          <Button
-            variant="default"
-            as-child
-            :href="`mailto:${email}`"
-            class="px-6 h-12"
-          >
+          <Button variant="default" as-child :href="`mailto:${email}`" class="px-6 h-12">
             <div class="flex items-center gap-3">
               <Mail :size="18" />
               <span class="font-semibold">{{ email }}</span>
             </div>
           </Button>
 
-          <Button
-            variant="outline"
-            @click="copyEmail"
-            class="h-12 px-4 transition-all duration-300"
-            :class="copied ? 'border-green-500 text-green-600 dark:text-green-400' : ''"
-          >
+          <Button variant="outline" @click="copyEmail" class="h-12 px-4 transition-all duration-300"
+            :class="copied ? 'border-green-500 text-green-600 dark:text-green-400' : ''">
             <div class="flex items-center gap-2">
               <Check v-if="copied" :size="18" />
               <Copy v-else :size="18" />
@@ -60,26 +51,15 @@ const copyEmail = async () => {
         </div>
 
         <div class="flex flex-wrap gap-4">
-          <Button
-            variant="outline"
-            as-child
-            href="https://github.com/lezzin"
-            target="_blank"
-            class="h-12 px-6"
-          >
+          <Button variant="outline" as-child href="https://github.com/lezzin" target="_blank" class="h-12 px-6">
             <div class="flex items-center gap-3">
               <Github :size="18" />
               <span>GitHub</span>
             </div>
           </Button>
 
-          <Button
-            variant="outline"
-            as-child
-            href="https://www.linkedin.com/in/leandro-adrian"
-            target="_blank"
-            class="h-12 px-6"
-          >
+          <Button variant="outline" as-child href="https://www.linkedin.com/in/leandro-adrian" target="_blank"
+            class="h-12 px-6">
             <div class="flex items-center gap-3">
               <Linkedin :size="18" />
               <span>LinkedIn</span>

@@ -6,7 +6,7 @@ import Title from '../../../components/common/Title.vue'
 </script>
 
 <template>
-  <section id="skills" class="py-20">
+  <section id="skills" class="py-20 scroll-mt-12">
     <Title>Habilidades & Ferramentas</Title>
 
     <div class="grid gap-8 md:grid-cols-2">
