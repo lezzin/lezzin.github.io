@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear()
 
     <Divider />
 
-    <footer class="py-16 text-center">
+    <footer class="pb-12 text-center">
       <div class="max-w-3xl mx-auto px-6 text-gray-800 dark:text-gray-300">
         <p class="font-handwritten text-xl mb-2">Leandro Adrian da Silva</p>
         <p class="text-[10px] font-sans opacity-60 uppercase tracking-widest">

@@ -4,6 +4,8 @@ import { computed } from 'vue'
 import { type Project } from '../../../types/project'
 import Button from '../../../components/common/Button.vue'
 import { formatText } from '../../../utils/markdown'
+import { motion } from 'motion-v'
+import { roughVariants } from '../../../constants/motion'
 
 const props = defineProps<{
   project: Project
@@ -30,8 +32,8 @@ const expandedClass = computed(() => {
 </script>
 
 <template>
-  <article
-    class="group rough-border p-6 md:p-8 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300">
+  <motion.article :variants="roughVariants" initial="hidden" animate="visible" while-hover="hover"
+    class="group rough-border p-6 md:p-8 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 origin-center">
     <div class="flex flex-col gap-4 mb-6">
       <h3 class="text-xl md:text-3xl font-handwritten text-gray-900 dark:text-gray-100 tracking-tight">
         {{ project.name }}
@@ -107,7 +109,7 @@ const expandedClass = computed(() => {
         </div>
       </div>
     </div>
-  </article>
+  </motion.article>
 </template>
 
 <style scoped lang="postcss">

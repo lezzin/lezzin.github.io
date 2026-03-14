@@ -2,6 +2,7 @@
 import clsx from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { computed } from 'vue'
+import { motion } from 'motion-v'
 
 type Variant = 'default' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link'
 
@@ -25,9 +26,9 @@ const props = withDefaults(
 )
 
 const base =
-  'bg-white dark:bg-zinc-950 inline-flex items-center justify-center border-2 text-base font-bold transition-all ' +
+  'bg-white dark:bg-zinc-950 inline-flex items-center justify-center border-2 text-base font-bold transition-colors ' +
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 ' +
-  'disabled:opacity-50 disabled:pointer-events-none active:scale-95'
+  'disabled:opacity-50 disabled:pointer-events-none'
 
 const variants: Record<Variant, string> = {
   default:
@@ -49,14 +50,29 @@ const sizes: Record<Size, string> = {
 }
 
 const classes = computed(() => twMerge(clsx(base, variants[props.variant], sizes[props.size])))
+
+const buttonVariants = {
+  hover: {
+    scale: 1.02,
+    rotate: -1,
+    boxShadow: "6px 6px 0px 0px rgba(0,0,0,1)"
+  },
+  tap: {
+    scale: 0.98,
+    rotate: 1,
+    boxShadow: "1px 1px 0px 0px rgba(0,0,0,1)"
+  }
+}
 </script>
 
 <template>
-  <component v-if="asChild" :is="'a'" :class="classes" v-bind="$attrs">
+  <motion.a v-if="asChild" :is="'a'" :class="classes" v-bind="$attrs" while-hover="hover" while-tap="tap"
+    :variants="buttonVariants">
     <slot />
-  </component>
+  </motion.a>
 
-  <button v-else :type="type" :disabled="disabled" :class="classes">
+  <motion.button v-else :type="type" :disabled="disabled" :class="classes" while-hover="hover" while-tap="tap"
+    :variants="buttonVariants">
     <slot />
-  </button>
+  </motion.button>
 </template>

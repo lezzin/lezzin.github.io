@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Experience } from '../../../types/experience'
 import { formatText } from '../../../utils/markdown'
+import { motion } from 'motion-v'
+import { itemVariants } from '../../../constants/motion'
 
 defineProps<{
   experience: Experience
@@ -8,7 +10,8 @@ defineProps<{
 </script>
 
 <template>
-  <article class="group relative py-8 border-b-2 border-zinc-900 dark:border-zinc-100 border-dashed last:border-0">
+  <motion.article :variants="itemVariants"
+    class="group relative py-8 border-b-2 border-zinc-900 dark:border-zinc-100 border-dashed last:border-0">
     <div class="grid md:grid-cols-[200px_1fr] gap-6 md:gap-10">
 
       <aside>
@@ -41,5 +44,5 @@ defineProps<{
         </ul>
       </div>
     </div>
-  </article>
+  </motion.article>
 </template>
