@@ -11,9 +11,18 @@ import { containerVariants } from '../../../constants/motion'
   <section id="experience" class="py-20 scroll-mt-12">
     <Title>Experiência Profissional</Title>
 
-    <motion.div class="space-y-12" :variants="containerVariants" initial="hidden" while-in-view="visible"
-      :viewport="{ once: true, margin: '-100px' }">
-      <ExperienceItem v-for="(experience, index) in experiences" :key="index" :experience="experience" />
+    <motion.div
+      class="space-y-12"
+      :variants="containerVariants"
+      initial="hidden"
+      while-in-view="visible"
+      :viewport="{ once: true, margin: '-100px' }"
+    >
+      <ExperienceItem
+        v-for="(experience, index) in experiences"
+        :key="index"
+        :experience="experience"
+      />
     </motion.div>
 
     <Divider />

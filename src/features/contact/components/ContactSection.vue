@@ -25,16 +25,21 @@ const copyEmail = async () => {
 
 <template>
   <section id="contact" class="py-20 scroll-mt-12">
-    <motion.div class="max-w-3xl" :variants="containerVariants" initial="hidden" while-in-view="visible"
-      :viewport="{ once: true, margin: '-100px' }">
+    <motion.div
+      class="max-w-3xl"
+      :variants="containerVariants"
+      initial="hidden"
+      while-in-view="visible"
+      :viewport="{ once: true, margin: '-100px' }"
+    >
       <motion.div :variants="itemVariants">
         <Title class="!mb-4">Vamos conversar?</Title>
       </motion.div>
 
       <motion.div :variants="itemVariants">
         <Subtitle class="mb-12 font-handwritten text-xl">
-          Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de sistemas
-          e oportunidades de colaboração no ecossistema Backend.
+          Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de
+          sistemas e oportunidades de colaboração no ecossistema Backend.
         </Subtitle>
       </motion.div>
 
@@ -57,16 +62,28 @@ const copyEmail = async () => {
         </motion.div>
 
         <motion.div :variants="itemVariants" class="flex flex-wrap gap-4">
-          <Button variant="outline" as-child href="https://github.com/lezzin" target="_blank" class="h-12 px-6"
-            size="sm">
+          <Button
+            variant="outline"
+            as-child
+            href="https://github.com/lezzin"
+            target="_blank"
+            class="h-12 px-6"
+            size="sm"
+          >
             <div class="flex items-center gap-3">
               <Github :size="18" />
               <span>GitHub</span>
             </div>
           </Button>
 
-          <Button variant="outline" as-child href="https://www.linkedin.com/in/leandro-adrian" target="_blank"
-            class="h-12 px-6" size="sm">
+          <Button
+            variant="outline"
+            as-child
+            href="https://www.linkedin.com/in/leandro-adrian"
+            target="_blank"
+            class="h-12 px-6"
+            size="sm"
+          >
             <div class="flex items-center gap-3">
               <Linkedin :size="18" />
               <span>LinkedIn</span>

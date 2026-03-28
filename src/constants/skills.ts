@@ -1,12 +1,5 @@
 import type { SkillCategory } from '../types/skill'
-import { 
-  Database, 
-  Layers, 
-  Server, 
-  Zap, 
-  Cloud, 
-  Monitor 
-} from 'lucide-vue-next'
+import { Database, Layers, Server, Zap, Cloud, Monitor } from 'lucide-vue-next'
 
 export const skillCategories: SkillCategory[] = [
   {
@@ -31,13 +24,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Ferramentas & DevOps',
-    skills: [
-      'Docker',
-      'Kubernetes (K8s)',
-      'Git / GitHub',
-      'Postman / Insomnia',
-      'Linux (Ubuntu)',
-    ],
+    skills: ['Docker', 'Kubernetes (K8s)', 'Git / GitHub', 'Postman / Insomnia', 'Linux (Ubuntu)'],
     icon: Cloud,
   },
   {

@@ -55,24 +55,38 @@ const buttonVariants = {
   hover: {
     scale: 1.02,
     rotate: -1,
-    boxShadow: "6px 6px 0px 0px rgba(0,0,0,1)"
+    boxShadow: '6px 6px 0px 0px rgba(0,0,0,1)',
   },
   tap: {
     scale: 0.98,
     rotate: 1,
-    boxShadow: "1px 1px 0px 0px rgba(0,0,0,1)"
-  }
+    boxShadow: '1px 1px 0px 0px rgba(0,0,0,1)',
+  },
 }
 </script>
 
 <template>
-  <motion.a v-if="asChild" :is="'a'" :class="classes" v-bind="$attrs" while-hover="hover" while-tap="tap"
-    :variants="buttonVariants">
+  <motion.a
+    v-if="asChild"
+    :is="'a'"
+    :class="classes"
+    v-bind="$attrs"
+    while-hover="hover"
+    while-tap="tap"
+    :variants="buttonVariants"
+  >
     <slot />
   </motion.a>
 
-  <motion.button v-else :type="type" :disabled="disabled" :class="classes" while-hover="hover" while-tap="tap"
-    :variants="buttonVariants">
+  <motion.button
+    v-else
+    :type="type"
+    :disabled="disabled"
+    :class="classes"
+    while-hover="hover"
+    while-tap="tap"
+    :variants="buttonVariants"
+  >
     <slot />
   </motion.button>
 </template>

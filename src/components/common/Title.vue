@@ -9,20 +9,27 @@ const titleVariants = {
     rotate: 0,
     transition: {
       type: 'spring',
-      stiffness: 100
-    } as Transition
-  }
+      stiffness: 100,
+    } as Transition,
+  },
 }
 </script>
 
 <template>
-  <motion.h2 :variants="titleVariants" initial="hidden" while-in-view="visible" :viewport="{ once: true }"
-    class="text-3xl md:text-5xl font-handwritten tracking-tight mb-12 text-zinc-900 dark:text-white flex items-center gap-4">
+  <motion.h2
+    :variants="titleVariants"
+    initial="hidden"
+    while-in-view="visible"
+    :viewport="{ once: true }"
+    class="text-3xl md:text-5xl font-handwritten tracking-tight mb-12 text-zinc-900 dark:text-white flex items-center gap-4"
+  >
     <slot></slot>
 
-    <motion.span :animate="{ rotate: [-5, 5, -5], scale: [1, 1.1, 1] }"
+    <motion.span
+      :animate="{ rotate: [-5, 5, -5], scale: [1, 1.1, 1] }"
       :transition="{ repeat: Infinity, duration: 4, ease: 'easeInOut' }"
-      class="w-3 h-3 rounded-rough-1 bg-zinc-900 dark:bg-white">
+      class="w-3 h-3 rounded-rough-1 bg-zinc-900 dark:bg-white"
+    >
     </motion.span>
   </motion.h2>
 </template>

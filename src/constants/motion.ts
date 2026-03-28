@@ -1,16 +1,16 @@
-import type { Transition } from "motion-v";
+import type { Transition } from 'motion-v'
 
 export const springTransition: Transition = {
-  type: "spring",
+  type: 'spring',
   stiffness: 260,
   damping: 20,
-};
+}
 
 const drawTransition: Transition = {
-  type: "spring",
+  type: 'spring',
   duration: 1.5,
   bounce: 0,
-};
+}
 
 export const containerVariants = {
   hidden: { opacity: 0 },
@@ -21,7 +21,7 @@ export const containerVariants = {
       delayChildren: 0.1,
     },
   },
-};
+}
 
 export const itemVariants = {
   hidden: { opacity: 0, y: 20, rotate: -2 },
@@ -31,7 +31,7 @@ export const itemVariants = {
     rotate: 0,
     transition: springTransition,
   },
-};
+}
 
 export const roughVariants = {
   hidden: { opacity: 0, scale: 0.9, rotate: -3 },
@@ -51,7 +51,7 @@ export const roughVariants = {
       duration: 0.3,
     },
   },
-};
+}
 
 export const wiggleVariants = {
   hover: {
@@ -61,7 +61,7 @@ export const wiggleVariants = {
       repeat: Infinity,
     },
   },
-};
+}
 
 export const drawVariants = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -73,4 +73,4 @@ export const drawVariants = {
       opacity: { duration: 0.01 },
     },
   },
-};
+}

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Divider from '../common/Divider.vue';
+import Divider from '../common/Divider.vue'
 import Header from './Header.vue'
 
 const currentYear = new Date().getFullYear()
@@ -9,7 +9,8 @@ const currentYear = new Date().getFullYear()
   <Header />
 
   <main
-    class="min-h-screen transition-colors duration-500 bg-white dark:bg-zinc-950 selection:bg-lime-100 dark:selection:bg-lime-900 pt-20">
+    class="min-h-screen transition-colors duration-500 bg-white dark:bg-zinc-950 selection:bg-lime-100 dark:selection:bg-lime-900 pt-20"
+  >
     <div class="max-w-4xl mx-auto px-6 md:px-8">
       <slot></slot>
     </div>

@@ -21,8 +21,12 @@ const toggleProject = (index: number) => {
 
 <template>
   <section id="projects" class="py-20 scroll-mt-12">
-    <motion.div :variants="containerVariants" initial="hidden" while-in-view="visible"
-      :viewport="{ once: true, margin: '-100px' }">
+    <motion.div
+      :variants="containerVariants"
+      initial="hidden"
+      while-in-view="visible"
+      :viewport="{ once: true, margin: '-100px' }"
+    >
       <motion.div :variants="itemVariants">
         <Title> Projetos & Estudos de Caso</Title>
       </motion.div>
@@ -30,14 +34,19 @@ const toggleProject = (index: number) => {
       <motion.div :variants="itemVariants">
         <Subtitle>
           Projetos selecionados que demonstram minha abordagem para resolver desafios complexos de
-          backend. Cada estudo de caso foca no raciocínio por trás das decisões técnicas, e não apenas
-          nas ferramentas utilizadas.
+          backend. Cada estudo de caso foca no raciocínio por trás das decisões técnicas, e não
+          apenas nas ferramentas utilizadas.
         </Subtitle>
       </motion.div>
 
       <div class="space-y-6">
-        <ProjectCard v-for="(project, index) in projects" :key="index" :project="project"
-          :is-expanded="expandedProjectIndex === index" @toggle="toggleProject(index)" />
+        <ProjectCard
+          v-for="(project, index) in projects"
+          :key="index"
+          :project="project"
+          :is-expanded="expandedProjectIndex === index"
+          @toggle="toggleProject(index)"
+        />
       </div>
     </motion.div>
 
