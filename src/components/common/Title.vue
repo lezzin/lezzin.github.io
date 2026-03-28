@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { motion } from 'motion-v'
+import { motion, type Transition } from 'motion-v'
 
 const titleVariants = {
   hidden: { opacity: 0, x: -20, rotate: -2 },
@@ -7,7 +7,10 @@ const titleVariants = {
     opacity: 1,
     x: 0,
     rotate: 0,
-    transition: { type: 'spring', stiffness: 100 }
+    transition: {
+      type: 'spring',
+      stiffness: 100
+    } as Transition
   }
 }
 </script>
