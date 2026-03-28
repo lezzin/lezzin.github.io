@@ -56,7 +56,7 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
           <Button variant="outline" as-child href="/cv.pdf" target="_blank">
             <div class="flex items-center">
               <FileText class="mr-2 h-4 w-4" />
-              CV
+              Currículo
             </div>
           </Button>
         </div>
