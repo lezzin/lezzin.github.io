@@ -3,33 +3,33 @@ import { Database, Layers, Server, Zap, Cloud, Monitor } from 'lucide-vue-next'
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: 'Arquitetura & Boas Práticas',
-    skills: ['Clean Architecture', 'SOLID', 'Microserviços', 'Clean Code'],
-    icon: Layers,
+    category: 'Frontend',
+    skills: ['Vue.js', 'Vite', 'Tailwind CSS', 'Bootstrap'],
+    icon: Monitor,
   },
   {
-    category: 'Backend & Frameworks',
-    skills: ['PHP', 'TypeScript', 'Laravel', 'NestJS', 'Node.js', 'CodeIgniter'],
+    category: 'Backend',
+    skills: ['Node.js', 'NestJS', 'Laravel', 'CodeIgniter', 'PHP', 'TypeScript'],
     icon: Server,
   },
   {
-    category: 'Mensageria & Performance',
-    skills: ['RabbitMQ', 'Redis (Filas & Cache)', 'Webhooks', 'MinIO (Arquivos)'],
-    icon: Zap,
-  },
-  {
     category: 'Bancos de Dados',
-    skills: ['PostgreSQL', 'MySQL', 'Otimização de Queries', 'Migrations'],
+    skills: ['PostgreSQL', 'MySQL', 'Migrations', 'Otimização de Queries'],
     icon: Database,
   },
   {
-    category: 'Ferramentas & DevOps',
-    skills: ['Docker', 'Kubernetes (K8s)', 'Git / GitHub', 'Postman / Insomnia', 'Linux (Ubuntu)'],
-    icon: Cloud,
+    category: 'Mensageria & Performance',
+    skills: ['Redis (Cache & Filas)', 'RabbitMQ', 'Webhooks', 'MinIO (Armazenamento)'],
+    icon: Zap,
   },
   {
-    category: 'Frontend',
-    skills: ['Vue.js', 'Tailwind CSS', 'Vite', 'Bootstrap'],
-    icon: Monitor,
+    category: 'Arquitetura & Boas Práticas',
+    skills: ['Clean Code', 'SOLID', 'Clean Architecture', 'Microserviços'],
+    icon: Layers,
+  },
+  {
+    category: 'DevOps & Ferramentas',
+    skills: ['Linux', 'Docker', 'Kubernetes (K8s)', 'Git & GitHub', 'Azure DevOps', 'Postman / Insomnia'],
+    icon: Cloud,
   },
 ]
