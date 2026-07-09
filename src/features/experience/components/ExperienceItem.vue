@@ -3,17 +3,22 @@ import type { Experience } from '../../../types/experience'
 import { formatText } from '../../../utils/markdown'
 import { motion } from 'motion-v'
 import { itemVariants } from '../../../constants/motion'
+import { ref } from 'vue'
+import ProjectItem from './ProjectItem.vue'
 
 defineProps<{
   experience: Experience
 }>()
+
+const expandedProjectIndex = ref<string | null>(null)
+
+const toggleProject = (id: string) => {
+  expandedProjectIndex.value = expandedProjectIndex.value === id ? null : id
+}
 </script>
 
 <template>
-  <motion.article
-    :variants="itemVariants"
-    class="group relative py-8 border-b-2 border-zinc-900 dark:border-zinc-100 border-dashed last:border-0"
-  >
+  <motion.article :variants="itemVariants" class="group relative py-8">
     <div class="grid md:grid-cols-[200px_1fr] gap-6 md:gap-10">
       <aside>
         <div class="md:sticky md:top-28">
@@ -53,6 +58,25 @@ defineProps<{
             <p class="text-gray-700 dark:text-zinc-300 leading-relaxed" v-html="formatText(item)" />
           </li>
         </ul>
+
+        <div
+          v-if="experience.projects.length"
+          class="pt-8 mt-8 border-t border-zinc-200 dark:border-zinc-800"
+        >
+          <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-3">
+            Projetos desenvolvidos
+          </h4>
+
+          <div class="space-y-4">
+            <ProjectItem
+              v-for="project in experience.projects"
+              :key="project.name"
+              :project="project"
+              :is-expanded="expandedProjectIndex === project.name"
+              @toggle="toggleProject(project.name)"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </motion.article>

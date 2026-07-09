@@ -44,23 +44,6 @@ export const roughVariants = {
       stiffness: 150,
     },
   },
-  hover: {
-    rotate: [0, -1, 1, -1, 0],
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-    },
-  },
-}
-
-export const wiggleVariants = {
-  hover: {
-    rotate: [-1, 1, -1, 1, 0],
-    transition: {
-      duration: 0.4,
-      repeat: Infinity,
-    },
-  },
 }
 
 export const drawVariants = {

@@ -12,7 +12,7 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
       :variants="containerVariants"
       initial="hidden"
       animate="visible"
-      class="space-y-8 max-w-3xl"
+      class="space-y-8 max-w-4xl"
     >
       <div class="space-y-3">
         <motion.p
@@ -52,7 +52,7 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
       </motion.p>
 
       <motion.div :variants="itemVariants" class="flex flex-wrap gap-4 pt-4">
-        <Button variant="default" as-child href="#projects">
+        <Button variant="default" as-child href="#experience">
           <div class="flex items-center">
             <motion.div
               :animate="{ y: [0, -4, 0] }"
@@ -64,7 +64,7 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
             >
               <ArrowDown :size="18" class="mr-2" />
             </motion.div>
-            Ver Projetos
+            Ver Experiências
           </div>
         </Button>
 
