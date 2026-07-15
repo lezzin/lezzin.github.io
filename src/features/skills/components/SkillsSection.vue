@@ -24,7 +24,7 @@ import { containerVariants, itemVariants } from '../../../constants/motion'
           v-for="category in skillCategories"
           :key="category.category"
           :variants="itemVariants"
-          class="p-6 rough-border hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300"
+          class="p-6 rough-border bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300"
         >
           <div class="flex items-center gap-3 mb-6">
             <component :is="category.icon" class="text-zinc-900 dark:text-zinc-100" :size="20" />

@@ -37,7 +37,7 @@ const expandedClass = computed(() => {
     initial="hidden"
     animate="visible"
     while-hover="hover"
-    class="group rough-border p-6 md:p-8 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 origin-center"
+    class="group rough-border p-6 md:p-8 bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 origin-center"
   >
     <div class="flex flex-col gap-4 mb-6">
       <h3
