@@ -4,7 +4,7 @@ import { drawVariants } from '../../constants/motion'
 </script>
 
 <template>
-  <div class="mt-12 md:mt-20 py-8 flex items-center justify-center overflow-hidden">
+  <div class="pt-8 pb-16 flex items-center justify-center overflow-hidden">
     <svg
       width="100%"
       height="20"

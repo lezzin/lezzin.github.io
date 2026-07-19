@@ -1,18 +1,17 @@
 <script lang="ts" setup>
 import { ArrowDown, FileText, Mail } from 'lucide-vue-next'
 import Button from '../../../components/common/Button.vue'
-import Divider from '../../../components/common/Divider.vue'
 import { motion } from 'motion-v'
 import { containerVariants, itemVariants, roughVariants } from '../../../constants/motion'
 </script>
 
 <template>
-  <section id="home" class="min-h-[85vh] flex flex-col justify-center py-16">
+  <section id="home" class="flex flex-col justify-center pt-24">
     <motion.div
       :variants="containerVariants"
       initial="hidden"
       animate="visible"
-      class="space-y-8 max-w-4xl"
+      class="space-y-8 max-w-3xl"
     >
       <div class="space-y-3">
         <motion.p
@@ -85,8 +84,6 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
         </div>
       </motion.div>
     </motion.div>
-
-    <Divider />
   </section>
 </template>
 

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { experiences } from '../../../constants/experiences'
-import Divider from '../../../components/common/Divider.vue'
 import ExperienceItem from './ExperienceItem.vue'
 import Title from '../../../components/common/Title.vue'
 import { motion } from 'motion-v'
@@ -8,7 +7,7 @@ import { containerVariants } from '../../../constants/motion'
 </script>
 
 <template>
-  <section id="experience" class="py-20 scroll-mt-12">
+  <section id="experience" class="scroll-mt-32">
     <Title>Experiência Profissional</Title>
 
     <motion.div
@@ -24,7 +23,5 @@ import { containerVariants } from '../../../constants/motion'
         :experience="experience"
       />
     </motion.div>
-
-    <Divider />
   </section>
 </template>

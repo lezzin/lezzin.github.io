@@ -24,7 +24,7 @@ const copyEmail = async () => {
 </script>
 
 <template>
-  <section id="contact" class="py-2 scroll-mt-12">
+  <section id="contact" class="py-2 scroll-mt-32">
     <motion.div
       class="max-w-3xl"
       :variants="containerVariants"

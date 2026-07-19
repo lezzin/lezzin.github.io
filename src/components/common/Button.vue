@@ -36,7 +36,7 @@ const variants: Record<Variant, string> = {
   secondary:
     'bg-zinc-200 text-zinc-900 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 border-zinc-900 dark:border-zinc-100 rounded-rough-2',
   outline:
-    'border-2 border-zinc-900 hover:bg-zinc-100 dark:border-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 rounded-rough-1',
+    'bg-transparent dark:bg-transparent border-2 border-zinc-900 hover:bg-zinc-100 dark:border-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 rounded-rough-1',
   ghost: 'hover:bg-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 border-transparent',
   destructive: 'bg-red-500 text-white hover:bg-red-600 border-red-900 rounded-rough-2',
   link: 'text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-100 border-transparent',

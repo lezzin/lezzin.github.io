@@ -11,7 +11,7 @@ const currentYear = new Date().getFullYear()
   >
     <Header />
 
-    <div class="max-w-4xl mx-auto px-6 md:px-8">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
       <main class="min-h-screen transition-colors duration-500 pt-20">
         <slot></slot>
       </main>

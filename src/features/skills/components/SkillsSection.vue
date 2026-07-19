@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { skillCategories } from '../../../constants/skills'
-import Divider from '../../../components/common/Divider.vue'
 import SkillItem from './SkillItem.vue'
 import Title from '../../../components/common/Title.vue'
 import { motion } from 'motion-v'
@@ -8,7 +7,7 @@ import { containerVariants, itemVariants } from '../../../constants/motion'
 </script>
 
 <template>
-  <section id="skills" class="py-20 scroll-mt-12">
+  <section id="skills" class="scroll-mt-32">
     <motion.div
       :variants="containerVariants"
       initial="hidden"
@@ -41,7 +40,5 @@ import { containerVariants, itemVariants } from '../../../constants/motion'
         </motion.div>
       </div>
     </motion.div>
-
-    <Divider />
   </section>
 </template>

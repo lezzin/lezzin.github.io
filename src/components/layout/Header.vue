@@ -87,10 +87,18 @@ onUnmounted(() => {
     :initial="{ y: -80, opacity: 0 }"
     :animate="{ y: 0, opacity: 1 }"
     :transition="{ duration: 0.5, ease: 'easeOut' }"
-    class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 md:px-8 pointer-events-none"
+    :class="[
+      'fixed left-0 right-0 z-40 flex justify-center pointer-events-none transition-all duration-500 ease-out',
+      isScrolled ? 'top-4 px-4 md:px-8' : 'top-0 px-0',
+    ]"
   >
     <div
-      class="relative w-full max-w-4xl flex items-center justify-between px-6 py-2.5 border-2 border-zinc-900 dark:border-zinc-100 bg-white/60 dark:bg-black/60 backdrop-blur-sm rounded-rough-1 shadow-[4px_4px_0px_0px_rgb(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgb(255,255,255)] overflow-hidden transition-all duration-300 pointer-events-auto"
+      :class="[
+        'relative w-full max-w-5xl flex items-center justify-between px-6 py-2.5 border-zinc-900 dark:border-zinc-100  overflow-hidden transition-all duration-300 pointer-events-auto',
+        isScrolled
+          ? 'bg-white/60 dark:bg-black/60 backdrop-blur-sm border-2 rounded-rough-1 shadow-[4px_4px_0px_0px_rgb(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgb(255,255,255)]'
+          : '',
+      ]"
     >
       <motion.div
         class="absolute bottom-0 left-0 h-[3px] bg-accent"
