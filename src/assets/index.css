@@ -50,4 +50,27 @@
   .mark {
     @apply bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 px-1 rounded-rough-2;
   }
+
+  .rough-line {
+    @apply relative pl-6;
+  }
+
+  .rough-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 120' preserveAspectRatio='none'%3E%3Cpath d='M10 0 C5 15 15 30 10 45 S5 75 10 90 S5 105 10 120' stroke='%23dc2626' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+  }
+
+  .dark .rough-line::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 120' preserveAspectRatio='none'%3E%3Cpath d='M10 0 C5 15 15 30 10 45 S5 75 10 90 S5 105 10 120' stroke='%23f87171' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  }
 }

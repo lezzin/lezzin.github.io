@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { computed } from 'vue'
 import { motion } from 'motion-v'
+import { useTheme } from '../../composables/useTheme'
 
 type Variant = 'default' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link'
 
@@ -25,6 +26,8 @@ const props = withDefaults(
   }
 )
 
+const { theme } = useTheme()
+
 const base =
   'bg-white dark:bg-zinc-950 inline-flex items-center justify-center border-2 text-base font-bold transition-colors ' +
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 ' +
@@ -36,7 +39,7 @@ const variants: Record<Variant, string> = {
   secondary:
     'bg-zinc-200 text-zinc-900 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 border-zinc-900 dark:border-zinc-100 rounded-rough-2',
   outline:
-    'bg-transparent dark:bg-transparent border-2 border-zinc-900 hover:bg-zinc-100 dark:border-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 rounded-rough-1',
+    'bg-transparent dark:bg-transparent border-2 border-zinc-900 hover:bg-white/50 dark:hover:bg-black/50 dark:border-zinc-100 dark:text-zinc-100 rounded-rough-1',
   ghost: 'hover:bg-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 border-transparent',
   destructive: 'bg-red-500 text-white hover:bg-red-600 border-red-900 rounded-rough-2',
   link: 'text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-100 border-transparent',
@@ -51,18 +54,14 @@ const sizes: Record<Size, string> = {
 
 const classes = computed(() => twMerge(clsx(base, variants[props.variant], sizes[props.size])))
 
-const buttonVariants = {
+const buttonVariants = computed(() => ({
   hover: {
     scale: 1.02,
     rotate: -1,
-    boxShadow: '6px 6px 0px 0px rgba(0,0,0,1)',
+    boxShadow:
+      theme.value === 'dark' ? '3px 3px 0 rgba(255,255,255,.4)' : '3px 3px 0 rgba(0,0,0,.4)',
   },
-  tap: {
-    scale: 0.98,
-    rotate: 1,
-    boxShadow: '1px 1px 0px 0px rgba(0,0,0,1)',
-  },
-}
+}))
 </script>
 
 <template>
@@ -72,7 +71,6 @@ const buttonVariants = {
     :class="classes"
     v-bind="$attrs"
     while-hover="hover"
-    while-tap="tap"
     :variants="buttonVariants"
   >
     <slot />
@@ -84,7 +82,6 @@ const buttonVariants = {
     :disabled="disabled"
     :class="classes"
     while-hover="hover"
-    while-tap="tap"
     :variants="buttonVariants"
   >
     <slot />

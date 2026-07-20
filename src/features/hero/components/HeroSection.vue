@@ -36,18 +36,8 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
       >
         Desenvolvedor Backend focado na construção de sistemas robustos, escaláveis e de alta
         performance. Especializado em arquiteturas modernas com
-        <motion.mark
-          :initial="{ rotate: -1, scale: 0.95 }"
-          :animate="{ rotate: 1, scale: 1 }"
-          :transition="{
-            repeat: Infinity,
-            repeatType: 'reverse',
-            duration: 2,
-          }"
-          class="mark font-medium inline-block px-1"
-          >NestJS e Laravel </motion.mark
-        >, busco transformar desafios técnicos em soluções eficientes, bem documentadas e de alto
-        impacto para o negócio.
+        <mark class="mark font-medium inline-block px-1">NestJS e Laravel </mark>, busco transformar
+        desafios técnicos em soluções eficientes, bem documentadas e de alto impacto para o negócio.
       </motion.p>
 
       <motion.div :variants="itemVariants" class="flex flex-wrap gap-4 pt-4">

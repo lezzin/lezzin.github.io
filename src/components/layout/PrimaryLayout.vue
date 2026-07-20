@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear()
 
 <template>
   <div
-    class="bg-white dark:bg-zinc-950 selection:bg-lime-100 dark:selection:bg-lime-900 bg-[radial-gradient(circle,_#d4d4d8_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#111_1px,_transparent_1px)] [background-size:16px_16px] bg-fixed"
+    class="bg-white dark:bg-zinc-950 selection:bg-lime-100 dark:selection:bg-lime-900 bg-[radial-gradient(circle,_#eee_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#111_1px,_transparent_1px)] [background-size:16px_16px] bg-fixed"
   >
     <Header />
 

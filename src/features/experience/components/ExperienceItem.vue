@@ -63,7 +63,7 @@ const closeProject = () => {
           :key="index"
           class="flex items-start gap-4"
         >
-          <span class="mt-2.5 w-3 h-3 rounded-rough-1 bg-zinc-900 dark:bg-white flex-shrink-0" />
+          <span class="mt-2.5 size-2.5 rounded-rough-1 bg-zinc-900 dark:bg-white flex-shrink-0" />
 
           <p class="text-gray-700 dark:text-zinc-300 leading-relaxed" v-html="formatText(item)" />
         </li>

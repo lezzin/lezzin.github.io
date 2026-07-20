@@ -46,7 +46,7 @@ const tilt = computed(() => {
       style="clip-path: polygon(4% 0, 96% 0, 100% 100%, 0 100%)"
     />
 
-    <div :class="['sticky-note p-6 md:p-8 rounded-rough-1', sticky?.bg]">
+    <div :class="['sticky-note p-6 md:p-8 rounded-rough-1 border-2', sticky?.bg, sticky?.border]">
       <h3
         class="text-xl md:text-3xl font-handwritten text-zinc-900 dark:text-zinc-100 tracking-tight mb-6"
       >
@@ -57,7 +57,7 @@ const tilt = computed(() => {
         <p class="project-text" v-html="formatText(project.context)" />
       </div>
 
-      <Button @click="emit('open', project)" variant="outline" class="w-full">
+      <Button @click="emit('open', project)" variant="ghost" class="w-full">
         <span class="flex gap-2 items-center">
           <Plus :size="18" class="transition-transform duration-300" />
           Ler estudo de caso completo

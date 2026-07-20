@@ -1,13 +1,61 @@
 <script setup lang="ts">
-defineProps<{
-  skill: string
+import { computed } from 'vue'
+import { motion } from 'motion-v'
+import { itemVariants } from '../../../constants/motion'
+import { STICKY_PALETTE } from '../../../constants/sticky-palette'
+import type { SkillCategory } from '../../../types/skill'
+
+const props = defineProps<{
+  category: SkillCategory
+  index: number
 }>()
+
+const stickyClass = STICKY_PALETTE[props.index % STICKY_PALETTE.length]
+
+const rotation = computed(() => {
+  return props.index % 2 === 0 ? '-rotate-1' : 'rotate-1'
+})
 </script>
 
 <template>
-  <span
-    class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 rounded-rough-2 border-2 border-zinc-900 dark:border-zinc-100 cursor-default inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]"
+  <motion.div
+    :variants="itemVariants"
+    :class="[
+      'relative overflow-hidden p-6 rounded-rough-1 border-2 transition-all duration-300',
+      'hover:-translate-y-1 hover:rotate-0',
+      rotation,
+      stickyClass?.bg,
+      stickyClass?.border,
+    ]"
   >
-    {{ skill }}
-  </span>
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-5">
+        <div
+          :class="[
+            'flex items-center justify-center size-10 border rounded-full',
+            stickyClass?.border,
+          ]"
+        >
+          <component :is="category.icon" :size="18" />
+        </div>
+
+        <h3 class="font-handwritten text-base uppercase tracking-[0.2em] font-bold">
+          {{ category.category }}
+        </h3>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span
+          v-for="skill in category.skills"
+          :key="skill"
+          :class="[
+            'px-3 py-1 border rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/40 dark:bg-black/10  backdrop-blur-sm transition-transform hover:-rotate-2',
+            stickyClass?.border,
+          ]"
+        >
+          {{ skill }}
+        </span>
+      </div>
+    </div>
+  </motion.div>
 </template>

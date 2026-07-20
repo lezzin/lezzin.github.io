@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'motion-v'
 import { formatText } from '../../utils/markdown'
 import type { Project } from '../../types/project'
 import { onBeforeUnmount, onMounted, watch } from 'vue'
-import { X } from 'lucide-vue-next'
+import { CheckCircle2, X } from 'lucide-vue-next'
 import type { StickyPaletteItem } from '../../types/sticky-palette'
 
 const props = defineProps<{
@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
         </button>
 
         <h3
-          class="text-2xl md:text-3xl font-handwritten text-zinc-900 dark:text-zinc-100 tracking-tight mb-2"
+          class="text-2xl md:text-3xl font-handwritten text-zinc-900 dark:text-zinc-100 tracking-tight mb-4"
         >
           {{ project.name }}
         </h3>
@@ -86,7 +86,7 @@ onBeforeUnmount(() => {
           <span
             v-for="tech in project.technologies"
             :key="tech"
-            class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-white/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-zinc-100 rounded-rough-2 border-2 border-zinc-900 dark:border-zinc-100"
+            class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-white/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-zinc-100 rounded-rough-1 border-2 border-zinc-900 dark:border-zinc-100"
           >
             {{ tech }}
           </span>
@@ -104,20 +104,15 @@ onBeforeUnmount(() => {
           </section>
 
           <section>
-            <h4
-              class="text-xs font-bold text-red-500 dark:text-red-400 uppercase tracking-[0.15em] mb-3"
-            >
-              O Desafio Técnico
-            </h4>
+            <h4 class="project-subtitle text-red-500 dark:text-red-400">O Desafio Técnico</h4>
             <p class="project-text" v-html="formatText(project.problem)" />
           </section>
 
           <section>
-            <h4
-              class="text-xs font-bold text-green-600 dark:text-green-400 uppercase tracking-[0.15em] mb-4"
-            >
+            <h4 class="project-subtitle text-green-600 dark:text-green-400">
               Decisões de Engenharia
             </h4>
+
             <ul class="grid gap-4">
               <li
                 v-for="(decision, index) in project.decisions"
@@ -132,22 +127,17 @@ onBeforeUnmount(() => {
 
           <section>
             <h4 class="project-subtitle">Análise de Trade-offs</h4>
-            <div class="relative pl-6">
-              <div
-                class="absolute inset-y-0 left-0 w-1 bg-zinc-900/20 dark:bg-zinc-100/20 rounded-full"
-              />
+
+            <div class="rough-line">
               <p class="project-text italic" v-html="formatText(project.tradeoffs)" />
             </div>
           </section>
 
           <footer
-            class="rounded-rough-2 p-6 bg-white/50 dark:bg-black/20 border-2 border-dashed border-green-700/40 dark:border-green-400/30"
+            class="rounded-rough-1 p-6 bg-white/50 dark:bg-black/20 border-2 border-dashed border-green-700/40 dark:border-green-400/30"
           >
-            <h4
-              class="text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-widest mb-3"
-            >
-              Resultado Final
-            </h4>
+            <h4 class="project-subtitle text-green-700 dark:text-green-400">Resultado Final</h4>
+
             <p
               class="text-green-900 dark:text-green-50 font-bold text-lg leading-relaxed"
               v-html="formatText(project.outcome)"
@@ -158,3 +148,9 @@ onBeforeUnmount(() => {
     </motion.div>
   </AnimatePresence>
 </template>
+
+<style scoped lang="postcss">
+.project-subtitle {
+  @apply text-sm font-semibold uppercase tracking-widest mb-2;
+}
+</style>
