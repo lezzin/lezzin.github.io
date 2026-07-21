@@ -31,14 +31,14 @@
   .rough-border {
     border-width: 2px;
     border-style: solid;
-    @apply border-zinc-900 dark:border-zinc-100 rounded-rough-1;
+    @apply border-zinc-900 dark:border-zinc-100 rounded-rough;
     transform: rotate(-0.5deg);
   }
 
   .rough-border-alt {
     border-width: 2px;
     border-style: solid;
-    @apply border-zinc-900 dark:border-zinc-100 rounded-rough-2;
+    @apply border-zinc-900 dark:border-zinc-100 rounded-rough;
     transform: rotate(0.5deg);
   }
 
@@ -48,7 +48,7 @@
   }
 
   .mark {
-    @apply bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 px-1 rounded-rough-2;
+    @apply bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 px-1 rounded-rough;
   }
 
   .rough-line {

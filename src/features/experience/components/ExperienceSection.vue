@@ -2,26 +2,18 @@
 import { experiences } from '../../../constants/experiences'
 import ExperienceItem from './ExperienceItem.vue'
 import Title from '../../../components/common/Title.vue'
-import { motion } from 'motion-v'
-import { containerVariants } from '../../../constants/motion'
 </script>
 
 <template>
   <section id="experience" class="scroll-mt-32">
     <Title>Experiência Profissional</Title>
 
-    <motion.div
-      class="space-y-12"
-      :variants="containerVariants"
-      initial="hidden"
-      while-in-view="visible"
-      :viewport="{ once: true, margin: '-100px' }"
-    >
+    <div class="space-y-12">
       <ExperienceItem
         v-for="(experience, index) in experiences"
         :key="index"
         :experience="experience"
       />
-    </motion.div>
+    </div>
   </section>
 </template>

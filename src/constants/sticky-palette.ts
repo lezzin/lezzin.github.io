@@ -2,14 +2,14 @@ import type { StickyPaletteItem } from '../types/sticky-palette'
 
 export const STICKY_PALETTE: StickyPaletteItem[] = [
   {
-    bg: 'bg-yellow-100 dark:bg-yellow-900/90',
-    tape: 'bg-yellow-200/70 dark:bg-yellow-800/60',
-    border: 'border-yellow-300 dark:border-yellow-950',
+    bg: 'bg-amber-100 dark:bg-amber-900/90',
+    tape: 'bg-amber-200/70 dark:bg-amber-800/60',
+    border: 'border-amber-300 dark:border-amber-950',
   },
   {
-    bg: 'bg-pink-100 dark:bg-pink-900/90',
-    tape: 'bg-pink-200/70 dark:bg-pink-800/60',
-    border: 'border-pink-300 dark:border-pink-950',
+    bg: 'bg-rose-100 dark:bg-rose-900/90',
+    tape: 'bg-rose-200/70 dark:bg-rose-800/60',
+    border: 'border-rose-300 dark:border-rose-950',
   },
   {
     bg: 'bg-sky-100 dark:bg-sky-900/90',
@@ -17,9 +17,24 @@ export const STICKY_PALETTE: StickyPaletteItem[] = [
     border: 'border-sky-300 dark:border-sky-950',
   },
   {
-    bg: 'bg-lime-100 dark:bg-lime-900/90',
-    tape: 'bg-lime-200/70 dark:bg-lime-800/60',
-    border: 'border-lime-300 dark:border-lime-950',
+    bg: 'bg-emerald-100 dark:bg-emerald-900/90',
+    tape: 'bg-emerald-200/70 dark:bg-emerald-800/60',
+    border: 'border-emerald-300 dark:border-emerald-950',
+  },
+  {
+    bg: 'bg-violet-100 dark:bg-violet-900/90',
+    tape: 'bg-violet-200/70 dark:bg-violet-800/60',
+    border: 'border-violet-300 dark:border-violet-950',
+  },
+  {
+    bg: 'bg-orange-100 dark:bg-orange-900/90',
+    tape: 'bg-orange-200/70 dark:bg-orange-800/60',
+    border: 'border-orange-300 dark:border-orange-950',
+  },
+  {
+    bg: 'bg-teal-100 dark:bg-teal-900/90',
+    tape: 'bg-teal-200/70 dark:bg-teal-800/60',
+    border: 'border-teal-300 dark:border-teal-950',
   },
   {
     bg: 'bg-stone-100 dark:bg-stone-900/90',

@@ -10,7 +10,7 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
     <motion.div
       :variants="containerVariants"
       initial="hidden"
-      animate="visible"
+      while-in-view="visible"
       class="space-y-8 max-w-3xl"
     >
       <div class="space-y-3">
@@ -44,7 +44,7 @@ import { containerVariants, itemVariants, roughVariants } from '../../../constan
         <Button variant="default" as-child href="#experience">
           <div class="flex items-center">
             <motion.div
-              :animate="{ y: [0, -4, 0] }"
+              :while-in-view="{ y: [0, -4, 0] }"
               :transition="{
                 repeat: Infinity,
                 duration: 1.5,

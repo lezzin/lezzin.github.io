@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
       v-if="open && project"
       key="backdrop"
       :initial="{ opacity: 0 }"
-      :animate="{ opacity: 1 }"
+      :while-in-view="{ opacity: 1 }"
       :exit="{ opacity: 0 }"
       :transition="{ duration: 0.2 }"
       class="fixed inset-0 z-50 bg-zinc-900/60 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
@@ -56,14 +56,14 @@ onBeforeUnmount(() => {
       <motion.div
         key="panel"
         :initial="{ opacity: 0, scale: 0.95, y: 12 }"
-        :animate="{ opacity: 1, scale: 1, y: 0 }"
+        :while-in-view="{ opacity: 1, scale: 1, y: 0 }"
         :exit="{ opacity: 0, scale: 0.95, y: 12 }"
         :transition="{ duration: 0.25, ease: 'easeOut' }"
         role="dialog"
         aria-modal="true"
         :aria-label="project.name"
         :class="[
-          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough-1',
+          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough',
           sticky?.bg,
         ]"
       >
@@ -86,7 +86,7 @@ onBeforeUnmount(() => {
           <span
             v-for="tech in project.technologies"
             :key="tech"
-            class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-white/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-zinc-100 rounded-rough-1 border-2 border-zinc-900 dark:border-zinc-100"
+            class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-white/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-zinc-100 rounded-rough border-2 border-zinc-900 dark:border-zinc-100"
           >
             {{ tech }}
           </span>
@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
           </section>
 
           <footer
-            class="rounded-rough-1 p-6 bg-white/50 dark:bg-black/20 border-2 border-dashed border-green-700/40 dark:border-green-400/30"
+            class="rounded-rough p-6 bg-white/50 dark:bg-black/20 border-2 border-dashed border-green-700/40 dark:border-green-400/30"
           >
             <h4 class="project-subtitle text-green-700 dark:text-green-400">Resultado Final</h4>
 

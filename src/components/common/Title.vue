@@ -26,9 +26,9 @@ const titleVariants = {
     <slot></slot>
 
     <motion.span
-      :animate="{ rotate: [-5, 5, -5], scale: [1, 1.1, 1] }"
+      :while-in-view="{ rotate: [-5, 5, -5], scale: [1, 1.1, 1] }"
       :transition="{ repeat: Infinity, duration: 4, ease: 'easeInOut' }"
-      class="w-3 h-3 rounded-rough-1 bg-zinc-900 dark:bg-white"
+      class="w-3 h-3 rounded-rough bg-zinc-900 dark:bg-white"
     >
     </motion.span>
   </motion.h2>

@@ -21,8 +21,7 @@ const rotation = computed(() => {
   <motion.div
     :variants="itemVariants"
     :class="[
-      'relative overflow-hidden p-6 rounded-rough-1 border-2 transition-all duration-300',
-      'hover:-translate-y-1 hover:rotate-0',
+      'relative overflow-hidden p-6 border-2 rounded-rough',
       rotation,
       stickyClass?.bg,
       stickyClass?.border,
@@ -32,7 +31,7 @@ const rotation = computed(() => {
       <div class="flex items-center gap-3 mb-5">
         <div
           :class="[
-            'flex items-center justify-center size-10 border rounded-full',
+            'flex items-center justify-center size-10 border rounded-rough-circle',
             stickyClass?.border,
           ]"
         >
@@ -49,7 +48,7 @@ const rotation = computed(() => {
           v-for="skill in category.skills"
           :key="skill"
           :class="[
-            'px-3 py-1 border rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/40 dark:bg-black/10  backdrop-blur-sm transition-transform hover:-rotate-2',
+            'px-3 py-1 border rounded-rough-pill text-xs font-bold uppercase tracking-wider bg-white/40 dark:bg-black/10 transition-transform hover:-rotate-2 cursor-default',
             stickyClass?.border,
           ]"
         >

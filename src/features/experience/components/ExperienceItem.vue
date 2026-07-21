@@ -2,7 +2,7 @@
 import type { Experience } from '../../../types/experience'
 import { formatText } from '../../../utils/markdown'
 import { motion } from 'motion-v'
-import { itemVariants } from '../../../constants/motion'
+import { containerVariants, itemVariants } from '../../../constants/motion'
 import { computed, ref } from 'vue'
 import ProjectItem from '../../project/ProjectItem.vue'
 import type { Project } from '../../../types/project.ts'
@@ -32,9 +32,14 @@ const closeProject = () => {
 </script>
 
 <template>
-  <motion.article :variants="itemVariants" class="group relative py-8">
+  <motion.article
+    :variants="containerVariants"
+    class="group relative py-8"
+    initial="hidden"
+    while-in-view="visible"
+  >
     <div class="space-y-4 max-w-3xl">
-      <header>
+      <motion.header :variants="itemVariants">
         <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
           {{ experience.title }}
         </h3>
@@ -50,30 +55,35 @@ const closeProject = () => {
         >
           {{ experience.company }}
         </p>
-      </header>
+      </motion.header>
 
-      <p
+      <motion.p
         class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg"
         v-html="formatText(experience.description)"
+        :variants="itemVariants"
       />
 
       <ul class="space-y-4 pt-2">
-        <li
+        <motion.li
           v-for="(item, index) in experience.bulletPoints"
           :key="index"
           class="flex items-start gap-4"
+          :variants="itemVariants"
         >
-          <span class="mt-2.5 size-2.5 rounded-rough-1 bg-zinc-900 dark:bg-white flex-shrink-0" />
+          <span class="mt-2.5 size-2.5 rounded-rough bg-zinc-900 dark:bg-white flex-shrink-0" />
 
           <p class="text-gray-700 dark:text-zinc-300 leading-relaxed" v-html="formatText(item)" />
-        </li>
+        </motion.li>
       </ul>
     </div>
 
     <div v-if="experience.projects.length" class="mt-8">
-      <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-6">
+      <motion.h4
+        class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-6"
+        :variants="itemVariants"
+      >
         Projetos desenvolvidos
-      </h4>
+      </motion.h4>
 
       <div class="grid md:grid-cols-2 gap-4 mt-4">
         <ProjectItem

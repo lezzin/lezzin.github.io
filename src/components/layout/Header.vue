@@ -95,9 +95,7 @@ onUnmounted(() => {
     <div
       :class="[
         'relative w-full max-w-5xl flex items-center justify-between px-6 py-2.5 border-zinc-900 dark:border-zinc-100  overflow-hidden transition-all duration-300 pointer-events-auto',
-        isScrolled
-          ? 'bg-white/60 dark:bg-black/60 backdrop-blur-sm border-2 rounded-rough-1 shadow-[4px_4px_0px_0px_rgb(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgb(255,255,255)]'
-          : '',
+        isScrolled ? 'bg-white/60 dark:bg-black/60 backdrop-blur-sm border-2 rounded-rough' : '',
       ]"
     >
       <motion.div

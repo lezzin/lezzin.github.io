@@ -28,22 +28,53 @@ const props = withDefaults(
 
 const { theme } = useTheme()
 
-const base =
-  'bg-white dark:bg-zinc-950 inline-flex items-center justify-center border-2 text-base font-bold transition-colors ' +
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 ' +
-  'disabled:opacity-50 disabled:pointer-events-none'
+const base = `
+  relative
+  inline-flex items-center justify-center
+  text-base font-bold
+  border-2 border-zinc-900 dark:border-zinc-100
+  text-zinc-900 dark:text-zinc-100
+  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2
+  disabled:opacity-50 disabled:pointer-events-none
+  transition-colors
+`
 
 const variants: Record<Variant, string> = {
-  default:
-    'bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-200 border-zinc-900 dark:border-zinc-100 rounded-rough-1',
-  secondary:
-    'bg-zinc-200 text-zinc-900 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 border-zinc-900 dark:border-zinc-100 rounded-rough-2',
-  outline:
-    'bg-transparent dark:bg-transparent border-2 border-zinc-900 hover:bg-white/50 dark:hover:bg-black/50 dark:border-zinc-100 dark:text-zinc-100 rounded-rough-1',
-  ghost: 'hover:bg-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-100 border-transparent',
-  destructive: 'bg-red-500 text-white hover:bg-red-600 border-red-900 rounded-rough-2',
-  link: 'text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-100 border-transparent',
+  default: `
+    text-zinc-100 dark:text-zinc-950
+    bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100
+    dark:hover:bg-zinc-200
+    rounded-rough
+  `,
+  secondary: `
+    bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-800
+    dark:hover:bg-zinc-700
+    rounded-rough
+  `,
+  outline: `
+    hover:bg-white/50 dark:hover:bg-black/50 
+    rounded-rough
+  `,
+  ghost: `
+    border-none 
+    hover:bg-white/50 dark:hover:bg-black/50 
+    rounded-rough
+  `,
+  destructive: `
+    bg-red-500
+    border-red-900
+    hover:bg-red-600 
+    rounded-rough
+  `,
+  link: `
+    group/link
+    border-none
+    underline-offset-8
+    cursor-pointer
+  `,
 }
+
+const noHoverVariants: Variant[] = ['ghost', 'link']
 
 const sizes: Record<Size, string> = {
   sm: 'h-9 px-3',
@@ -54,14 +85,21 @@ const sizes: Record<Size, string> = {
 
 const classes = computed(() => twMerge(clsx(base, variants[props.variant], sizes[props.size])))
 
-const buttonVariants = computed(() => ({
-  hover: {
-    scale: 1.02,
-    rotate: -1,
-    boxShadow:
-      theme.value === 'dark' ? '3px 3px 0 rgba(255,255,255,.4)' : '3px 3px 0 rgba(0,0,0,.4)',
-  },
-}))
+const buttonVariants = computed(() => {
+  if (noHoverVariants.includes(props.variant)) return undefined
+
+  return {
+    hover: {
+      scale: 1.02,
+      rotate: -1,
+      boxShadow:
+        theme.value === 'dark' ? '3px 3px 0 rgba(255,255,255,.4)' : '3px 3px 0 rgba(0,0,0,.4)',
+    },
+  }
+})
+
+const whileHover = computed(() => (props.variant === 'ghost' ? undefined : 'hover'))
+const isLink = computed(() => props.variant === 'link')
 </script>
 
 <template>
@@ -70,9 +108,26 @@ const buttonVariants = computed(() => ({
     :is="'a'"
     :class="classes"
     v-bind="$attrs"
-    while-hover="hover"
+    :while-hover="whileHover"
     :variants="buttonVariants"
   >
+    <svg
+      v-if="isLink"
+      class="absolute -bottom-1.5 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
+      viewBox="0 0 100 10"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M2,6 C18,2 30,8 45,3 C58,-0.5 68,7 82,2 C90,-0.5 94,5 98,3"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        class="sketch-draw"
+        pathLength="1"
+      />
+    </svg>
+
     <slot />
   </motion.a>
 
@@ -81,9 +136,40 @@ const buttonVariants = computed(() => ({
     :type="type"
     :disabled="disabled"
     :class="classes"
-    while-hover="hover"
+    :while-hover="whileHover"
     :variants="buttonVariants"
   >
+    <svg
+      v-if="isLink"
+      class="absolute -bottom-1.5 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
+      viewBox="0 0 100 10"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M2,6 C18,2 30,8 45,3 C58,-0.5 68,7 82,2 C90,-0.5 94,5 98,3"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        class="sketch-draw"
+        pathLength="1"
+      />
+    </svg>
+
     <slot />
   </motion.button>
 </template>
+
+<style scoped>
+.sketch-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-sketch 0.35s ease forwards;
+}
+
+@keyframes draw-sketch {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+</style>

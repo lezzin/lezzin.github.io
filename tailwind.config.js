@@ -9,8 +9,9 @@ export default {
         handwritten: ['"Gloria Hallelujah"', 'cursive'],
       },
       borderRadius: {
-        'rough-1': '255px 15px 225px 15px/15px 225px 15px 255px',
-        'rough-2': '15px 225px 15px 255px/255px 15px 225px 15px',
+        rough: '255px 15px 225px 15px/15px 225px 15px 255px',
+        'rough-circle': '61% 39% 57% 43% / 42% 58% 38% 62%',
+        'rough-pill': '999px 860px 999px 900px / 780px 999px 850px 999px',
       },
     },
   },
