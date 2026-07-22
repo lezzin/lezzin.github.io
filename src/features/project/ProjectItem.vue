@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import { Plus } from 'lucide-vue-next'
 import { computed } from 'vue'
-import { motion } from 'motion-v'
 import type { Project } from '../../types/project'
-import { roughVariants } from '../../constants/motion'
 import { formatText } from '../../utils/markdown'
 import Button from '../../components/common/Button.vue'
 import { STICKY_PALETTE } from '../../constants/sticky-palette.ts'
@@ -18,25 +16,10 @@ const emit = defineEmits<{
 }>()
 
 const sticky = computed(() => STICKY_PALETTE[(props.index ?? 0) % STICKY_PALETTE.length])
-
-const tilt = computed(() => {
-  const angles = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2']
-  return angles[(props.index ?? 0) % angles.length]
-})
 </script>
 
 <template>
-  <motion.article
-    :variants="roughVariants"
-    initial="hidden"
-    while-in-view="visible"
-    while-hover="hover"
-    :class="[
-      'group relative origin-center transition-all duration-300',
-      tilt,
-      'hover:rotate-0 hover:scale-[1.02]',
-    ]"
-  >
+  <article class="relative">
     <span
       :class="[
         'absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 rotate-[-3deg] z-10',
@@ -64,5 +47,5 @@ const tilt = computed(() => {
         </div>
       </Button>
     </div>
-  </motion.article>
+  </article>
 </template>

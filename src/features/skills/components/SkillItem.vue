@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { motion } from 'motion-v'
-import { itemVariants } from '../../../constants/motion'
 import { STICKY_PALETTE } from '../../../constants/sticky-palette'
 import type { SkillCategory } from '../../../types/skill'
 
@@ -11,18 +8,12 @@ const props = defineProps<{
 }>()
 
 const stickyClass = STICKY_PALETTE[props.index % STICKY_PALETTE.length]
-
-const rotation = computed(() => {
-  return props.index % 2 === 0 ? '-rotate-1' : 'rotate-1'
-})
 </script>
 
 <template>
-  <motion.div
-    :variants="itemVariants"
+  <div
     :class="[
       'relative overflow-hidden p-6 border-2 rounded-rough',
-      rotation,
       stickyClass?.bg,
       stickyClass?.border,
     ]"
@@ -48,7 +39,7 @@ const rotation = computed(() => {
           v-for="skill in category.skills"
           :key="skill"
           :class="[
-            'px-3 py-1 border rounded-rough-pill text-xs font-bold uppercase tracking-wider bg-white/40 dark:bg-black/10 transition-transform hover:-rotate-2 cursor-default',
+            'px-3 py-1 border rounded-rough-pill text-xs font-bold uppercase tracking-wider bg-white/40 dark:bg-black/10 cursor-default',
             stickyClass?.border,
           ]"
         >
@@ -56,5 +47,5 @@ const rotation = computed(() => {
         </span>
       </div>
     </div>
-  </motion.div>
+  </div>
 </template>

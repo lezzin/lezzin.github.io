@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
-import { motion } from 'motion-v'
 
 const isScrolled = ref(false)
 const activeSection = ref('home')
@@ -83,10 +82,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <motion.header
-    :initial="{ y: -80, opacity: 0 }"
-    :animate="{ y: 0, opacity: 1 }"
-    :transition="{ duration: 0.5, ease: 'easeOut' }"
+  <header
     :class="[
       'fixed left-0 right-0 z-40 flex justify-center pointer-events-none transition-all duration-500 ease-out',
       isScrolled ? 'top-4 px-4 md:px-8' : 'top-0 px-0',
@@ -95,40 +91,27 @@ onUnmounted(() => {
     <div
       :class="[
         'relative w-full max-w-5xl flex items-center justify-between px-6 py-2.5 border-zinc-900 dark:border-zinc-100  overflow-hidden transition-all duration-300 pointer-events-auto',
-        isScrolled ? 'bg-white/60 dark:bg-black/60 backdrop-blur-sm border-2 rounded-rough' : '',
+        isScrolled ? 'bg-white dark:bg-black border-2 rounded-rough' : '',
       ]"
     >
-      <motion.div
-        class="absolute bottom-0 left-0 h-[3px] bg-accent"
-        :animate="{ width: `${scrollProgress}%` }"
-        :transition="{ duration: 0.15 }"
-      />
-
-      <motion.a
-        href="#"
-        class="font-handwritten text-2xl tracking-tight text-board-text"
-        while-hover="{ rotate: [-2, 2, -1, 0], scale: 1.05 }"
-        :transition="{ duration: 0.4 }"
-      >
-        L<span class="text-accent">.</span>Adrian
-      </motion.a>
+      <a href="#" class="font-handwritten text-2xl tracking-tight text-board-text">
+        L<span class="text-green-600 dark:text-green-400">.</span>Adrian
+      </a>
 
       <nav class="hidden md:flex items-center gap-8">
         <div v-for="item in navItems" :key="item.name" class="relative group">
-          <motion.a
+          <a
             :href="item.href"
             :class="[
               'relative inline-block text-base font-bold transition-colors duration-200',
               activeSection === item.href.replace('#', '') ||
               (item.href === '#' && activeSection === 'home')
-                ? 'text-accent'
-                : 'text-board-text/70 group-hover:text-accent',
+                ? 'text-green-600 dark:text-green-400'
+                : '',
             ]"
-            while-hover="{ rotate: [0, -1.5, 1.5, -1, 0], y: -1 }"
-            :transition="{ duration: 0.35, ease: 'easeInOut' }"
           >
             {{ item.name }}
-          </motion.a>
+          </a>
 
           <svg
             v-if="
@@ -145,7 +128,7 @@ onUnmounted(() => {
               stroke="currentColor"
               stroke-width="2.5"
               stroke-linecap="round"
-              class="text-accent"
+              class="text-green-600 dark:text-green-400"
             />
           </svg>
 
@@ -161,7 +144,7 @@ onUnmounted(() => {
               stroke="currentColor"
               stroke-width="2.5"
               stroke-linecap="round"
-              class="text-accent sketch-draw"
+              class="sketch-draw"
               pathLength="1"
             />
           </svg>
@@ -172,7 +155,7 @@ onUnmounted(() => {
         <ThemeToggle />
       </div>
     </div>
-  </motion.header>
+  </header>
 </template>
 
 <style scoped>

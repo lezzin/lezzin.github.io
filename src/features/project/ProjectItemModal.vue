@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { AnimatePresence, motion } from 'motion-v'
 import { formatText } from '../../utils/markdown'
 import type { Project } from '../../types/project'
 import { onBeforeUnmount, onMounted, watch } from 'vue'
@@ -42,23 +41,13 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <AnimatePresence>
-    <motion.div
+  <Transition>
+    <div
       v-if="open && project"
-      key="backdrop"
-      :initial="{ opacity: 0 }"
-      :while-in-view="{ opacity: 1 }"
-      :exit="{ opacity: 0 }"
-      :transition="{ duration: 0.2 }"
       class="fixed inset-0 z-50 bg-zinc-900/60 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
       @click.self="close"
     >
-      <motion.div
-        key="panel"
-        :initial="{ opacity: 0, scale: 0.95, y: 12 }"
-        :while-in-view="{ opacity: 1, scale: 1, y: 0 }"
-        :exit="{ opacity: 0, scale: 0.95, y: 12 }"
-        :transition="{ duration: 0.25, ease: 'easeOut' }"
+      <div
         role="dialog"
         aria-modal="true"
         :aria-label="project.name"
@@ -144,9 +133,9 @@ onBeforeUnmount(() => {
             />
           </footer>
         </div>
-      </motion.div>
-    </motion.div>
-  </AnimatePresence>
+      </div>
+    </div>
+  </Transition>
 </template>
 
 <style scoped lang="postcss">

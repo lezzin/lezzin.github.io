@@ -8,7 +8,7 @@ import Title from '../../../components/common/Title.vue'
   <section id="experience" class="scroll-mt-32">
     <Title>Experiência Profissional</Title>
 
-    <div class="space-y-12">
+    <div class="space-y-8">
       <ExperienceItem
         v-for="(experience, index) in experiences"
         :key="index"

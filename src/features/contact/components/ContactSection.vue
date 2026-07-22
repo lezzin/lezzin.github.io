@@ -4,8 +4,6 @@ import Title from '../../../components/common/Title.vue'
 import Subtitle from '../../../components/common/Subtitle.vue'
 import Button from '../../../components/common/Button.vue'
 import { ref } from 'vue'
-import { motion } from 'motion-v'
-import { containerVariants, itemVariants } from '../../../constants/motion'
 
 const email = 'leandrinsilva22@gmail.com'
 const copied = ref(false)
@@ -25,26 +23,16 @@ const copyEmail = async () => {
 
 <template>
   <section id="contact" class="py-2 scroll-mt-32">
-    <motion.div
-      class="max-w-3xl"
-      :variants="containerVariants"
-      initial="hidden"
-      while-in-view="visible"
-      :viewport="{ once: true, margin: '-100px' }"
-    >
-      <motion.div :variants="itemVariants">
-        <Title class="!mb-4">Vamos conversar?</Title>
-      </motion.div>
+    <div class="max-w-3xl">
+      <Title class="!mb-4">Vamos conversar?</Title>
 
-      <motion.div :variants="itemVariants">
-        <Subtitle class="mb-12 font-handwritten text-xl">
-          Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de
-          sistemas e oportunidades de colaboração no ecossistema Backend.
-        </Subtitle>
-      </motion.div>
+      <Subtitle class="mb-12 font-handwritten text-xl">
+        Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de sistemas
+        e oportunidades de colaboração no ecossistema Backend.
+      </Subtitle>
 
-      <div class="flex flex-col gap-6">
-        <motion.div :variants="itemVariants" class="flex flex-wrap gap-4">
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-wrap gap-2">
           <Button variant="default" as-child :href="`mailto:${email}`" size="sm">
             <div class="flex items-center gap-2">
               <Mail :size="18" />
@@ -59,9 +47,9 @@ const copyEmail = async () => {
               <span>{{ copied ? 'Copiado!' : 'Copiar' }}</span>
             </div>
           </Button>
-        </motion.div>
+        </div>
 
-        <motion.div :variants="itemVariants" class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-2">
           <Button
             variant="outline"
             as-child
@@ -89,8 +77,8 @@ const copyEmail = async () => {
               <span>LinkedIn</span>
             </div>
           </Button>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   </section>
 </template>

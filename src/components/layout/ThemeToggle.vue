@@ -8,11 +8,12 @@ const { theme, toggleTheme } = useTheme()
 
 <template>
   <Button @click="toggleTheme" variant="outline" size="icon">
-    <span v-if="theme === 'light'">
-      <Sun :size="20" />
-    </span>
-    <span v-else>
-      <Moon :size="20" />
-    </span>
+    <template v-if="theme === 'light'">
+      <Sun :size="20" class="text-yellow-600" />
+    </template>
+
+    <template v-else>
+      <Moon :size="20" class="text-blue-300" />
+    </template>
   </Button>
 </template>

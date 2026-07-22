@@ -2,8 +2,6 @@
 import clsx from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { computed } from 'vue'
-import { motion } from 'motion-v'
-import { useTheme } from '../../composables/useTheme'
 
 type Variant = 'default' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link'
 
@@ -26,8 +24,6 @@ const props = withDefaults(
   }
 )
 
-const { theme } = useTheme()
-
 const base = `
   relative
   inline-flex items-center justify-center
@@ -36,8 +32,15 @@ const base = `
   text-zinc-900 dark:text-zinc-100
   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2
   disabled:opacity-50 disabled:pointer-events-none
-  transition-colors
+  transition-all
 `
+const noHoverVariants: Variant[] = ['ghost', 'link']
+
+const hoverEffect = computed(() =>
+  noHoverVariants.includes(props.variant)
+    ? ''
+    : 'hover:scale-105 hover:rotate-1 hover:shadow-[3px_3px_0_rgba(0,0,0,.4)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,.4)]'
+)
 
 const variants: Record<Variant, string> = {
   default: `
@@ -52,18 +55,18 @@ const variants: Record<Variant, string> = {
     rounded-rough
   `,
   outline: `
-    hover:bg-white/50 dark:hover:bg-black/50 
+    hover:bg-white/50 dark:hover:bg-black/50
     rounded-rough
   `,
   ghost: `
-    border-none 
-    hover:bg-white/50 dark:hover:bg-black/50 
+    border-none
+    hover:bg-white/50 dark:hover:bg-black/50
     rounded-rough
   `,
   destructive: `
     bg-red-500
     border-red-900
-    hover:bg-red-600 
+    hover:bg-red-600
     rounded-rough
   `,
   link: `
@@ -74,8 +77,6 @@ const variants: Record<Variant, string> = {
   `,
 }
 
-const noHoverVariants: Variant[] = ['ghost', 'link']
-
 const sizes: Record<Size, string> = {
   sm: 'h-9 px-3',
   default: 'h-10 px-4 py-2',
@@ -83,34 +84,15 @@ const sizes: Record<Size, string> = {
   icon: 'h-10 w-10',
 }
 
-const classes = computed(() => twMerge(clsx(base, variants[props.variant], sizes[props.size])))
+const classes = computed(() =>
+  twMerge(clsx(base, variants[props.variant], sizes[props.size], hoverEffect.value))
+)
 
-const buttonVariants = computed(() => {
-  if (noHoverVariants.includes(props.variant)) return undefined
-
-  return {
-    hover: {
-      scale: 1.02,
-      rotate: -1,
-      boxShadow:
-        theme.value === 'dark' ? '3px 3px 0 rgba(255,255,255,.4)' : '3px 3px 0 rgba(0,0,0,.4)',
-    },
-  }
-})
-
-const whileHover = computed(() => (props.variant === 'ghost' ? undefined : 'hover'))
 const isLink = computed(() => props.variant === 'link')
 </script>
 
 <template>
-  <motion.a
-    v-if="asChild"
-    :is="'a'"
-    :class="classes"
-    v-bind="$attrs"
-    :while-hover="whileHover"
-    :variants="buttonVariants"
-  >
+  <a v-if="asChild" :is="'a'" :class="classes" v-bind="$attrs">
     <svg
       v-if="isLink"
       class="absolute -bottom-1.5 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
@@ -129,16 +111,9 @@ const isLink = computed(() => props.variant === 'link')
     </svg>
 
     <slot />
-  </motion.a>
+  </a>
 
-  <motion.button
-    v-else
-    :type="type"
-    :disabled="disabled"
-    :class="classes"
-    :while-hover="whileHover"
-    :variants="buttonVariants"
-  >
+  <button v-else :type="type" :disabled="disabled" :class="classes">
     <svg
       v-if="isLink"
       class="absolute -bottom-1.5 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
@@ -157,7 +132,7 @@ const isLink = computed(() => props.variant === 'link')
     </svg>
 
     <slot />
-  </motion.button>
+  </button>
 </template>
 
 <style scoped>
