@@ -52,7 +52,7 @@ onBeforeUnmount(() => {
         aria-modal="true"
         :aria-label="project.name"
         :class="[
-          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough border',
+          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough border-2',
           sticky.bg,
           sticky.border,
         ]"
