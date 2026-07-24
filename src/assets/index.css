@@ -9,22 +9,15 @@
 
   html {
     scroll-behavior: smooth;
-    /* Excalidraw-like grid background */
-    background-image:
-      radial-gradient(circle, #e5e7eb 1px, transparent 1px),
-      radial-gradient(circle, #e5e7eb 1px, transparent 1px);
-    background-size: 20px 20px;
-    background-position:
-      0 0,
-      10px 10px;
   }
 
-  .dark html {
-    background-image:
-      radial-gradient(circle, #1f2937 1px, transparent 1px),
-      radial-gradient(circle, #1f2937 1px, transparent 1px);
+  html.dark {
+    color-scheme: dark;
   }
 
+  html.light {
+    color-scheme: light;
+  }
 }
 
 @layer components {

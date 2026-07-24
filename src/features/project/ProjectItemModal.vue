@@ -100,7 +100,9 @@ onBeforeUnmount(() => {
           </section>
 
           <section>
-            <h4 class="project-subtitle text-red-500 dark:text-red-400">{{ t.experience.modal.problem }}</h4>
+            <h4 class="project-subtitle text-red-500 dark:text-red-400">
+              {{ t.experience.modal.problem }}
+            </h4>
             <p class="project-text" v-html="formatText(project.problem)" />
           </section>
 
@@ -132,7 +134,9 @@ onBeforeUnmount(() => {
           <footer
             class="rounded-rough p-6 bg-white/50 dark:bg-black/20 border-2 border-dashed border-green-700/40 dark:border-green-400/30"
           >
-            <h4 class="project-subtitle text-green-700 dark:text-green-400">{{ t.experience.modal.outcome }}</h4>
+            <h4 class="project-subtitle text-green-700 dark:text-green-400">
+              {{ t.experience.modal.outcome }}
+            </h4>
 
             <p
               class="text-green-900 dark:text-green-50 font-bold text-lg leading-relaxed"
