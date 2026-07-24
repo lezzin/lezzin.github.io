@@ -85,9 +85,9 @@ onUnmounted(() => {
   >
     <div
       :class="[
-        'relative w-full max-w-5xl flex items-center justify-between ps-6 pe-3 py-2.5 overflow-hidden transition-all duration-300 pointer-events-auto rounded-rough-pill shadow-sm border-2',
+        'relative w-full max-w-5xl flex items-center justify-between ps-6 pe-3 py-2.5 overflow-hidden transition-all duration-300 pointer-events-auto rounded-rough-pill border-2',
         isScrolled
-          ? 'bg-white dark:bg-zinc-950 border-zinc-300 dark:border-zinc-800'
+          ? 'bg-white dark:bg-zinc-950 border-zinc-300 dark:border-zinc-800 shadow-sm'
           : 'border-transparent',
       ]"
     >
