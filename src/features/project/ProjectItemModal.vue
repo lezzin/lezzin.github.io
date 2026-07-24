@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { formatText } from '../../utils/markdown'
 import type { Project } from '../../types/project'
-import { onBeforeUnmount, onMounted, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
 import { CheckCircle2, X } from 'lucide-vue-next'
 import type { StickyPaletteItem } from '../../types/sticky-palette'
+import { useLanguage } from '../../composables/useLanguage'
+import { uiTranslations } from '../../i18n/ui'
 
 const props = defineProps<{
   open: boolean
@@ -14,6 +16,9 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'close'): void
 }>()
+
+const { language } = useLanguage()
+const t = computed(() => uiTranslations[language.value])
 
 const close = () => emit('close')
 
@@ -59,7 +64,7 @@ onBeforeUnmount(() => {
       >
         <button
           type="button"
-          aria-label="Fechar"
+          :aria-label="t.experience.modal.close"
           class="sticky top-0 float-right -mr-2 md:-mt-4 md:-mr-4 z-10 p-2 rounded-rough-circle bg-white/70 dark:bg-zinc-900/70 border-2 hover:bg-white dark:hover:bg-zinc-900 transition-colors"
           @click="close"
           :class="sticky.border"
@@ -85,23 +90,23 @@ onBeforeUnmount(() => {
 
         <div class="space-y-10 font-handwritten text-lg">
           <section>
-            <h4 class="project-subtitle">Contexto</h4>
+            <h4 class="project-subtitle">{{ t.experience.modal.context }}</h4>
             <p class="project-text" v-html="formatText(project.context)" />
           </section>
 
           <section>
-            <h4 class="project-subtitle">Impacto no Negócio</h4>
+            <h4 class="project-subtitle">{{ t.experience.modal.importance }}</h4>
             <p class="project-text" v-html="formatText(project.importance)" />
           </section>
 
           <section>
-            <h4 class="project-subtitle text-red-500 dark:text-red-400">O Desafio Técnico</h4>
+            <h4 class="project-subtitle text-red-500 dark:text-red-400">{{ t.experience.modal.problem }}</h4>
             <p class="project-text" v-html="formatText(project.problem)" />
           </section>
 
           <section>
             <h4 class="project-subtitle text-green-600 dark:text-green-400">
-              Decisões de Engenharia
+              {{ t.experience.modal.decisions }}
             </h4>
 
             <ul class="grid gap-4">
@@ -117,7 +122,7 @@ onBeforeUnmount(() => {
           </section>
 
           <section>
-            <h4 class="project-subtitle">Análise de Trade-offs</h4>
+            <h4 class="project-subtitle">{{ t.experience.modal.tradeoffs }}</h4>
 
             <div class="rough-line">
               <p class="project-text italic" v-html="formatText(project.tradeoffs)" />
@@ -127,7 +132,7 @@ onBeforeUnmount(() => {
           <footer
             class="rounded-rough p-6 bg-white/50 dark:bg-black/20 border-2 border-dashed border-green-700/40 dark:border-green-400/30"
           >
-            <h4 class="project-subtitle text-green-700 dark:text-green-400">Resultado Final</h4>
+            <h4 class="project-subtitle text-green-700 dark:text-green-400">{{ t.experience.modal.outcome }}</h4>
 
             <p
               class="text-green-900 dark:text-green-50 font-bold text-lg leading-relaxed"

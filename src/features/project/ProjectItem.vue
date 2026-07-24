@@ -6,6 +6,8 @@ import { formatText } from '../../utils/markdown'
 import Button from '../../components/common/Button.vue'
 import { STICKY_PALETTE } from '../../constants/sticky-palette.ts'
 import Tape from '../../components/common/Tape.vue'
+import { useLanguage } from '../../composables/useLanguage'
+import { uiTranslations } from '../../i18n/ui'
 
 const props = defineProps<{
   project: Project
@@ -15,6 +17,9 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'open', project: Project): void
 }>()
+
+const { language } = useLanguage()
+const t = computed(() => uiTranslations[language.value])
 
 const sticky = computed(() => STICKY_PALETTE[(props.index ?? 0) % STICKY_PALETTE.length]!)
 </script>
@@ -37,7 +42,7 @@ const sticky = computed(() => STICKY_PALETTE[(props.index ?? 0) % STICKY_PALETTE
       <Button @click="emit('open', project)" variant="link" class="ps-0">
         <div class="flex items-center">
           <Plus :size="18" class="mr-2" />
-          Ler estudo de caso completo
+          {{ t.experience.readCaseStudy }}
         </div>
       </Button>
     </div>

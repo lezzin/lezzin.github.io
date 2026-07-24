@@ -3,7 +3,12 @@ import { Github, Linkedin, Mail, Copy, Check } from 'lucide-vue-next'
 import Title from '../../../components/common/Title.vue'
 import Subtitle from '../../../components/common/Subtitle.vue'
 import Button from '../../../components/common/Button.vue'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useLanguage } from '../../../composables/useLanguage'
+import { uiTranslations } from '../../../i18n/ui'
+
+const { language } = useLanguage()
+const t = computed(() => uiTranslations[language.value])
 
 const email = 'leandrinsilva22@gmail.com'
 const copied = ref(false)
@@ -24,11 +29,10 @@ const copyEmail = async () => {
 <template>
   <section id="contact" class="py-2 scroll-mt-32">
     <div class="max-w-3xl">
-      <Title class="!mb-4">Vamos conversar?</Title>
+      <Title class="!mb-4">{{ t.contact.title }}</Title>
 
       <Subtitle class="mb-12 font-handwritten text-xl">
-        Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de sistemas
-        e oportunidades de colaboração no ecossistema Backend.
+        {{ t.contact.subtitle }}
       </Subtitle>
 
       <div class="flex flex-col gap-4">
@@ -44,7 +48,7 @@ const copyEmail = async () => {
             <div class="flex items-center gap-2">
               <Check v-if="copied" :size="18" />
               <Copy v-else :size="18" />
-              <span>{{ copied ? 'Copiado!' : 'Copiar' }}</span>
+              <span>{{ copied ? t.contact.copied : t.contact.copy }}</span>
             </div>
           </Button>
         </div>

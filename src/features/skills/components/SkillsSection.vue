@@ -1,12 +1,19 @@
 <script lang="ts" setup>
-import { skillCategories } from '../../../constants/skills'
+import { computed } from 'vue'
+import { useLanguage } from '../../../composables/useLanguage'
+import { skillCategoriesTranslations } from '../../../i18n/skills'
+import { uiTranslations } from '../../../i18n/ui'
 import Title from '../../../components/common/Title.vue'
 import SkillItem from './SkillItem.vue'
+
+const { language } = useLanguage()
+const skillCategories = computed(() => skillCategoriesTranslations[language.value])
+const t = computed(() => uiTranslations[language.value])
 </script>
 
 <template>
   <section id="skills" class="scroll-mt-32">
-    <Title>Habilidades & Ferramentas</Title>
+    <Title>{{ t.skills.title }}</Title>
 
     <div class="grid gap-4 md:grid-cols-2">
       <SkillItem

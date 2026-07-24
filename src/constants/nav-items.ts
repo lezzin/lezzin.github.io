@@ -1,6 +1,2 @@
-export const navItems = [
-  { name: 'Início', href: '#' },
-  { name: 'Experiência', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Contato', href: '#contact' },
-]
+import { navItemsTranslations } from '../i18n/nav-items'
+export const navItems = navItemsTranslations.pt

@@ -7,10 +7,15 @@ import type { Project } from '../../../types/project.ts'
 import ProjectItemModal from '../../project/ProjectItemModal.vue'
 import { STICKY_PALETTE } from '../../../constants/sticky-palette.ts'
 import Tape from '../../../components/common/Tape.vue'
+import { useLanguage } from '../../../composables/useLanguage'
+import { uiTranslations } from '../../../i18n/ui'
 
 defineProps<{
   experience: Experience
 }>()
+
+const { language } = useLanguage()
+const t = computed(() => uiTranslations[language.value])
 
 const selectedProjectIndex = ref(0)
 const sticky = computed(
@@ -74,7 +79,7 @@ const closeProject = () => {
 
     <div v-if="experience.projects.length" class="mt-8">
       <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-6">
-        Projetos e Estudos de Caso
+        {{ t.experience.projectsTitle }}
       </h4>
 
       <div class="grid md:grid-cols-2 gap-4 md:gap-8 mt-4">

@@ -1,6 +1,13 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { ArrowDown, FileText, Mail } from 'lucide-vue-next'
 import Button from '../../../components/common/Button.vue'
+import { useLanguage } from '../../../composables/useLanguage'
+import { uiTranslations } from '../../../i18n/ui'
+import { formatText } from '../../../utils/markdown'
+
+const { language } = useLanguage()
+const t = computed(() => uiTranslations[language.value])
 </script>
 
 <template>
@@ -8,7 +15,7 @@ import Button from '../../../components/common/Button.vue'
     <div class="space-y-8 max-w-3xl">
       <div class="space-y-3">
         <p class="text-green-600 dark:text-green-400 text-sm font-bold tracking-widest uppercase">
-          Desenvolvedor Backend
+          {{ t.hero.role }}
         </p>
 
         <h1
@@ -19,32 +26,30 @@ import Button from '../../../components/common/Button.vue'
         </h1>
       </div>
 
-      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-        Desenvolvedor Backend focado na construção de sistemas robustos, escaláveis e de alta
-        performance. Especializado em arquiteturas modernas com
-        <mark class="mark font-medium inline-block px-1">NestJS e Laravel </mark>, busco transformar
-        desafios técnicos em soluções eficientes, bem documentadas e de alto impacto para o negócio.
-      </p>
+      <p
+        class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed"
+        v-html="formatText(t.hero.description)"
+      />
 
       <div class="flex flex-wrap gap-2 pt-4">
         <Button variant="default" as-child href="#experience" size="lg">
           <div class="flex items-center">
             <ArrowDown :size="18" class="mr-2" />
-            Ver Experiências
+            {{ t.hero.viewExperience }}
           </div>
         </Button>
 
         <Button variant="outline" as-child href="#contact" size="lg">
           <div class="flex items-center">
             <Mail class="mr-2 h-4 w-4" />
-            Agendar Conversa
+            {{ t.hero.scheduleCall }}
           </div>
         </Button>
 
         <Button variant="outline" as-child href="/cv.pdf" target="_blank" size="lg">
           <div class="flex items-center">
             <FileText class="mr-2 h-4 w-4" />
-            Currículo
+            {{ t.hero.resume }}
           </div>
         </Button>
       </div>

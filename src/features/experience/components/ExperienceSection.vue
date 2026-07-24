@@ -1,12 +1,19 @@
 <script lang="ts" setup>
-import { experiences } from '../../../constants/experiences'
+import { computed } from 'vue'
+import { useLanguage } from '../../../composables/useLanguage'
+import { experiencesTranslations } from '../../../i18n/experiences'
+import { uiTranslations } from '../../../i18n/ui'
 import ExperienceItem from './ExperienceItem.vue'
 import Title from '../../../components/common/Title.vue'
+
+const { language } = useLanguage()
+const experiences = computed(() => experiencesTranslations[language.value])
+const t = computed(() => uiTranslations[language.value])
 </script>
 
 <template>
   <section id="experience" class="scroll-mt-32">
-    <Title>Experiência Profissional</Title>
+    <Title>{{ t.experience.title }}</Title>
 
     <div class="space-y-8">
       <ExperienceItem

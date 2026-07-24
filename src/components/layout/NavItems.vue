@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { navItems } from '../../constants/nav-items'
+import { computed } from 'vue'
+import { useLanguage } from '../../composables/useLanguage'
+import { navItemsTranslations } from '../../i18n/nav-items'
 
 defineProps<{
   active?: string
 }>()
+
+const { language } = useLanguage()
+const navItems = computed(() => navItemsTranslations[language.value])
 </script>
 
 <template>
   <nav class="flex items-center flex-wrap gap-8">
-    <div v-for="item in navItems" :key="item.name" class="relative group">
+    <div v-for="item in navItems" :key="item.href" class="relative group">
       <a
         :href="item.href"
         :class="[
