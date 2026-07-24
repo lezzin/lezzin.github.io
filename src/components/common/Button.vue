@@ -39,7 +39,7 @@ const noHoverVariants: Variant[] = ['ghost', 'link']
 const hoverEffect = computed(() =>
   noHoverVariants.includes(props.variant)
     ? ''
-    : 'hover:scale-105 hover:rotate-1 hover:shadow-[3px_3px_0_rgba(0,0,0,.4)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,.4)]'
+    : 'hover:scale-[102%] hover:rotate-[0.5deg] hover:shadow-[3px_3px_0_rgba(0,0,0,.4)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,.4)]'
 )
 
 const variants: Record<Variant, string> = {
@@ -81,7 +81,7 @@ const sizes: Record<Size, string> = {
   sm: 'h-9 px-3',
   default: 'h-10 px-4 py-2',
   lg: 'h-11 px-8',
-  icon: 'h-10 w-10',
+  icon: 'size-10',
 }
 
 const classes = computed(() =>
@@ -92,10 +92,10 @@ const isLink = computed(() => props.variant === 'link')
 </script>
 
 <template>
-  <a v-if="asChild" :is="'a'" :class="classes" v-bind="$attrs">
+  <a v-if="asChild" :class="classes" v-bind="$attrs">
     <svg
       v-if="isLink"
-      class="absolute -bottom-1.5 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
+      class="absolute -bottom-1 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
       viewBox="0 0 100 10"
       preserveAspectRatio="none"
     >
@@ -116,7 +116,7 @@ const isLink = computed(() => props.variant === 'link')
   <button v-else :type="type" :disabled="disabled" :class="classes">
     <svg
       v-if="isLink"
-      class="absolute -bottom-1.5 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
+      class="absolute -bottom-1 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
       viewBox="0 0 100 10"
       preserveAspectRatio="none"
     >

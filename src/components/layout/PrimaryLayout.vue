@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Divider from '../common/Divider.vue'
 import Header from './Header.vue'
+import NavItems from './NavItems.vue'
 
 const currentYear = new Date().getFullYear()
 </script>
@@ -19,9 +20,13 @@ const currentYear = new Date().getFullYear()
       <Divider />
 
       <footer class="pb-12 text-center">
+        <div class="flex items-center justify-center mb-8">
+          <NavItems />
+        </div>
+
         <div class="max-w-3xl mx-auto px-6 text-gray-800 dark:text-gray-300">
           <p class="font-handwritten text-xl mb-2">Leandro Adrian da Silva</p>
-          <p class="text-[10px] font-sans opacity-60 uppercase tracking-widest">
+          <p class="text-[10px] font-sans uppercase tracking-widest">
             © {{ currentYear }} — Feito com Vue.js & Tailwind CSS
           </p>
         </div>

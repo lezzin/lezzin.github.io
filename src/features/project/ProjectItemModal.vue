@@ -8,7 +8,7 @@ import type { StickyPaletteItem } from '../../types/sticky-palette'
 const props = defineProps<{
   open: boolean
   project: Project | null
-  sticky?: StickyPaletteItem
+  sticky: StickyPaletteItem
 }>()
 
 const emit = defineEmits<{
@@ -52,15 +52,17 @@ onBeforeUnmount(() => {
         aria-modal="true"
         :aria-label="project.name"
         :class="[
-          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough',
-          sticky?.bg,
+          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough border',
+          sticky.bg,
+          sticky.border,
         ]"
       >
         <button
           type="button"
           aria-label="Fechar"
-          class="sticky top-0 float-right -mr-2 md:-mt-4 md:-mr-4 z-10 p-2 rounded-full bg-white/70 dark:bg-zinc-900/70 border-2 border-zinc-900 dark:border-zinc-100 hover:bg-white dark:hover:bg-zinc-900 transition-colors"
+          class="sticky top-0 float-right -mr-2 md:-mt-4 md:-mr-4 z-10 p-2 rounded-rough-circle bg-white/70 dark:bg-zinc-900/70 border-2 hover:bg-white dark:hover:bg-zinc-900 transition-colors"
           @click="close"
+          :class="sticky.border"
         >
           <X :size="18" class="text-zinc-900 dark:text-zinc-100" />
         </button>

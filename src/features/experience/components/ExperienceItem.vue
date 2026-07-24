@@ -6,6 +6,7 @@ import ProjectItem from '../../project/ProjectItem.vue'
 import type { Project } from '../../../types/project.ts'
 import ProjectItemModal from '../../project/ProjectItemModal.vue'
 import { STICKY_PALETTE } from '../../../constants/sticky-palette.ts'
+import Tape from '../../../components/common/Tape.vue'
 
 defineProps<{
   experience: Experience
@@ -13,7 +14,7 @@ defineProps<{
 
 const selectedProjectIndex = ref(0)
 const sticky = computed(
-  () => STICKY_PALETTE[(selectedProjectIndex.value ?? 0) % STICKY_PALETTE.length]
+  () => STICKY_PALETTE[(selectedProjectIndex.value ?? 0) % STICKY_PALETTE.length]!
 )
 
 const selectedProject = ref<Project | null>(null)
@@ -30,7 +31,11 @@ const closeProject = () => {
 </script>
 
 <template>
-  <article class="group relative py-8 bg-stone-100 dark:bg-stone-900 rounded-rough p-4 md:p-8">
+  <article
+    class="group relative py-8 bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough p-4 md:p-8 shadow-md"
+  >
+    <Tape color="bg-stone-200/70 dark:bg-stone-800/60" />
+
     <div class="space-y-4">
       <header>
         <div class="flex justify-between items-start gap-4 flex-wrap">
@@ -72,7 +77,7 @@ const closeProject = () => {
         Projetos e Estudos de Caso
       </h4>
 
-      <div class="grid md:grid-cols-2 gap-4 mt-4">
+      <div class="grid md:grid-cols-2 gap-4 md:gap-8 mt-4">
         <ProjectItem
           v-for="(project, index) in experience.projects"
           :key="project.name"
