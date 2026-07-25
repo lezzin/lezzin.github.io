@@ -26,9 +26,15 @@ const sticky = computed(() => STICKY_PALETTE[(props.index ?? 0) % STICKY_PALETTE
 
 <template>
   <article class="relative">
-    <Tape :color="sticky.tape" />
+    <Tape :color="sticky.tape" size="sm" position="topCenter" />
 
-    <div :class="['p-6 md:p-8 rounded-rough border-2', sticky.bg, sticky.border]">
+    <div
+      :class="[
+        'p-6 md:p-8 rounded-rough border-2 shadow-md hover:shadow-lg transition-shadow',
+        sticky.bg,
+        sticky.border,
+      ]"
+    >
       <h3
         class="text-xl md:text-3xl font-handwritten text-zinc-900 dark:text-zinc-100 tracking-tight mb-6"
       >

@@ -15,7 +15,7 @@ const t = computed(() => uiTranslations[language.value])
   <section id="experience" class="scroll-mt-32">
     <Title>{{ t.experience.title }}</Title>
 
-    <div class="space-y-8">
+    <div class="grid gap-12">
       <ExperienceItem
         v-for="(experience, index) in experiences"
         :key="index"

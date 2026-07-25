@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Tape from '../../../components/common/Tape.vue'
 import { STICKY_PALETTE } from '../../../constants/sticky-palette'
 import type { SkillCategory } from '../../../types/skill'
 
@@ -7,23 +8,26 @@ const props = defineProps<{
   index: number
 }>()
 
-const stickyClass = STICKY_PALETTE[props.index % STICKY_PALETTE.length]
+const stickyClass = STICKY_PALETTE[props.index % STICKY_PALETTE.length]!
 </script>
 
 <template>
   <div
     :class="[
-      'relative overflow-hidden p-6 border-2 rounded-rough',
-      stickyClass?.bg,
-      stickyClass?.border,
+      'relative p-6 border-2 rounded-rough shadow-md hover:shadow-lg transition-shadow',
+      stickyClass.bg,
+      stickyClass.border,
     ]"
   >
+    <Tape :color="stickyClass.tape" position="topLeft" size="sm" />
+    <Tape :color="stickyClass.tape" position="bottomRight" size="sm" />
+
     <div class="relative z-10">
       <div class="flex items-center gap-3 mb-5">
         <div
           :class="[
-            'flex items-center justify-center size-10 border rounded-rough-circle',
-            stickyClass?.border,
+            'flex items-center justify-center size-10 border rounded-rough-circle bg-white/40 dark:bg-black/10',
+            stickyClass.border,
           ]"
         >
           <component :is="category.icon" :size="18" />
@@ -39,8 +43,9 @@ const stickyClass = STICKY_PALETTE[props.index % STICKY_PALETTE.length]
           v-for="skill in category.skills"
           :key="skill"
           :class="[
-            'px-3 py-1 border rounded-rough-pill text-xs font-bold uppercase tracking-wider bg-white/40 dark:bg-black/10 cursor-default',
-            stickyClass?.border,
+            'px-3 py-1 border rounded-rough-pill text-xs font-bold uppercase tracking-wider bg-white/40 dark:bg-black/10',
+            stickyClass.border,
+            stickyClass.bg,
           ]"
         >
           {{ skill }}

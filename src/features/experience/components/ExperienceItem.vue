@@ -33,63 +33,70 @@ const closeProject = () => {
   selectedProjectIndex.value = 0
   selectedProject.value = null
 }
+
+const tapeColor = 'bg-stone-200/70 dark:bg-stone-800/60'
 </script>
 
 <template>
   <article
-    class="group relative py-8 bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough p-4 md:p-8 shadow-md"
+    class="relative bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough"
   >
-    <Tape color="bg-stone-200/70 dark:bg-stone-800/60" />
+    <Tape :color="tapeColor" position="topLeft" />
+    <Tape :color="tapeColor" position="topRight" />
+    <Tape :color="tapeColor" position="bottomRight" />
+    <Tape :color="tapeColor" position="bottomLeft" />
 
-    <div class="space-y-4">
-      <header>
-        <div class="flex justify-between items-start gap-4 flex-wrap">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
-            {{ experience.title }}
-          </h3>
+    <div class="p-4 md:p-8">
+      <div class="grid gap-4">
+        <header>
+          <div class="flex justify-between items-start gap-4 flex-wrap">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
+              {{ experience.title }}
+            </h3>
 
-          <time
-            class="text-sm font-handwritten tracking-widest text-zinc-900 dark:text-zinc-100 uppercase"
-          >
-            {{ experience.period }}
-          </time>
-        </div>
+            <time
+              class="text-sm font-handwritten tracking-widest text-zinc-900 dark:text-zinc-100 uppercase"
+            >
+              {{ experience.period }}
+            </time>
+          </div>
 
-        <p class="text-xs font-bold mt-1 uppercase tracking-tighter">
-          {{ experience.company }}
-        </p>
-      </header>
+          <p class="text-xs font-bold mt-1 uppercase tracking-tighter">
+            {{ experience.company }}
+          </p>
+        </header>
 
-      <p
-        class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg"
-        v-html="formatText(experience.description)"
-      />
-
-      <ul class="space-y-4 pt-2">
-        <li
-          v-for="(item, index) in experience.bulletPoints"
-          :key="index"
-          class="flex items-start gap-4"
-        >
-          <span class="mt-2.5 size-2.5 rounded-rough bg-zinc-900 dark:bg-white flex-shrink-0" />
-          <p class="text-gray-700 dark:text-zinc-300 leading-relaxed" v-html="formatText(item)" />
-        </li>
-      </ul>
-    </div>
-
-    <div v-if="experience.projects.length" class="mt-8">
-      <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-6">
-        {{ t.experience.projectsTitle }}
-      </h4>
-
-      <div class="grid md:grid-cols-2 gap-4 md:gap-8 mt-4">
-        <ProjectItem
-          v-for="(project, index) in experience.projects"
-          :key="project.name"
-          :project="project"
-          :index="index"
-          @open="() => openProject(project, index)"
+        <p
+          class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg"
+          v-html="formatText(experience.description)"
         />
+
+        <ul class="space-y-4 pt-2">
+          <li
+            v-for="(item, index) in experience.bulletPoints"
+            :key="index"
+            class="flex items-start gap-4"
+          >
+            <span class="mt-2.5 size-2.5 rounded-rough bg-zinc-900 dark:bg-white flex-shrink-0" />
+            <p class="text-gray-700 dark:text-zinc-300 leading-relaxed" v-html="formatText(item)" />
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="experience.projects.length" class="mt-8">
+        <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-6">
+          {{ t.experience.projectsTitle }}
+        </h4>
+
+        <div class="grid md:grid-cols-2 gap-4 md:gap-8 mt-4">
+          <ProjectItem
+            v-for="(project, index) in experience.projects"
+            :key="project.name"
+            :project="project"
+            :index="index"
+            @open="() => openProject(project, index)"
+          />
+        </div>
       </div>
     </div>
   </article>

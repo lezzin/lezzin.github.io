@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
         aria-modal="true"
         :aria-label="project.name"
         :class="[
-          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough border-2',
+          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough border-2 shadow-xl',
           sticky.bg,
           sticky.border,
         ]"
@@ -82,7 +82,8 @@ onBeforeUnmount(() => {
           <span
             v-for="tech in project.technologies"
             :key="tech"
-            class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-white/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-zinc-100 rounded-rough border-2 border-zinc-900 dark:border-zinc-100"
+            class="px-3 py-1 text-xs font-bold uppercase shadow tracking-wider bg-white/40 dark:bg-black/10 rounded-rough border-2"
+            :class="sticky.border"
           >
             {{ tech }}
           </span>
