@@ -6,7 +6,6 @@ import ProjectItem from '../../project/ProjectItem.vue'
 import type { Project } from '../../../types/project.ts'
 import ProjectItemModal from '../../project/ProjectItemModal.vue'
 import { STICKY_PALETTE } from '../../../constants/sticky-palette.ts'
-import Tape from '../../../components/common/Tape.vue'
 import { useLanguage } from '../../../composables/useLanguage'
 import { uiTranslations } from '../../../i18n/ui'
 
@@ -33,20 +32,13 @@ const closeProject = () => {
   selectedProjectIndex.value = 0
   selectedProject.value = null
 }
-
-const tapeColor = 'bg-stone-200/70 dark:bg-stone-800/60'
 </script>
 
 <template>
   <article
-    class="relative bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough"
+    class="relative bg-stone-100 overflow-hidden dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough"
   >
-    <Tape :color="tapeColor" position="topLeft" />
-    <Tape :color="tapeColor" position="topRight" />
-    <Tape :color="tapeColor" position="bottomRight" />
-    <Tape :color="tapeColor" position="bottomLeft" />
-
-    <div class="p-4 md:p-8">
+    <div class="px-4 md:px-8 py-8">
       <div class="grid gap-4">
         <header>
           <div class="flex justify-between items-start gap-4 flex-wrap">
@@ -88,7 +80,7 @@ const tapeColor = 'bg-stone-200/70 dark:bg-stone-800/60'
           {{ t.experience.projectsTitle }}
         </h4>
 
-        <div class="grid md:grid-cols-2 gap-4 md:gap-8 mt-4">
+        <div class="grid md:grid-cols-2 gap-4 mt-4">
           <ProjectItem
             v-for="(project, index) in experience.projects"
             :key="project.name"

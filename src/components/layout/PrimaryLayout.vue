@@ -29,8 +29,8 @@ const containerClass = 'max-w-5xl mx-auto px-6 md:px-8 transition-colors duratio
     <div :class="twMerge(containerClass, 'py-6')">
       <div class="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <p class="font-handwritten text-xl mb-2">Leandro Adrian da Silva</p>
-          <p class="text-[10px] font-sans uppercase tracking-widest">
+          <p class="font-handwritten text-xl mb-1">Leandro Adrian da Silva</p>
+          <p class="text-[10px] uppercase tracking-widest">
             {{ t.footer.madeWith.replace('{year}', currentYear.toString()) }}
           </p>
         </div>

@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
           <span
             v-for="tech in project.technologies"
             :key="tech"
-            class="px-3 py-1 text-xs font-bold uppercase shadow tracking-wider bg-white/40 dark:bg-black/10 rounded-rough border-2"
+            class="px-3 py-1 text-xs font-bold uppercase shadow-sm tracking-wider bg-white/40 dark:bg-black/10 rounded-rough border-2"
             :class="sticky.border"
           >
             {{ tech }}

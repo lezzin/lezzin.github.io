@@ -5,8 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Architects Daughter"', 'cursive'],
-        handwritten: ['"Gloria Hallelujah"', 'cursive'],
+        handwritten: ['"Excalifont"', 'cursive'],
       },
       borderRadius: {
         rough: '255px 15px 225px 15px/15px 225px 15px 255px',

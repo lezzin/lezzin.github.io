@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { useMobile } from '../../composables/useMobile'
+
+const { isMobile } = useMobile()
+</script>
+
 <template>
   <div class="pt-8 pb-16 flex items-center justify-center overflow-hidden">
     <svg
@@ -11,10 +17,9 @@
       <path
         d="M0 10 C 150 5, 300 15, 450 10 S 750 5, 900 10 S 1200 5, 1200 10"
         stroke="currentColor"
-        stroke-width="2"
+        :stroke-width="isMobile ? 5 : 2"
         stroke-dasharray="10 5"
         stroke-linecap="round"
-        initial="hidden"
       />
     </svg>
   </div>

@@ -1,5 +1,8 @@
 export interface StickyPaletteItem {
   bg: string
-  tape: string
   border: string
+  stripe: {
+    light: string
+    dark: string
+  }
 }

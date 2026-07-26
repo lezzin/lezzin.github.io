@@ -24,8 +24,13 @@ export function useTheme() {
     theme.value = theme.value === 'dark' ? 'light' : 'dark'
   }
 
+  function isDark() {
+    return theme.value == 'dark'
+  }
+
   return {
     theme,
     toggleTheme,
+    isDark,
   }
 }

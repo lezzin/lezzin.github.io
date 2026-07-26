@@ -1,14 +1,20 @@
 <script setup lang="ts">
-import Tape from '../../../components/common/Tape.vue'
+import { computed } from 'vue'
 import { STICKY_PALETTE } from '../../../constants/sticky-palette'
 import type { SkillCategory } from '../../../types/skill'
+import { useTheme } from '../../../composables/useTheme.ts'
+import StripeBackground from '../../../components/common/StripeBackground.vue'
 
 const props = defineProps<{
   category: SkillCategory
   index: number
 }>()
 
+const { isDark } = useTheme()
+
 const stickyClass = STICKY_PALETTE[props.index % STICKY_PALETTE.length]!
+
+const stripeColor = computed(() => (isDark() ? stickyClass.stripe.dark : stickyClass.stripe.light))
 </script>
 
 <template>
@@ -19,8 +25,7 @@ const stickyClass = STICKY_PALETTE[props.index % STICKY_PALETTE.length]!
       stickyClass.border,
     ]"
   >
-    <Tape :color="stickyClass.tape" position="topLeft" size="sm" />
-    <Tape :color="stickyClass.tape" position="bottomRight" size="sm" />
+    <StripeBackground :color="stripeColor" />
 
     <div class="relative z-10">
       <div class="flex items-center gap-3 mb-5">
