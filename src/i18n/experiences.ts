@@ -8,43 +8,43 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
       company: 'Autônomo · Remoto',
       period: 'Jan 2024 – Dez 2024',
       description:
-        'Desenvolvimento de ==uma plataforma web sob medida== para um cliente, atuando em todas as etapas do projeto, desde o levantamento de requisitos até a implantação em produção.',
+        'Desenvolvimento de ==uma plataforma web sob medida== para um cliente, do primeiro contato com as necessidades do negócio até a entrega em produção.',
 
       bulletPoints: [
-        '**Desenvolvimento Fullstack:** Construção completa da aplicação utilizando **CodeIgniter**, **jQuery**, **MySQL**, HTML, CSS e JavaScript.',
+        '**Entrega ponta a ponta:** Construção completa da aplicação com **CodeIgniter**, **jQuery**, **MySQL**, HTML, CSS e JavaScript, do zero ao ar.',
 
-        '**Ecossistema Literário:** Desenvolvimento de funcionalidades para publicação de obras, capítulos, perfis de autores, comentários, avaliações e interação entre escritores e leitores.',
+        '**Experiência para escritores e leitores:** Criação de um ambiente completo para publicar obras e capítulos, montar perfis de autores, comentar, avaliar e interagir.',
 
-        '**Integração de Pagamentos:** Implementação da integração com **Stripe** para monetização da plataforma, permitindo cobranças e gerenciamento do fluxo de pagamentos.',
+        '**Monetização:** Integração com **Stripe**, permitindo que o cliente cobrasse pelo conteúdo e gerenciasse pagamentos com segurança.',
 
-        '**Deploy & Infraestrutura:** Configuração do ambiente de produção e implantação da aplicação na **Hostinger**, incluindo banco de dados, domínio e manutenção evolutiva.',
+        '**Colocando no ar:** Configuração do ambiente de produção e publicação na **Hostinger**, cuidando de banco de dados, domínio e manutenção contínua.',
       ],
 
       projects: [
         {
           name: 'Erupção das Letras',
           context:
-            'Plataforma social voltada para escritores e leitores, permitindo publicação de livros, descoberta de obras, interação entre usuários e monetização de conteúdo.',
+            'Rede social pensada para escritores e leitores, onde é possível publicar livros, descobrir novas obras, interagir com outros usuários e monetizar conteúdo.',
 
           importance:
-            'Projeto desenvolvido para criar um ambiente completo de produção e consumo de conteúdo literário.',
+            'Projeto criado para oferecer um espaço completo de produção e consumo de conteúdo literário.',
 
           problem:
-            'O cliente precisava centralizar publicação, leitura e monetização em uma única plataforma, oferecendo uma experiência semelhante às grandes plataformas de leitura online.',
+            'O cliente precisava reunir publicação, leitura e monetização em um só lugar, com uma experiência à altura das grandes plataformas de leitura online.',
 
           decisions: [
-            'Desenvolvimento da aplicação utilizando **CodeIgniter** seguindo a arquitetura MVC.',
-            'Implementação de perfis distintos para escritores e leitores com regras de acesso específicas.',
-            'Integração com **Stripe** para processamento de pagamentos e monetização da plataforma.',
-            'Criação de módulos para publicação de obras, capítulos, comentários, avaliações e interação entre usuários.',
-            'Modelagem do banco de dados para suportar crescimento da plataforma e organização do catálogo de obras.',
+            'Construção da aplicação com **CodeIgniter**, organizada para facilitar manutenção.',
+            'Perfis separados para escritores e leitores, cada um com suas próprias permissões.',
+            'Integração com **Stripe** para processar pagamentos e viabilizar a monetização.',
+            'Módulos para publicação de obras, capítulos, comentários, avaliações e interação entre usuários.',
+            'Banco de dados modelado pensando no crescimento da plataforma e na organização do catálogo.',
           ],
 
           tradeoffs:
-            'O uso do CodeIgniter proporcionou rapidez no desenvolvimento e facilidade de hospedagem compartilhada, embora exigisse maior responsabilidade na organização da arquitetura em comparação com frameworks mais opinativos.',
+            'Optar pelo CodeIgniter trouxe agilidade no desenvolvimento e facilidade para hospedar em planos compartilhados, ainda que exigisse mais cuidado meu na organização da arquitetura.',
 
           outcome:
-            'Entrega de uma plataforma funcional para publicação e descoberta de obras literárias, permitindo que escritores compartilhassem conteúdo e interagissem diretamente com seus leitores.',
+            'Plataforma no ar e funcional, permitindo que escritores publicassem suas obras e se conectassem diretamente com seus leitores.',
 
           technologies: ['CodeIgniter', 'PHP', 'MySQL', 'jQuery', 'JavaScript', 'Stripe'],
         },
@@ -55,15 +55,15 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
       company: 'Ágil Empréstimos · Monte Belo',
       period: 'Abril 2025 – Fev 2026',
       description:
-        'Atuação no desenvolvimento e modernização de ==sistemas core== da empresa, com foco em performance, escalabilidade e manutenção de código.',
+        'Atuação no desenvolvimento e modernização dos ==sistemas centrais== da empresa, com foco em deixar tudo mais rápido, estável e fácil de manter.',
       bulletPoints: [
-        '**Sistema de Mensageria:** Implementação de disparos multicanal com **RabbitMQ** e **Redis**, garantindo o processamento de mais de **100 mil faturas por dia** com alta disponibilidade.',
+        '**Mensageria em escala:** Implementação de disparos multicanal com **RabbitMQ** e **Redis**, garantindo o processamento de mais de **100 mil faturas por dia** sem sustos.',
 
-        '**Otimização de Processos:** Redução do tempo de geração de relatórios em **97,5%** (de 40 minutos para menos de 1 minuto) através de processamento assíncrono e streaming de dados.',
+        '**Relatórios muito mais rápidos:** Redução do tempo de geração de relatórios em **97,5%** (de 40 minutos para menos de 1 minuto), com processamento assíncrono e streaming de dados.',
 
-        '**Evolução Tecnológica:** Desenvolvimento de novos microserviços com **NestJS** e manutenção evolutiva em sistemas legados utilizando **CodeIgniter**.',
+        '**Modernização dos sistemas:** Novos microserviços construídos com **NestJS** e manutenção evolutiva dos sistemas legados em **CodeIgniter**.',
 
-        '**Cultura Técnica:** Criação de documentação técnica e diagramas arquiteturais para facilitar o suporte e o onboarding de novos membros no time.',
+        '**Compartilhando conhecimento:** Documentação técnica e diagramas de arquitetura criados para facilitar o suporte e o onboarding de novos colegas.',
       ],
       projects: [
         {
@@ -71,34 +71,34 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
           context:
             'Sistema responsável por ==automatizar o envio de faturas== por E-mail, SMS e WhatsApp.',
           importance:
-            'Fundamental para a previsibilidade do fluxo de caixa e redução da inadimplência.',
+            'Peça-chave para dar previsibilidade ao fluxo de caixa e reduzir a inadimplência.',
           problem:
-            'Processos manuais centralizados e falta de rastreabilidade, o que gerava ==alto risco operacional== e erros de cobrança.',
+            'Os disparos eram feitos manualmente e sem rastreabilidade, o que gerava ==alto risco operacional== e erros de cobrança.',
           decisions: [
-            'Implementação de **processamento assíncrono com RabbitMQ** para gerenciar picos de carga sem comprometer o sistema.',
-            'Uso de **Redis** para caching de consultas rápidas e **MinIO** para persistência das faturas geradas.',
+            'Processamento assíncrono com **RabbitMQ** para aguentar picos de envio sem travar o sistema.',
+            '**Redis** para cache de consultas frequentes e **MinIO** para armazenamento dos QR Codes de pagamento enviados por e-mail.',
           ],
           tradeoffs:
-            'Complexidade vs. Escalabilidade: O uso de filas trouxe maior complexidade inicial, mas resolveu gargalos de performance a longo prazo.',
+            'Adotar filas trouxe mais complexidade no início, mas resolveu de vez os gargalos de performance a longo prazo.',
           outcome:
-            'Eliminação total de intervenções manuais, com capacidade para processar mais de **100 mil transações diárias**.',
+            'Fim das intervenções manuais, com capacidade de processar mais de **100 mil transações diárias**.',
           technologies: ['Laravel 11', 'RabbitMQ', 'Redis', 'MinIO'],
         },
         {
           name: 'Processamento Assíncrono de Relatórios Financeiros',
           context:
-            'Ferramenta desenvolvida para ==geração de relatórios operacionais== e financeiros para áreas internas.',
-          importance: 'Os relatórios são essenciais para o monitoramento diário da saúde do negócio.',
+            'Ferramenta criada para ==gerar relatórios operacionais== e financeiros usados pelas áreas internas.',
+          importance: 'Relatórios essenciais para acompanhar a saúde do negócio no dia a dia.',
           problem:
-            'Timeouts constantes de até **40 minutos** em processos síncronos, exigindo suporte manual frequente.',
+            'Os relatórios travavam com timeouts de até **40 minutos**, exigindo suporte manual com frequência.',
           decisions: [
-            'Migração da lógica de geração de arquivos para processamento em background via **Redis Queues**.',
-            'Otimização de queries SQL e implementação de ==streaming de dados== para reduzir drasticamente o consumo de memória.',
+            'Geração de arquivos migrada para processamento em segundo plano com **Redis Queues**.',
+            'Otimização das consultas SQL e ==streaming de dados== para consumir bem menos memória.',
           ],
           tradeoffs:
-            'Novo Serviço vs. Legado: Em vez de manter a lógica no sistema legado, optei por desenvolver uma nova aplicação do zero para garantir estabilidade, isolamento e uso de tecnologias modernas.',
+            'Em vez de remendar o sistema legado, construí uma aplicação nova para garantir estabilidade e usar tecnologias atuais.',
           outcome:
-            'Redução do tempo de geração de **40 minutos para menos de 1 minuto**, com zero ocorrências de timeouts.',
+            'Tempo de geração caiu de **40 minutos para menos de 1 minuto**, sem nenhum timeout desde então.',
           technologies: ['Laravel 12', 'Redis', 'MinIO', 'SQL Optimization'],
         },
         {
@@ -108,15 +108,15 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
           importance:
             'Canal crítico de comunicação para envio de faturas e validações de segurança (OTP).',
           problem:
-            'Regras de negócio e templates fixos no código, exigindo ==deploys técnicos== para alterações de texto.',
+            'Textos e regras ficavam fixos no código, exigindo ==deploys técnicos== para qualquer alteração de mensagem.',
           decisions: [
-            'Integração com a API OMNE para facilitar a comunicação com o provedor oficial.',
-            'Desenvolvimento de uma ==interface administrativa== para gerenciamento dinâmico de templates pelo time de negócio.',
+            'Integração com a API OMNE para comunicação com o provedor oficial.',
+            '==Painel administrativo== criado para o time de negócio gerenciar os templates sem depender de TI.',
           ],
           tradeoffs:
-            'Agilidade vs. Custo: A adoção de um intermediador oficial aumentou levemente os custos, mas reduziu o time-to-market de novas campanhas.',
+            'Usar um intermediador oficial aumentou um pouco os custos, mas reduziu bastante o tempo para lançar novas campanhas.',
           outcome:
-            'Total autonomia para o time de negócios e visibilidade analítica sobre o status de entrega das mensagens.',
+            'Time de negócio ganhou autonomia total e visibilidade sobre o status de entrega das mensagens.',
           technologies: ['NestJS', 'TypeScript', 'Redis', 'API OMNE', 'Node.js'],
         },
       ],
@@ -126,37 +126,37 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
       company: 'Autônomo · Remoto',
       period: 'Fev 2026 – Atual',
       description:
-        'Desenvolvimento de ==sistemas web personalizados== utilizando Laravel, com atuação em todas as etapas do projeto, desde o levantamento de requisitos até o deploy em produção.',
+        'Desenvolvimento de ==sistemas web personalizados== com Laravel, acompanhando o projeto do início ao fim: levantamento de requisitos, desenvolvimento e deploy em produção.',
       bulletPoints: [
-        '**Desenvolvimento Fullstack:** Criação de aplicações completas com **Laravel**, **Blade**, **Tailwind CSS**, **Alpine.js** e **MySQL**, priorizando código limpo, segurança e escalabilidade.',
+        '**Aplicações completas:** Construção com **Laravel**, **Blade**, **Tailwind CSS**, **Alpine.js** e **MySQL**, sempre com foco em código limpo, segurança e escalabilidade.',
 
-        '**Arquitetura Backend:** Implementação de APIs REST, autenticação, filas (**Queues**), Jobs, sistema de permissões, integrações com serviços externos e regras de negócio complexas.',
+        '**Base sólida por trás:** APIs REST, autenticação, filas (**Queues**), jobs, permissões e integrações externas para suportar regras de negócio complexas.',
 
-        '**Deploy & Infraestrutura:** Configuração de ambientes Linux e hospedagem em provedores como **Hostinger** e VPS.',
+        '**No ar e funcionando:** Configuração de ambientes Linux e hospedagem em **Hostinger** e VPS.',
 
-        '**Relacionamento com Clientes:** Levantamento de requisitos, definição de arquitetura, desenvolvimento de funcionalidades sob demanda e suporte pós-entrega, garantindo soluções alinhadas às necessidades do negócio.',
+        '**Parceria com o cliente:** Levantamento de necessidades, definição da arquitetura, novas funcionalidades sob demanda e suporte após a entrega.',
       ],
       projects: [
         {
           name: 'Plataforma Franquias Panda',
           context:
-            'Sistema web desenvolvido sob medida para centralizar a operação da Franquias Panda, integrando administradores, franqueados e clientes em uma única plataforma.',
+            'Sistema sob medida para centralizar a operação da Franquias Panda, unindo administradores, franqueados e clientes em um só lugar.',
           importance:
-            'Aplicação responsável pela gestão de contratos, campanhas, empresas, aparelhos, conteúdos, benefícios e processos administrativos da franquia.',
+            'Responsável pela gestão de contratos, campanhas, empresas, aparelhos, conteúdos, benefícios e processos administrativos da franquia.',
           problem:
-            'A empresa dependia de processos descentralizados e operações manuais, dificultando o gerenciamento da rede de franquias e a evolução das funcionalidades.',
+            'A empresa vivia de processos descentralizados e manuais, o que dificultava gerenciar a rede de franquias e evoluir o sistema.',
           decisions: [
-            'Desenvolvimento de uma arquitetura modular em Laravel para facilitar manutenção e evolução do sistema.',
-            'Separação da aplicação em painéis específicos para administradores, franqueados e clientes, cada um com permissões e funcionalidades próprias.',
-            'Implementação de módulos para gestão de contratos, campanhas publicitárias, empresas, aparelhos, blogs e conteúdos administrativos.',
-            'Criação de dashboards com indicadores, filtros e relatórios para apoio à tomada de decisão.',
-            'Automação de processos como geração de contratos em PDF, validações, fluxo de assinaturas e gerenciamento operacional.',
-            'Desenvolvimento de componentes reutilizáveis com Blade, TailwindCSS e Alpine.js para manter consistência visual e reduzir duplicação de código.',
+            'Arquitetura modular em Laravel, pensada para facilitar manutenção e evolução do sistema.',
+            'Painéis separados para administradores, franqueados e clientes, cada um com suas próprias permissões.',
+            'Módulos para contratos, campanhas publicitárias, empresas, aparelhos, blogs e conteúdos administrativos.',
+            'Dashboards com indicadores, filtros e relatórios para apoiar a tomada de decisão.',
+            'Automação de processos como geração de contratos em PDF, validações e fluxo de assinaturas.',
+            'Componentes reutilizáveis com Blade, Tailwind CSS e Alpine.js para manter consistência visual e reduzir retrabalho.',
           ],
           tradeoffs:
-            'A grande quantidade de regras de negócio e diferentes perfis de acesso aumentou a complexidade da aplicação, porém proporcionou uma plataforma flexível, organizada e preparada para futuras expansões.',
+            'Tanta regra de negócio e perfil de acesso diferente deixou a aplicação mais complexa, mas resultou numa plataforma flexível e pronta para crescer.',
           outcome:
-            'O sistema passou a centralizar os principais processos da Franquias Panda, reduzindo atividades manuais, aumentando a autonomia da equipe administrativa e melhorando a experiência de franqueados e clientes.',
+            'O sistema passou a centralizar os principais processos da Franquias Panda, reduzindo trabalho manual, aumentando a autonomia da equipe administrativa e melhorando a experiência de franqueados e clientes.',
           technologies: [
             'Laravel',
             'PHP',
@@ -169,50 +169,50 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
         },
       ],
     },
-  ],
+  ].reverse(),
   en: [
     {
       title: 'Freelance Fullstack Developer',
       company: 'Freelance · Remote',
       period: 'Jan 2024 – Dec 2024',
       description:
-        'Development of ==a custom web platform== for a client, acting across all project stages, from requirements gathering to production deployment.',
+        'Built ==a custom web platform== for a client, from the first conversation about business needs all the way through production launch.',
 
       bulletPoints: [
-        '**Fullstack Development:** End-to-end application construction using **CodeIgniter**, **jQuery**, **MySQL**, HTML, CSS, and JavaScript.',
+        '**End-to-end delivery:** Built the full application from scratch using **CodeIgniter**, **jQuery**, **MySQL**, HTML, CSS, and JavaScript.',
 
-        '**Literary Ecosystem:** Development of features for publishing works, chapters, author profiles, comments, reviews, and interaction between writers and readers.',
+        '**A home for writers and readers:** Delivered a complete experience for publishing works and chapters, building author profiles, commenting, reviewing, and interacting.',
 
-        '**Payment Integration:** Implementation of **Stripe** integration for platform monetization, enabling billing and payment flow management.',
+        '**Monetization:** Integrated **Stripe** so the client could charge for content and manage payments securely.',
 
-        '**Deploy & Infrastructure:** Production environment configuration and application deployment on **Hostinger**, including database, domain, and evolutionary maintenance.',
+        '**Getting it live:** Set up the production environment and deployed on **Hostinger**, handling the database, domain, and ongoing maintenance.',
       ],
 
       projects: [
         {
           name: 'Erupção das Letras',
           context:
-            'Social platform tailored for writers and readers, enabling book publishing, discovery of literary works, user interaction, and content monetization.',
+            'A social platform for writers and readers, where people can publish books, discover new works, interact with each other, and monetize content.',
 
           importance:
-            'Project developed to create a comprehensive environment for producing and consuming literary content.',
+            'Built to give writers and readers a complete space to produce and enjoy literary content.',
 
           problem:
-            'The client needed to centralize publishing, reading, and monetization on a single platform, offering an experience similar to major online reading platforms.',
+            'The client needed to bring publishing, reading, and monetization together in one place, with an experience on par with major online reading platforms.',
 
           decisions: [
-            'Application development using **CodeIgniter** following MVC architecture.',
-            'Implementation of distinct profiles for writers and readers with specific access rules.',
-            'Integration with **Stripe** for payment processing and platform monetization.',
-            'Creation of modules for publishing works, chapters, comments, reviews, and user interactions.',
-            'Database modeling to support platform growth and catalog organization.',
+            'Built the application with **CodeIgniter**, organized for easy maintenance.',
+            'Separate profiles for writers and readers, each with their own permissions.',
+            'Integrated **Stripe** to handle payments and enable monetization.',
+            'Built modules for publishing works, chapters, comments, reviews, and user interaction.',
+            'Modeled the database with platform growth and catalog organization in mind.',
           ],
 
           tradeoffs:
-            'Using CodeIgniter provided fast development speed and easy shared hosting, though requiring greater responsibility in architectural organization compared to more opinionated frameworks.',
+            'Choosing CodeIgniter meant faster development and easy shared hosting, though it took extra care on my part to keep the architecture organized.',
 
           outcome:
-            'Delivery of a functional platform for publishing and discovering literary works, allowing writers to share content and interact directly with their readers.',
+            'Shipped a working platform where writers could publish their work and connect directly with readers.',
 
           technologies: ['CodeIgniter', 'PHP', 'MySQL', 'jQuery', 'JavaScript', 'Stripe'],
         },
@@ -223,68 +223,64 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
       company: 'Ágil Empréstimos · Monte Belo',
       period: 'Apr 2025 – Feb 2026',
       description:
-        'Working on the development and modernization of the company\'s ==core systems==, with a focus on performance, scalability, and code maintainability.',
+        "Helped build and modernize the company's ==core systems==, focused on making everything faster, more stable, and easier to maintain.",
       bulletPoints: [
-        '**Messaging System:** Implementation of multichannel dispatches with **RabbitMQ** and **Redis**, ensuring the processing of over **100,000 invoices per day** with high availability.',
+        '**Messaging at scale:** Built multichannel dispatch with **RabbitMQ** and **Redis**, reliably processing over **100,000 invoices a day**.',
 
-        '**Process Optimization:** Reduction of report generation time by **97.5%** (from 40 minutes to under 1 minute) through asynchronous processing and data streaming.',
+        '**Much faster reports:** Cut report generation time by **97.5%** (from 40 minutes to under 1 minute) using asynchronous processing and data streaming.',
 
-        '**Technological Evolution:** Development of new microservices with **NestJS** and evolutionary maintenance on legacy systems using **CodeIgniter**.',
+        '**Modernizing the stack:** Built new microservices with **NestJS** while keeping legacy **CodeIgniter** systems running smoothly.',
 
-        '**Technical Culture:** Creation of technical documentation and architectural diagrams to facilitate support and onboarding for new team members.',
+        '**Sharing knowledge:** Wrote technical documentation and architecture diagrams to make support and onboarding easier for new teammates.',
       ],
       projects: [
         {
           name: 'Automatic Invoice Dispatch Schedule',
-          context:
-            'System responsible for ==automating invoice dispatch== via Email, SMS, and WhatsApp.',
-          importance:
-            'Essential for cash flow predictability and reducing delinquency rates.',
+          context: 'System that ==automates invoice dispatch== via Email, SMS, and WhatsApp.',
+          importance: 'Key to keeping cash flow predictable and cutting down on late payments.',
           problem:
-            'Centralized manual processes and lack of traceability, which generated ==high operational risk== and billing errors.',
+            'Dispatches were handled manually with no traceability, creating ==high operational risk== and billing mistakes.',
           decisions: [
-            'Implementation of **asynchronous processing with RabbitMQ** to manage load spikes without compromising the system.',
-            'Use of **Redis** for fast query caching and **MinIO** for persistence of generated invoices.',
+            'Used **asynchronous processing with RabbitMQ** to absorb load spikes without slowing the system down.',
+            'Used **Redis** for caching frequent database queries and **MinIO** for storing payment QR codes sent via email.',
           ],
           tradeoffs:
-            'Complexity vs. Scalability: Queue usage introduced higher initial complexity, but solved long-term performance bottlenecks.',
+            'Adding queues meant more upfront complexity, but it solved long-term performance bottlenecks for good.',
           outcome:
-            'Total elimination of manual interventions, capable of processing over **100,000 daily transactions**.',
+            'Eliminated manual work entirely, now processing over **100,000 transactions a day**.',
           technologies: ['Laravel 11', 'RabbitMQ', 'Redis', 'MinIO'],
         },
         {
           name: 'Asynchronous Financial Reporting',
           context:
-            'Tool developed for ==generating operational and financial reports== for internal business units.',
-          importance: 'Reports are essential for daily monitoring of business health.',
+            'A tool built to ==generate operational and financial reports== for internal teams.',
+          importance: 'These reports are how the business tracks its day-to-day health.',
           problem:
-            'Constant timeouts up to **40 minutes** in synchronous processes, requiring frequent manual support.',
+            'Reports would time out after up to **40 minutes**, requiring frequent manual support.',
           decisions: [
-            'Migration of file generation logic to background processing via **Redis Queues**.',
-            'SQL query optimization and implementation of ==data streaming== to drastically cut memory consumption.',
+            'Moved file generation to background processing with **Redis Queues**.',
+            'Optimized SQL queries and added ==data streaming== to sharply cut memory use.',
           ],
           tradeoffs:
-            'New Service vs. Legacy: Instead of keeping logic in the legacy system, I built a new application from scratch to ensure stability, isolation, and modern tech stack.',
+            'Rather than patch the legacy system, I built a new application from scratch for better stability and a modern tech stack.',
           outcome:
-            'Generation time reduced from **40 minutes to under 1 minute**, with zero timeout occurrences.',
+            'Cut generation time from **40 minutes to under 1 minute**, with zero timeouts since.',
           technologies: ['Laravel 12', 'Redis', 'MinIO', 'SQL Optimization'],
         },
         {
           name: 'WhatsApp Messaging Gateway (OMNE API)',
-          context:
-            'Microservice responsible for connecting internal systems with the WhatsApp Gateway.',
-          importance:
-            'Critical communication channel for invoice dispatch and security verifications (OTP).',
+          context: 'A microservice connecting internal systems to the WhatsApp Gateway.',
+          importance: 'A critical channel for sending invoices and handling security checks (OTP).',
           problem:
-            'Hardcoded business rules and templates, requiring ==technical deploys== for minor text updates.',
+            'Message text and rules were hardcoded, so ==technical deploys== were needed for even small text changes.',
           decisions: [
-            'Integration with OMNE API for official provider communication.',
-            'Development of an ==admin dashboard== for dynamic template management by the business team.',
+            'Integrated with the OMNE API for official provider communication.',
+            'Built an ==admin dashboard== so the business team could manage templates without needing engineering.',
           ],
           tradeoffs:
-            'Agility vs. Cost: Adopting an official intermediary slightly increased costs, but significantly reduced time-to-market for new campaigns.',
+            'Using an official intermediary raised costs slightly, but significantly sped up how fast new campaigns could launch.',
           outcome:
-            'Full autonomy for the business team and analytical visibility over message delivery status.',
+            'Gave the business team full autonomy and clear visibility into message delivery status.',
           technologies: ['NestJS', 'TypeScript', 'Redis', 'API OMNE', 'Node.js'],
         },
       ],
@@ -294,37 +290,37 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
       company: 'Freelance · Remote',
       period: 'Feb 2026 – Present',
       description:
-        'Development of ==custom web applications== using Laravel, involved in all project stages from requirements gathering to production deployment.',
+        'Building ==custom web applications== with Laravel, involved in every stage from requirements gathering to production deployment.',
       bulletPoints: [
-        '**Fullstack Development:** Creation of complete applications with **Laravel**, **Blade**, **Tailwind CSS**, **Alpine.js**, and **MySQL**, prioritizing clean code, security, and scalability.',
+        '**Complete applications:** Built with **Laravel**, **Blade**, **Tailwind CSS**, **Alpine.js**, and **MySQL**, always prioritizing clean code, security, and scalability.',
 
-        '**Backend Architecture:** Implementation of REST APIs, authentication, queues (**Queues**), Jobs, permissions system, external integrations, and complex business logic.',
+        '**Solid foundations behind the scenes:** REST APIs, authentication, queues, jobs, permissions, and external integrations supporting complex business logic.',
 
-        '**Deploy & Infrastructure:** Linux environment configuration and hosting setup on providers like **Hostinger** and VPS.',
+        '**Live and running:** Set up Linux environments and hosting on providers like **Hostinger** and VPS.',
 
-        '**Client Relations:** Requirements gathering, architecture definition, on-demand feature development, and post-delivery support, ensuring solutions align with business needs.',
+        '**Working closely with the client:** Gathering requirements, defining architecture, building features on demand, and providing support after delivery.',
       ],
       projects: [
         {
           name: 'Franquias Panda Platform',
           context:
-            'Custom web system built to centralize operations for Franquias Panda, unifying admins, franchisees, and clients into a single platform.',
+            'A custom system built to centralize operations for Franquias Panda, bringing admins, franchisees, and clients together on one platform.',
           importance:
-            'Application responsible for handling contracts, ad campaigns, companies, devices, content, benefits, and administrative franchise processes.',
+            'Handles contracts, ad campaigns, companies, devices, content, benefits, and administrative processes for the franchise network.',
           problem:
-            'The business relied on decentralized processes and manual operations, making franchise network management and feature evolution difficult.',
+            'The business relied on scattered manual processes, making it hard to manage the franchise network or add new features.',
           decisions: [
-            'Development of a modular architecture in Laravel for simplified maintenance and system evolution.',
-            'Separation of the application into dedicated panels for admins, franchisees, and clients, each with specific permissions and features.',
-            'Implementation of modules for managing contracts, ad campaigns, companies, devices, blogs, and administrative content.',
-            'Creation of dashboards featuring metrics, filters, and reports for decision support.',
-            'Automation of processes such as PDF contract generation, validation, signature workflows, and operational management.',
-            'Development of reusable components using Blade, TailwindCSS, and Alpine.js to maintain visual consistency and reduce code duplication.',
+            'Built a modular Laravel architecture designed for easy maintenance and future growth.',
+            'Split the application into dedicated panels for admins, franchisees, and clients, each with its own permissions.',
+            'Built modules for contracts, ad campaigns, companies, devices, blogs, and administrative content.',
+            'Created dashboards with metrics, filters, and reports to support decision-making.',
+            'Automated processes like PDF contract generation, validation, and signature workflows.',
+            'Built reusable components with Blade, Tailwind CSS, and Alpine.js to keep the visual style consistent and cut down on repeated work.',
           ],
           tradeoffs:
-            'The vast amount of business logic and access roles increased application complexity, but provided a flexible, organized platform ready for future expansion.',
+            'The sheer volume of business rules and access levels added complexity, but the result is a flexible, well-organized platform ready to grow.',
           outcome:
-            'The system centralized core operations for Franquias Panda, eliminating manual tasks, increasing administrative team autonomy, and improving franchisee and client experience.',
+            "The system now centralizes Franquias Panda's core operations, cutting manual work, giving the admin team more autonomy, and improving the experience for franchisees and clients alike.",
           technologies: [
             'Laravel',
             'PHP',
@@ -337,50 +333,50 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
         },
       ],
     },
-  ],
+  ].reverse(),
   es: [
     {
       title: 'Desarrollador Fullstack Freelance',
       company: 'Autónomo · Remoto',
       period: 'Ene 2024 – Dic 2024',
       description:
-        'Desarrollo de ==una plataforma web a medida== para un cliente, participando en todas las etapas del proyecto, desde el levantamiento de requisitos hasta el despliegue en producción.',
+        'Desarrollo de ==una plataforma web a medida== para un cliente, desde la primera conversación sobre las necesidades del negocio hasta el lanzamiento en producción.',
 
       bulletPoints: [
-        '**Desarrollo Fullstack:** Construcción completa de la aplicación utilizando **CodeIgniter**, **jQuery**, **MySQL**, HTML, CSS y JavaScript.',
+        '**Entrega de punta a punta:** Construcción completa de la aplicación desde cero con **CodeIgniter**, **jQuery**, **MySQL**, HTML, CSS y JavaScript.',
 
-        '**Ecosistema Literario:** Desarrollo de funcionalidades para publicación de obras, capítulos, perfiles de autores, comentarios, evaluaciones e interacción entre escritores y lectores.',
+        '**Un espacio para escritores y lectores:** Experiencia completa para publicar obras y capítulos, crear perfiles de autores, comentar, evaluar e interactuar.',
 
-        '**Integración de Pagos:** Implementación de la integración con **Stripe** para la monetización de la plataforma, permitiendo cobros y gestión del flujo de pagos.',
+        '**Monetización:** Integración con **Stripe**, permitiendo al cliente cobrar por el contenido y gestionar los pagos con seguridad.',
 
-        '**Despliegue e Infraestructura:** Configuración del entorno de producción y despliegue de la aplicación en **Hostinger**, incluyendo base de datos, dominio y mantenimiento evolutivo.',
+        '**Puesta en marcha:** Configuración del entorno de producción y despliegue en **Hostinger**, incluyendo base de datos, dominio y mantenimiento continuo.',
       ],
 
       projects: [
         {
           name: 'Erupção das Letras',
           context:
-            'Plataforma social orientada a escritores y lectores, que permite la publicación de libros, descubrimiento de obras, interacción entre usuarios y monetización de contenido.',
+            'Red social pensada para escritores y lectores, donde es posible publicar libros, descubrir nuevas obras, interactuar entre usuarios y monetizar contenido.',
 
           importance:
-            'Proyecto desarrollado para crear un entorno completo de producción y consumo de contenido literario.',
+            'Proyecto creado para ofrecer un espacio completo de producción y consumo de contenido literario.',
 
           problem:
-            'El cliente necesitaba centralizar la publicación, lectura y monetización en una única plataforma, ofreciendo una experiencia similar a las grandes plataformas de lectura online.',
+            'El cliente necesitaba reunir publicación, lectura y monetización en un solo lugar, con una experiencia a la altura de las grandes plataformas de lectura online.',
 
           decisions: [
-            'Desarrollo de la aplicación utilizando **CodeIgniter** siguiendo la arquitectura MVC.',
-            'Implementación de perfiles distintos para escritores y lectores con reglas de acceso específicas.',
-            'Integración con **Stripe** para el procesamiento de pagos y monetización de la plataforma.',
-            'Creación de módulos para la publicación de obras, capítulos, comentarios, evaluaciones e interacción entre usuarios.',
-            'Modelado de la base de datos para soportar el crecimiento de la plataforma y la organización del catálogo de obras.',
+            'Construcción de la aplicación con **CodeIgniter**, organizada para facilitar el mantenimiento.',
+            'Perfiles separados para escritores y lectores, cada uno con sus propios permisos.',
+            'Integración con **Stripe** para procesar pagos y habilitar la monetización.',
+            'Módulos para la publicación de obras, capítulos, comentarios, evaluaciones e interacción entre usuarios.',
+            'Base de datos modelada pensando en el crecimiento de la plataforma y la organización del catálogo.',
           ],
 
           tradeoffs:
-            'El uso de CodeIgniter proporcionó rapidez en el desarrollo y facilidad de alojamiento compartido, aunque exigió mayor responsabilidad en la organización de la arquitectura en comparación con frameworks más opinativos.',
+            'Elegir CodeIgniter dio agilidad en el desarrollo y facilidad de alojamiento compartido, aunque exigió mayor cuidado de mi parte para mantener la arquitectura organizada.',
 
           outcome:
-            'Entrega de una plataforma funcional para la publicación y descubrimiento de obras literarias, permitiendo que los escritores compartieran contenido e interactuaran directamente con sus lectores.',
+            'Plataforma funcional en producción, permitiendo que los escritores publicaran sus obras y se conectaran directamente con sus lectores.',
 
           technologies: ['CodeIgniter', 'PHP', 'MySQL', 'jQuery', 'JavaScript', 'Stripe'],
         },
@@ -391,68 +387,65 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
       company: 'Ágil Empréstimos · Monte Belo',
       period: 'Abr 2025 – Feb 2026',
       description:
-        'Participación en el desarrollo y modernización de ==sistemas core== de la empresa, con enfoque en rendimiento, escalabilidad y mantenimiento de código.',
+        'Participación en el desarrollo y modernización de los ==sistemas centrales== de la empresa, enfocado en hacer todo más rápido, estable y fácil de mantener.',
       bulletPoints: [
-        '**Sistema de Mensajería:** Implementación de envíos multicanal con **RabbitMQ** y **Redis**, garantizando el procesamiento de más de **100 mil facturas por día** con alta disponibilidad.',
+        '**Mensajería a gran escala:** Implementación de envíos multicanal con **RabbitMQ** y **Redis**, procesando de forma confiable más de **100 mil facturas por día**.',
 
-        '**Optimización de Procesos:** Reducción del tiempo de generación de reportes en un **97,5%** (de 40 minutos a menos de 1 minuto) a través de procesamiento asíncrono y streaming de datos.',
+        '**Reportes mucho más rápidos:** Reducción del tiempo de generación de reportes en **97,5%** (de 40 minutos a menos de 1 minuto), con procesamiento asíncrono y streaming de datos.',
 
-        '**Evolución Tecnológica:** Desarrollo de nuevos microservicios con **NestJS** y mantenimiento evolutivo en sistemas legados utilizando **CodeIgniter**.',
+        '**Modernización del stack:** Nuevos microservicios construidos con **NestJS**, manteniendo en funcionamiento los sistemas legados en **CodeIgniter**.',
 
-        '**Cultura Técnica:** Creación de documentación técnica y diagramas arquitectónicos para facilitar el soporte y onboarding de nuevos miembros en el equipo.',
+        '**Compartiendo conocimiento:** Documentación técnica y diagramas de arquitectura creados para facilitar el soporte y la incorporación de nuevos compañeros.',
       ],
       projects: [
         {
           name: 'Cronograma Automático de Envío de Facturas',
-          context:
-            'Sistema responsable de ==automatizar el envío de facturas== por Correo, SMS y WhatsApp.',
-          importance:
-            'Fundamental para la previsibilidad del flujo de caja y reducción de la morosidad.',
+          context: 'Sistema que ==automatiza el envío de facturas== por Correo, SMS y WhatsApp.',
+          importance: 'Clave para dar previsibilidad al flujo de caja y reducir la morosidad.',
           problem:
-            'Procesos manuales centralizados y falta de trazabilidad, lo que generaba ==alto riesgo operativo== y errores de cobro.',
+            'Los envíos se hacían manualmente y sin trazabilidad, lo que generaba ==alto riesgo operativo== y errores de cobro.',
           decisions: [
-            'Implementación de **procesamiento asíncrono con RabbitMQ** para gestionar picos de carga sin comprometer el sistema.',
-            'Uso de **Redis** para almacenamiento en caché de consultas rápidas y **MinIO** para persistencia de facturas generadas.',
+            'Uso de **procesamiento asíncrono con RabbitMQ** para absorber picos de carga sin afectar el sistema.',
+            'Uso de**Redis** para almacenar en caché consultas frecuentes a la base de datos y **MinIO** para almacenar los códigos QR de pago enviados por correo electrónico.',
           ],
           tradeoffs:
-            'Complejidad vs. Escalabilidad: El uso de colas trajo mayor complejidad inicial, pero resolvió cuellos de botella de rendimiento a largo plazo.',
+            'Adoptar colas trajo más complejidad al inicio, pero resolvió los cuellos de botella de rendimiento a largo plazo.',
           outcome:
-            'Eliminación total de intervenciones manuales, con capacidad para procesar más de **100 mil transacciones diarias**.',
+            'Eliminación total de las intervenciones manuales, procesando más de **100 mil transacciones diarias**.',
           technologies: ['Laravel 11', 'RabbitMQ', 'Redis', 'MinIO'],
         },
         {
           name: 'Procesamiento Asíncrono de Reportes Financieros',
           context:
-            'Herramienta desarrollada para ==generación de reportes operativos== y financieros para áreas internas.',
-          importance: 'Los reportes son esenciales para el monitoreo diario de la salud del negocio.',
+            'Herramienta creada para ==generar reportes operativos== y financieros para las áreas internas.',
+          importance: 'Reportes esenciales para el seguimiento diario de la salud del negocio.',
           problem:
-            'Timeouts constantes de hasta **40 minutos** en procesos síncronos, exigiendo soporte manual frecuente.',
+            'Los reportes se caían con timeouts de hasta **40 minutos**, exigiendo soporte manual con frecuencia.',
           decisions: [
-            'Migración de la lógica de generación de archivos a procesamiento en segundo plano mediante **Redis Queues**.',
+            'Migración de la generación de archivos a procesamiento en segundo plano con **Redis Queues**.',
             'Optimización de consultas SQL e implementación de ==streaming de datos== para reducir drásticamente el consumo de memoria.',
           ],
           tradeoffs:
-            'Nuevo Servicio vs. Legado: En lugar de mantener la lógica en el sistema legado, opté por desarrollar una nueva aplicación desde cero para garantizar estabilidad, aislamiento y uso de tecnologías modernas.',
+            'En lugar de parchar el sistema legado, construí una aplicación nueva desde cero para garantizar estabilidad y usar tecnologías actuales.',
           outcome:
-            'Reducción del tiempo de generación de **40 minutos a menos de 1 minuto**, con cero incidencias de timeouts.',
+            'El tiempo de generación bajó de **40 minutos a menos de 1 minuto**, sin timeouts desde entonces.',
           technologies: ['Laravel 12', 'Redis', 'MinIO', 'SQL Optimization'],
         },
         {
           name: 'Gateway de Mensajes WhatsApp (API OMNE)',
-          context:
-            'Microservicio responsable de la conexión entre el sistema interno y el WhatsApp Gateway.',
+          context: 'Microservicio que conecta el sistema interno con el WhatsApp Gateway.',
           importance:
-            'Canal crítico de comunicación para envío de facturas y validaciones de seguridad (OTP).',
+            'Canal crítico para el envío de facturas y las validaciones de seguridad (OTP).',
           problem:
-            'Reglas de negocio y plantillas fijas en el código, requiriendo ==despliegues técnicos== para cambios de texto.',
+            'Los textos y reglas estaban fijos en el código, exigiendo ==despliegues técnicos== para cualquier cambio de mensaje.',
           decisions: [
-            'Integración con la API OMNE para facilitar la comunicación con el proveedor oficial.',
-            'Desarrollo de una ==interfaz administrativa== para la gestión dinámica de plantillas por parte del equipo de negocios.',
+            'Integración con la API OMNE para la comunicación con el proveedor oficial.',
+            'Creación de un ==panel administrativo== para que el equipo de negocio gestionara las plantillas sin depender de TI.',
           ],
           tradeoffs:
-            'Agilidad vs. Costo: La adopción de un intermediario oficial aumentó levemente los costos, pero redujo el time-to-market de nuevas campañas.',
+            'Usar un intermediario oficial aumentó un poco los costos, pero redujo bastante el tiempo para lanzar nuevas campañas.',
           outcome:
-            'Total autonomía para el equipo de negocios y visibilidad analítica sobre el estado de entrega de los mensajes.',
+            'El equipo de negocio ganó autonomía total y visibilidad sobre el estado de entrega de los mensajes.',
           technologies: ['NestJS', 'TypeScript', 'Redis', 'API OMNE', 'Node.js'],
         },
       ],
@@ -462,37 +455,37 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
       company: 'Autónomo · Remoto',
       period: 'Feb 2026 – Actualidad',
       description:
-        'Desarrollo de ==sistemas web personalizados== utilizando Laravel, participando en todas las etapas del proyecto, desde el levantamiento de requisitos hasta el despliegue en producción.',
+        'Desarrollo de ==sistemas web personalizados== con Laravel, participando en cada etapa del proyecto, desde el levantamiento de requisitos hasta el despliegue en producción.',
       bulletPoints: [
-        '**Desarrollo Fullstack:** Creación de aplicaciones completas con **Laravel**, **Blade**, **Tailwind CSS**, **Alpine.js** y **MySQL**, priorizando código limpio, seguridad y escalabilidad.',
+        '**Aplicaciones completas:** Construidas con **Laravel**, **Blade**, **Tailwind CSS**, **Alpine.js** y **MySQL**, priorizando siempre código limpio, seguridad y escalabilidad.',
 
-        '**Arquitectura Backend:** Implementación de APIs REST, autenticación, colas (**Queues**), Jobs, sistema de permisos, integraciones con servicios externos y reglas de negocio complejas.',
+        '**Bases sólidas detrás de escena:** APIs REST, autenticación, colas, jobs, permisos e integraciones externas que soportan reglas de negocio complejas.',
 
-        '**Despliegue e Infraestructura:** Configuración de entornos Linux y alojamiento en proveedores como **Hostinger** y VPS.',
+        '**En producción y funcionando:** Configuración de entornos Linux y alojamiento en proveedores como **Hostinger** y VPS.',
 
-        '**Relación con Clientes:** Levantamiento de requisitos, definición de arquitectura, desarrollo de funcionalidades a medida y soporte post-entrega, garantizando soluciones alineadas a las necesidades del negocio.',
+        '**Trabajo cercano con el cliente:** Levantamiento de necesidades, definición de arquitectura, desarrollo de funcionalidades a pedido y soporte post-entrega.',
       ],
       projects: [
         {
           name: 'Plataforma Franquias Panda',
           context:
-            'Sistema web desarrollado a medida para centralizar la operación de Franquias Panda, integrando administradores, franquiciados y clientes en una única plataforma.',
+            'Sistema a medida para centralizar la operación de Franquias Panda, uniendo administradores, franquiciados y clientes en una sola plataforma.',
           importance:
-            'Aplicación responsable de la gestión de contratos, campañas, empresas, dispositivos, contenidos, beneficios y procesos administrativos de la franquicia.',
+            'Responsable de la gestión de contratos, campañas, empresas, dispositivos, contenidos, beneficios y procesos administrativos de la franquicia.',
           problem:
-            'La empresa dependía de procesos descentralizados y operaciones manuales, dificultando la gestión de la red de franquicias y la evolución de funcionalidades.',
+            'La empresa dependía de procesos dispersos y manuales, lo que dificultaba gestionar la red de franquicias y sumar nuevas funcionalidades.',
           decisions: [
-            'Desarrollo de una arquitectura modular en Laravel para facilitar el mantenimiento y la evolución del sistema.',
-            'Separación de la aplicación en paneles específicos para administradores, franquiciados y clientes, cada uno con permisos y funcionalidades propias.',
-            'Implementación de módulos para la gestión de contratos, campañas publicitarias, empresas, dispositivos, blogs y contenidos administrativos.',
-            'Creación de dashboards con indicadores, filtros y reportes para soporte en la toma de decisiones.',
-            'Automatización de procesos como generación de contratos en PDF, validaciones, flujo de firmas y gestión operativa.',
-            'Desarrollo de componentes reutilizables con Blade, Tailwind CSS y Alpine.js para mantener la consistencia visual y reducir la duplicación de código.',
+            'Arquitectura modular en Laravel, pensada para facilitar el mantenimiento y el crecimiento del sistema.',
+            'Paneles separados para administradores, franquiciados y clientes, cada uno con sus propios permisos.',
+            'Módulos para contratos, campañas publicitarias, empresas, dispositivos, blogs y contenidos administrativos.',
+            'Dashboards con indicadores, filtros y reportes para apoyar la toma de decisiones.',
+            'Automatización de procesos como generación de contratos en PDF, validaciones y flujo de firmas.',
+            'Componentes reutilizables con Blade, Tailwind CSS y Alpine.js para mantener la consistencia visual y reducir el trabajo repetido.',
           ],
           tradeoffs:
-            'La gran cantidad de reglas de negocio y diferentes perfiles de acceso aumentó la complejidad de la aplicación, pero proporcionó una plataforma flexible, organizada y preparada para futuras expansiones.',
+            'La gran cantidad de reglas de negocio y perfiles de acceso distintos añadió complejidad, pero el resultado es una plataforma flexible y organizada, lista para crecer.',
           outcome:
-            'El sistema pasó a centralizar los principales procesos de Franquias Panda, reduciendo actividades manuales, aumentando la autonomía del equipo administrativo y mejorando la experiencia de franquiciados y clientes.',
+            'El sistema pasó a centralizar los procesos clave de Franquias Panda, reduciendo el trabajo manual, dando más autonomía al equipo administrativo y mejorando la experiencia de franquiciados y clientes.',
           technologies: [
             'Laravel',
             'PHP',
@@ -505,5 +498,5 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
         },
       ],
     },
-  ],
+  ].reverse(),
 }
