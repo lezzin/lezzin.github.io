@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ArrowDown, FileText, Mail } from 'lucide-vue-next'
+import { ArrowDown, FileText } from 'lucide-vue-next'
 import Button from '../../../components/common/Button.vue'
 import { useLanguage } from '../../../composables/useLanguage'
 import { uiTranslations } from '../../../i18n/ui'
 import { formatText } from '../../../utils/markdown'
+import Whatsapp from '../../../components/icon/Whatsapp.vue'
 
 const { language } = useLanguage()
 const t = computed(() => uiTranslations[language.value])
@@ -41,7 +42,7 @@ const t = computed(() => uiTranslations[language.value])
 
         <Button variant="outline" as-child href="#contact" size="lg">
           <div class="flex items-center">
-            <Mail class="mr-2 h-4 w-4" />
+            <Whatsapp class="mr-2 h-4 w-4" />
             {{ t.hero.scheduleCall }}
           </div>
         </Button>

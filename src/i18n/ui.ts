@@ -28,10 +28,9 @@ export interface UiTranslations {
   contact: {
     title: string
     subtitle: string
-    copy: string
-    copied: string
     github: string
     linkedin: string
+    cta: string
   }
   footer: {
     madeWith: string
@@ -69,10 +68,9 @@ export const uiTranslations: Record<Language, UiTranslations> = {
       title: 'Vamos conversar?',
       subtitle:
         'Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de sistemas e oportunidades de colaboração no ecossistema Backend.',
-      copy: 'Copiar',
-      copied: 'Copiado!',
       github: 'GitHub',
       linkedin: 'LinkedIn',
+      cta: 'Chamar no Whatsapp',
     },
     footer: {
       madeWith: '© {year} — Feito com Vue.js & Tailwind CSS',
@@ -108,10 +106,9 @@ export const uiTranslations: Record<Language, UiTranslations> = {
       title: "Let's talk?",
       subtitle:
         "I'm always interested in hearing about new challenging projects, system architecture, and collaboration opportunities in the Backend ecosystem.",
-      copy: 'Copy',
-      copied: 'Copied!',
       github: 'GitHub',
       linkedin: 'LinkedIn',
+      cta: 'Chat on Whatsapp',
     },
     footer: {
       madeWith: '© {year} — Built with Vue.js & Tailwind CSS',
@@ -147,10 +144,9 @@ export const uiTranslations: Record<Language, UiTranslations> = {
       title: '¿Hablamos?',
       subtitle:
         'Siempre estoy interesado en escuchar sobre nuevos proyectos desafiantes, arquitectura de sistemas y oportunidades de colaboración en el ecosistema Backend.',
-      copy: 'Copiar',
-      copied: '¡Copiado!',
       github: 'GitHub',
       linkedin: 'LinkedIn',
+      cta: 'Chatear por WhatsApp',
     },
     footer: {
       madeWith: '© {year} — Hecho con Vue.js & Tailwind CSS',

@@ -1,29 +1,19 @@
 <script lang="ts" setup>
-import { Github, Linkedin, Mail, Copy, Check } from 'lucide-vue-next'
+import { computed } from 'vue'
+import { useLanguage } from '../../../composables/useLanguage'
+import { uiTranslations } from '../../../i18n/ui'
+
 import Title from '../../../components/common/Title.vue'
 import Subtitle from '../../../components/common/Subtitle.vue'
 import Button from '../../../components/common/Button.vue'
-import { computed, ref } from 'vue'
-import { useLanguage } from '../../../composables/useLanguage'
-import { uiTranslations } from '../../../i18n/ui'
+import Linkedin from '../../../components/icon/Linkedin.vue'
+import Github from '../../../components/icon/Github.vue'
+import Whatsapp from '../../../components/icon/Whatsapp.vue'
 
 const { language } = useLanguage()
 const t = computed(() => uiTranslations[language.value])
 
-const email = 'leandrinsilva22@gmail.com'
-const copied = ref(false)
-
-const copyEmail = async () => {
-  try {
-    await navigator.clipboard.writeText(email)
-    copied.value = true
-    setTimeout(() => {
-      copied.value = false
-    }, 2000)
-  } catch (err) {
-    console.error('Failed to copy: ', err)
-  }
-}
+const phone = '5535997242338'
 </script>
 
 <template>
@@ -35,53 +25,45 @@ const copyEmail = async () => {
         {{ t.contact.subtitle }}
       </Subtitle>
 
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-wrap gap-2">
-          <Button variant="default" as-child :href="`mailto:${email}`" size="sm">
-            <div class="flex items-center gap-2">
-              <Mail :size="18" />
-              <span class="font-semibold">{{ email }}</span>
-            </div>
-          </Button>
+      <div class="flex flex-wrap gap-2">
+        <Button
+          variant="default"
+          as-child
+          :href="`https://api.whatsapp.com/send?phone=${phone}&text=Oi,%20Leandro!%20Vim%20pelo%20seu%20portf%C3%B3lio%20pessoal`"
+          target="_blank"
+          :aria-label="`Enviar mensagem no WhatsApp para ${phone}`"
+        >
+          <div class="flex items-center gap-3">
+            <Whatsapp class="size-5" />
+            <span>{{ t.contact.cta }}</span>
+          </div>
+        </Button>
 
-          <Button variant="outline" @click="copyEmail" size="sm">
-            <div class="flex items-center gap-2">
-              <Check v-if="copied" :size="18" />
-              <Copy v-else :size="18" />
-              <span>{{ copied ? t.contact.copied : t.contact.copy }}</span>
-            </div>
-          </Button>
-        </div>
+        <Button
+          variant="outline"
+          as-child
+          href="https://www.linkedin.com/in/leandro-adrian"
+          target="_blank"
+          aria-label="Abrir perfil no LinkedIn"
+        >
+          <div class="flex items-center gap-3">
+            <Linkedin class="size-5" />
+            <span>LinkedIn</span>
+          </div>
+        </Button>
 
-        <div class="flex flex-wrap gap-2">
-          <Button
-            variant="outline"
-            as-child
-            href="https://github.com/lezzin"
-            target="_blank"
-            class="h-12 px-6"
-            size="sm"
-          >
-            <div class="flex items-center gap-3">
-              <Github :size="18" />
-              <span>GitHub</span>
-            </div>
-          </Button>
-
-          <Button
-            variant="outline"
-            as-child
-            href="https://www.linkedin.com/in/leandro-adrian"
-            target="_blank"
-            class="h-12 px-6"
-            size="sm"
-          >
-            <div class="flex items-center gap-3">
-              <Linkedin :size="18" />
-              <span>LinkedIn</span>
-            </div>
-          </Button>
-        </div>
+        <Button
+          variant="outline"
+          as-child
+          href="https://github.com/lezzin"
+          target="_blank"
+          aria-label="Abrir perfil no GitHub"
+        >
+          <div class="flex items-center gap-3">
+            <Github class="size-5" />
+            <span>GitHub</span>
+          </div>
+        </Button>
       </div>
     </div>
   </section>
