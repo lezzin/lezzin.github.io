@@ -2,7 +2,6 @@ import type { Language } from '../composables/useLanguage'
 
 export interface UiTranslations {
   hero: {
-    role: string
     description: string
     viewExperience: string
     scheduleCall: string
@@ -40,11 +39,10 @@ export interface UiTranslations {
 export const uiTranslations: Record<Language, UiTranslations> = {
   pt: {
     hero: {
-      role: 'Desenvolvedor Backend',
       description:
         'Desenvolvedor Backend focado na construção de sistemas robustos, escaláveis e de alta performance. Especializado em arquiteturas modernas com ==NestJS e Laravel==, busco transformar desafios técnicos em soluções eficientes, bem documentadas e de alto impacto para o negócio.',
       viewExperience: 'Ver Experiências',
-      scheduleCall: 'Agendar Conversa',
+      scheduleCall: 'Contato',
       resume: 'Currículo',
     },
     experience: {
@@ -78,11 +76,10 @@ export const uiTranslations: Record<Language, UiTranslations> = {
   },
   en: {
     hero: {
-      role: 'Backend Developer',
       description:
         'Backend Developer focused on building robust, scalable, and high-performance systems. Specialized in modern architectures with ==NestJS and Laravel==, I strive to transform technical challenges into efficient, well-documented, and high-impact business solutions.',
       viewExperience: 'View Experience',
-      scheduleCall: 'Schedule a Call',
+      scheduleCall: 'Contact',
       resume: 'Resume',
     },
     experience: {
@@ -116,11 +113,10 @@ export const uiTranslations: Record<Language, UiTranslations> = {
   },
   es: {
     hero: {
-      role: 'Desarrollador Backend',
       description:
         'Desarrollador Backend enfocado en la construcción de sistemas robustos, escalables y de alto rendimiento. Especializado en arquitecturas modernas con ==NestJS y Laravel==, busco transformar desafíos técnicos en soluciones eficientes, bien documentadas y de alto impacto para el negocio.',
       viewExperience: 'Ver Experiencias',
-      scheduleCall: 'Agendar Conversación',
+      scheduleCall: 'Contacto',
       resume: 'Currículum',
     },
     experience: {

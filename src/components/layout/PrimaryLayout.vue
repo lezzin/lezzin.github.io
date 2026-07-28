@@ -18,7 +18,7 @@ const containerClass = 'max-w-5xl mx-auto px-6 md:px-8 transition-colors duratio
   <div
     class="bg-white dark:bg-zinc-950 selection:bg-lime-100 dark:selection:bg-lime-900 bg-[radial-gradient(circle,_#eee_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#111_1px,_transparent_1px)] [background-size:16px_16px] bg-fixed"
   >
-    <Header />
+    <Header :container-class="containerClass" />
 
     <main :class="twMerge(containerClass, 'py-20')">
       <slot></slot>

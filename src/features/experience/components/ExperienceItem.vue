@@ -36,7 +36,7 @@ const closeProject = () => {
 
 <template>
   <article
-    class="relative bg-stone-100 overflow-hidden dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough"
+    class="relative overflow-hidden bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough"
   >
     <div class="px-4 md:px-8 py-8">
       <div class="grid gap-4">
