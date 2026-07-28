@@ -35,7 +35,7 @@ function changeLanguage(lang: Language) {
       class="inline-flex items-center gap-2 h-9 px-3 rounded-rough-pill border-2 border-zinc-300 dark:border-zinc-800 font-bold"
     >
       <span>{{ current.flag }}</span>
-      <span>{{ current.label }}</span>
+      <span class="hidden md:flex">{{ current.label }}</span>
 
       <ChevronDown :size="16" class="transition-transform" :class="{ 'rotate-180': open }" />
     </button>
