@@ -15,33 +15,31 @@ const containerClass = 'max-w-5xl mx-auto px-6 md:px-8 transition-colors duratio
 </script>
 
 <template>
-  <div
-    class="bg-white dark:bg-zinc-950 selection:bg-lime-100 dark:selection:bg-lime-900 bg-[radial-gradient(circle,_#eee_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#111_1px,_transparent_1px)] [background-size:16px_16px] bg-fixed"
-  >
+  <div class="bg-point selection:bg-lime-100 dark:selection:bg-lime-900">
     <Header :container-class="containerClass" />
 
     <main :class="twMerge(containerClass, 'py-20')">
       <slot></slot>
     </main>
-  </div>
 
-  <footer class="bg-stone-200 dark:bg-neutral-900">
-    <div :class="twMerge(containerClass, 'py-6')">
-      <div class="flex items-center justify-between flex-wrap gap-4">
-        <div>
-          <p class="font-handwritten text-xl mb-1">Leandro Adrian da Silva</p>
-          <p class="text-[10px] uppercase tracking-widest">
-            {{ t.footer.madeWith.replace('{year}', currentYear.toString()) }}
-          </p>
-        </div>
-
-        <Button variant="outline" as-child href="/cv.pdf" target="_blank" size="sm">
-          <div class="flex items-center">
-            <FileText class="mr-2 h-4 w-4" />
-            {{ t.hero.resume }}
+    <footer>
+      <div :class="twMerge(containerClass, 'py-6')">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <p class="font-handwritten text-xl mb-1">Leandro Adrian da Silva</p>
+            <p class="text-[10px] uppercase tracking-widest">
+              {{ t.footer.madeWith.replace('{year}', currentYear.toString()) }}
+            </p>
           </div>
-        </Button>
+
+          <Button variant="outline" as-child href="/cv.pdf" target="_blank" size="sm">
+            <div class="flex items-center">
+              <FileText class="mr-2 h-4 w-4" />
+              {{ t.hero.resume }}
+            </div>
+          </Button>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </template>

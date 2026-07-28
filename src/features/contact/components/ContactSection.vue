@@ -25,20 +25,20 @@ const phone = '5535997242338'
         {{ t.contact.subtitle }}
       </Subtitle>
 
-      <div class="flex flex-wrap gap-2">
-        <Button
-          variant="default"
-          as-child
-          :href="`https://api.whatsapp.com/send?phone=${phone}&text=Oi,%20Leandro!%20Vim%20pelo%20seu%20portf%C3%B3lio%20pessoal`"
-          target="_blank"
-          :aria-label="`Enviar mensagem no WhatsApp para ${phone}`"
-        >
-          <div class="flex items-center gap-3">
-            <Whatsapp class="size-5" />
-            <span>{{ t.contact.cta }}</span>
-          </div>
-        </Button>
+      <Button
+        variant="default"
+        as-child
+        :href="`https://api.whatsapp.com/send?phone=${phone}&text=Oi,%20Leandro!%20Vim%20pelo%20seu%20portf%C3%B3lio%20pessoal`"
+        target="_blank"
+        :aria-label="`Enviar mensagem no WhatsApp para ${phone}`"
+      >
+        <div class="flex items-center gap-3">
+          <Whatsapp class="size-5" />
+          <span>{{ t.contact.cta }}</span>
+        </div>
+      </Button>
 
+      <div class="flex flex-wrap gap-2 mt-2">
         <Button
           variant="outline"
           as-child
