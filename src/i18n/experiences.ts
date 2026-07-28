@@ -63,6 +63,8 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
 
         '**Modernização dos sistemas:** Novos microserviços construídos com **NestJS** e manutenção evolutiva dos sistemas legados em **CodeIgniter**.',
 
+        '**Troubleshooting de ambientes:** Análise e diagnóstico de aplicações em ambientes **Kubernetes** utilizando **Lens**, investigando **pods, services, logs e recursos do ambiente** para identificar e solucionar problemas.',
+
         '**Compartilhando conhecimento:** Documentação técnica e diagramas de arquitetura criados para facilitar o suporte e o onboarding de novos colegas.',
       ],
       projects: [
@@ -231,6 +233,8 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
 
         '**Modernizing the stack:** Built new microservices with **NestJS** while keeping legacy **CodeIgniter** systems running smoothly.',
 
+        '**Environment troubleshooting:** Analysis and diagnosis of applications running in **Kubernetes** environments using **Lens**, investigating **pods, services, logs, and environment resources** to identify and resolve issues.',
+
         '**Sharing knowledge:** Wrote technical documentation and architecture diagrams to make support and onboarding easier for new teammates.',
       ],
       projects: [
@@ -394,6 +398,8 @@ export const experiencesTranslations: Record<Language, Experience[]> = {
         '**Reportes mucho más rápidos:** Reducción del tiempo de generación de reportes en **97,5%** (de 40 minutos a menos de 1 minuto), con procesamiento asíncrono y streaming de datos.',
 
         '**Modernización del stack:** Nuevos microservicios construidos con **NestJS**, manteniendo en funcionamiento los sistemas legados en **CodeIgniter**.',
+
+        '**Troubleshooting de entornos:** Análisis y diagnóstico de aplicaciones en entornos **Kubernetes** utilizando **Lens**, investigando **pods, servicios, logs y recursos del entorno** para identificar y solucionar problemas.',
 
         '**Compartiendo conocimiento:** Documentación técnica y diagramas de arquitectura creados para facilitar el soporte y la incorporación de nuevos compañeros.',
       ],
