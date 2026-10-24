@@ -2,7 +2,8 @@ import { ref, computed } from 'vue'
 
 export type Language = 'pt' | 'en' | 'es'
 
-const savedLang = typeof window !== 'undefined' ? (localStorage.getItem('language') as Language | null) : null
+const savedLang =
+  typeof window !== 'undefined' ? (localStorage.getItem('language') as Language | null) : null
 const initialLang: Language = savedLang && ['pt', 'en', 'es'].includes(savedLang) ? savedLang : 'pt'
 
 const currentLanguage = ref<Language>(initialLang)

@@ -77,12 +77,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header :class="[
-    'fixed left-0 right-0 z-40 transition-all duration-200',
-    isScrolled
-      ? 'bg-white dark:bg-zinc-950 border-b border-zinc-100 dark:border-zinc-800'
-      : 'border-transparent',
-  ]">
+  <header
+    :class="[
+      'fixed left-0 right-0 z-40 transition-all duration-200',
+      isScrolled
+        ? 'bg-white dark:bg-zinc-950 border-b border-zinc-100 dark:border-zinc-800'
+        : 'border-transparent',
+    ]"
+  >
     <div :class="[containerClass, 'w-full flex items-center justify-between py-4']">
       <a href="#" class="font-handwritten text-2xl tracking-tight text-zinc-900 dark:text-zinc-100">
         L<span class="text-green-600 dark:text-green-400">.</span>Adrian

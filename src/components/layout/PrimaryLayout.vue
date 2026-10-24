@@ -14,7 +14,9 @@ const containerClass = 'max-w-4xl mx-auto px-6 md:px-8'
 </script>
 
 <template>
-  <div class="bg-white dark:bg-zinc-950 min-h-screen selection:bg-green-100 dark:selection:bg-green-900">
+  <div
+    class="bg-white dark:bg-zinc-950 min-h-screen selection:bg-green-100 dark:selection:bg-green-900"
+  >
     <Header :container-class="containerClass" />
 
     <main :class="[containerClass, 'pt-24 pb-20']">

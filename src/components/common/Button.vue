@@ -77,9 +77,7 @@ const sizes: Record<Size, string> = {
   icon: 'size-9',
 }
 
-const classes = computed(() =>
-  twMerge(clsx(base, variants[props.variant], sizes[props.size]))
-)
+const classes = computed(() => twMerge(clsx(base, variants[props.variant], sizes[props.size])))
 </script>
 
 <template>

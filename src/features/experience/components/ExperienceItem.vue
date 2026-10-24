@@ -71,7 +71,9 @@ const closeProject = () => {
     </ul>
 
     <div v-if="experience.projects.length" class="mt-6">
-      <p class="text-xs font-medium text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-3">
+      <p
+        class="text-xs font-medium text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-3"
+      >
         {{ t.experience.projectsTitle }}
       </p>
 
