@@ -35,60 +35,54 @@ const closeProject = () => {
 </script>
 
 <template>
-  <article
-    class="relative overflow-hidden bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-950 rounded-rough"
-  >
-    <div class="px-4 md:px-8 py-8">
-      <div class="grid gap-4">
-        <header>
-          <div class="flex justify-between items-start gap-4 flex-wrap">
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
-              {{ experience.title }}
-            </h3>
+  <article class="relative pl-5 border-l-2 border-zinc-100 dark:border-zinc-800">
+    <div class="absolute -left-px top-0 h-5 w-0.5 bg-green-500 dark:bg-green-400" />
 
-            <time
-              class="text-sm font-handwritten tracking-widest text-zinc-900 dark:text-zinc-100 uppercase"
-            >
-              {{ experience.period }}
-            </time>
-          </div>
+    <header class="mb-4">
+      <div class="flex justify-between items-start gap-4 flex-wrap">
+        <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+          {{ experience.title }}
+        </h3>
 
-          <p class="text-xs font-bold mt-1 uppercase tracking-tighter">
-            {{ experience.company }}
-          </p>
-        </header>
-
-        <p
-          class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg"
-          v-html="formatText(experience.description)"
-        />
-
-        <ul class="space-y-4 pt-2">
-          <li
-            v-for="(item, index) in experience.bulletPoints"
-            :key="index"
-            class="flex items-start gap-4"
-          >
-            <span class="mt-2.5 size-2.5 rounded-rough bg-zinc-900 dark:bg-white flex-shrink-0" />
-            <p class="text-gray-700 dark:text-zinc-300 leading-relaxed" v-html="formatText(item)" />
-          </li>
-        </ul>
+        <time class="text-xs text-zinc-400 dark:text-zinc-500 tracking-wide flex-shrink-0 mt-0.5">
+          {{ experience.period }}
+        </time>
       </div>
 
-      <div v-if="experience.projects.length" class="mt-8">
-        <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-6">
-          {{ t.experience.projectsTitle }}
-        </h4>
+      <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
+        {{ experience.company }}
+      </p>
+    </header>
 
-        <div class="grid md:grid-cols-2 gap-4 mt-4">
-          <ProjectItem
-            v-for="(project, index) in experience.projects"
-            :key="project.name"
-            :project="project"
-            :index="index"
-            @open="() => openProject(project, index)"
-          />
-        </div>
+    <p
+      class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4"
+      v-html="formatText(experience.description)"
+    />
+
+    <ul class="space-y-2 mb-4">
+      <li
+        v-for="(item, index) in experience.bulletPoints"
+        :key="index"
+        class="flex items-start gap-2.5 text-sm text-zinc-600 dark:text-zinc-400"
+      >
+        <span class="mt-2 size-1 rounded-full bg-zinc-300 dark:bg-zinc-600 flex-shrink-0" />
+        <span class="leading-relaxed" v-html="formatText(item)" />
+      </li>
+    </ul>
+
+    <div v-if="experience.projects.length" class="mt-6">
+      <p class="text-xs font-medium text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-3">
+        {{ t.experience.projectsTitle }}
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        <ProjectItem
+          v-for="(project, index) in experience.projects"
+          :key="project.name"
+          :project="project"
+          :index="index"
+          @open="() => openProject(project, index)"
+        />
       </div>
     </div>
   </article>

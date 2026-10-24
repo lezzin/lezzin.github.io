@@ -49,101 +49,93 @@ onBeforeUnmount(() => {
   <Transition>
     <div
       v-if="open && project"
-      class="fixed inset-0 z-50 bg-zinc-900/60 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+      class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4 md:p-8"
       @click.self="close"
     >
       <div
         role="dialog"
         aria-modal="true"
         :aria-label="project.name"
-        :class="[
-          'relative w-full max-w-3xl max-h-[85vh] overflow-y-auto sticky-note p-6 md:p-10 rounded-rough border-2 shadow-xl',
-          sticky.bg,
-          sticky.border,
-        ]"
+        class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-xl"
       >
-        <button
-          type="button"
-          :aria-label="t.experience.modal.close"
-          class="sticky top-0 float-right -mr-2 md:-mt-4 md:-mr-4 z-10 p-2 rounded-rough-circle bg-white/70 dark:bg-zinc-900/70 border-2 hover:bg-white dark:hover:bg-zinc-900 transition-colors"
-          @click="close"
-          :class="sticky.border"
+        <!-- Modal header -->
+        <div
+          class="sticky top-0 flex items-center justify-between px-6 py-4 bg-white dark:bg-zinc-900 border-b border-zinc-100 dark:border-zinc-800 z-10"
         >
-          <X :size="18" class="text-zinc-900 dark:text-zinc-100" />
-        </button>
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 pr-4">
+            {{ project.name }}
+          </h3>
 
-        <h3
-          class="text-2xl md:text-3xl font-handwritten text-zinc-900 dark:text-zinc-100 tracking-tight mb-4"
-        >
-          {{ project.name }}
-        </h3>
-
-        <div class="flex flex-wrap gap-2 mb-8">
-          <span
-            v-for="tech in project.technologies"
-            :key="tech"
-            class="px-3 py-1 text-xs font-bold uppercase shadow-sm tracking-wider bg-white/40 dark:bg-black/10 rounded-rough border-2"
-            :class="sticky.border"
+          <button
+            type="button"
+            :aria-label="t.experience.modal.close"
+            class="flex items-center justify-center size-8 rounded-md text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex-shrink-0"
+            @click="close"
           >
-            {{ tech }}
-          </span>
+            <X :size="16" />
+          </button>
         </div>
 
-        <div class="space-y-10 font-handwritten text-lg">
+        <!-- Modal body -->
+        <div class="px-6 py-5 space-y-6">
+          <!-- Technologies -->
+          <div class="flex flex-wrap gap-1.5">
+            <span
+              v-for="tech in project.technologies"
+              :key="tech"
+              class="px-2 py-0.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 rounded"
+            >
+              {{ tech }}
+            </span>
+          </div>
+
           <section>
-            <h4 class="project-subtitle">{{ t.experience.modal.context }}</h4>
-            <p class="project-text" v-html="formatText(project.context)" />
+            <h4 class="modal-label">{{ t.experience.modal.context }}</h4>
+            <p class="modal-text" v-html="formatText(project.context)" />
           </section>
 
           <section>
-            <h4 class="project-subtitle">{{ t.experience.modal.importance }}</h4>
-            <p class="project-text" v-html="formatText(project.importance)" />
+            <h4 class="modal-label">{{ t.experience.modal.importance }}</h4>
+            <p class="modal-text" v-html="formatText(project.importance)" />
           </section>
 
           <section>
-            <h4 class="project-subtitle text-red-500 dark:text-red-400">
-              {{ t.experience.modal.problem }}
-            </h4>
-            <p class="project-text" v-html="formatText(project.problem)" />
+            <h4 class="modal-label">{{ t.experience.modal.problem }}</h4>
+            <p class="modal-text" v-html="formatText(project.problem)" />
           </section>
 
           <section>
-            <h4 class="project-subtitle text-green-600 dark:text-green-400">
+            <h4 class="modal-label text-green-700 dark:text-green-400">
               {{ t.experience.modal.decisions }}
             </h4>
-
-            <ul class="grid gap-4">
+            <ul class="space-y-2">
               <li
                 v-for="(decision, index) in project.decisions"
                 :key="index"
-                class="project-text flex gap-3 items-start"
+                class="flex gap-2.5 items-start"
               >
-                <CheckCircle2 :size="18" class="text-green-500 mt-1 flex-shrink-0" />
-                <span v-html="formatText(decision)" />
+                <CheckCircle2 :size="14" class="text-green-500 mt-0.5 flex-shrink-0" />
+                <span class="modal-text" v-html="formatText(decision)" />
               </li>
             </ul>
           </section>
 
           <section>
-            <h4 class="project-subtitle">{{ t.experience.modal.tradeoffs }}</h4>
-
-            <div class="rough-line">
-              <p class="project-text italic" v-html="formatText(project.tradeoffs)" />
-            </div>
+            <h4 class="modal-label">{{ t.experience.modal.tradeoffs }}</h4>
+            <p class="modal-text italic" v-html="formatText(project.tradeoffs)" />
           </section>
 
-          <footer
-            class="rounded-rough p-6 bg-white/50 dark:bg-black/20 border-2 border-dashed border-green-700/40 dark:border-green-400/30"
+          <section
+            class="rounded-lg p-4 bg-green-50 dark:bg-green-950/30 border border-green-100 dark:border-green-900/40"
           >
-            <h4 class="project-subtitle text-green-700 dark:text-green-400">
+            <h4 class="modal-label text-green-700 dark:text-green-400">
               {{ t.experience.modal.outcome }}
             </h4>
-
             <p
-              class="text-green-900 dark:text-green-50 font-bold text-lg leading-relaxed"
+              class="text-sm font-medium text-green-800 dark:text-green-200 leading-relaxed"
               v-html="formatText(project.outcome)"
             />
-          </footer>
+          </section>
         </div>
       </div>
     </div>
@@ -151,7 +143,11 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="postcss">
-.project-subtitle {
-  @apply text-sm font-semibold uppercase tracking-widest mb-2;
+.modal-label {
+  @apply text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-2;
+}
+
+.modal-text {
+  @apply text-sm leading-relaxed text-zinc-600 dark:text-zinc-400;
 }
 </style>

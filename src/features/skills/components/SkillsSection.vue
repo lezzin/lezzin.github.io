@@ -12,10 +12,10 @@ const t = computed(() => uiTranslations[language.value])
 </script>
 
 <template>
-  <section id="skills" class="scroll-mt-32">
+  <section id="skills" class="scroll-mt-20">
     <Title>{{ t.skills.title }}</Title>
 
-    <div class="grid gap-4 md:grid-cols-2">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <SkillItem
         v-for="(category, index) in skillCategories"
         :key="category.category"

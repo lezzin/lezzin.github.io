@@ -12,10 +12,10 @@ const t = computed(() => uiTranslations[language.value])
 </script>
 
 <template>
-  <section id="experience" class="scroll-mt-32">
+  <section id="experience" class="scroll-mt-20">
     <Title>{{ t.experience.title }}</Title>
 
-    <div class="grid gap-8 md:gap-12">
+    <div class="space-y-10">
       <ExperienceItem
         v-for="(experience, index) in experiences"
         :key="index"

@@ -4,7 +4,6 @@ import { twMerge } from 'tailwind-merge'
 import { computed } from 'vue'
 
 type Variant = 'default' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link'
-
 type Size = 'sm' | 'default' | 'lg' | 'icon'
 
 const props = withDefaults(
@@ -27,124 +26,68 @@ const props = withDefaults(
 const base = `
   relative
   inline-flex items-center justify-center
-  text-base font-bold
-  border-2 border-zinc-900 dark:border-zinc-100
-  text-zinc-900 dark:text-zinc-100
-  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2
+  text-sm font-medium
+  rounded-md
+  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2
   disabled:opacity-50 disabled:pointer-events-none
-  transition-all
+  transition-colors duration-150
 `
-const noHoverVariants: Variant[] = ['ghost', 'link']
-
-const hoverEffect = computed(() =>
-  noHoverVariants.includes(props.variant)
-    ? ''
-    : 'hover:scale-[102%] hover:rotate-[0.5deg] hover:shadow-[3px_3px_0_rgba(0,0,0,.4)] dark:hover:shadow-[3px_3px_0_rgba(255,255,255,.4)]'
-)
 
 const variants: Record<Variant, string> = {
   default: `
-    text-zinc-100 dark:text-zinc-950
-    bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100
+    bg-zinc-900 text-zinc-100
+    hover:bg-zinc-700
+    dark:bg-zinc-100 dark:text-zinc-900
     dark:hover:bg-zinc-200
-    rounded-rough
   `,
   secondary: `
-    bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-800
+    bg-zinc-100 text-zinc-900
+    hover:bg-zinc-200
+    dark:bg-zinc-800 dark:text-zinc-100
     dark:hover:bg-zinc-700
-    rounded-rough
   `,
   outline: `
-    hover:bg-white/50 dark:hover:bg-black/50
-    rounded-rough
+    border border-zinc-200 dark:border-zinc-700
+    bg-transparent
+    text-zinc-700 dark:text-zinc-300
+    hover:bg-zinc-50 dark:hover:bg-zinc-800
+    hover:text-zinc-900 dark:hover:text-zinc-100
   `,
   ghost: `
-    border-none
-    hover:bg-white/50 dark:hover:bg-black/50
-    rounded-rough
+    bg-transparent
+    text-zinc-700 dark:text-zinc-300
+    hover:bg-zinc-100 dark:hover:bg-zinc-800
   `,
   destructive: `
-    bg-red-500
-    border-red-900
-    hover:bg-red-600
-    rounded-rough
+    bg-red-600 text-white
+    hover:bg-red-700
   `,
   link: `
-    group/link
-    border-none
-    underline-offset-8
-    cursor-pointer
+    bg-transparent
+    text-green-700 dark:text-green-400
+    hover:underline underline-offset-4
+    px-0
   `,
 }
 
 const sizes: Record<Size, string> = {
-  sm: 'h-9 px-3',
-  default: 'h-10 px-4 py-2',
-  lg: 'h-11 px-8',
-  icon: 'size-10',
+  sm: 'h-8 px-3 text-xs',
+  default: 'h-9 px-4 py-2',
+  lg: 'h-10 px-5',
+  icon: 'size-9',
 }
 
 const classes = computed(() =>
-  twMerge(clsx(base, variants[props.variant], sizes[props.size], hoverEffect.value))
+  twMerge(clsx(base, variants[props.variant], sizes[props.size]))
 )
-
-const isLink = computed(() => props.variant === 'link')
 </script>
 
 <template>
   <a v-if="asChild" :class="classes" v-bind="$attrs">
-    <svg
-      v-if="isLink"
-      class="absolute -bottom-1 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
-      viewBox="0 0 100 10"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M2,6 C18,2 30,8 45,3 C58,-0.5 68,7 82,2 C90,-0.5 94,5 98,3"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        class="sketch-draw"
-        pathLength="1"
-      />
-    </svg>
-
     <slot />
   </a>
 
   <button v-else :type="type" :disabled="disabled" :class="classes">
-    <svg
-      v-if="isLink"
-      class="absolute -bottom-1 left-0 w-full h-[8px] overflow-visible pointer-events-none opacity-0 group-hover/link:opacity-100 transition-opacity duration-150"
-      viewBox="0 0 100 10"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M2,6 C18,2 30,8 45,3 C58,-0.5 68,7 82,2 C90,-0.5 94,5 98,3"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        class="sketch-draw"
-        pathLength="1"
-      />
-    </svg>
-
     <slot />
   </button>
 </template>
-
-<style scoped>
-.sketch-draw {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw-sketch 0.35s ease forwards;
-}
-
-@keyframes draw-sketch {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-</style>

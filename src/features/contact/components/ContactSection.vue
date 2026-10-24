@@ -4,7 +4,6 @@ import { useLanguage } from '../../../composables/useLanguage'
 import { uiTranslations } from '../../../i18n/ui'
 
 import Title from '../../../components/common/Title.vue'
-import Subtitle from '../../../components/common/Subtitle.vue'
 import Button from '../../../components/common/Button.vue'
 import Linkedin from '../../../components/icon/Linkedin.vue'
 import Github from '../../../components/icon/Github.vue'
@@ -17,28 +16,28 @@ const phone = '5535997242338'
 </script>
 
 <template>
-  <section id="contact" class="py-2 scroll-mt-32">
-    <div class="max-w-3xl">
-      <Title class="!mb-4">{{ t.contact.title }}</Title>
+  <section id="contact" class="scroll-mt-20">
+    <div class="max-w-xl">
+      <Title>{{ t.contact.title }}</Title>
 
-      <Subtitle class="mb-12 font-handwritten text-xl">
+      <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
         {{ t.contact.subtitle }}
-      </Subtitle>
+      </p>
 
-      <Button
-        variant="default"
-        as-child
-        :href="`https://api.whatsapp.com/send?phone=${phone}&text=Oi,%20Leandro!%20Vim%20pelo%20seu%20portf%C3%B3lio%20pessoal`"
-        target="_blank"
-        :aria-label="`Enviar mensagem no WhatsApp para ${phone}`"
-      >
-        <div class="flex items-center gap-3">
-          <Whatsapp class="size-5" />
-          <span>{{ t.contact.cta }}</span>
-        </div>
-      </Button>
+      <div class="flex flex-wrap gap-3">
+        <Button
+          variant="default"
+          as-child
+          :href="`https://api.whatsapp.com/send?phone=${phone}&text=Oi,%20Leandro!%20Vim%20pelo%20seu%20portf%C3%B3lio%20pessoal`"
+          target="_blank"
+          :aria-label="`Enviar mensagem no WhatsApp para ${phone}`"
+        >
+          <div class="flex items-center gap-2">
+            <Whatsapp class="size-4" />
+            <span>{{ t.contact.cta }}</span>
+          </div>
+        </Button>
 
-      <div class="flex flex-wrap gap-2 mt-2">
         <Button
           variant="outline"
           as-child
@@ -46,8 +45,8 @@ const phone = '5535997242338'
           target="_blank"
           aria-label="Abrir perfil no LinkedIn"
         >
-          <div class="flex items-center gap-3">
-            <Linkedin class="size-5" />
+          <div class="flex items-center gap-2">
+            <Linkedin class="size-4" />
             <span>LinkedIn</span>
           </div>
         </Button>
@@ -59,8 +58,8 @@ const phone = '5535997242338'
           target="_blank"
           aria-label="Abrir perfil no GitHub"
         >
-          <div class="flex items-center gap-3">
-            <Github class="size-5" />
+          <div class="flex items-center gap-2">
+            <Github class="size-4" />
             <span>GitHub</span>
           </div>
         </Button>

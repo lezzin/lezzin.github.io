@@ -1,14 +1,10 @@
 <script lang="ts" setup>
-import { Plus } from 'lucide-vue-next'
 import { computed } from 'vue'
 import type { Project } from '../../types/project'
 import { formatText } from '../../utils/markdown'
 import Button from '../../components/common/Button.vue'
-import { STICKY_PALETTE } from '../../constants/sticky-palette.ts'
 import { useLanguage } from '../../composables/useLanguage'
 import { uiTranslations } from '../../i18n/ui'
-import { useTheme } from '../../composables/useTheme.ts'
-import StripeBackground from '../../components/common/StripeBackground.vue'
 
 const props = defineProps<{
   project: Project
@@ -19,47 +15,31 @@ const emit = defineEmits<{
   (e: 'open', project: Project): void
 }>()
 
-const { isDark } = useTheme()
-
 const { language } = useLanguage()
 const t = computed(() => uiTranslations[language.value])
-
-const sticky = computed(() => STICKY_PALETTE[(props.index ?? 0) % STICKY_PALETTE.length]!)
-
-const stripeColor = computed(() =>
-  isDark() ? sticky.value.stripe.dark : sticky.value.stripe.light
-)
 </script>
 
 <template>
-  <article class="relative h-full">
-    <div
-      :class="[
-        'relative h-full overflow-hidden p-6 md:p-8 rounded-rough border-2 shadow-md hover:shadow-lg transition-shadow',
-        sticky.bg,
-        sticky.border,
-      ]"
-    >
-      <StripeBackground :color="stripeColor" />
+  <article
+    class="border border-zinc-100 dark:border-zinc-800 rounded-lg p-4 hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors cursor-pointer"
+    @click="emit('open', props.project)"
+    tabindex="0"
+    role="button"
+    :aria-label="props.project.name"
+    @keydown.enter="emit('open', props.project)"
+    @keydown.space.prevent="emit('open', props.project)"
+  >
+    <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-1.5">
+      {{ props.project.name }}
+    </h3>
 
-      <div class="relative z-10">
-        <h3
-          class="text-xl md:text-3xl font-handwritten text-zinc-900 dark:text-zinc-100 tracking-tight mb-6"
-        >
-          {{ project.name }}
-        </h3>
+    <p
+      class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed mb-3 line-clamp-2"
+      v-html="formatText(props.project.context)"
+    />
 
-        <div class="space-y-6 mb-8 font-handwritten text-lg">
-          <p class="project-text" v-html="formatText(project.context)" />
-        </div>
-
-        <Button @click="emit('open', project)" variant="link" class="ps-0">
-          <div class="flex items-center">
-            <Plus :size="18" class="mr-2" />
-            {{ t.experience.readCaseStudy }}
-          </div>
-        </Button>
-      </div>
-    </div>
+    <Button variant="link" class="text-xs h-auto" @click.stop="emit('open', props.project)">
+      {{ t.experience.readCaseStudy }}
+    </Button>
   </article>
 </template>

@@ -12,7 +12,8 @@
 
 @layer base {
   body {
-    @apply font-handwritten antialiased text-zinc-900 dark:text-zinc-100;
+    @apply antialiased text-zinc-900 dark:text-zinc-100;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   html {
@@ -29,60 +30,14 @@
 }
 
 @layer components {
-  .rough-border {
-    border-width: 2px;
-    border-style: solid;
-    @apply border-zinc-900 dark:border-zinc-100 rounded-rough;
-    transform: rotate(-0.5deg);
-  }
-
-  .rough-border-alt {
-    border-width: 2px;
-    border-style: solid;
-    @apply border-zinc-900 dark:border-zinc-100 rounded-rough;
-    transform: rotate(0.5deg);
-  }
-
-  .rough-divider {
-    @apply h-1 w-full border-b-2 border-zinc-900 dark:border-zinc-100 opacity-50;
-    transform: rotate(-0.2deg) skewX(2deg);
-  }
-
   .mark {
-    @apply bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 px-1 rounded-rough;
-  }
-
-  .rough-line {
-    @apply relative pl-6;
-  }
-
-  .rough-line::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 18px;
-
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 120' preserveAspectRatio='none'%3E%3Cpath d='M10 0 C5 15 15 30 10 45 S5 75 10 90 S5 105 10 120' stroke='%23dc2626' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
-
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    pointer-events: none;
-  }
-
-  .dark .rough-line::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 120' preserveAspectRatio='none'%3E%3Cpath d='M10 0 C5 15 15 30 10 45 S5 75 10 90 S5 105 10 120' stroke='%23f87171' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
-  }
-
-  .bg-point {
-    @apply bg-white dark:bg-zinc-950 bg-[radial-gradient(circle,#eee_1px,transparent_1px)] dark:bg-[radial-gradient(circle,#111_1px,transparent_1px)] [background-size:16px_16px] bg-fixed
+    @apply bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 px-1 rounded;
   }
 }
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.2s ease;
 }
 
 .v-enter-from,

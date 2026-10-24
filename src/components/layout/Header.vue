@@ -11,15 +11,11 @@ defineProps<{
 
 const isScrolled = ref(false)
 const activeSection = ref('home')
-const scrollProgress = ref(0)
 
 let observer: IntersectionObserver | null = null
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
-
-  const totalHeight = document.documentElement.scrollHeight - window.innerHeight
-  scrollProgress.value = (window.scrollY / totalHeight) * 100
 }
 
 const setupObserver = () => {
@@ -36,7 +32,6 @@ const setupObserver = () => {
           visible.add(id)
           return
         }
-
         visible.delete(id)
       })
 
@@ -71,7 +66,7 @@ const setupObserver = () => {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', handleScroll, { passive: true })
   setupObserver()
 })
 
@@ -82,45 +77,23 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header
-    :class="[
-      'fixed left-0 right-0 z-40 flex justify-center pointer-events-none transition-all duration-500 ease-out',
-      isScrolled ? 'top-4 px-4 md:px-8' : 'top-0 px-0',
-    ]"
-  >
-    <div
-      :class="[
-        containerClass,
-        'relative w-full flex items-center justify-between py-2.5 transition-all duration-300 pointer-events-auto rounded-rough-pill border-2',
-        isScrolled
-          ? 'bg-white dark:bg-zinc-950 border-zinc-300 dark:border-zinc-800 shadow-sm'
-          : 'border-transparent',
-      ]"
-    >
-      <a href="#" class="font-handwritten text-2xl tracking-tight text-board-text">
+  <header :class="[
+    'fixed left-0 right-0 z-40 transition-all duration-200',
+    isScrolled
+      ? 'bg-white dark:bg-zinc-950 border-b border-zinc-100 dark:border-zinc-800'
+      : 'border-transparent',
+  ]">
+    <div :class="[containerClass, 'w-full flex items-center justify-between py-4']">
+      <a href="#" class="font-handwritten text-2xl tracking-tight text-zinc-900 dark:text-zinc-100">
         L<span class="text-green-600 dark:text-green-400">.</span>Adrian
       </a>
 
       <NavItems :active="activeSection" class="hidden md:flex" />
 
-      <div class="flex items-center gap-2 md:gap-3">
+      <div class="flex items-center gap-2">
         <LanguageToggle />
         <ThemeToggle />
       </div>
     </div>
   </header>
 </template>
-
-<style scoped>
-.sketch-draw {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw-sketch 0.35s ease forwards;
-}
-
-@keyframes draw-sketch {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-</style>
