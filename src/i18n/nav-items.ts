@@ -9,7 +9,7 @@ export const navItemsTranslations: Record<Language, NavItem[]> = {
   pt: [
     { name: 'Início', href: '#' },
     { name: 'Experiência', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
+    { name: 'Habilidades', href: '#skills' },
     { name: 'Contato', href: '#contact' },
   ],
   en: [

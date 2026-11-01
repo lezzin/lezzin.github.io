@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useLanguage } from '../../../composables/useLanguage'
 import { uiTranslations } from '../../../i18n/ui'
 
-import Title from '../../../components/common/Title.vue'
+import Card from '../../../components/common/Card.vue'
 import Button from '../../../components/common/Button.vue'
 import Linkedin from '../../../components/icon/Linkedin.vue'
 import Github from '../../../components/icon/Github.vue'
@@ -17,16 +17,15 @@ const phone = '5535997242338'
 
 <template>
   <section id="contact" class="scroll-mt-20">
-    <div class="max-w-xl">
-      <Title>{{ t.contact.title }}</Title>
-
-      <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
+    <Card :title="t.contact.title">
+      <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
         {{ t.contact.subtitle }}
       </p>
 
-      <div class="flex flex-wrap gap-3">
+      <div class="flex flex-wrap gap-2">
         <Button
-          variant="default"
+          variant="card"
+          color="green"
           as-child
           :href="`https://api.whatsapp.com/send?phone=${phone}&text=Oi,%20Leandro!%20Vim%20pelo%20seu%20portf%C3%B3lio%20pessoal`"
           target="_blank"
@@ -34,12 +33,13 @@ const phone = '5535997242338'
         >
           <div class="flex items-center gap-2">
             <Whatsapp class="size-4" />
-            <span>{{ t.contact.cta }}</span>
+            <span>{{ t.contact.whatsapp }}</span>
           </div>
         </Button>
 
         <Button
-          variant="outline"
+          variant="card"
+          color="blue"
           as-child
           href="https://www.linkedin.com/in/leandro-adrian"
           target="_blank"
@@ -52,7 +52,8 @@ const phone = '5535997242338'
         </Button>
 
         <Button
-          variant="outline"
+          variant="card"
+          color="black"
           as-child
           href="https://github.com/lezzin"
           target="_blank"
@@ -64,6 +65,6 @@ const phone = '5535997242338'
           </div>
         </Button>
       </div>
-    </div>
+    </Card>
   </section>
 </template>

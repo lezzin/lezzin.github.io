@@ -5,9 +5,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        handwritten: ['"Excalifont"', 'cursive'],
+        sans: [
+          '"Epilogue Variable"',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'sans-serif',
+        ],
+        handwritten: ['"Caveat Variable"', 'cursive'],
       },
     },
   },
   plugins: [],
 }
+

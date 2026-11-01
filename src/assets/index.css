@@ -2,19 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Excalifont';
-  src: url('./fonts/Excalifont-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+@layer utilities {
+  .font-handwritten {
+    font-family: 'Caveat Variable', cursive;
+  }
 }
 
 @layer base {
   body {
-    @apply antialiased text-zinc-900 dark:text-zinc-100;
+    @apply antialiased text-slate-900 dark:text-slate-100 bg-slate-50 dark:bg-slate-950;
+
     font-family:
-      'Inter',
+      'Epilogue Variable',
       system-ui,
       -apple-system,
       BlinkMacSystemFont,
@@ -37,7 +36,11 @@
 
 @layer components {
   .mark {
-    @apply bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 px-1 rounded;
+    @apply bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-200 px-1.5 py-0.5 rounded font-semibold;
+  }
+
+  .section-label {
+    @apply text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2;
   }
 }
 

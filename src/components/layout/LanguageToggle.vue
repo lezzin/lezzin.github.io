@@ -35,7 +35,7 @@ function changeLanguage(lang: Language) {
   <div ref="root" class="relative inline-block">
     <button
       @click="open = !open"
-      class="inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-zinc-200 dark:border-zinc-700 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+      class="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
       :aria-expanded="open"
       aria-haspopup="listbox"
     >
@@ -55,7 +55,7 @@ function changeLanguage(lang: Language) {
       <div
         v-if="open"
         role="listbox"
-        class="absolute right-0 mt-1.5 w-40 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-md overflow-hidden z-50"
+        class="absolute right-0 mt-1.5 w-40 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg overflow-hidden z-50"
       >
         <button
           v-for="lang in languages"
@@ -65,9 +65,9 @@ function changeLanguage(lang: Language) {
           @click="changeLanguage(lang.code)"
           class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left transition-colors"
           :class="{
-            'text-green-700 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/20':
+            'text-emerald-700 dark:text-emerald-400 font-semibold bg-emerald-50 dark:bg-emerald-900/20':
               language === lang.code,
-            'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800':
+            'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800':
               language !== lang.code,
           }"
         >
@@ -75,7 +75,7 @@ function changeLanguage(lang: Language) {
           <span>{{ lang.label }}</span>
           <span
             v-if="language === lang.code"
-            class="ml-auto text-green-600 dark:text-green-400 text-xs"
+            class="ml-auto text-emerald-600 dark:text-emerald-400 text-xs"
             >✓</span
           >
         </button>

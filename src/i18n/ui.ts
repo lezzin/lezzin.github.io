@@ -1,9 +1,15 @@
 import type { Language } from '../composables/useLanguage'
 
 export interface UiTranslations {
+  card: {
+    hero: string
+    nav: string
+    social: string
+  }
   hero: {
     description: string
     viewExperience: string
+    viewSkills: string
     scheduleCall: string
     resume: string
   }
@@ -29,7 +35,7 @@ export interface UiTranslations {
     subtitle: string
     github: string
     linkedin: string
-    cta: string
+    whatsapp: string
   }
   footer: {
     madeWith: string
@@ -38,10 +44,16 @@ export interface UiTranslations {
 
 export const uiTranslations: Record<Language, UiTranslations> = {
   pt: {
+    card: {
+      hero: 'Apresentação',
+      nav: 'O que deseja fazer?',
+      social: 'Redes Sociais',
+    },
     hero: {
       description:
-        'Desenvolvedor Backend focado na construção de sistemas robustos, escaláveis e de alta performance. Especializado em arquiteturas modernas com ==NestJS e Laravel==, busco transformar desafios técnicos em soluções eficientes, bem documentadas e de alto impacto para o negócio.',
+        'Desenvolvedor Backend especializado em arquiteturas orientadas a eventos, APIs de alto tráfego e modernização de legados com ==NestJS e Laravel==. Foco prático na resolução de gargalos em bancos de dados relacionais, pipelines de mensageria assíncrona e entrega de serviços resilientes alinhados aos objetivos de negócio.',
       viewExperience: 'Ver Experiências',
+      viewSkills: 'Ver Habilidades',
       scheduleCall: 'Contato',
       resume: 'Currículo',
     },
@@ -65,20 +77,26 @@ export const uiTranslations: Record<Language, UiTranslations> = {
     contact: {
       title: 'Vamos conversar?',
       subtitle:
-        'Estou sempre interessado em ouvir sobre novos projetos desafiadores, arquitetura de sistemas e oportunidades de colaboração no ecossistema Backend.',
+        'Disponível para novos desafios em engenharia de backend, discussões sobre arquitetura de software e desenvolvimento de soluções de alta performance.',
       github: 'GitHub',
       linkedin: 'LinkedIn',
-      cta: 'Chamar no Whatsapp',
+      whatsapp: 'Whatsapp',
     },
     footer: {
       madeWith: '© {year} — Feito com Vue.js & Tailwind CSS',
     },
   },
   en: {
+    card: {
+      hero: 'Introduction',
+      nav: 'What would you like to do?',
+      social: 'Social Networks',
+    },
     hero: {
       description:
-        'Backend Developer focused on building robust, scalable, and high-performance systems. Specialized in modern architectures with ==NestJS and Laravel==, I strive to transform technical challenges into efficient, well-documented, and high-impact business solutions.',
+        'Backend Developer specializing in event-driven architectures, high-throughput APIs, and legacy modernization with ==NestJS and Laravel==. Hands-on experience optimizing relational database bottlenecks, asynchronous messaging pipelines, and delivering resilient services aligned with business goals.',
       viewExperience: 'View Experience',
+      viewSkills: 'View Skills',
       scheduleCall: 'Contact',
       resume: 'Resume',
     },
@@ -102,20 +120,26 @@ export const uiTranslations: Record<Language, UiTranslations> = {
     contact: {
       title: "Let's talk?",
       subtitle:
-        "I'm always interested in hearing about new challenging projects, system architecture, and collaboration opportunities in the Backend ecosystem.",
+        'Open to new backend engineering opportunities, software architecture discussions, and building high-performance systems.',
       github: 'GitHub',
       linkedin: 'LinkedIn',
-      cta: 'Chat on Whatsapp',
+      whatsapp: 'Whatsapp',
     },
     footer: {
       madeWith: '© {year} — Built with Vue.js & Tailwind CSS',
     },
   },
   es: {
+    card: {
+      hero: 'Presentación',
+      nav: '¿Qué deseas hacer?',
+      social: 'Redes Sociales',
+    },
     hero: {
       description:
-        'Desarrollador Backend enfocado en la construcción de sistemas robustos, escalables y de alto rendimiento. Especializado en arquitecturas modernas con ==NestJS y Laravel==, busco transformar desafíos técnicos en soluciones eficientes, bien documentadas y de alto impacto para el negocio.',
+        'Desarrollador Backend especializado en arquitecturas orientadas a eventos, APIs de alto rendimiento y modernización de sistemas con ==NestJS y Laravel==. Enfoque práctico en la resolución de cuellos de botella en bases de datos relacionales, canalizaciones de mensajería asíncrona y entrega de servicios resilientes alineados con los objetivos del negocio.',
       viewExperience: 'Ver Experiencias',
+      viewSkills: 'Ver Habilidades',
       scheduleCall: 'Contacto',
       resume: 'Currículum',
     },
@@ -139,10 +163,10 @@ export const uiTranslations: Record<Language, UiTranslations> = {
     contact: {
       title: '¿Hablamos?',
       subtitle:
-        'Siempre estoy interesado en escuchar sobre nuevos proyectos desafiantes, arquitectura de sistemas y oportunidades de colaboración en el ecosistema Backend.',
+        'Disponible para nuevos desafíos en ingeniería backend, debates sobre arquitectura de software y desarrollo de soluciones de alto rendimiento.',
       github: 'GitHub',
       linkedin: 'LinkedIn',
-      cta: 'Chatear por WhatsApp',
+      whatsapp: 'Whatsapp',
     },
     footer: {
       madeWith: '© {year} — Hecho con Vue.js & Tailwind CSS',

@@ -21,7 +21,7 @@ const t = computed(() => uiTranslations[language.value])
 
 <template>
   <article
-    class="border border-zinc-100 dark:border-zinc-800 rounded-lg p-4 hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors cursor-pointer"
+    class="group border border-slate-200 dark:border-slate-700 rounded-xl p-4 hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-sm bg-white dark:bg-slate-800/50 transition-all duration-150 cursor-pointer"
     @click="emit('open', props.project)"
     tabindex="0"
     role="button"
@@ -29,12 +29,12 @@ const t = computed(() => uiTranslations[language.value])
     @keydown.enter="emit('open', props.project)"
     @keydown.space.prevent="emit('open', props.project)"
   >
-    <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-1.5">
+    <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1.5 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
       {{ props.project.name }}
     </h3>
 
     <p
-      class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed mb-3 line-clamp-2"
+      class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3 line-clamp-2"
       v-html="formatText(props.project.context)"
     />
 
