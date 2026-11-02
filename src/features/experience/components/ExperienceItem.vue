@@ -4,8 +4,6 @@ import { formatText } from '../../../utils/markdown'
 import { computed, ref } from 'vue'
 import ProjectItem from '../../project/ProjectItem.vue'
 import type { Project } from '../../../types/project.ts'
-import ProjectItemModal from '../../project/ProjectItemModal.vue'
-import { STICKY_PALETTE } from '../../../constants/sticky-palette.ts'
 import { useLanguage } from '../../../composables/useLanguage'
 import { uiTranslations } from '../../../i18n/ui'
 import { Calendar, FolderOpen, ChevronDown } from 'lucide-vue-next'
@@ -23,23 +21,11 @@ const isCurrent = computed(() => {
   return period.includes('atual') || period.includes('present') || period.includes('actualidad')
 })
 
-const selectedProjectIndex = ref(0)
-const sticky = computed(
-  () => STICKY_PALETTE[(selectedProjectIndex.value ?? 0) % STICKY_PALETTE.length]!
-)
-
-const selectedProject = ref<Project | null>(null)
 const showAllBullets = ref(false)
 
-const openProject = (project: Project, index: number) => {
-  selectedProjectIndex.value = index
-  selectedProject.value = project
-}
-
-const closeProject = () => {
-  selectedProjectIndex.value = 0
-  selectedProject.value = null
-}
+const emit = defineEmits<{
+  (e: 'open-project', project: Project): void
+}>()
 </script>
 
 <template>
@@ -54,10 +40,8 @@ const closeProject = () => {
             <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
               {{ experience.title }}
             </h3>
-            <span
-              v-if="isCurrent"
-              class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800"
-            >
+            <span v-if="isCurrent"
+              class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
               <span class="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
               {{ language === 'pt' ? 'Atual' : language === 'es' ? 'Actual' : 'Current' }}
             </span>
@@ -92,7 +76,9 @@ const closeProject = () => {
         <button v-if="experience.bulletPoints.length > 3" @click="showAllBullets = !showAllBullets"
           class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
           <ChevronDown :size="14" class="transition-transform duration-200" :class="{ 'rotate-180': showAllBullets }" />
-          {{ showAllBullets ? (language === 'pt' ? 'Ver menos' : language === 'es' ? 'Ver menos' : 'Show less') : (language === 'pt' ? `Ver mais ${experience.bulletPoints.length - 3} pontos` : language === 'es' ? `Ver más ${experience.bulletPoints.length - 3} puntos` : `Show ${experience.bulletPoints.length - 3} more`) }}
+          {{ showAllBullets ? (language === 'pt' ? 'Ver menos' : language === 'es' ? 'Ver menos' : 'Show less') :
+            (language === 'pt' ? `Ver mais ${experience.bulletPoints.length - 3} pontos` : language === 'es' ? `Ver más
+          ${experience.bulletPoints.length - 3} puntos` : `Show ${experience.bulletPoints.length - 3} more`) }}
         </button>
       </div>
 
@@ -106,13 +92,9 @@ const closeProject = () => {
 
         <div class="grid sm:grid-cols-2 gap-3">
           <ProjectItem v-for="(project, i) in experience.projects" :key="project.name" :project="project" :index="i"
-            @open="() => openProject(project, i)" />
+            @open="() => emit('open-project', project)" />
         </div>
       </div>
     </div>
   </article>
-
-  <Teleport to="body">
-    <ProjectItemModal :project="selectedProject" :sticky="sticky" :open="!!selectedProject" @close="closeProject" />
-  </Teleport>
 </template>
