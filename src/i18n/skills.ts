@@ -21,7 +21,7 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
     },
     {
       category: 'Mensageria & Performance',
-      skills: ['Redis (Cache & Filas)', 'RabbitMQ', 'Webhooks', 'MinIO (Armazenamento)'],
+      skills: ['Redis', 'RabbitMQ', 'Webhooks', 'MinIO'],
       icon: Zap,
     },
     {
@@ -34,7 +34,7 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
       skills: [
         'Linux',
         'Docker',
-        'Kubernetes (K8s)',
+        'Kubernetes',
         'Lens',
         'Git & GitHub',
         'Azure DevOps',
@@ -61,7 +61,7 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
     },
     {
       category: 'Messaging & Performance',
-      skills: ['Redis (Cache & Queues)', 'RabbitMQ', 'Webhooks', 'MinIO (Storage)'],
+      skills: ['Redis', 'RabbitMQ', 'Webhooks', 'MinIO'],
       icon: Zap,
     },
     {
@@ -74,7 +74,7 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
       skills: [
         'Linux',
         'Docker',
-        'Kubernetes (K8s)',
+        'Kubernetes',
         'Lens',
         'Git & GitHub',
         'Azure DevOps',
@@ -101,7 +101,7 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
     },
     {
       category: 'Mensajería y Rendimiento',
-      skills: ['Redis (Caché y Colas)', 'RabbitMQ', 'Webhooks', 'MinIO (Almacenamiento)'],
+      skills: ['Redis', 'RabbitMQ', 'Webhooks', 'MinIO'],
       icon: Zap,
     },
     {
@@ -114,7 +114,7 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
       skills: [
         'Linux',
         'Docker',
-        'Kubernetes (K8s)',
+        'Kubernetes',
         'Lens',
         'Git & GitHub',
         'Azure DevOps',

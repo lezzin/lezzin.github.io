@@ -4,14 +4,11 @@ export interface UiTranslations {
   card: {
     hero: string
     nav: string
-    social: string
   }
   hero: {
     description: string
-    viewExperience: string
-    viewSkills: string
-    scheduleCall: string
-    resume: string
+    experiences: string
+    skills: string
   }
   experience: {
     title: string
@@ -45,17 +42,14 @@ export interface UiTranslations {
 export const uiTranslations: Record<Language, UiTranslations> = {
   pt: {
     card: {
-      hero: 'Apresentação',
-      nav: 'O que deseja fazer?',
-      social: 'Redes Sociais',
+      hero: 'Leandro Adrian da Silva',
+      nav: 'Links Úteis',
     },
     hero: {
       description:
         'Desenvolvedor Backend especializado em arquiteturas orientadas a eventos, APIs de alto tráfego e modernização de legados com ==NestJS e Laravel==. Foco prático na resolução de gargalos em bancos de dados relacionais, pipelines de mensageria assíncrona e entrega de serviços resilientes alinhados aos objetivos de negócio.',
-      viewExperience: 'Ver Experiências',
-      viewSkills: 'Ver Habilidades',
-      scheduleCall: 'Contato',
-      resume: 'Currículo',
+      experiences: 'Ver Experiências',
+      skills: 'Ver Habilidades',
     },
     experience: {
       title: 'Experiência Profissional',
@@ -88,17 +82,14 @@ export const uiTranslations: Record<Language, UiTranslations> = {
   },
   en: {
     card: {
-      hero: 'Introduction',
-      nav: 'What would you like to do?',
-      social: 'Social Networks',
+      hero: 'Leandro Adrian da Silva',
+      nav: 'Useful Links',
     },
     hero: {
       description:
         'Backend Developer specializing in event-driven architectures, high-throughput APIs, and legacy modernization with ==NestJS and Laravel==. Hands-on experience optimizing relational database bottlenecks, asynchronous messaging pipelines, and delivering resilient services aligned with business goals.',
-      viewExperience: 'View Experience',
-      viewSkills: 'View Skills',
-      scheduleCall: 'Contact',
-      resume: 'Resume',
+      experiences: 'View Experience',
+      skills: 'View Skills',
     },
     experience: {
       title: 'Professional Experience',
@@ -131,17 +122,14 @@ export const uiTranslations: Record<Language, UiTranslations> = {
   },
   es: {
     card: {
-      hero: 'Presentación',
-      nav: '¿Qué deseas hacer?',
-      social: 'Redes Sociales',
+      hero: 'Leandro Adrian da Silva',
+      nav: 'Links Úteis',
     },
     hero: {
       description:
         'Desarrollador Backend especializado en arquitecturas orientadas a eventos, APIs de alto rendimiento y modernización de sistemas con ==NestJS y Laravel==. Enfoque práctico en la resolución de cuellos de botella en bases de datos relacionales, canalizaciones de mensajería asíncrona y entrega de servicios resilientes alineados con los objetivos del negocio.',
-      viewExperience: 'Ver Experiencias',
-      viewSkills: 'Ver Habilidades',
-      scheduleCall: 'Contacto',
-      resume: 'Currículum',
+      experiences: 'Ver Experiencias',
+      skills: 'Ver Habilidades',
     },
     experience: {
       title: 'Experiencia Profesional',
