@@ -8,12 +8,15 @@ const { language } = useLanguage()
 const t = computed(() => uiTranslations[language.value])
 const currentYear = new Date().getFullYear()
 
+const footerText = computed(() => t.value.footer.madeWith.replace('{year}', currentYear.toString()))
+
 const containerClass = 'max-w-5xl mx-auto px-4 sm:px-6 md:px-8'
 </script>
 
 <template>
   <div
-    class="relative min-h-screen bg-slate-50 dark:bg-slate-950 selection:bg-emerald-100 dark:selection:bg-emerald-900/60">
+    class="relative min-h-screen bg-slate-50 dark:bg-slate-950 selection:bg-emerald-100 dark:selection:bg-emerald-900/60"
+  >
     <Header :container-class="containerClass" />
 
     <main :class="[containerClass, 'pt-28 pb-24 space-y-6']">
@@ -27,7 +30,7 @@ const containerClass = 'max-w-5xl mx-auto px-4 sm:px-6 md:px-8'
             Leandro Adrian da Silva
           </p>
           <p class="text-xs text-slate-400 dark:text-slate-500 tracking-wide">
-            {{ t.footer.madeWith.replace('{year}', currentYear.toString()) }}
+            {{ footerText }}
           </p>
         </div>
       </div>

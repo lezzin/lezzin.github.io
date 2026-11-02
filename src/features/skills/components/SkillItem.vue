@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { SkillCategory } from '../../../types/skill'
+
+const props = defineProps<{
+  category: SkillCategory
+  index: number
+}>()
 
 const accentColors = [
   'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300',
@@ -8,7 +14,7 @@ const accentColors = [
   'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300',
   'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300',
   'bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300',
-]
+] as const
 
 const iconColors = [
   'text-emerald-500 dark:text-emerald-400',
@@ -17,30 +23,36 @@ const iconColors = [
   'text-amber-500 dark:text-amber-400',
   'text-teal-500 dark:text-teal-400',
   'text-rose-500 dark:text-rose-400',
-]
+] as const
 
-const props = defineProps<{
-  category: SkillCategory
-  index: number
-}>()
-
-const badgeClass = accentColors[props.index % accentColors.length]
-const iconClass = iconColors[props.index % iconColors.length]
+const badgeClass = computed(() => accentColors[props.index % accentColors.length])
+const iconClass = computed(() => iconColors[props.index % iconColors.length])
 </script>
 
 <template>
   <div
-    class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden space-y-3 p-6">
+    class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden space-y-3 p-6"
+  >
     <div class="flex items-center gap-2">
-      <component :is="category.icon" :size="15" :class="iconClass" class="flex-shrink-0" />
+      <component
+        :is="category.icon"
+        :size="15"
+        aria-hidden="true"
+        :class="iconClass"
+        class="flex-shrink-0"
+      />
       <h3 class="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">
         {{ category.category }}
       </h3>
     </div>
 
     <div class="flex flex-wrap gap-1.5">
-      <span v-for="skill in category.skills" :key="skill" :class="badgeClass"
-        class="px-2.5 py-1 text-xs font-semibold rounded-full">
+      <span
+        v-for="skill in category.skills"
+        :key="skill"
+        :class="badgeClass"
+        class="px-2.5 py-1 text-xs font-semibold rounded-full"
+      >
         {{ skill }}
       </span>
     </div>

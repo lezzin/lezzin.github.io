@@ -8,7 +8,7 @@ const navItems = computed(() => navItemsTranslations[language.value])
 </script>
 
 <template>
-  <nav class="flex items-center gap-1">
+  <nav class="flex items-center gap-1" aria-label="Navegação principal">
     <a
       v-for="item in navItems"
       :key="item.href"

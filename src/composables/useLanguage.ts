@@ -2,11 +2,23 @@ import { ref, computed } from 'vue'
 
 export type Language = 'pt' | 'en' | 'es'
 
-const savedLang =
-  typeof window !== 'undefined' ? (localStorage.getItem('language') as Language | null) : null
-const initialLang: Language = savedLang && ['pt', 'en', 'es'].includes(savedLang) ? savedLang : 'pt'
+const SUPPORTED_LANGUAGES: readonly Language[] = ['pt', 'en', 'es']
 
+function getInitialLanguage(): Language {
+  if (typeof window === 'undefined') return 'pt'
+  const saved = localStorage.getItem('language') as Language | null
+  if (saved && (SUPPORTED_LANGUAGES as readonly string[]).includes(saved)) {
+    return saved
+  }
+  return 'pt'
+}
+
+const initialLang = getInitialLanguage()
 const currentLanguage = ref<Language>(initialLang)
+
+if (typeof window !== 'undefined') {
+  document.documentElement.lang = initialLang
+}
 
 export function useLanguage() {
   const setLanguage = (lang: Language) => {

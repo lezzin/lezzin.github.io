@@ -1,25 +1,32 @@
 <script setup lang="ts">
 import { ref, computed, type Component } from 'vue'
 import { ChevronDown } from 'lucide-vue-next'
-import { useLanguage, type Language } from '../../composables/useLanguage'
 import { onClickOutside } from '@vueuse/core'
+import { useLanguage, type Language } from '../../composables/useLanguage'
 import Br from '../icon/Br.vue'
 import Us from '../icon/Us.vue'
 import Es from '../icon/Es.vue'
 
+interface LanguageOption {
+  code: Language
+  label: string
+  flag: Component
+}
+
 const { language, setLanguage } = useLanguage()
 
 const open = ref(false)
+const root = ref<HTMLElement | null>(null)
 
-const languages: { code: Language; label: string; flag: Component }[] = [
+const languages: readonly LanguageOption[] = [
   { code: 'pt', label: 'Português', flag: Br },
   { code: 'en', label: 'English', flag: Us },
   { code: 'es', label: 'Español', flag: Es },
 ]
 
-const current = computed(() => languages.find((l) => l.code === language.value)!)
-
-const root = ref()
+const current = computed<LanguageOption>(
+  () => languages.find((l) => l.code === language.value) ?? languages[0]!
+)
 
 onClickOutside(root, () => {
   open.value = false
@@ -29,19 +36,32 @@ function changeLanguage(lang: Language) {
   setLanguage(lang)
   open.value = false
 }
+
+function handleKeyDown(event: KeyboardEvent) {
+  if (event.key === 'Escape') {
+    open.value = false
+  }
+}
 </script>
 
 <template>
-  <div ref="root" class="relative inline-block">
+  <div ref="root" class="relative inline-block" @keydown="handleKeyDown">
     <button
+      type="button"
       @click="open = !open"
       class="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
       :aria-expanded="open"
+      :aria-label="`Idioma atual: ${current.label}`"
       aria-haspopup="listbox"
     >
-      <component :is="current.flag" class="w-6 h-4 shrink-0" />
+      <component :is="current.flag" aria-hidden="true" class="w-6 h-4 shrink-0" />
       <span class="hidden sm:inline">{{ current.label }}</span>
-      <ChevronDown :size="14" class="transition-transform" :class="{ 'rotate-180': open }" />
+      <ChevronDown
+        :size="14"
+        aria-hidden="true"
+        class="transition-transform"
+        :class="{ 'rotate-180': open }"
+      />
     </button>
 
     <Transition
@@ -60,6 +80,7 @@ function changeLanguage(lang: Language) {
         <button
           v-for="lang in languages"
           :key="lang.code"
+          type="button"
           role="option"
           :aria-selected="language === lang.code"
           @click="changeLanguage(lang.code)"
@@ -71,13 +92,15 @@ function changeLanguage(lang: Language) {
               language !== lang.code,
           }"
         >
-          <component :is="lang.flag" class="w-6 h-4 shrink-0" />
+          <component :is="lang.flag" aria-hidden="true" class="w-6 h-4 shrink-0" />
           <span>{{ lang.label }}</span>
           <span
             v-if="language === lang.code"
+            aria-hidden="true"
             class="ml-auto text-emerald-600 dark:text-emerald-400 text-xs"
-            >✓</span
           >
+            ✓
+          </span>
         </button>
       </div>
     </Transition>

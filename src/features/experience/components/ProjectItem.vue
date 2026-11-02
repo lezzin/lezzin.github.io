@@ -1,10 +1,10 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { computed } from 'vue'
-import type { Project } from '../../../types/project.ts'
-import { formatText } from '../../../utils/markdown.ts'
+import type { Project } from '../../../types/project'
 import Button from '../../../components/common/Button.vue'
-import { useLanguage } from '../../../composables/useLanguage.ts'
-import { uiTranslations } from '../../../i18n/ui.ts'
+import { useLanguage } from '../../../composables/useLanguage'
+import { uiTranslations } from '../../../i18n/ui'
+import { formatText } from '../../../utils/markdown'
 
 const props = defineProps<{
   project: Project
@@ -17,19 +17,25 @@ const emit = defineEmits<{
 
 const { language } = useLanguage()
 const t = computed(() => uiTranslations[language.value])
+
+const openProject = () => {
+  emit('open', props.project)
+}
 </script>
 
 <template>
   <article
     class="group border border-slate-200 dark:border-slate-700 rounded-xl p-4 hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-sm bg-white dark:bg-slate-800/50 transition-all duration-150 cursor-pointer"
-    @click="emit('open', props.project)"
     tabindex="0"
     role="button"
     :aria-label="props.project.name"
-    @keydown.enter="emit('open', props.project)"
-    @keydown.space.prevent="emit('open', props.project)"
+    @click="openProject"
+    @keydown.enter="openProject"
+    @keydown.space.prevent="openProject"
   >
-    <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1.5 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+    <h3
+      class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1.5 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors"
+    >
       {{ props.project.name }}
     </h3>
 
@@ -38,7 +44,7 @@ const t = computed(() => uiTranslations[language.value])
       v-html="formatText(props.project.context)"
     />
 
-    <Button variant="link" class="text-xs h-auto" @click.stop="emit('open', props.project)">
+    <Button variant="link" class="text-xs h-auto" tabindex="-1" @click.stop="openProject">
       {{ t.experience.readCaseStudy }}
     </Button>
   </article>
