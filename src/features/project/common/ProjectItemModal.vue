@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { formatText } from '../../utils/markdown'
-import type { Project } from '../../types/project'
+import { formatText } from '../../../utils/markdown'
+import type { Project } from '../../../types/project'
 import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
 import { CheckCircle2, X } from 'lucide-vue-next'
-import type { StickyPaletteItem } from '../../types/sticky-palette'
-import { useLanguage } from '../../composables/useLanguage'
-import { uiTranslations } from '../../i18n/ui'
+import type { StickyPaletteItem } from '../../../types/sticky-palette'
+import { useLanguage } from '../../../composables/useLanguage'
+import { uiTranslations } from '../../../i18n/ui'
 
 const props = defineProps<{
   open: boolean

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type { Experience } from '../../../types/experience'
 import { formatText } from '../../../utils/markdown'
-import { computed, ref } from 'vue'
-import ProjectItem from '../../project/ProjectItem.vue'
-import type { Project } from '../../../types/project.ts'
+import { computed, inject, ref } from 'vue'
+import ProjectItem from './ProjectItem.vue'
 import { useLanguage } from '../../../composables/useLanguage'
 import { uiTranslations } from '../../../i18n/ui'
 import { Calendar, FolderOpen, ChevronDown } from 'lucide-vue-next'
+import { projectModalKey } from '../../../types/project-modal.ts'
 
 const props = defineProps<{
   experience: Experience
@@ -16,16 +16,8 @@ const props = defineProps<{
 const { language } = useLanguage()
 const t = computed(() => uiTranslations[language.value])
 
-const isCurrent = computed(() => {
-  const period = props.experience.period.toLowerCase()
-  return period.includes('atual') || period.includes('present') || period.includes('actualidad')
-})
-
 const showAllBullets = ref(false)
-
-const emit = defineEmits<{
-  (e: 'open-project', project: Project): void
-}>()
+const projectModal = inject(projectModalKey)
 </script>
 
 <template>
@@ -36,16 +28,9 @@ const emit = defineEmits<{
     <div class="p-6 md:p-8">
       <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
         <div>
-          <div class="flex items-center gap-2 flex-wrap mb-1">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
-              {{ experience.title }}
-            </h3>
-            <span v-if="isCurrent"
-              class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-              <span class="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              {{ language === 'pt' ? 'Atual' : language === 'es' ? 'Actual' : 'Current' }}
-            </span>
-          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 leading-tight mb-1">
+            {{ experience.title }}
+          </h3>
 
           <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
             {{ experience.company }}
@@ -92,7 +77,7 @@ const emit = defineEmits<{
 
         <div class="grid sm:grid-cols-2 gap-3">
           <ProjectItem v-for="(project, i) in experience.projects" :key="project.name" :project="project" :index="i"
-            @open="() => emit('open-project', project)" />
+            @open="projectModal?.openProject(project, i)" />
         </div>
       </div>
     </div>

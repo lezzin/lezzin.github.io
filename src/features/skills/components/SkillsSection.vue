@@ -22,7 +22,7 @@ const t = computed(() => uiTranslations[language.value])
       </h2>
     </div>
 
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 sm:grid-cols-2">
       <SkillItem v-for="(category, index) in skillCategories" :key="category.category" :index="index"
         :category="category" />
     </div>

@@ -1,33 +1,14 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { useLanguage } from '../../../composables/useLanguage'
 import { experiencesTranslations } from '../../../i18n/experiences'
 import { uiTranslations } from '../../../i18n/ui'
 import ExperienceItem from './ExperienceItem.vue'
 import { Briefcase } from 'lucide-vue-next'
-import { STICKY_PALETTE } from '../../../constants/sticky-palette.ts'
-import type { Project } from '../../../types/project.ts'
-import ProjectItemModal from '../../project/ProjectItemModal.vue'
 
 const { language } = useLanguage()
 const experiences = computed(() => experiencesTranslations[language.value])
 const t = computed(() => uiTranslations[language.value])
-
-const selectedProject = ref<Project | null>(null)
-const selectedProjectIndex = ref(0)
-
-const sticky = computed(
-  () => STICKY_PALETTE[selectedProjectIndex.value % STICKY_PALETTE.length]!
-)
-
-const openProject = (project: Project) => {
-  selectedProject.value = project
-}
-
-const closeProject = () => {
-  selectedProject.value = null
-  selectedProjectIndex.value = 0
-}
 </script>
 
 <template>
@@ -43,12 +24,7 @@ const closeProject = () => {
     </div>
 
     <div class="flex flex-col gap-6">
-      <ExperienceItem v-for="(experience, index) in experiences" :key="index" :experience="experience" :index="index"
-        @open-project="openProject" />
+      <ExperienceItem v-for="(experience, index) in experiences" :key="index" :experience="experience" :index="index" />
     </div>
   </section>
-
-  <Teleport to="body">
-    <ProjectItemModal :project="selectedProject" :sticky="sticky" :open="!!selectedProject" @close="closeProject" />
-  </Teleport>
 </template>

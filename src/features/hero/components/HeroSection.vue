@@ -32,9 +32,9 @@ const phone = '5535997242338'
           {{ t.hero.experiences }}
         </Button>
 
-        <Button variant="card" color="violet" as-child href="#skills">
+        <Button variant="card" color="violet" as-child href="#projects">
           <ArrowDown :size="14" />
-          {{ t.hero.skills }}
+          {{ t.hero.projects }}
         </Button>
       </div>
     </Card>

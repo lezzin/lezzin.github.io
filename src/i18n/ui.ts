@@ -8,7 +8,7 @@ export interface UiTranslations {
   hero: {
     description: string
     experiences: string
-    skills: string
+    projects: string
   }
   experience: {
     title: string
@@ -25,6 +25,9 @@ export interface UiTranslations {
     }
   }
   skills: {
+    title: string
+  }
+  projects: {
     title: string
   }
   contact: {
@@ -49,7 +52,7 @@ export const uiTranslations: Record<Language, UiTranslations> = {
       description:
         'Desenvolvedor Backend especializado em arquiteturas orientadas a eventos, APIs de alto tráfego e modernização de legados com ==NestJS e Laravel==. Foco prático na resolução de gargalos em bancos de dados relacionais, pipelines de mensageria assíncrona e entrega de serviços resilientes alinhados aos objetivos de negócio.',
       experiences: 'Ver Experiências',
-      skills: 'Ver Habilidades',
+      projects: 'Ver Projetos',
     },
     experience: {
       title: 'Experiência Profissional',
@@ -67,6 +70,9 @@ export const uiTranslations: Record<Language, UiTranslations> = {
     },
     skills: {
       title: 'Habilidades & Ferramentas',
+    },
+    projects: {
+      title: 'Projetos',
     },
     contact: {
       title: 'Vamos conversar?',
@@ -89,7 +95,7 @@ export const uiTranslations: Record<Language, UiTranslations> = {
       description:
         'Backend Developer specializing in event-driven architectures, high-throughput APIs, and legacy modernization with ==NestJS and Laravel==. Hands-on experience optimizing relational database bottlenecks, asynchronous messaging pipelines, and delivering resilient services aligned with business goals.',
       experiences: 'View Experience',
-      skills: 'View Skills',
+      projects: 'View Projects',
     },
     experience: {
       title: 'Professional Experience',
@@ -107,6 +113,9 @@ export const uiTranslations: Record<Language, UiTranslations> = {
     },
     skills: {
       title: 'Skills & Tools',
+    },
+    projects: {
+      title: 'Projects',
     },
     contact: {
       title: "Let's talk?",
@@ -129,7 +138,7 @@ export const uiTranslations: Record<Language, UiTranslations> = {
       description:
         'Desarrollador Backend especializado en arquitecturas orientadas a eventos, APIs de alto rendimiento y modernización de sistemas con ==NestJS y Laravel==. Enfoque práctico en la resolución de cuellos de botella en bases de datos relacionales, canalizaciones de mensajería asíncrona y entrega de servicios resilientes alineados con los objetivos del negocio.',
       experiences: 'Ver Experiencias',
-      skills: 'Ver Habilidades',
+      projects: 'Ver Proyectos',
     },
     experience: {
       title: 'Experiencia Profesional',
@@ -147,6 +156,9 @@ export const uiTranslations: Record<Language, UiTranslations> = {
     },
     skills: {
       title: 'Habilidades y Herramientas',
+    },
+    projects: {
+      title: 'Proyectos',
     },
     contact: {
       title: '¿Hablamos?',
