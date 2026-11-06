@@ -20,23 +20,21 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
       icon: Database,
     },
     {
-      category: 'Mensageria & Performance',
+      category: 'Mensageria e Performance',
       skills: ['Redis', 'RabbitMQ', 'Webhooks', 'MinIO'],
       icon: Zap,
     },
     {
-      category: 'Arquitetura & Boas Práticas',
-      skills: ['Clean Code', 'SOLID', 'Clean Architecture', 'Microserviços'],
+      category: 'Arquitetura e Boas Práticas',
+      skills: ['Clean Code', 'SOLID', 'Clean Architecture', 'Microsserviços'],
       icon: Layers,
     },
     {
-      category: 'DevOps & Ferramentas',
+      category: 'DevOps e Ferramentas',
       skills: [
         'Linux',
         'Docker',
-        'Kubernetes',
-        'Lens',
-        'Git & GitHub',
+        'Git e GitHub',
         'Azure DevOps',
         'Postman / Insomnia',
       ],
@@ -74,8 +72,6 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
       skills: [
         'Linux',
         'Docker',
-        'Kubernetes',
-        'Lens',
         'Git & GitHub',
         'Azure DevOps',
         'Postman / Insomnia',
@@ -114,8 +110,6 @@ export const skillCategoriesTranslations: Record<Language, SkillCategory[]> = {
       skills: [
         'Linux',
         'Docker',
-        'Kubernetes',
-        'Lens',
         'Git & GitHub',
         'Azure DevOps',
         'Postman / Insomnia',

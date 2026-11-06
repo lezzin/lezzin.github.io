@@ -8,35 +8,35 @@ const pt = [
     company: 'Autônomo · Remoto',
     period: 'Jan 2024 – Dez 2024',
     description:
-      'Concepção e entrega de ==plataforma web para publicação e monetização literária==, assumindo todo o ciclo de engenharia: levantamento técnico de requisitos, modelagem relacional, desenvolvimento fullstack e implantação em produção.',
+      'Criei e lancei uma ==plataforma web de publicação literária==. Cuidei de requisitos, banco de dados, desenvolvimento fullstack e deploy em produção.',
 
     bulletPoints: [
-      '**Arquitetura e desenvolvimento:** Estruturação da aplicação com **CodeIgniter (PHP)** e **MySQL**, aplicando separação clara de camadas de serviço e repositório para facilitar manutenções futuras.',
-      '**Controle de acesso e engajamento:** Implementação de autenticação e RBAC para isolar permissões entre autores e leitores, além de módulos dinâmicos de comentários, avaliações e métricas de leitura.',
-      '**Integração financeira:** Configuração de checkout seguro via **Stripe**, automatizando a liberação de capítulos e obras pagas por meio do tratamento de webhooks transacionais.',
-      '**Deploy e infraestrutura:** Provisionamento do ambiente na **Hostinger**, configuração de domínios, SSL, rotinas automatizadas de backup e otimização de queries para planos compartilhados.',
+      '**Arquitetura e desenvolvimento:** Desenvolvi a aplicação com **CodeIgniter (PHP)** e **MySQL**, separando camadas para facilitar manutenções futuras.',
+      '**Controle de acesso e comunidade:** Criei controle de acesso para autores e leitores, além de comentários, avaliações e métricas de leitura.',
+      '**Pagamentos com Stripe:** Integrei checkout da **Stripe** e criei rotinas para liberar capítulos e assinaturas de forma automática.',
+      '**Deploy e infraestrutura:** Configurei o ambiente na **Hostinger** com SSL e rotinas de backup, otimizando consultas ao banco de dados.',
     ],
 
     projects: [
       {
         name: 'Erupção das Letras',
         context:
-          'Plataforma social e de publicação digital voltada para a produção, consumo e monetização direta de obras literárias independentes.',
+          'Plataforma web para autores independentes publicarem, divulgarem e venderem suas obras diretamente aos leitores.',
         importance:
-          'Permitir que o cliente validasse no mercado um modelo de negócio baseado em venda avulsa de capítulos e assinaturas de autores, com baixa barreira operacional.',
+          'Permitir que o cliente validasse o modelo de venda de capítulos e assinaturas com baixo custo operacional.',
         problem:
-          'Inexistência de um ecossistema integrado que unificasse leitura confortável no navegador, interação social entre usuários e processamento seguro de pagamentos sob uma mesma conta.',
+          'Faltava uma plataforma que reunisse leitura agradável no navegador, interação entre usuários e pagamentos seguros no mesmo lugar.',
         decisions: [
-          'Modelagem relacional normalizada em **MySQL** para gerenciar hierarquia de publicações (obras, volumes e capítulos) com versionamento de rascunhos.',
-          'Consumo assíncrono de webhooks da **Stripe** com controle de idempotência para evitar duplicidade na liberação de conteúdos.',
-          'Separação estrita de permissões via RBAC para segregar perfis de autores, leitores e moderação administrativa.',
-          'Desenvolvimento de leitor web responsivo com tipografia ajustável e renderização leve com **jQuery** e CSS modular.',
-          'Estruturação de índices em chaves compostas no banco para garantir carregamento instantâneo do feed e da busca de obras.',
+          'Modelei o banco em **MySQL** para organizar obras, volumes e capítulos com histórico de rascunhos.',
+          'Processei webhooks da **Stripe** com checagem de segurança para evitar liberação duplicada de conteúdo.',
+          'Isolei permissões com RBAC para separar os acessos de autores, leitores e administradores.',
+          'Criei um leitor web responsivo com **jQuery** e CSS modular, com ajuste no tamanho do texto.',
+          'Criei índices compostos no banco de dados para acelerar a busca e o carregamento do catálogo.',
         ],
         tradeoffs:
-          'A escolha pelo CodeIgniter viabilizou rápida entrega e baixo custo de hospedagem compartilhada, mas demandou a implementação manual de camadas de abstração ausentes no framework para manter o código desacoplado.',
+          'O CodeIgniter acelerou a entrega e reduziu custos de hospedagem. Em contrapartida, precisei criar camadas de abstração na mão.',
         outcome:
-          'Lançamento da plataforma em produção dentro do prazo estabelecido, com processamento de pagamentos 100% estável e catálogo ativo de autores independentes.',
+          'Lancei a plataforma no prazo, com pagamentos 100% estáveis e autores vendendo suas obras.',
         technologies: ['CodeIgniter', 'PHP', 'MySQL', 'jQuery', 'JavaScript', 'Stripe'],
       },
     ],
@@ -46,67 +46,66 @@ const pt = [
     company: 'Ágil Empréstimos · Monte Belo',
     period: 'Abr 2025 – Fev 2026',
     description:
-      'Atuação na engenharia de backend e sustentação dos ==sistemas centrais de crédito e faturamento==, com foco em pipelines de mensageria assíncrona, refatoração de gargalos de banco e modernização de serviços legados.',
+      'Atuei no backend dos ==sistemas centrais de crédito e faturamento==. Otimizei consultas ao banco, montei filas assíncronas e modernizei serviços legados.',
     bulletPoints: [
-      '**Mensageria e processamento assíncrono:** Construção de pipelines com **RabbitMQ** e **Redis**, garantindo o processamento distribuído e tolerante a falhas de mais de **100 mil faturas diárias**.',
-      '**Otimização de desempenho:** Redução de **97,5% no tempo de geração** de relatórios operacionais (de 40 minutos para menos de 1 minuto), aplicando streaming de dados e reestruturação de consultas SQL.',
-      '**Modernização de microsserviços:** Construção de novos serviços em **NestJS (TypeScript)** e manutenção corretiva/evolutiva em sistemas transacionais legados em **CodeIgniter**.',
-      '**Diagnóstico e observabilidade:** Investigação e resolução de incidentes em clusters **Kubernetes** utilizando **Lens**, analisando ciclos de vida de pods, services, métricas de consumo e logs de aplicação.',
-      '**Padronização e documentação:** Elaboração de documentações de API e diagramas de fluxo arquitetural, acelerando o onboarding de novos desenvolvedores e o suporte entre equipes.',
+      '**Mensageria e filas:** Criei rotinas com **RabbitMQ** e **Redis** para processar mais de **100 mil faturas diárias** sem falhas.',
+      '**Otimização de banco:** Reduzi o tempo de relatórios em **97,5%** (de 40 minutos para menos de 1 minuto) com streaming e consultas SQL.',
+      '**Modernização de microsserviços:** Criei novos serviços em **NestJS (TypeScript)** e mantive sistemas legados em **CodeIgniter**.',
+      '**Documentação técnica:** Escrevi documentações de APIs e diagramas de fluxo para acelerar o aprendizado de novos desenvolvedores.',
     ],
     projects: [
       {
         name: 'Automação Multicanal de Faturas',
         context:
-          'Sistema automatizado para orquestração e despacho de cobranças via E-mail, SMS e WhatsApp integrado ao core financeiro.',
+          'Sistema para automatizar o envio de faturas por E-mail, SMS e WhatsApp integrado ao financeiro da empresa.',
         importance:
-          'Mitigar a inadimplência por atraso de envio, conferir previsibilidade ao fluxo de caixa e eliminar intervenções manuais na cobrança.',
+          'Reduzir atrasos nos pagamentos, dar previsibilidade ao caixa e eliminar disparos manuais de cobrança.',
         problem:
-          'Envios eram realizados manualmente, sem fila centralizada ou rastreabilidade de entrega, provocando gargalos operacionais e alto índice de inconsistências nos envios.',
+          'Os envios eram manuais, sem fila nem rastreio, o que gerava atrasos operacionais e erros de entrega.',
         decisions: [
-          'Estruturação de filas assíncronas no **RabbitMQ** para desacoplar a geração de títulos do envio externo, absorvendo picos de demanda sem indisponibilidade.',
-          'Implementação de cache de dados cadastrais no **Redis** e armazenamento de comprovantes/QR Codes no **MinIO** via S3 API para aliviar a carga no banco relacional.',
+          'Criei filas no **RabbitMQ** para separar a geração de cobranças dos envios externos, absorvendo picos sem travar o sistema.',
+          'Adicionei cache no **Redis** e salvei arquivos no **MinIO** via S3 para aliviar o banco relacional.',
         ],
         tradeoffs:
-          'A introdução de mensageria assíncrona adicionou complexidade no rastreamento de estados parciais de envio, mitigada com logs estruturados de eventos por fatura.',
+          'As filas assíncronas exigiram mais controle dos envios, resolvido com logs detalhados para cada fatura processada.',
         outcome:
-          'Processo 100% automatizado com capacidade homologada para mais de **100 mil transações diárias**, eliminando erros de envio manual.',
+          'Automatização completa do processo, com capacidade para mais de **100 mil transações diárias** e zero erros manuais.',
         technologies: ['Laravel 11', 'RabbitMQ', 'Redis', 'MinIO'],
       },
       {
         name: 'Processamento Assíncrono de Relatórios Financeiros',
         context:
-          'Módulo especializado na consolidação e exportação de dados contábeis e operacionais volumosos para auditoria e controladoria.',
+          'Módulo para consolidar e exportar grandes volumes de dados contábeis para auditoria e controladoria.',
         importance:
-          'Disponibilizar métricas auditáveis essenciais para fechamento diário e decisões executivas sem degradar o ambiente transacional.',
+          'Gerar relatórios essenciais para fechamentos diários e decisões da diretoria sem deixar o sistema lento.',
         problem:
-          'Consultas síncronas bloqueavam tabelas transacionais e causavam estouro de memória no servidor PHP, gerando timeouts de até **40 minutos** e falhas de exportação.',
+          'Consultas pesadas travavam o banco e estouravam a memória do PHP, gerando erros e esperas de até **40 minutos**.',
         decisions: [
-          'Migração da extração de dados para jobs assíncronos no **Redis Queues**, liberando as conexões HTTP dos usuários de forma imediata.',
-          'Otimização de índices relacionais e implementação de **cursor-based streaming**, gerando e gravando arquivos diretamente no **MinIO** sem retenção em memória RAM.',
+          'Movi a extração de dados para tarefas em segundo plano com **Redis Queues**, liberando o usuário na hora.',
+          'Otimizei índices no banco e usei **streaming com cursores**, gravando relatórios no **MinIO** sem lotar a memória RAM.',
         ],
         tradeoffs:
-          'A construção de um serviço dedicado substituiu patches paliativos no legado, exigindo validação rigorosa de conciliação de dados entre o modelo antigo e o novo.',
+          'Criar um serviço novo levou mais tempo de validação dos dados contábeis, mas eliminou remendos no código antigo.',
         outcome:
-          'Redução no tempo de geração de **40 minutos para menos de 60 segundos**, com zero ocorrências de timeout e consumo de memória estabilizado.',
+          'Tempo de geração caiu de **40 minutos para menos de 60 segundos**, sem falhas e com baixo uso de memória.',
         technologies: ['Laravel 12', 'Redis', 'MinIO', 'SQL Optimization'],
       },
       {
         name: 'Microsserviço de Mensageria WhatsApp (API OMNE)',
         context:
-          'Microsserviço integrador entre a infraestrutura interna da empresa e o provedor oficial de mensageria via API OMNE.',
+          'Microsserviço que conecta os sistemas da empresa à API OMNE para envio de mensagens via WhatsApp.',
         importance:
-          'Assegurar um canal seguro e homologado para envio de códigos de validação (OTP) e avisos transacionais com alta taxa de entrega.',
+          'Garantir a entrega rápida de códigos de validação (OTP) e avisos de cobrança por um canal oficial.',
         problem:
-          'Regras de negócio e modelos de mensagens ficavam codificados de forma rígida no backend, demandando deploys técnicos para qualquer ajuste de texto ou template.',
+          'Modelos de mensagens ficavam fixos no código. Qualquer ajuste de texto exigia um novo deploy.',
         decisions: [
-          'Desenvolvimento de microsserviço isolado com **NestJS** e **TypeScript**, tratando autenticação com tokens, retentativas e webhooks de entrega e leitura.',
-          'Criação de painel de controle administrativo para homologação e gestão de templates de mensagens pela equipe de negócios sem intervenção da TI.',
+          'Construí um microsserviço em **NestJS** e **TypeScript** com renovação de tokens, retentativas automáticas e leitura de webhooks.',
+          'Criei um painel administrativo para a equipe de negócios gerenciar e aprovar templates sem depender da TI.',
         ],
         tradeoffs:
-          'A utilização de provedor oficial e a separação em microsserviço introduziram latência de rede adicional, compensada pela garantia de entregabilidade e conformidade com as políticas do WhatsApp.',
+          'O microsserviço adicionou chamadas de rede extras, mas garantiu segurança na entrega e conformidade com as regras do WhatsApp.',
         outcome:
-          'Autonomia completa para as áreas operacionais na gestão de campanhas e rastreabilidade em tempo real do status de cada mensagem enviada.',
+          'Autonomia total para o time de operações gerenciar envios e acompanhamento em tempo real de cada mensagem entregue.',
         technologies: ['NestJS', 'TypeScript', 'Redis', 'API OMNE', 'Node.js'],
       },
     ],
@@ -116,34 +115,34 @@ const pt = [
     company: 'Autônomo · Remoto',
     period: 'Fev 2026 – Ago 2026',
     description:
-      'Engenharia e implantação de ==sistema web corporativo== para gestão integrada de rede de franquias, centralizando operações financeiras, contratos digitais e governança multi-unidade em produção.',
+      'Desenvolvi e implantei um ==sistema web== para redes de franquias. Centralizei a gestão financeira, contratos digitais e o controle entre unidades.',
     bulletPoints: [
-      '**Desenvolvimento Fullstack:** Construção da plataforma utilizando **Laravel**, **MySQL**, **Tailwind CSS** e **Alpine.js**, priorizando código testável e interface responsiva.',
-      '**Arquitetura de dados e processos:** Criação de APIs RESTful, controle de acesso granular multi-tenant, processamento assíncrono de relatórios e emissão automatizada de contratos em PDF.',
-      '**Infraestrutura e segurança:** Configuração de servidores Linux em VPS, políticas de firewall, Nginx, certificados SSL e esteiras de deploy para garantir disponibilidade da rede.',
-      '**Alinhamento de produto:** Levantamento de requisitos diretamente com a liderança, definição de roadmap de entregas e suporte técnico pós-lançamento aos franqueados.',
+      '**Desenvolvimento fullstack:** Construí a plataforma com **Laravel**, **MySQL**, **Tailwind CSS** e **Alpine.js**, focando em código testável e interface ágil.',
+      '**APIs e regras de negócio:** Criei APIs RESTful com isolamento por unidade (multi-tenant), relatórios assíncronos e emissão automática de contratos em PDF.',
+      '**Infraestrutura e segurança:** Configurei servidores Linux em VPS com firewall, Nginx, certificados SSL e deploys automatizados.',
+      '**Alinhamento de produto:** Alinhei requisitos com os fundadores, planejei entregas e dei suporte técnico direto aos usuários da rede.',
     ],
     projects: [
       {
         name: 'Plataforma Franquias Panda',
         context:
-          'Sistema ERP sob medida projetado para unificar a gestão operacional, financeira e contratual entre franqueadora, franqueados e clientes.',
+          'Sistema de gestão sob medida para unificar as rotinas operacionais, financeiras e contratuais entre franqueadora e franqueados.',
         importance:
-          'Eliminar o uso de controles manuais em planilhas e dar visibilidade em tempo real sobre adesão de campanhas, faturamento e conformidade das unidades.',
+          'Substituir planilhas manuais por dados em tempo real sobre vendas, campanhas e conformidade de cada unidade.',
         problem:
-          'A dispersão de informações em canais informais causava atrasos na aprovação de contratos, extravio de inventário de dispositivos e falta de métricas consolidadas de desempenho.',
+          'Dados espalhados em canais informais causavam atrasos em contratos, perdas no estoque e falta de visão clara do negócio.',
         decisions: [
-          'Arquitetura modular em **Laravel** orientada a serviços para facilitar a inclusão de novas verticais de negócio.',
-          'Isolamento de contextos com painéis dedicados para administradores, franqueados e clientes finais via policies e RBAC.',
-          'Módulos para gestão de contratos, controle de estoque de dispositivos, campanhas de incentivo e catálogo de conteúdos corporativos.',
-          'Dashboards analíticos com filtros compostos para acompanhamento de faturamento e engajamento por unidade.',
-          'Pipeline automatizado para geração e assinatura digital de contratos em PDF com registros de auditoria.',
-          'Componentização da interface com **Blade**, **Tailwind CSS** e **Alpine.js**, garantindo carregamento rápido e consistência visual.',
+          'Estruturei a aplicação em **Laravel** com camadas de serviço para facilitar a chegada de novas funções.',
+          'Criei painéis específicos para administradores, franqueados e clientes com controle rigoroso de acessos (RBAC).',
+          'Desenvolvi módulos de contratos, estoque de dispositivos, campanhas de incentivo e materiais de treinamento corporativo.',
+          'Criei painéis analíticos com filtros detalhados para acompanhar vendas e desempenho de cada filial.',
+          'Automatizei a criação e assinatura de contratos em PDF com registro histórico para auditoria.',
+          'Construí a interface usando **Blade**, **Tailwind CSS** e **Alpine.js** para um carregamento rápido e visual consistente.',
         ],
         tradeoffs:
-          'A multiplicidade de papéis e regras contratuais customizadas elevou a complexidade das regras de negócio, compensada pela criação de uma suíte de testes unitários e de integração para prevenir regressões.',
+          'A variedade de regras e perfis aumentou a complexidade. Para evitar falhas, criei uma rotina ampla de testes automatizados.',
         outcome:
-          'Centralização completa da operação da rede em uma única plataforma, reduzindo o tempo de fechamento contratual e proporcionando total autonomia administrativa.',
+          'Operação 100% centralizada na plataforma, com contratos fechados muito mais rápido e autonomia para os administradores.',
         technologies: [
           'Laravel',
           'PHP',
@@ -161,32 +160,30 @@ const pt = [
     company: 'Ágil Empréstimos · Monte Belo',
     period: 'Ago 2026 – Atual',
     description:
-      'Engenharia e evolução contínua de ==serviços de alta criticidade no ecossistema de crédito e cobrança==, atuando no desacoplamento de microsserviços, observabilidade em Kubernetes e garantia de resiliência em rotas transacionais.',
+      'Desenvolvo e mantenho ==serviços essenciais de crédito e cobrança==. Atuo na separação de microsserviços e na estabilidade de pagamentos.',
     bulletPoints: [
-      '**Microsserviços de alto desempenho:** Desenvolvimento de APIs corporativas com **NestJS** e **Laravel 13**, garantindo baixa latência em rotas transacionais de alto volume e manutenção de legados em **CodeIgniter**.',
-      '**Observabilidade em Kubernetes:** Diagnóstico proativo de incidentes em produção com **Lens**, inspecionando ciclo de vida de pods, roteamento de services, logs estruturados e contenção de falhas em tempo real.',
-      '**Resiliência transacional:** Implementação de mecanismos de fallback e reprocessamento automático para liquidação e envio de faturas, eliminando perdas de comunicação com clientes.',
-      '**Governança de dados e testes:** Refatoração de consultas analíticas e criação de testes automatizados para assegurar conformidade e integridade contábil nas operações de crédito.',
+      '**Microsserviços rápidos:** Desenvolvo APIs de alto volume com **NestJS** e **Laravel 13**, além de manter legados em **CodeIgniter**.',
+      '**Rotinas confiáveis:** Criei reprocessamento automático e rotas de contingência para envio e liquidação de faturas sem perder notificações.',
     ],
     projects: [
       {
         name: 'Automação e Resiliência na Cobrança de Acordos',
         context:
-          'Sistema de régua de cobrança automática para acordos de crédito, orquestrando envio prioritário via WhatsApp com failover instantâneo para SMS.',
+          'Sistema de cobrança automática para acordos de crédito, enviando mensagens via WhatsApp com troca imediata para SMS se falhar.',
         importance:
-          'Acelerar a recuperação de crédito e garantir que clientes recebam os títulos antes do vencimento, mitigando a quebra de acordos.',
+          'Acelerar o recebimento de parcelas e garantir a entrega dos boletos antes do vencimento para evitar quebras de acordos.',
         problem:
-          'O fluxo dependia de envios manuais e desordenados, sem rastreabilidade de entrega, provocando atrasos nos pagamentos, aumento de cancelamento de acordos e sobrecarga no suporte.',
+          'Os envios eram manuais e desorganizados. Sem rastreio de entrega, os pagamentos atrasavam e o suporte ficava sobrecarregado.',
         decisions: [
-          'Desenvolvimento de pipeline assíncrono em **Laravel 13** com **Redis**, isolando o processamento em filas concorrentes para suportar picos sazonais de vencimento.',
-          'Implementação de **failover multicanal automático**: a não confirmação de entrega do WhatsApp aciona envio imediato de contingência via SMS com o código da fatura.',
-          'Criação de chaves de idempotência e locks distribuídos no Redis para impedir envios duplicados em cenários de reprocessamento por webhook.',
-          'Rastreabilidade de ponta a ponta com registro detalhado de status (gerado, enviado, entregue, falha e pago) para auditoria operacional.',
+          'Criei rotinas em **Laravel 13** com filas no **Redis** para aguentar picos de envio nas datas de vencimento.',
+          'Criei **troca automática de canal**: se o WhatsApp falhar, o sistema dispara a fatura por SMS imediatamente.',
+          'Usei travas e chaves únicas no **Redis** para nunca enviar a mesma cobrança duas vezes durante reprocessamentos.',
+          'Gravei cada etapa da mensagem (criada, enviada, entregue e paga) para auditoria e controle em tempo real.',
         ],
         tradeoffs:
-          'A arquitetura com múltiplos canais e failover em tempo real exigiu atenção redobrada no gerenciamento de estados assíncronos e retentativas para evitar notificações em duplicidade.',
+          'A alternância entre canais exigiu controle rigoroso de filas para nunca notificar o cliente mais de uma vez.',
         outcome:
-          '100% de rastreabilidade sobre os envios de acordos, redução expressiva na quebra de negociações por falta de fatura e eliminação do trabalho manual de disparo.',
+          'Alcancei 100% de rastreio nas cobranças, menos quebras de acordos e o fim total dos envios manuais.',
         technologies: ['Laravel 13', 'Redis', 'WhatsApp API', 'SMS'],
       },
     ],
@@ -242,7 +239,6 @@ const en = withSameKeys<typeof pt>()([
       '**Messaging & asynchronous processing:** Built resilient event pipelines with **RabbitMQ** and **Redis**, processing over **100,000 daily invoices** with distributed throughput control.',
       '**Performance optimization:** Cut operational report generation time by **97.5%** (from 40 minutes to under 1 minute) through cursor-based data streaming and SQL query tuning.',
       '**Microservice modernization:** Developed domain-oriented microservices with **NestJS (TypeScript)** while maintaining and incrementally refactoring transactional legacy systems in **CodeIgniter**.',
-      '**Troubleshooting & observability:** Diagnosed and resolved production issues across **Kubernetes** clusters using **Lens**, analyzing pod lifecycles, service routing, resource utilization, and container logs.',
       '**Technical documentation:** Created comprehensive API documentation and architectural diagrams, reducing team onboarding overhead and streamlining cross-team support.',
     ],
     projects: [
@@ -352,12 +348,10 @@ const en = withSameKeys<typeof pt>()([
     company: 'Ágil Empréstimos · Monte Belo',
     period: 'Aug 2026 – Present',
     description:
-      'Engineering and continuous improvement of ==mission-critical financial services across credit and billing systems==, focusing on microservice decoupling, Kubernetes observability, and transactional resilience.',
+      'Engineering and continuous improvement of ==mission-critical financial services across credit and billing systems==, focusing on microservice decoupling and transactional resilience.',
     bulletPoints: [
       '**High-throughput microservices:** Engineered production APIs with **NestJS** and **Laravel 13**, maintaining low latency across critical transaction routes while sustaining legacy **CodeIgniter** services.',
-      '**Kubernetes observability:** Investigated and resolved production issues using **Lens**, analyzing pod lifecycles, service routing, structured container logs, and cluster resource contention in real time.',
       '**Transactional resilience:** Built automated fallback and retry mechanisms for invoice delivery and reconciliation, eliminating communication drops with borrowers.',
-      '**Data governance & testing:** Optimized analytical database queries and expanded automated test coverage to enforce accounting integrity across loan workflows.',
     ],
     projects: [
       {
@@ -433,7 +427,6 @@ const es = withSameKeys<typeof pt>()([
       '**Mensajería y procesamiento asíncrono:** Construcción de flujos con **RabbitMQ** y **Redis**, garantizando el procesamiento distribuido de más de **100 mil facturas diarias** sin saturación.',
       '**Optimización de rendimiento:** Reducción del **97,5% en el tiempo de generación** de reportes (de 40 minutos a menos de 1 minuto), implementando streaming de datos y reestructuración SQL.',
       '**Modernización de microservicios:** Desarrollo de nuevos microservicios en **NestJS (TypeScript)** y mantenimiento evolutivo de sistemas transaccionales heredados en **CodeIgniter**.',
-      '**Diagnóstico y observabilidad:** Investigación y resolución de incidencias en clústeres **Kubernetes** mediante **Lens**, analizando ciclos de vida de pods, services, métricas y registros de aplicación.',
       '**Estandarización y documentación:** Elaboración de documentación de APIs y diagramas de flujo arquitectónico, acelerando la incorporación de nuevos desarrolladores y el soporte operativo.',
     ],
     projects: [
@@ -543,12 +536,10 @@ const es = withSameKeys<typeof pt>()([
     company: 'Ágil Empréstimos · Monte Belo',
     period: 'Ago 2026 – Actualidad',
     description:
-      'Ingeniería y evolución continua de ==servicios críticos en el ecosistema de crédito y cobros==, participando en el desacoplamiento de microservicios, observabilidad en Kubernetes y resiliencia transaccional.',
+      'Ingeniería y evolución continua de ==servicios críticos en el ecosistema de crédito y cobros==, participando en el desacoplamiento de microservicios y resiliencia transaccional.',
     bulletPoints: [
       '**Microservicios de alto rendimiento:** Desarrollo de APIs corporativas con **NestJS** e **Laravel 13**, asegurando baja latencia en endpoints transaccionales y manteniendo servicios en **CodeIgniter**.',
-      '**Observabilidad en Kubernetes:** Diagnóstico proactivo de incidencias en producción mediante **Lens**, inspeccionando pods, services, registros estructurados y contención de fallos en tiempo real.',
       '**Resiliencia transaccional:** Implementación de mecanismos de fallback y reintentos automatizados para la emisión y liquidación de facturas, evitando pérdidas de contacto con clientes.',
-      '**Gobernanza de datos y pruebas:** Refactorización de consultas analíticas y cobertura de pruebas automatizadas para salvaguardar la integridad contable en las operaciones de crédito.',
     ],
     projects: [
       {

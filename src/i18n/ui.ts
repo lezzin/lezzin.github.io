@@ -46,30 +46,30 @@ export const uiTranslations: Record<Language, UiTranslations> = {
   pt: {
     card: {
       hero: 'Leandro Adrian da Silva',
-      nav: 'Links Úteis',
+      nav: 'Links úteis',
     },
     hero: {
       description:
-        'Desenvolvedor Backend especializado em arquiteturas orientadas a eventos, APIs de alto tráfego e modernização de legados com ==NestJS e Laravel==. Foco prático na resolução de gargalos em bancos de dados relacionais, pipelines de mensageria assíncrona e entrega de serviços resilientes alinhados aos objetivos de negócio.',
-      experiences: 'Ver Experiências',
-      projects: 'Ver Projetos',
+        'Sou desenvolvedor backend focado em ==NestJS e Laravel==. Crio APIs rápidas, resolvo gargalos em bancos relacionais e organizo filas assíncronas para manter sistemas estáveis.',
+      experiences: 'Ver experiências',
+      projects: 'Ver projetos',
     },
     experience: {
-      title: 'Experiência Profissional',
-      projectsTitle: 'Projetos e Estudos de Caso',
+      title: 'Experiência profissional',
+      projectsTitle: 'Projetos e estudos de caso',
       readCaseStudy: 'Ler estudo de caso completo',
       modal: {
         close: 'Fechar',
         context: 'Contexto',
-        importance: 'Impacto no Negócio',
-        problem: 'O Desafio Técnico',
-        decisions: 'Decisões de Engenharia',
-        tradeoffs: 'Análise de Trade-offs',
-        outcome: 'Resultado Final',
+        importance: 'Impacto no negócio',
+        problem: 'O desafio técnico',
+        decisions: 'Decisões de engenharia',
+        tradeoffs: 'Análise de trade-offs',
+        outcome: 'Resultado final',
       },
     },
     skills: {
-      title: 'Habilidades & Ferramentas',
+      title: 'Habilidades e ferramentas',
     },
     projects: {
       title: 'Projetos',
@@ -77,13 +77,13 @@ export const uiTranslations: Record<Language, UiTranslations> = {
     contact: {
       title: 'Vamos conversar?',
       subtitle:
-        'Disponível para novos desafios em engenharia de backend, discussões sobre arquitetura de software e desenvolvimento de soluções de alta performance.',
+        'Estou disponível para novos desafios em backend. Se você precisa criar sistemas rápidos e confiáveis, fale comigo.',
       github: 'GitHub',
       linkedin: 'LinkedIn',
-      whatsapp: 'Whatsapp',
+      whatsapp: 'WhatsApp',
     },
     footer: {
-      madeWith: '© {year} — Feito com Vue.js & Tailwind CSS',
+      madeWith: '© {year} — Feito com Vue.js e Tailwind CSS',
     },
   },
   en: {

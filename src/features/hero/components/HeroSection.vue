@@ -16,10 +16,17 @@ const t = computed(() => uiTranslations[language.value])
   <section id="home" class="pt-2 pb-2">
     <Card :title="t.card.hero" image-position="left">
       <template #image>
-        <img src="/profile.png" alt="Foto de perfil" class="object-cover aspect-square" />
+        <img
+          src="/profile.png"
+          alt="Foto de perfil de Leandro Adrian"
+          class="object-cover aspect-square"
+        />
       </template>
 
-      <p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400" v-html="formatText(t.hero.description)" />
+      <p
+        class="text-sm leading-relaxed text-slate-500 dark:text-slate-400"
+        v-html="formatText(t.hero.description)"
+      />
 
       <div class="grid md:grid-cols-2 gap-4 mt-6">
         <Button variant="card" color="indigo" as-child href="#experience">

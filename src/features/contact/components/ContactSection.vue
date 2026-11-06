@@ -12,7 +12,7 @@ const { language } = useLanguage()
 const t = computed(() => uiTranslations[language.value])
 
 const PHONE_NUMBER = '5535997242338'
-const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodeURIComponent('Oi, Leandro! Vim pelo seu portfólio pessoal')}`
+const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodeURIComponent('Olá, Leandro! Vi seu portfólio e gostaria de conversar.')}`
 </script>
 
 <template>
