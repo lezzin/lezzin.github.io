@@ -1,4 +1,4 @@
-import type { Project } from "./project"
+import type { Project } from './project'
 
 export interface Experience {
   title: string

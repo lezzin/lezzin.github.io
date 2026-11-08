@@ -21,7 +21,7 @@ const containerClass = 'max-w-5xl mx-auto px-4 sm:px-6 md:px-8'
           <p class="font-handwritten text-xl mb-0.5 text-slate-900 dark:text-slate-100">
             Leandro Adrian da Silva
           </p>
-          <p class="text-xs text-slate-400 dark:text-slate-500 tracking-wide">
+          <p class="text-xs text-slate-600 dark:text-slate-400 tracking-wide">
             {{ footerText }}
           </p>
         </div>

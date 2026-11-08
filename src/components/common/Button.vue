@@ -50,18 +50,22 @@ const props = withDefaults(
 )
 
 const cardColors: Record<CardColor, string> = {
-  green: 'bg-emerald-500 text-white hover:bg-emerald-600',
-  blue: 'bg-sky-500 text-white hover:bg-sky-600',
+  green:
+    'bg-emerald-700 text-white hover:bg-emerald-800 dark:bg-emerald-600 dark:hover:bg-emerald-700',
+  blue: 'bg-sky-700 text-white hover:bg-sky-800 dark:bg-sky-600 dark:hover:bg-sky-700',
   yellow: 'bg-amber-400 text-amber-950 hover:bg-amber-500',
-  red: 'bg-rose-500 text-white hover:bg-rose-600',
-  purple: 'bg-violet-500 text-white hover:bg-violet-600',
-  pink: 'bg-pink-500 text-white hover:bg-pink-600',
-  orange: 'bg-orange-500 text-white hover:bg-orange-600',
-  cyan: 'bg-cyan-500 text-white hover:bg-cyan-600',
-  indigo: 'bg-indigo-500 text-white hover:bg-indigo-600',
-  violet: 'bg-violet-500 text-white hover:bg-violet-600',
-  sky: 'bg-sky-500 text-white hover:bg-sky-600',
-  zinc: 'bg-zinc-500 text-white hover:bg-zinc-600',
+  red: 'bg-rose-600 text-white hover:bg-rose-700',
+  purple:
+    'bg-violet-600 text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600',
+  pink: 'bg-pink-600 text-white hover:bg-pink-700',
+  orange: 'bg-orange-600 text-white hover:bg-orange-700',
+  cyan: 'bg-cyan-700 text-white hover:bg-cyan-800',
+  indigo:
+    'bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600',
+  violet:
+    'bg-violet-600 text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600',
+  sky: 'bg-sky-700 text-white hover:bg-sky-800 dark:bg-sky-600 dark:hover:bg-sky-700',
+  zinc: 'bg-zinc-600 text-white hover:bg-zinc-700',
   black:
     'bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200',
 }

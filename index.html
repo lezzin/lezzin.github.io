@@ -2,27 +2,29 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- Google Tag Manager -->
-    <script>
-      ;(function (w, d, s, l, i) {
-        w[l] = w[l] || []
-        w[l].push({
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js',
-        })
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : ''
-        j.async = true
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-        f.parentNode.insertBefore(j, f)
-      })(window, document, 'script', 'dataLayer', 'GTM-NXMC9CVB')
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Content Security Policy (Meta alternative for static hosts like GitHub Pages) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.counter.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://t.counter.dev https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src 'self' https://www.googletagmanager.com;"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- LCP Image Preload -->
+    <link
+      rel="preload"
+      as="image"
+      href="/profile-380.webp"
+      type="image/webp"
+      imagesrcset="/profile-380.webp 380w, /profile-760.webp 760w"
+      imagesizes="(max-width: 640px) 378px, 378px"
+      fetchpriority="high"
+    />
+
     <meta
       name="description"
       content="Leandro Adrian da Silva. Desenvolvo sistemas backend rápidos e confiáveis com NestJS, Laravel e mensageria."
@@ -53,11 +55,46 @@
     />
     <meta property="twitter:image" content="/og-image.png" />
 
+    <!-- Counter.dev diferido (não bloqueia FCP/LCP) -->
     <script
+      defer
       src="https://cdn.counter.dev/script.js"
       data-id="2f069bd4-b8d7-4cc7-b8a0-05f5fcaa6e08"
       data-utcoffset="-3"
     ></script>
+
+    <!-- Google Tag Manager (Carregamento sob demanda em ociosidade/interação) -->
+    <script>
+      ;(function () {
+        function loadGTM() {
+          if (window.__gtmLoaded) return
+          window.__gtmLoaded = true
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js',
+          })
+          var f = document.getElementsByTagName('script')[0]
+          var j = document.createElement('script')
+          j.async = true
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NXMC9CVB'
+          f.parentNode.insertBefore(j, f)
+        }
+
+        if ('requestIdleCallback' in window) {
+          window.addEventListener('load', function () {
+            requestIdleCallback(loadGTM, { timeout: 3500 })
+          })
+        } else {
+          window.addEventListener('load', function () {
+            setTimeout(loadGTM, 2000)
+          })
+        }
+        ;['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (evt) {
+          window.addEventListener(evt, loadGTM, { once: true, passive: true })
+        })
+      })()
+    </script>
 
     <title>Portfólio Backend — Leandro Adrian da Silva</title>
   </head>

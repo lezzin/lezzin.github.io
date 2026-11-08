@@ -5,7 +5,9 @@ import ProjectItem from './ProjectItem.vue'
 import SectionTitle from '../../components/common/SectionTitle.vue'
 import { experiences } from '../../constants/experiences.ts'
 
-const projects = computed(() => experiences.flatMap((experience) => experience.projects).filter(project => project != undefined))
+const projects = computed(() =>
+  experiences.flatMap((experience) => experience.projects).filter((project) => project != undefined)
+)
 </script>
 
 <template>
@@ -13,8 +15,12 @@ const projects = computed(() => experiences.flatMap((experience) => experience.p
     <SectionTitle title="Projetos" :icon="FolderCode" />
 
     <div class="grid md:grid-cols-2 gap-6">
-      <ProjectItem v-for="(project, index) in projects" :key="`${project.name}-${index}`" :project="project"
-        :index="index" />
+      <ProjectItem
+        v-for="(project, index) in projects"
+        :key="`${project.name}-${index}`"
+        :project="project"
+        :index="index"
+      />
     </div>
   </section>
 </template>
