@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useLanguage } from '../../composables/useLanguage'
-import { navItemsTranslations } from '../../i18n/nav-items'
-
-const { language } = useLanguage()
-const navItems = computed(() => navItemsTranslations[language.value])
+import { navItems } from '../../constants/nav-items'
 </script>
 
 <template>

@@ -1,10 +1,14 @@
+export interface Metric {
+  value: string
+  label: string
+}
+
 export interface Project {
   name: string
-  context: string
-  importance: string
+  summary: string
   problem: string
-  decisions: string[]
-  tradeoffs: string
+  solution: string[]
   outcome: string
+  metrics?: Metric[]
   technologies: string[]
 }

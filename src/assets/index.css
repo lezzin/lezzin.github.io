@@ -42,6 +42,10 @@
   .section-label {
     @apply text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2;
   }
+
+  .markldown {
+    @apply text-emerald-700 dark:text-emerald-400 font-bold;
+  }
 }
 
 .v-enter-active,

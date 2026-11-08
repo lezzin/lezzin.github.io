@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ThemeToggle from './ThemeToggle.vue'
-import LanguageToggle from './LanguageToggle.vue'
 import NavItems from './NavItems.vue'
 
 defineProps<{
@@ -23,7 +22,6 @@ defineProps<{
       <NavItems class="hidden md:flex" />
 
       <div class="flex items-center gap-2">
-        <LanguageToggle />
         <ThemeToggle />
       </div>
     </div>

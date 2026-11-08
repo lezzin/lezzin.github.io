@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import Header from './Header.vue'
-import { useLanguage } from '../../composables/useLanguage'
-import { uiTranslations } from '../../i18n/ui'
 
-const { language } = useLanguage()
-const t = computed(() => uiTranslations[language.value])
-const currentYear = new Date().getFullYear()
-
-const footerText = computed(() => t.value.footer.madeWith.replace('{year}', currentYear.toString()))
-
+const footerText = `© ${new Date().getFullYear().toString()} — Feito com Vue.js e Tailwind CSS`
 const containerClass = 'max-w-5xl mx-auto px-4 sm:px-6 md:px-8'
 </script>
 

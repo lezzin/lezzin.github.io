@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import Github from '../../../components/icon/Github.vue'
 import Linkedin from '../../../components/icon/Linkedin.vue'
 import Whatsapp from '../../../components/icon/Whatsapp.vue'
-import { useLanguage } from '../../../composables/useLanguage'
-import { uiTranslations } from '../../../i18n/ui'
 import Card from '../../../components/common/Card.vue'
 import Button from '../../../components/common/Button.vue'
-
-const { language } = useLanguage()
-const t = computed(() => uiTranslations[language.value])
 
 const PHONE_NUMBER = '5535997242338'
 const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodeURIComponent('Olá, Leandro! Vi seu portfólio e gostaria de conversar.')}`
@@ -17,9 +11,10 @@ const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=$
 
 <template>
   <section id="contact" class="scroll-mt-20">
-    <Card :title="t.contact.title" class="mt-6 scroll-mt-20">
+    <Card title="Vamos conversar?" class="mt-6 scroll-mt-20">
       <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-        {{ t.contact.subtitle }}
+        Estou disponível para novos desafios em backend. Se você precisa criar sistemas rápidos e
+        confiáveis, fale comigo
       </p>
 
       <div class="flex flex-wrap gap-2">
@@ -34,7 +29,7 @@ const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=$
         >
           <div class="flex items-center gap-2">
             <Whatsapp aria-hidden="true" class="size-4" />
-            <span>{{ t.contact.whatsapp }}</span>
+            <span>WhatsApp</span>
           </div>
         </Button>
 

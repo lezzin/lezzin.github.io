@@ -1,30 +1,20 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { FolderCode } from 'lucide-vue-next'
-import { useLanguage } from '../../composables/useLanguage'
-import { experiencesTranslations } from '../../i18n/experiences'
-import { uiTranslations } from '../../i18n/ui'
 import ProjectItem from './ProjectItem.vue'
 import SectionTitle from '../../components/common/SectionTitle.vue'
+import { experiences } from '../../constants/experiences.ts'
 
-const { language } = useLanguage()
-const projects = computed(() =>
-  experiencesTranslations[language.value].flatMap((experience) => experience.projects)
-)
-const t = computed(() => uiTranslations[language.value])
+const projects = computed(() => experiences.flatMap((experience) => experience.projects).filter(project => project != undefined))
 </script>
 
 <template>
   <section id="projects" class="scroll-mt-20">
-    <SectionTitle :title="t.projects.title" :icon="FolderCode" />
+    <SectionTitle title="Projetos" :icon="FolderCode" />
 
     <div class="grid md:grid-cols-2 gap-6">
-      <ProjectItem
-        v-for="(project, index) in projects"
-        :key="`${project.name}-${index}`"
-        :project="project"
-        :index="index"
-      />
+      <ProjectItem v-for="(project, index) in projects" :key="`${project.name}-${index}`" :project="project"
+        :index="index" />
     </div>
   </section>
 </template>

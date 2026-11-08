@@ -1,2 +1,2 @@
-import { experiencesTranslations } from '../i18n/experiences'
-export const projects = experiencesTranslations.pt.map((experience) => experience.projects).flat()
+import { experiences } from './experiences'
+export const projects = experiences.map((experience) => experience.projects).flat()

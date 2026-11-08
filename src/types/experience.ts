@@ -1,4 +1,4 @@
-import type { Project } from './project'
+import type { Project } from "./project"
 
 export interface Experience {
   title: string
@@ -6,5 +6,5 @@ export interface Experience {
   period: string
   description: string
   bulletPoints: string[]
-  projects: Project[]
+  projects?: Project[]
 }
